@@ -74,6 +74,99 @@
         .escape-input { width: 80%; max-width: 280px; padding: 12px; font-size: 1.2rem; font-weight: bold; text-align: center; border: 2px solid #d4a359; border-radius: 8px; background: #fdf6e2; color: #2c1d11; margin-bottom: 12px; text-transform: uppercase; }
         .escape-hint { font-size: 0.85rem; color: #e67e22; margin-top: 10px; font-style: italic; display: none; }
 
+        /* ANIMATIE DESCHIDERE UȘĂ ESCAPE ROOM */
+        .door-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.88);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            backdrop-filter: blur(4px);
+        }
+
+        .door-frame {
+            position: relative;
+            width: 220px; height: 320px;
+            background: #2b1d0c;
+            border: 8px solid #8c5a2b;
+            border-radius: 12px 12px 0 0;
+            perspective: 1000px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(241, 196, 15, 0.4);
+        }
+
+        .door-inside {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle, #fff9c4 10%, #fbc02d 60%, #e67e22 100%);
+            display: flex; justify-content: center; align-items: center;
+            font-size: 60px;
+        }
+
+        .door {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #4a2e1b, #2c1d11);
+            border: 4px solid #8c5a2b;
+            transform-origin: left;
+            transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex; justify-content: center; align-items: center;
+        }
+
+        .door.open {
+            transform: rotateY(-110deg);
+        }
+
+        .keyhole {
+            width: 36px; height: 50px;
+            background: #1a0f0a;
+            border: 3px solid #d4a359;
+            border-radius: 18px 18px 8px 8px;
+            position: relative;
+        }
+
+        .animated-key {
+            position: absolute;
+            font-size: 48px;
+            top: -120px;
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .animated-key.insert {
+            top: calc(50% - 25px);
+            opacity: 1;
+        }
+
+        .animated-key.turn {
+            transform: rotate(90deg);
+        }
+
+        .victory-card {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s ease;
+            margin-top: 20px;
+            text-align: center;
+            color: #fff;
+            max-width: 90%;
+            background: #3d2516;
+            border: 2px solid #d4a359;
+            padding: 15px 20px;
+            border-radius: 12px;
+        }
+
+        .victory-card.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
         .archery-container { 
             position: relative; 
             width: 100%; 
@@ -205,7 +298,7 @@
                     <input type="text" id="escapeInput" class="escape-input" placeholder="Răspuns..." autocomplete="off">
                     <br>
                     <button class="btn-action" style="background: #27ae60; color: #fff; border-color: #2ecc71;" onclick="checkCurrentLock()">🔓 Deschide Lacătul!</button>
-                    <button class="btn-action" style="background: #e67e22; color: #fff; border-color: #d35400;" <button onclick="toggleHint()" class="...">💡 Indiciu</button>
+                    <button class="btn-action" style="background: #e67e22; color: #fff; border-color: #d35400;" onclick="toggleHint()">💡 Indiciu</button>
                 </div>
                 
                 <div id="escapeHintText" class="escape-hint"></div>
@@ -238,6 +331,22 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div id="doorModal" class="door-modal">
+    <div class="door-frame">
+        <div class="door-inside">🌟</div>
+        <div class="door" id="mainDoor">
+            <div class="keyhole"></div>
+            <div class="animated-key" id="animatedKey">🔑</div>
+        </div>
+    </div>
+
+    <div class="victory-card" id="victoryCard">
+        <h2 style="color: #f1c40f; font-size: 22px; margin-bottom: 10px;">🎉 FELICITĂRI!</h2>
+        <p style="font-size: 16px; color: #fff; line-height: 1.5;" id="victoryDetails"></p>
+        <button onclick="closeDoorModal()" class="btn-action" style="margin-top: 15px; background: #27ae60; color: white; border: none;">Continuă Aventura! 🚀</button>
     </div>
 </div>
 
@@ -683,154 +792,202 @@
     }
 
     /* ===================================================
-       LOGICĂ NOUĂ ESCAPE ROOM CU 4 LACĂTE
+       LOGICĂ ESCAPE ROOM CU 4 LACĂTE & ANIMAȚIE UȘĂ
     =================================================== */
     function initEscapeRoom() {
-    document.getElementById('escapeInput').value = '';
-    document.getElementById('escapeFeedback').innerText = '';
-    document.getElementById('escapeHintText').style.display = 'none';
+        document.getElementById('escapeInput').value = '';
+        document.getElementById('escapeFeedback').innerText = '';
+        document.getElementById('escapeHintText').style.display = 'none';
 
-    const hasEscape = currentLessonData && 
-                      currentLessonData.escape && 
-                      Array.isArray(currentLessonData.escape.locks) && 
-                      currentLessonData.escape.locks.length > 0;
+        const hasEscape = currentLessonData && 
+                          currentLessonData.escape && 
+                          Array.isArray(currentLessonData.escape.locks) && 
+                          currentLessonData.escape.locks.length > 0;
 
-    if (!hasEscape) {
-        document.getElementById('escapePuzzleText').innerText = 
-            "🔒 Modulul Escape Room pentru această lecție nu a fost încă configurat de profesor.";
-        document.querySelector('.locks-row').style.display = 'none';
-        document.getElementById('escapeInputArea').style.display = 'none';
-        return;
+        if (!hasEscape) {
+            document.getElementById('escapePuzzleText').innerText = 
+                "🔒 Modulul Escape Room pentru această lecție nu a fost încă configurat de profesor.";
+            document.querySelector('.locks-row').style.display = 'none';
+            document.getElementById('escapeInputArea').style.display = 'none';
+            return;
+        }
+
+        document.querySelector('.locks-row').style.display = 'flex';
+        
+        let escapeKey = `escape_solved_${currentClassKey}_${currentLessonIdx}`;
+        let isSolved = localStorage.getItem(escapeKey) === 'true';
+        let locksData = currentLessonData.escape.locks;
+
+        if (isSolved) {
+            for (let i = 0; i < 4; i++) {
+                let card = document.getElementById(`lockCard${i}`);
+                card.className = "lock-card solved-lock";
+                document.getElementById(`lockIcon${i}`).innerText = '🔓';
+                document.getElementById(`lockDigit${i}`).innerText = locksData[i].digitRevealed;
+            }
+            let finalCodeStr = locksData.map(l => l.digitRevealed).join('');
+            document.getElementById('escapePuzzleText').innerText = 
+                `🎉 AI EVADAT CU SUCCES! Codul istoric descifrat al arhivei a fost: ${finalCodeStr}!`;
+            document.getElementById('escapeInputArea').style.display = 'none';
+        } else {
+            document.getElementById('escapeInputArea').style.display = 'block';
+            updateLocksUI(locksData);
+        }
     }
 
-    document.querySelector('.locks-row').style.display = 'flex';
-    
-    // Cheie unică per clasă și per lecție
-    let escapeKey = `escape_solved_${currentClassKey}_${currentLessonIdx}`;
-    let isSolved = localStorage.getItem(escapeKey) === 'true'; // Verificare strictă de boolean
-    let locksData = currentLessonData.escape.locks;
+    function updateLocksUI(locksData) {
+        let savedProgressKey = `escape_progress_${currentClassKey}_${currentLessonIdx}`;
+        let savedProgress = parseInt(localStorage.getItem(savedProgressKey)) || 0;
+        currentLockIndex = savedProgress;
 
-    if (isSolved) {
         for (let i = 0; i < 4; i++) {
             let card = document.getElementById(`lockCard${i}`);
-            card.className = "lock-card solved-lock";
-            document.getElementById(`lockIcon${i}`).innerText = '🔓';
-            document.getElementById(`lockDigit${i}`).innerText = locksData[i].digitRevealed;
+            let icon = document.getElementById(`lockIcon${i}`);
+            let digit = document.getElementById(`lockDigit${i}`);
+
+            if (i < currentLockIndex) {
+                card.className = "lock-card solved-lock";
+                icon.innerText = '🔓';
+                digit.innerText = locksData[i].digitRevealed;
+            } else if (i === currentLockIndex) {
+                card.className = "lock-card active-lock";
+                icon.innerText = '🔒';
+                digit.innerText = '?';
+            } else {
+                card.className = "lock-card";
+                icon.innerText = '🔒';
+                digit.innerText = '-';
+            }
         }
-        let finalCodeStr = locksData.map(l => l.digitRevealed).join('');
-        document.getElementById('escapePuzzleText').innerText = 
-            `🎉 AI EVADAT CU SUCCES! Codul istoric descifrat al arhivei a fost: ${finalCodeStr}!`;
-        document.getElementById('escapeInputArea').style.display = 'none';
-    } else {
-        document.getElementById('escapeInputArea').style.display = 'block';
-        updateLocksUI(locksData);
-    }
-}
 
-function updateLocksUI(locksData) {
-    let savedProgressKey = `escape_progress_${currentClassKey}_${currentLessonIdx}`;
-    let savedProgress = parseInt(localStorage.getItem(savedProgressKey)) || 0;
-    currentLockIndex = savedProgress;
-
-    for (let i = 0; i < 4; i++) {
-        let card = document.getElementById(`lockCard${i}`);
-        let icon = document.getElementById(`lockIcon${i}`);
-        let digit = document.getElementById(`lockDigit${i}`);
-
-        if (i < currentLockIndex) {
-            card.className = "lock-card solved-lock";
-            icon.innerText = '🔓';
-            digit.innerText = locksData[i].digitRevealed;
-        } else if (i === currentLockIndex) {
-            card.className = "lock-card active-lock";
-            icon.innerText = '🔒';
-            digit.innerText = '?';
+        if (currentLockIndex < 4) {
+            document.getElementById('escapePuzzleText').innerText = locksData[currentLockIndex].puzzle;
+            document.getElementById('escapeHintText').innerText = locksData[currentLockIndex].hint || "Verifică rezumatul!";
+            document.getElementById('escapeInput').value = '';
         } else {
-            card.className = "lock-card";
-            icon.innerText = '🔒';
-            digit.innerText = '-';
+            // Când toate cele 4 lacăte s-au deschis:
+            let escapeKey = `escape_solved_${currentClassKey}_${currentLessonIdx}`;
+            localStorage.setItem(escapeKey, 'true');
+
+            let finalCodeStr = locksData.map(l => l.digitRevealed).join('');
+            
+            document.getElementById('escapePuzzleText').innerText = 
+                `🎉 AI EVADAT CU SUCCES! Codul istoric descifrat al arhivei a fost: ${finalCodeStr}!`;
+            document.getElementById('escapeInputArea').style.display = 'none';
+
+            // Declansăm animația spectaculoasă de deschidere a ușii!
+            playDoorUnlockAnimation(finalCodeStr, 100);
         }
     }
 
-    if (currentLockIndex < 4) {
-        document.getElementById('escapePuzzleText').innerText = locksData[currentLockIndex].puzzle;
-        document.getElementById('escapeHintText').innerText = locksData[currentLockIndex].hint || "Verifică rezumatul!";
-        document.getElementById('escapeInput').value = '';
-    } else {
-        // Toate cele 4 lacăte au fost deschise!
-        let escapeKey = `escape_solved_${currentClassKey}_${currentLessonIdx}`;
-        localStorage.setItem(escapeKey, 'true');
+    function playDoorUnlockAnimation(code, wonXP) {
+        const modal = document.getElementById('doorModal');
+        const door = document.getElementById('mainDoor');
+        const key = document.getElementById('animatedKey');
+        const victoryCard = document.getElementById('victoryCard');
+        const victoryDetails = document.getElementById('victoryDetails');
 
-        let finalCodeStr = locksData.map(l => l.digitRevealed).join('');
-        document.getElementById('escapePuzzleText').innerText = 
-            `🎉 FELICITĂRI! Ai deschis toate cele 4 lacăte! Codul/Anul descifrat din arhivă este: ${finalCodeStr}! (+100 XP)`;
-        document.getElementById('escapeFeedback').innerText = "🔓 UȘA MARE S-A DEBLOCAT CU SUCCES!";
-        document.getElementById('escapeFeedback').style.color = "#2ecc71";
-        document.getElementById('escapeInputArea').style.display = 'none';
-        playSound('levelup');
-        updateXP(100);
-    }
-}
+        // Resetăm stările
+        door.classList.remove('open');
+        key.classList.remove('insert', 'turn');
+        key.style.opacity = '0';
+        victoryCard.classList.remove('show');
+        
+        modal.style.display = 'flex';
 
-// Funcție ajutătoare care elimină diacriticele și spațiile libere
-function removeDiacritics(str) {
-    return str
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/â|ă/g, "a")
-        .replace(/î/g, "i")
-        .replace(/ș|ş/g, "s")
-        .replace(/ț|ţ/g, "t")
-        .toLowerCase()
-        .trim();
-}
-
-function checkCurrentLock() {
-    if (!currentLessonData || !currentLessonData.escape || !currentLessonData.escape.locks) return;
-
-    let rawInput = document.getElementById('escapeInput').value;
-    if (!rawInput.trim()) return;
-
-    // Curățăm și egalizăm atât textul introdus de elev, cât și codul corect din lecții.js
-    let inputVal = removeDiacritics(rawInput);
-    let locksData = currentLessonData.escape.locks;
-    let correctCode = removeDiacritics(locksData[currentLockIndex].code.toString());
-
-    if (inputVal === correctCode) {
-        playSound('correct');
-        document.getElementById('escapeFeedback').innerText = 
-            `🔓 Lacătul ${currentLockIndex + 1} s-a deschis! Ai deblocat cifra/litera '${locksData[currentLockIndex].digitRevealed}'!`;
-        document.getElementById('escapeFeedback').style.color = "#2ecc71";
-
-        currentLockIndex++;
-        let savedProgressKey = `escape_progress_${currentClassKey}_${currentLessonIdx}`;
-        localStorage.setItem(savedProgressKey, currentLockIndex);
-
-        document.getElementById('escapeHintText').style.display = 'none';
+        // 1. Cheia coboară în broască
         setTimeout(() => {
-            document.getElementById('escapeFeedback').innerText = '';
-            updateLocksUI(locksData);
-        }, 1200);
-    } else {
-        playSound('wrong');
-        document.getElementById('escapeFeedback').innerText = 
-            "❌ Cod incorect pentru acest lacăt! Verifică rezumatul și încearcă din nou.";
-        document.getElementById('escapeFeedback').style.color = "#e74c3c";
-    }
-}
-function toggleHint() {
-    let hintElem = document.getElementById('escapeHintText');
-    if (!hintElem) return;
+            key.classList.add('insert');
+        }, 300);
 
-    if (hintElem.style.display === 'none' || hintElem.style.display === '') {
-        hintElem.style.display = 'block';
-    } else {
-        hintElem.style.display = 'none';
+        // 2. Cheia se rotește în broască
+        setTimeout(() => {
+            key.classList.add('turn');
+            playSound('correct');
+        }, 1200);
+
+        // 3. Ușa se deschide larg
+        setTimeout(() => {
+            key.style.opacity = '0';
+            door.classList.add('open');
+            playSound('levelup');
+        }, 1800);
+
+        // 4. Apare ecranul de victorie cu mesajul complet
+        setTimeout(() => {
+            victoryDetails.innerHTML = `
+                Ai deschis toate cele 4 lacăte!<br>
+                Codul/Anul descifrat din arhivă este: <strong style="color:#f1c40f; font-size: 20px;">${code}</strong>!<br>
+                <span style="color: #2ecc71; font-weight: bold; font-size: 18px;">+${wonXP} XP</span><br><br>
+                🔓 <strong>UȘA MARE S-A DEBLOCAT CU SUCCES!</strong>
+            `;
+            victoryCard.classList.add('show');
+            updateXP(wonXP);
+        }, 2500);
     }
-}
+
+    function closeDoorModal() {
+        document.getElementById('doorModal').style.display = 'none';
+    }
+
+    function removeDiacritics(str) {
+        return str
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/â|ă/g, "a")
+            .replace(/î/g, "i")
+            .replace(/ș|ş/g, "s")
+            .replace(/ț|ţ/g, "t")
+            .toLowerCase()
+            .trim();
+    }
+
+    function checkCurrentLock() {
+        if (!currentLessonData || !currentLessonData.escape || !currentLessonData.escape.locks) return;
+
+        let rawInput = document.getElementById('escapeInput').value;
+        if (!rawInput.trim()) return;
+
+        let inputVal = removeDiacritics(rawInput);
+        let locksData = currentLessonData.escape.locks;
+        let correctCode = removeDiacritics(locksData[currentLockIndex].code.toString());
+
+        if (inputVal === correctCode) {
+            playSound('correct');
+            document.getElementById('escapeFeedback').innerText = 
+                `🔓 Lacătul ${currentLockIndex + 1} s-a deschis! Ai deblocat cifra/litera '${locksData[currentLockIndex].digitRevealed}'!`;
+            document.getElementById('escapeFeedback').style.color = "#2ecc71";
+
+            currentLockIndex++;
+            let savedProgressKey = `escape_progress_${currentClassKey}_${currentLessonIdx}`;
+            localStorage.setItem(savedProgressKey, currentLockIndex);
+
+            document.getElementById('escapeHintText').style.display = 'none';
+            setTimeout(() => {
+                document.getElementById('escapeFeedback').innerText = '';
+                updateLocksUI(locksData);
+            }, 1200);
+        } else {
+            playSound('wrong');
+            document.getElementById('escapeFeedback').innerText = 
+                "❌ Cod incorect pentru acest lacăt! Verifică rezumatul și încearcă din nou.";
+            document.getElementById('escapeFeedback').style.color = "#e74c3c";
+        }
+    }
+
+    function toggleHint() {
+        let hintElem = document.getElementById('escapeHintText');
+        if (!hintElem) return;
+
+        if (hintElem.style.display === 'none' || hintElem.style.display === '') {
+            hintElem.style.display = 'block';
+        } else {
+            hintElem.style.display = 'none';
+        }
+    }
 
     /* ===================================================
-       JOC ASEDIU MEDIEVAL
+       JOC ASEDIU MEDIEVAL SI ANIMAȚIE DE CUCERIRE
     =================================================== */
     const canvas = document.getElementById('archeryCanvas');
     const ctx = canvas.getContext('2d');
@@ -840,13 +997,14 @@ function toggleHint() {
     let targets = [], canShoot = true, fireball = null, trail = [], explosionParticles = [];
     let catapultAngle = 0;
     
-    let isVictory = false, victoryAnimationId = null, fireworks = [], fwParticles = [];
+    let isVictory = false, victoryAnimationId = null, fireworks = [], fwParticles = [], fireEffectParticles = [];
 
     function initArcheryGame() {
         isVictory = false;
         if(victoryAnimationId) cancelAnimationFrame(victoryAnimationId);
         fireworks = [];
         fwParticles = [];
+        fireEffectParticles = [];
         
         if (!currentLessonData || !currentLessonData.quiz || currentLessonData.quiz.length === 0) return;
         loadQuestion(currentQuizIndex);
@@ -956,10 +1114,10 @@ function toggleHint() {
         ctx.restore();
     }
 
-    function drawWall() {
+    function drawWall(isConquered = false) {
         ctx.save();
         
-        ctx.fillStyle = "#7f8c8d";
+        ctx.fillStyle = isConquered ? "#535c5d" : "#7f8c8d";
         ctx.strokeStyle = "#2c3e50";
         ctx.lineWidth = 3;
 
@@ -972,33 +1130,59 @@ function toggleHint() {
         ctx.fill();
         ctx.stroke();
 
-        ctx.fillStyle = "#95a5a6";
+        ctx.fillStyle = isConquered ? "#6b7778" : "#95a5a6";
         for(let wx = 90; wx < 710; wx += 45) {
             ctx.fillRect(wx, 440, 35, 18);
             ctx.fillRect(wx + 20, 465, 35, 18);
             ctx.fillRect(wx, 490, 35, 18);
         }
 
-        ctx.fillStyle = "#5a3d28";
-        ctx.fillRect(360, 445, 80, 75);
-        ctx.strokeStyle = "#2b1d0c";
-        ctx.lineWidth = 3;
-        ctx.strokeRect(360, 445, 80, 75);
-        ctx.fillStyle = "#3d2516";
-        ctx.fillRect(397, 445, 6, 75);
-        ctx.fillStyle = "#2c3e50";
-        ctx.beginPath(); ctx.arc(380, 480, 5, 0, Math.PI*2); ctx.fill();
-        ctx.beginPath(); ctx.arc(420, 480, 5, 0, Math.PI*2); ctx.fill();
+        if (isConquered) {
+            ctx.fillStyle = "#1a0f0a";
+            ctx.fillRect(360, 445, 80, 75);
+            
+            ctx.save();
+            ctx.translate(360, 445);
+            ctx.rotate(-0.3);
+            ctx.fillStyle = "#3d2516";
+            ctx.fillRect(0, 0, 35, 75);
+            ctx.strokeStyle = "#1a0f0a";
+            ctx.strokeRect(0, 0, 35, 75);
+            ctx.restore();
 
-        drawDetailedSoldier(210, 412);
-        drawDetailedSoldier(260, 412);
-        drawDetailedSoldier(310, 412);
+            ctx.save();
+            ctx.translate(440, 445);
+            ctx.rotate(0.35);
+            ctx.fillStyle = "#3d2516";
+            ctx.fillRect(-35, 0, 35, 75);
+            ctx.strokeStyle = "#1a0f0a";
+            ctx.strokeRect(-35, 0, 35, 75);
+            ctx.restore();
 
-        drawDetailedSoldier(490, 412);
-        drawDetailedSoldier(540, 412);
-        drawDetailedSoldier(590, 412);
+        } else {
+            ctx.fillStyle = "#5a3d28";
+            ctx.fillRect(360, 445, 80, 75);
+            ctx.strokeStyle = "#2b1d0c";
+            ctx.lineWidth = 3;
+            ctx.strokeRect(360, 445, 80, 75);
+            ctx.fillStyle = "#3d2516";
+            ctx.fillRect(397, 445, 6, 75);
+            ctx.fillStyle = "#2c3e50";
+            ctx.beginPath(); ctx.arc(380, 480, 5, 0, Math.PI*2); ctx.fill();
+            ctx.beginPath(); ctx.arc(420, 480, 5, 0, Math.PI*2); ctx.fill();
+        }
 
-        ctx.fillStyle = "#7f8c8d";
+        if (!isConquered) {
+            drawDetailedSoldier(210, 412);
+            drawDetailedSoldier(260, 412);
+            drawDetailedSoldier(310, 412);
+
+            drawDetailedSoldier(490, 412);
+            drawDetailedSoldier(540, 412);
+            drawDetailedSoldier(590, 412);
+        }
+
+        ctx.fillStyle = isConquered ? "#535c5d" : "#7f8c8d";
         ctx.fillRect(40, 340, 90, 180);
         ctx.strokeRect(40, 340, 90, 180);
         ctx.fillRect(35, 320, 25, 25);
@@ -1011,14 +1195,34 @@ function toggleHint() {
         ctx.fillRect(700, 320, 25, 25);
         ctx.fillRect(735, 320, 25, 25);
 
-        drawDetailedSoldier(72, 298);
-        drawDetailedSoldier(712, 298);
+        if (!isConquered) {
+            drawDetailedSoldier(72, 298);
+            drawDetailedSoldier(712, 298);
 
-        drawWoodenLadder(132, 350, 18, 140);
-        drawDetailedSoldier(141, 410);
+            drawWoodenLadder(132, 350, 18, 140);
+            drawDetailedSoldier(141, 410);
 
-        drawWoodenLadder(650, 350, 18, 140);
-        drawDetailedSoldier(659, 410);
+            drawWoodenLadder(650, 350, 18, 140);
+            drawDetailedSoldier(659, 410);
+        }
+
+        if (isConquered) {
+            ctx.strokeStyle = "#1a1a1a";
+            ctx.lineWidth = 3;
+
+            ctx.beginPath();
+            ctx.moveTo(85, 340); ctx.lineTo(75, 380); ctx.lineTo(90, 420); ctx.lineTo(80, 460);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(710, 340); ctx.lineTo(725, 390); ctx.lineTo(705, 430); ctx.lineTo(720, 480);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(250, 435); ctx.lineTo(265, 470); ctx.lineTo(255, 510);
+            ctx.moveTo(550, 435); ctx.lineTo(535, 475); ctx.lineTo(545, 515);
+            ctx.stroke();
+        }
 
         ctx.restore();
     }
@@ -1027,7 +1231,7 @@ function toggleHint() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "#e3ceab"; ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        drawWall();
+        drawWall(false);
 
         targets.forEach(t => {
             ctx.save(); 
@@ -1297,7 +1501,47 @@ function toggleHint() {
         ctx.fillStyle = "#e3ceab"; 
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        drawWall(); 
+        drawWall(true); 
+
+        if (Math.random() < 0.6) {
+            let spawnX = [80, 400, 715, 260, 540][Math.floor(Math.random() * 5)];
+            let spawnY = spawnX === 400 ? 470 : (spawnX < 100 || spawnX > 700 ? 340 : 435);
+            
+            fireEffectParticles.push({
+                x: spawnX + (Math.random() * 40 - 20),
+                y: spawnY,
+                vx: (Math.random() - 0.5) * 1.5,
+                vy: -(Math.random() * 2.5 + 1),
+                radius: Math.random() * 8 + 4,
+                color: Math.random() > 0.4 ? "#e74c3c" : (Math.random() > 0.5 ? "#f39c12" : "#f1c40f"),
+                alpha: 1,
+                isSmoke: Math.random() < 0.3
+            });
+        }
+
+        for (let i = fireEffectParticles.length - 1; i >= 0; i--) {
+            let fp = fireEffectParticles[i];
+            fp.x += fp.vx;
+            fp.y += fp.vy;
+            fp.radius *= 0.96;
+            fp.alpha -= 0.02;
+
+            if (fp.isSmoke) {
+                fp.color = "#444444";
+                fp.radius *= 1.02;
+            }
+
+            ctx.beginPath();
+            ctx.arc(fp.x, fp.y, Math.max(0.5, fp.radius), 0, Math.PI * 2);
+            ctx.fillStyle = fp.color;
+            ctx.globalAlpha = Math.max(0, fp.alpha);
+            ctx.fill();
+            ctx.globalAlpha = 1;
+
+            if (fp.alpha <= 0 || fp.radius <= 0.5) {
+                fireEffectParticles.splice(i, 1);
+            }
+        }
 
         for(let i=fireworks.length-1; i>=0; i--) {
             let fw = fireworks[i];
