@@ -7888,7 +7888,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/875347f5fab04a4dbbc0e50f6230c5f3?themeId=46&templateId=48&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum s-a numit tratatul semnat în anul 1494 prin care Spania și Portugalia au împărțit Lumea Nouă? Tratatul de la... (Vezi punctul 1)",
+                        code: "tordesillas",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea tratatului îngroșat de la punctul 1 din rezumat."
+                    },
+                    {
+                        puzzle: "2. Ce conchistador spaniol a cucerit Imperiul Aztec și capitala Tenochtitlan? (Vezi punctul 2)",
+                        code: "hernan cortes",
+                        digitRevealed: "4",
+                        hint: "Caută numele de conchistador îngroșat de la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Ce conchistador spaniol a cucerit Imperiul Incaș din Munții Anzi? (Vezi punctul 2)",
+                        code: "francisco pizarro",
+                        digitRevealed: "9",
+                        hint: "Verifică numele de conchistador îngroșat de la a doua bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. Ce boală adusă de europeni a ucis milioane de indigeni care nu aveau imunitate? (Vezi punctul 3)",
+                        code: "variola",
+                        digitRevealed: "4",
+                        hint: "Caută denumirea bolii din paranteza de la prima bulină a punctului 3."
+                    }
+                ]
+            }
       },
           {
       title: "4. Renașterea intelectuală. Umanismul",
@@ -8000,7 +8028,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/4c110605b9894c4abde134805b912a4f?themeId=22&templateId=35&fontStackId=0",
         game2: "https://wordwall.net/ro/embed/477035a6a6e8464d8d1ec88221668550?themeId=66&templateId=3&fontStackId=0",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum se numeau protectorii și susținătorii financiari bogați ai artiștilor, precum familia Medici? (Vezi punctul 1)",
+                        code: "mecena",
+                        digitRevealed: "1",
+                        hint: "Verifică primul termen îngroșat de la punctul 1 din rezumat."
+                    },
+                    {
+                        puzzle: "2. Ce invenție revoluționară a lui Gutenberg a ajutat la răspândirea rapidă a ideilor umaniste în Europa? Tiparul cu... (Vezi punctul 3)",
+                        code: "litere mobile",
+                        digitRevealed: "4",
+                        hint: "Caută sintagma îngroșată de la începutul punctului 3."
+                    },
+                    {
+                        puzzle: "3. Ce astronom a demonstrat teoria heliocentrică (rotirea planetelor în jurul Soarelui)? Nicolaus... (Vezi punctul 3)",
+                        code: "copernic",
+                        digitRevealed: "5",
+                        hint: "Verifică numele de astronom îngroșat de la prima bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "4. Ce medic a explicat pentru prima dată circulația sângelui prin plămâni? Miguel... (Vezi punctul 3)",
+                        code: "servet",
+                        digitRevealed: "5",
+                        hint: "Caută numele medicului îngroșat de la ultima bulină a punctului 3."
+                    }
+                ]
+            }
       },
            {
        title: "5. Renașterea artistică",
@@ -8112,7 +8168,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/070498e1c0ca42c5a68aab5f27c840e1?themeId=41&templateId=30&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce tehnică nouă de pictură prin care tablourile păreau să aibă adâncime și spațiu a fost introdusă în Renaștere? Tehnica ... (Vezi punctul 1)",
+                        code: "perspectivei",
+                        digitRevealed: "1",
+                        hint: "Verifică prima inovație îngroșată de la punctul 1 din rezumat."
+                    },
+                    {
+                        puzzle: "2. Ce mare maestru italian a pictat tabloul 'Școala din Atena'? (Vezi punctul 2)",
+                        code: "rafael sanzio",
+                        digitRevealed: "5",
+                        hint: "Caută numele pictorului de la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Ce mare arhitect italian a proiectat celebra cupolă a Domului din Florența? Filippo... (Vezi punctul 3)",
+                        code: "brunelleschi",
+                        digitRevealed: "0",
+                        hint: "Verifică numele de arhitect îngroșat de la prima bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "4. Ce mare dramaturg englez a scris piesele de teatru 'Romeo și Julieta' și 'Hamlet'? William... (Vezi punctul 3)",
+                        code: "shakespeare",
+                        digitRevealed: "4",
+                        hint: "Caută numele scriitorului îngroșat de la ultimul punct din rezumat."
+                    }
+                ]
+            }
       },
            {
         title: "6. Leonardo și Michelangelo. Olimpianul și Titanul",
@@ -8210,7 +8294,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/b74a476d0c474f1bbe534a04a693bf74?themeId=54&templateId=8&fontStackId=0",
         game2: "https://wordwall.net/ro/embed/348d2658a9eb458da78b4f0c6eaa97e1?themeId=41&templateId=2&fontStackId=0",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce tehnică nouă de pictură, caracterizată prin trecerea fină între culori, a inventat Leonardo da Vinci? (Vezi punctul 1)",
+                        code: "sfumato",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea în italice de la punctul 1 din rezumat."
+                    },
+                    {
+                        puzzle: "2. Care este cel mai celebru tablou al lui Leonardo da Vinci, faimos pentru zâmbetul enigmatic al personajului? (Vezi punctul 1)",
+                        code: "mona lisa",
+                        digitRevealed: "5",
+                        hint: "Caută denumirea îngroșată a tabloului de la punctul 1."
+                    },
+                    {
+                        puzzle: "3. În ce celebră capelă din Vatican a pictat Michelangelo scene precum 'Crearea lui Adam' și 'Judecata de Apoi'? Capela... (Vezi punctul 2)",
+                        code: "sixtina",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea îngroșată a capelei de la punctul 2 din rezumat."
+                    },
+                    {
+                        puzzle: "4. Ce statuie faimoasă din sculptura lui Michelangelo are o înălțime de 5,17 metri? (Vezi punctul 2)",
+                        code: "david",
+                        digitRevealed: "2",
+                        hint: "Caută prima sculptură menționată în italice la punctul 2."
+                    }
+                ]
+            }
       },
            {
         title: "7. Giordano Bruno și Galileo Galilei",
@@ -8322,7 +8434,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/fed12ef6b631470a960035a46abe611b?themeId=41&templateId=3&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce teorie revoluționară susțineau cei doi învățați, conform căreia Pământul se rotește în jurul Soarelui? Teoria... (Vezi punctul 1)",
+                        code: "heliocentrica",
+                        digitRevealed: "1",
+                        hint: "Verifică sintagma îngroșată de la punctul 1 din rezumat."
+                    },
+                    {
+                        puzzle: "2. În ce oraș a fost ars pe rug Giordano Bruno în anul 1600 pentru ideile sale despre universul infinit? (Vezi punctul 2)",
+                        code: "roma",
+                        digitRevealed: "6",
+                        hint: "Caută numele orașului menționat la finalul punctului 2."
+                    },
+                    {
+                        puzzle: "3. Ce instrument astronomic a perfecționat Galileo Galilei pentru a observa Luna și petele solare? (Vezi punctul 3)",
+                        code: "telescopul",
+                        digitRevealed: "3",
+                        hint: "Verifică termenul îngroșat de la a doua bulină de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Câți sateliți ai planetei Jupiter a descoperit Galileo Galilei folosind telescopul? (Scrie cifra sau cuvântul, ex: 7) (Vezi punctul 3)",
+                        code: "4",
+                        digitRevealed: "3",
+                        hint: "Caută numărul de sateliți menționat la a doua bulină de la punctul 3."
+                    }
+                ]
+            }
       },
            {
         title: "8. Niccolò Machiavelli",
@@ -8422,7 +8562,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/364ee4fdb7e74eb6826c2167d5b1c103?themeId=22&templateId=35&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce oraș italian a deținut Machiavelli funcția de secretar al Consiliului celor 10? În Republica... (Vezi punctul 1)",
+                        code: "florenta",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea republicii din italice de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Care este cea mai celebră carte a lui Machiavelli, publicată în 1532, în care descrie conducătorul ideal? (Vezi punctul 2)",
+                        code: "principele",
+                        digitRevealed: "5",
+                        hint: "Caută titlul îngroșat al cărții de la punctul 2 din rezumat."
+                    },
+                    {
+                        puzzle: "3. Machiavelli este considerat părintele cărei științe moderne? Științele... (Vezi punctul 3)",
+                        code: "politice",
+                        digitRevealed: "3",
+                        hint: "Verifică sintagma îngroșată de la finalul punctului 3."
+                    },
+                    {
+                        puzzle: "4. Ce altă scriere valoroasă a lui Machiavelli este menționată la punctul 3? Istorii... (Vezi punctul 3)",
+                        code: "florentine",
+                        digitRevealed: "2",
+                        hint: "Caută titlul în italice menționat la începutul punctului 3."
+                    }
+                ]
+            }
       },
            {
         title: "9. William Shakespeare",
@@ -8527,7 +8695,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/98a0574e827e49499113decc14040d66?themeId=55&templateId=11&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. În timpul domniei cărei regine s-a desfășurat în mare parte viața și activitatea lui Shakespeare? Regina... (Vezi punctul 1)",
+                        code: "elisabeta i",
+                        digitRevealed: "1",
+                        hint: "Verifică numele reginei îngroșat de la punctul 1 din rezumat."
+                    },
+                    {
+                        puzzle: "2. Câte sonete a creat Shakespeare în timpul vieții sale? (Scrie numărul exact) (Vezi punctul 2)",
+                        code: "154",
+                        digitRevealed: "5",
+                        hint: "Caută numărul de sonete din cifra îngroșată de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. În ce piesă de teatru scrisă de Shakespeare apare celebra replică 'Lumea-ntreagă e o scenă / Și toți oamenii-s actori'? Cum... (Vezi punctul 3)",
+                        code: "va place",
+                        digitRevealed: "6",
+                        hint: "Caută titlul comediei în italice de la finalul punctului 3."
+                    },
+                    {
+                        puzzle: "4. Ce comedie celebră a lui Shakespeare este menționată prima în lista de comedii de la punctul 2? Visul unei... (Vezi punctul 2)",
+                        code: "nopti de vara",
+                        digitRevealed: "4",
+                        hint: "Verifică prima comedie în italice din lista de la punctul 2."
+                    }
+                ]
+            }
       },
        {
         title: "10. Reforma religioasă. Contrareforma",
@@ -8636,7 +8832,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/a782d305f7d24cfeabe772885f2aad01?themeId=21&templateId=3&fontStackId=0",
         game2: "https://wordwall.net/ro/embed/c193dd43c3fa43d7ab9346fd35db7b94?themeId=51&templateId=30&fontStackId=0",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce călugăr german a declanșat Reforma religioasă în anul 1517 prin afișarea celor 95 de teze? (Vezi punctul 1)",
+                        code: "martin luther",
+                        digitRevealed: "1",
+                        hint: "Verifică primul nume de reformator îngroșat de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Cum se numea vânzarea de scrisori de iertare a păcatelor în schimbul unor sume de bani? Vânzarea de... (Vezi punctul 1)",
+                        code: "indulgente",
+                        digitRevealed: "5",
+                        hint: "Caută al doilea termen îngroșat de la punctul 1 din rezumat."
+                    },
+                    {
+                        puzzle: "3. În cadrul cărui conciliu (1545-1563) s-au luat măsuri majore pentru reorganizarea Bisericii Catolice? Conciliul de la... (Vezi punctul 2)",
+                        code: "trento",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea conciliului îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Cine a înființat Ordinul Iezuiților în anul 1534? Ignațiu de... (Vezi punctul 3)",
+                        code: "loyola",
+                        digitRevealed: "7",
+                        hint: "Caută numele de fondator îngroșat de la punctul 3 din rezumat."
+                    }
+                ]
+            }
       },
      {
         title: "11. Stilul baroc",
@@ -8735,7 +8959,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/e89afc8c954045ecbffb5f3b9cb16bd2?themeId=23&templateId=49&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce mișcare religioasă a susținut apariția stilului baroc ca mijloc de atragere a credincioșilor? (Vezi punctul 1)",
+                        code: "contrareforma",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea din paranteza de la punctul 1 din rezumat."
+                    },
+                    {
+                        puzzle: "2. Ce mare sculptor și arhitect italian s-a remarcat în arta barocă? Gian Lorenzo... (Vezi punctul 3)",
+                        code: "bernini",
+                        digitRevealed: "6",
+                        hint: "Caută numele artistului menționat la finalul primei fraze de la punctul 3."
+                    },
+                    {
+                        puzzle: "3. Ce mare pictor olandez este menționat alături de Peter Paul Rubens la punctul 3? Rembrandt van... (Vezi punctul 3)",
+                        code: "rijn",
+                        digitRevealed: "0",
+                        hint: "Verifică al doilea nume de pictor din italice de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Ce compozitor faimos este menționat în muzica barocă alături de Johann Sebastian Bach? Antonio... (Vezi punctul 3)",
+                        code: "vivaldi",
+                        digitRevealed: "0",
+                        hint: "Caută numele compozitorului din italice de la finalul punctului 3."
+                    }
+                ]
+            }
       },
            {
         title: "12. Absolutismul monarhic",
@@ -8841,7 +9093,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/247ed1f52c0a454789ab1c3e252280e6?themeId=21&templateId=69&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum se numea ideea conform căreia regii absolutiști susțineau că au fost aleși direct de Dumnezeu să conducă? Drept... (Vezi punctul 2)",
+                        code: "divin",
+                        digitRevealed: "1",
+                        hint: "Verifică termenul în italice de la punctul 2 din rezumat."
+                    },
+                    {
+                        puzzle: "2. Ce palat uriaș și strălucitor din Franța a fost construit de regii absolutiști pentru a-și arăta puterea? Palatul... (Vezi punctul 2)",
+                        code: "versailles",
+                        digitRevealed: "5",
+                        hint: "Caută denumirea palatului din paranteza de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Ce rege faimos al Franței a fost supranumit 'Regele Soare' și a spus 'Statul sunt Eu!'? ... al XIV-lea (Vezi punctul 3)",
+                        code: "ludovic",
+                        digitRevealed: "8",
+                        hint: "Verifică numele regelui în italice de la prima bulină/paragraf de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Ce rege al Angliei a scos Biserica engleză de sub conducerea Papei de la Roma? ... al VIII-lea (Vezi punctul 3)",
+                        code: "henric",
+                        digitRevealed: "8",
+                        hint: "Caută numele regelui englez în italice de la prima bulină a punctului 3."
+                    }
+                ]
+            }
       },
            {
        title: "13. Soliman Magnificul",
@@ -8945,7 +9225,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/ce0fd7b2fd334d2b94a1450f0f5f56b6?themeId=52&templateId=36&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce an au cucerit otomanii orașul Constantinopol, transformându-l în capitala imperiului? (Vezi punctul 1)",
+                        code: "1453",
+                        digitRevealed: "1",
+                        hint: "Verifică anul îngroșat de la punctul 1 din rezumat."
+                    },
+                    {
+                        puzzle: "2. Cum îi spunea propriul popor sultanului Soliman pentru că a creat legi drepte? Soliman... (Vezi punctul 2)",
+                        code: "legiuitorul",
+                        digitRevealed: "5",
+                        hint: "Caută denumirea în română din italice de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Ce nume tainic folosea sultanul Soliman atunci când scria poezii? (Vezi punctul 3)",
+                        code: "muhibbi",
+                        digitRevealed: "2",
+                        hint: "Verifică numele propriu îngroșat de la punctul 3 din rezumat."
+                    },
+                    {
+                        puzzle: "4. Ce cetate importantă a fost cucerită de Soliman în anul 1521? Cetatea... (Vezi punctul 2)",
+                        code: "belgrad",
+                        digitRevealed: "6",
+                        hint: "Caută prima cetate menționată la prima bulină de la punctul 2."
+                    }
+                ]
+            }
       },
            {
        title: "14. Ludovic al XIV-lea, „Regele Soare”. Palatul Versailles",
@@ -9048,7 +9356,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/d81596e7ddf346c4a05ca0f244bb7974?themeId=59&templateId=30&fontStackId=0",
         game2: "https://wordwall.net/ro/embed/9383d5aae6484efc93dfdab549f30148?themeId=61&templateId=3&fontStackId=0",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce cardinal și sfetnic de încredere a guvernat Franța în perioada copilăriei lui Ludovic al XIV-lea? Cardinalul Jules... (Vezi punctul 1)",
+                        code: "mazarin",
+                        digitRevealed: "1",
+                        hint: "Verifică numele cardinalului din italice de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce colonie din America de Nord a fost întemeiată și numită în cinstea regelui Ludovic al XIV-lea? (Vezi punctul 2)",
+                        code: "louisiana",
+                        digitRevealed: "6",
+                        hint: "Caută numele coloniei din italice de la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Ce spital uriaș a construit regele la Paris pentru bătrânii soldați și cei răniți în războaie? Domul... (Vezi punctul 2)",
+                        code: "invalizilor",
+                        digitRevealed: "8",
+                        hint: "Verifică denumirea spitalului din italice de la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. În ce an a fost inaugurat spectaculosul Palat Versailles de lângă Paris? (Vezi punctul 3)",
+                        code: "1682",
+                        digitRevealed: "2",
+                        hint: "Caută anul din paranteză de la punctul 3 din rezumat."
+                    }
+                ]
+            }
       },
            {
        title: "15. Petru cel Mare al Rusiei",
@@ -9153,7 +9489,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/81de4a352b0e48ecbcee5793444caf29?themeId=46&templateId=35&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum s-a numit celebra călătorie de studiu prin vestul Europei făcută de Petru I în anii 1697-1698? Marea... (Vezi punctul 1)",
+                        code: "ambasada",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea din italice de la finalul punctului 1."
+                    },
+                    {
+                        puzzle: "2. La ce dată a mutat Petru cel Mare sărbătorirea Anului Nou prin reforma calendarului din 1699? La 1... (Vezi punctul 2)",
+                        code: "ianuarie",
+                        digitRevealed: "7",
+                        hint: "Caută data îngroșată de la a treia bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. În ce celebră bătălie din 1709 a zdrobit armata lui Petru cel Mare pe suedezi? Bătălia de la... (Vezi punctul 3)",
+                        code: "poltava",
+                        digitRevealed: "0",
+                        hint: "Verifică denumirea bătăliei îngroșate de la al doilea paragraf al punctului 3."
+                    },
+                    {
+                        puzzle: "4. Ce oraș nou, numit 'fereastra Rusiei spre Europa', a devenit capitala imperiului în 1712? (Vezi punctul 3)",
+                        code: "sankt petersburg",
+                        digitRevealed: "3",
+                        hint: "Caută numele noului oraș îngroșat de la ultimul paragraf al punctului 3."
+                    }
+                ]
+            }
       },
            {
        title: "16. Anglia. Revoluția Glorioasă",
@@ -9252,7 +9616,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/70a6b19af6c94a63bb1c0beba924bb64?themeId=48&templateId=30&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Din ce dinastie făceau parte regii care au venit la putere în Anglia în anul 1603? Dinastia... (Vezi punctul 1)",
+                        code: "stuart",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea dinastiei îngroșate de la punctul 1 din rezumat."
+                    },
+                    {
+                        puzzle: "2. Cine a condus armata Parlamentului englez în războiul civil și Bătălia de la Naseby? Oliver... (Vezi punctul 2)",
+                        code: "cromwell",
+                        digitRevealed: "6",
+                        hint: "Caută numele conducătorului militar îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Ce conducător a fost adus de Parlament pe tronul Angliei în anul 1688? Wilhelm de... (Vezi punctul 3)",
+                        code: "orania",
+                        digitRevealed: "8",
+                        hint: "Verifică numele noului rege îngroșat de la punctul 3 din rezumat."
+                    },
+                    {
+                        puzzle: "4. Ce important document a semnat noul rege în anul 1689, transformând Anglia în monarhie parlamentară? (Vezi punctul 3)",
+                        code: "declaratia drepturilor",
+                        digitRevealed: "9",
+                        hint: "Caută denumirea documentului îngroșat de la primul paragraf al punctului 3."
+                    }
+                ]
+            }
       },
            {
        title: "17. Iluminismul",
@@ -9358,7 +9750,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/f701f216fc8e4de581736ba157bcec92?themeId=54&templateId=8&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce mare savant a descoperit legea gravitației, contribuind la apariția Iluminismului? Isaac... (Vezi punctul 1)",
+                        code: "newton",
+                        digitRevealed: "1",
+                        hint: "Verifică numele savantului îngroșat de la finalul punctului 1."
+                    },
+                    {
+                        puzzle: "2. Ce mare gânditor iluminist francez cunoști în afară de Voltaire și Montesquieu? Jean-Jacques... (Vezi punctul 2)",
+                        code: "rousseau",
+                        digitRevealed: "7",
+                        hint: "Caută al doilea nume de filozof francez îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Cum au fost numiți regii absolutiști care au făcut reforme în școli și economie influențați de Iluminism? Monarhi... (Vezi punctul 3)",
+                        code: "luminati",
+                        digitRevealed: "8",
+                        hint: "Verifică denumirea din italice de la primul paragraf al punctului 3."
+                    },
+                    {
+                        puzzle: "4. În ce an a izbucnit Revoluția Franceză, fiind influențată direct de ideile iluminiștilor? (Vezi punctul 3)",
+                        code: "1789",
+                        digitRevealed: "9",
+                        hint: "Caută anul îngroșat de la finalul rezumatului."
+                    }
+                ]
+            }
       },
            {
        title: "18. Voltaire, J.J. Rousseau, Charles de Montesquieu",
@@ -9467,7 +9887,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/17322421f2404c65930fe6b2048330b8?themeId=21&templateId=69&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Care a fost numele real al marelui filozof iluminist francez Voltaire? François-Marie... (Vezi punctul 1)",
+                        code: "arouet",
+                        digitRevealed: "1",
+                        hint: "Verifică numele din paranteză de la punctul 1 din rezumat."
+                    },
+                    {
+                        puzzle: "2. Cu ce rege al Prusiei a fost bun prieten Voltaire? ... al II-lea (Vezi punctul 1)",
+                        code: "frederic",
+                        digitRevealed: "7",
+                        hint: "Caută numele regelui prusac îngroșat de la punctul 1."
+                    },
+                    {
+                        puzzle: "3. În ce principiu fundamental al unui stat modern propus de Montesquieu puterile legislativă, executivă și judecătorească sunt separate? Separația... (Vezi punctul 3)",
+                        code: "puterilor in stat",
+                        digitRevealed: "4",
+                        hint: "Verifică sintagma îngroșată de la finalul punctului 3."
+                    },
+                    {
+                        puzzle: "4. În ce carte celebră publicată în 1748 a prezentat Montesquieu ideea separației puterilor în stat? Spiritul... (Vezi punctul 3)",
+                        code: "legilor",
+                        digitRevealed: "8",
+                        hint: "Caută titlul cărții din italice de la punctul 3."
+                    }
+                ]
+            }
       },
            {
         title: "19. Viața cotidiană. Opinia publică în secolul al XVIII-lea",
@@ -9569,7 +10017,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/5b3025fa6c00485caf022e995f486009?themeId=21&templateId=69&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce plantă adusă din America, alături de fasole și tomate, a jucat un rol esențial în hrana europenilor? (Vezi punctul 1)",
+                        code: "cartof",
+                        digitRevealed: "1",
+                        hint: "Verifică prima plantă îngroșată de la punctul 1 din rezumat."
+                    },
+                    {
+                        puzzle: "2. Care era cea mai dinamică clasă urbană, ce acumula averi din comerț, bănci și manufacturi? (Vezi punctul 2)",
+                        code: "burghezia",
+                        digitRevealed: "7",
+                        hint: "Caută denumirea clasei sociale îngroșate de la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Cum se numește părerea împărtășită de populația informată, formată prin presă și cafenele? Opinia... (Vezi punctul 3)",
+                        code: "publica",
+                        digitRevealed: "5",
+                        hint: "Verifică sintagma îngroșată de la finalul punctului 3."
+                    },
+                    {
+                        puzzle: "4. Unde socializau elitele urbane pentru deZbateri alături de cafenele, teatru și operă? În saloane de... (Vezi punctul 3)",
+                        code: "lectura",
+                        digitRevealed: "0",
+                        hint: "Caută prima locație menționată la primul paragraf de la punctul 3."
+                    }
+                ]
+            }
       },
            {
         title: "20. Constituirea Statelor Unite ale Americii",
@@ -9671,7 +10147,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/37cd14478cc04e19ae712c936eb4e2e8?themeId=22&templateId=30&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Câte colonii engleze s-au format pe coasta atlantică a Americii de Nord în secolele XVII-XVIII? (Scrie numărul exact) (Vezi punctul 1)",
+                        code: "13",
+                        digitRevealed: "1",
+                        hint: "Verifică numărul de colonii îngroșat de la punctul 1 din rezumat."
+                    },
+                    {
+                        puzzle: "2. În ce oraș s-a produs celebrul protest numit 'Partida de ceai' în anul 1773? (Vezi punctul 2)",
+                        code: "boston",
+                        digitRevealed: "7",
+                        hint: "Caută denumirea orașului menționat la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Cine a condus armata coloniștilor americani în Războiul de Independență și a devenit primul președinte al SUA? George... (Vezi punctul 2)",
+                        code: "washington",
+                        digitRevealed: "7",
+                        hint: "Verifică numele conducătorului american îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Ce stat european a oferit un sprijin crucial coloniștilor americani în Războiul de Independență? (Vezi punctul 2)",
+                        code: "franta",
+                        digitRevealed: "6",
+                        hint: "Caută numele țării europene îngroșate de la a treia bulină a punctului 2."
+                    }
+                ]
+            }
       },
            {
         title: "21. Revoluția Franceză. De la supus la cetățean",
@@ -9776,7 +10280,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/3800b3d437f64268b7b5ae7e44de111d?themeId=67&templateId=8&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce închisoare din Paris, simbol al absolutismului regal, a fost dărâmată de popor la 14 iulie 1789? (Vezi punctul 1)",
+                        code: "bastilia",
+                        digitRevealed: "1",
+                        hint: "Verifică numele închisorii îngroșate de la punctul 1 din rezumat."
+                    },
+                    {
+                        puzzle: "2. Ce importantă declarație privind principiile de egalitate și libertate a fost adoptată în august 1789? Declarația drepturilor omului și ale... (Vezi punctul 2)",
+                        code: "cetateanului",
+                        digitRevealed: "7",
+                        hint: "Caută ultimul cuvânt din titlul în italice de la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Ce rege al Franței a fost arestat și executat la începutul anului 1793? ... al XVI-lea (Vezi punctul 3)",
+                        code: "ludovic",
+                        digitRevealed: "8",
+                        hint: "Verifică numele regelui francez îngroșat de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Ce grup de lideri radicali a preluat puterea în perioada 1793-1794, declanșând 'Marea Teroare'? (Vezi punctul 3)",
+                        code: "iacobinii",
+                        digitRevealed: "9",
+                        hint: "Caută denumirea grupului politic îngroșat de la finalul punctului 3."
+                    }
+                ]
+            }
       },
        {
         title: "22. Napoleon I și răspândirea ideilor Revoluției franceze",
@@ -9879,7 +10411,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/4c61158deb1844b7b1aa4b42b85453a1?themeId=23&templateId=49&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce an a fost proclamat Napoleon Bonaparte împărat al francezilor? (Vezi punctul 2)",
+                        code: "1804",
+                        digitRevealed: "1",
+                        hint: "Verifică anul îngroșat de la începutul punctului 2 din rezumat."
+                    },
+                    {
+                        puzzle: "2. În ce celebră bătălie din 1805 a obținut Napoleon una dintre cele mai strălucite victorii ale sale? Bătălia de la... (Vezi punctul 2)",
+                        code: "austerlitz",
+                        digitRevealed: "8",
+                        hint: "Caută prima bătălie menționată în lista de victorii de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. În ce localitate a fost înfrânt definitiv Napoleon în anul 1815, după perioada celor 100 de zile? (Vezi punctul 2)",
+                        code: "waterloo",
+                        digitRevealed: "1",
+                        hint: "Verifică numele bătăliei finale îngroșate de la a treia bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. Ce important ansamblu de legi adoptat în 1804 garanta egalitatea cetățenilor și dreptul de proprietate privată? Codul... (Vezi punctul 3)",
+                        code: "civil",
+                        digitRevealed: "5",
+                        hint: "Caută denumirea legii îngroșate de la punctul 3 din rezumat."
+                    }
+                ]
+            }
       },
            {
       title: "23. Revoluția industrială",
@@ -9984,7 +10544,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/03472f360c6e46579e83744aafe3bb32?themeId=22&templateId=71&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cine a perfecționat motorul cu abur, cea mai importantă invenție a Revoluției industriale? James... (Vezi punctul 1)",
+                        code: "watt",
+                        digitRevealed: "1",
+                        hint: "Verifică numele inventatorului englez îngroșat de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Cine a construit primul vapor eficient propulsat de un motor cu abur în anul 1807? Robert... (Vezi punctul 2)",
+                        code: "fulton",
+                        digitRevealed: "8",
+                        hint: "Caută numele inventatorului american îngroșat de la prima bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Cum se numea celebra locomotivă creată de Robert Stephenson în anul 1829? The... (Vezi punctul 2)",
+                        code: "rocket",
+                        digitRevealed: "2",
+                        hint: "Verifică denumirea în italice a locomotivei de la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Cum se numea noua clasă socială formată din muncitorii din fabrici? Muncitorimea sau... (Vezi punctul 3)",
+                        code: "proletariatul",
+                        digitRevealed: "9",
+                        hint: "Caută termenul din paranteză de la primul paragraf al punctului 3."
+                    }
+                ]
+            }
       },
            {
        title: "24. Statele moderne: revoluție și emancipare națională",
@@ -10091,7 +10679,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/efae571b452c46f3a4b53cc0123fb308?themeId=27&templateId=82&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce congres a reunit Marile Puteri în anul 1815 pentru a redesena harta Europei după înfrângerea lui Napoleon? Congresul de la... (Vezi punctul 2)",
+                        code: "viena",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea orașului unde s-a ținut congresul de la punctul 2."
+                    },
+                    {
+                        puzzle: "2. Cum se numea alianța creată de monarhii Rusiei, Austriei și Prusiei pentru a opri orice nouă revoluție? Sfanta... (Vezi punctul 2)",
+                        code: "alianta",
+                        digitRevealed: "8",
+                        hint: "Caută denumirea alianței îngroșate de la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Cine a condus Revoluția din 1821 a românilor, punând capăt regimului fanariot? Tudor... (Vezi punctul 3)",
+                        code: "vladimirescu",
+                        digitRevealed: "2",
+                        hint: "Verifică numele conducătorului român îngroșat de la a treia bulină de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Față de ce mare imperiu multinațional și-au obținut grecii independența în urma războiului din 1821-1829? Imperiul... (Vezi punctul 3)",
+                        code: "otoman",
+                        digitRevealed: "1",
+                        hint: "Caută numele imperiului menționat la a doua bulină de la punctul 3."
+                    }
+                ]
+            }
       },
            {
         title: "25. 1848 în Europa",
@@ -10200,7 +10816,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/85e7fa114be1488fba7fb9341c1e4f45?themeId=66&templateId=49&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum s-a numit valul de revoluții care a cuprins aproape întreaga Europă în anul 1848? Primavara... (Vezi punctul 1)",
+                        code: "popoarelor",
+                        digitRevealed: "1",
+                        hint: "Verifică sintagma îngroșată de la primul paragraf de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. În ce oraș din Italia a izbucnit revoluția în ianuarie 1848? (Vezi punctul 2)",
+                        code: "palermo",
+                        digitRevealed: "8",
+                        hint: "Caută numele orașului menționat la prima bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Cine a fost ales în fruntea Republicii Franceze după alungarea regelui în 1848? Ludovic... (Vezi punctul 2)",
+                        code: "napoleon",
+                        digitRevealed: "4",
+                        hint: "Verifică numele conducătorului francez îngroșat de la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Alături de Rusia și Imperiul Otoman, care a fost al treilea mare imperiu ale cărui armate au oprit revoluțiile din 1848? Imperiul... (Vezi punctul 3)",
+                        code: "austriac",
+                        digitRevealed: "8",
+                        hint: "Caută numele imperiului menționat în paranteza de la punctul 3."
+                    }
+                ]
+            }
       },
            {
         title: "26. Românii și modernitatea",
@@ -10305,7 +10949,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/5699db1933ff48ed9ad15370694c48bd?themeId=60&templateId=49&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce imn național, alături de drapelul tricolor, a apărut în timpul Revoluției pașoptiste din 1848? 'Deșteaptă-te,...' (Vezi punctul 1)",
+                        code: "romane",
+                        digitRevealed: "1",
+                        hint: "Verifică titlul imnului din italice de la prima bulină a punctului 1."
+                    },
+                    {
+                        puzzle: "2. Cine a fost ales domnitor al Moldovei și Țării Românești în ianuarie 1859? Alexandru Ioan... (Vezi punctul 2)",
+                        code: "cuza",
+                        digitRevealed: "8",
+                        hint: "Caută numele domnitorului Unirii îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Ce teritoriu s-a unit cu România în urma Războiului de Independență (1877–1878)? (Vezi punctul 3)",
+                        code: "dobrogea",
+                        digitRevealed: "5",
+                        hint: "Verifică denumirea regiunii unite cu țara de la prima bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "4. Cine a devenit primul rege al României după proclamarea Regatului în anul 1881? Regele... (Vezi punctul 3)",
+                        code: "carol i",
+                        digitRevealed: "9",
+                        hint: "Caută numele primului rege menționat la a doua bulină de la punctul 3."
+                    }
+                ]
+            }
       },
            {
         title: "27. Formarea statelor naționale. Germania",
@@ -10409,7 +11081,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/3c2827369c9c48ce92092eb3ef282295?themeId=58&templateId=82&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce oraș a devenit capitala Italiei unificate în anul 1871? (Vezi punctul 2)",
+                        code: "roma",
+                        digitRevealed: "1",
+                        hint: "Verifică numele orașului îngroșat de la finalul punctului 2 din rezumat."
+                    },
+                    {
+                        puzzle: "2. Ce mare cancelar numit 'Cancelarul de Fier' a condus unificarea Germaniei? Otto von... (Vezi punctul 3)",
+                        code: "bismarck",
+                        digitRevealed: "8",
+                        hint: "Caută numele cancelarului îngroșat de la punctul 3."
+                    },
+                    {
+                        puzzle: "3. Ce rege al Prusiei a fost proclamat împărat al Germaniei unificate la 18 ianuarie 1871? Wilhelm... (Scrie numărul cu cifre romane, ex: I) (Vezi punctul 3)",
+                        code: "i",
+                        digitRevealed: "7",
+                        hint: "Verifică numele regelui prusac îngroșat de la a treia bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "4. În ce faimos palat din Franța a fost proclamată unificarea Imperiului German la 18 ianuarie 1871? Palatul... (Vezi punctul 3)",
+                        code: "versailles",
+                        digitRevealed: "1",
+                        hint: "Caută numele palatului îngroșat de la ultima bulină a punctului 3."
+                    }
+                ]
+            }
       },
            {
         title: "28. Epoca victoriană. La Belle Époque",
@@ -10516,7 +11216,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/f2c3239fc6ab4364a35f0e7c3ad470f4?themeId=61&templateId=49&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. După numele cărei regine, ce a domnit între 1837 și 1901, au denumit britanicii această perioadă de prosperitate? Regina... (Vezi punctul 1)",
+                        code: "victoria",
+                        digitRevealed: "1",
+                        hint: "Verifică numele reginei britanice îngroșat de la prima bulină a punctului 1."
+                    },
+                    {
+                        puzzle: "2. Ce nouă sursă de energie a apărut după 1880 alături de petrol, făcând orașele mai sigure și mai luminoase? (Vezi punctul 2)",
+                        code: "electricitatea",
+                        digitRevealed: "9",
+                        hint: "Caută a doua sursă de energie îngroșată de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. În ce oraș a fost deschisă prima linie de metrou din lume în anul 1863? (Vezi punctul 2)",
+                        code: "londra",
+                        digitRevealed: "0",
+                        hint: "Verifică primul oraș menționat în paranteza de la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Ce curent artistic apărut în pictura franceză punea accent pe lumină și natură? (Vezi punctul 3)",
+                        code: "impresionism",
+                        digitRevealed: "0",
+                        hint: "Caută termenul artistic îngroșat de la primul paragraf de la punctul 3."
+                    }
+                ]
+            }
       },
        ],
     "VII": [
