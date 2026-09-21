@@ -414,24 +414,37 @@
     let currentQuizIndex = 0;
     let currentLockIndex = 0;
 
-    const LEVELS = [
-        { level: 1, title: "Mic Arheolog", minXP: 0, maxXP: 100, avatar: '🛡️' },
-        { level: 2, title: "Explorator de Istorie", minXP: 100, maxXP: 250, avatar: '🏛️' },
-        { level: 3, title: "Scrib Regal", minXP: 250, maxXP: 500, avatar: '📜' },
-        { level: 4, title: "Cronicar de Seamă", minXP: 500, maxXP: 850, avatar: '⚔️' },
-        { level: 5, title: "Cavaler al Cunoașterii", minXP: 850, maxXP: 1300, avatar: '🏰' },
-        { level: 6, title: "Maestru Strateg", minXP: 1300, maxXP: 1800, avatar: '👑' },
-        { level: 7, title: "Sfetnic al Coroanei", minXP: 1800, maxXP: 2400, avatar: '🦅' },
-        { level: 8, title: "Legendă a Istoriei", minXP: 2400, maxXP: Infinity, avatar: '🔱' }
+  const LEVELS = [
+        { level: 1,  title: "Mic Arheolog",           minXP: 0,     maxXP: 200,    avatar: '🛡️' },
+        { level: 2,  title: "Explorator de Istorie",  minXP: 200,   maxXP: 500,    avatar: '🏛️' },
+        { level: 3,  title: "Scrib Regal",            minXP: 500,   maxXP: 900,    avatar: '📜' },
+        { level: 4,  title: "Cronicar de Seamă",       minXP: 900,   maxXP: 1400,   avatar: '⚔️' },
+        { level: 5,  title: "Centurion al Cunoașterii",minXP: 1400,  maxXP: 2100,   avatar: '🗡️' },
+        { level: 6,  title: "Cavaler al Coroanei",     minXP: 2100,  maxXP: 3000,   avatar: '🏰' },
+        { level: 7,  title: "Strateg al Regatului",   minXP: 3000,  maxXP: 4100,   avatar: '👑' },
+        { level: 8,  title: "Sfetnic Domnesc",        minXP: 4100,  maxXP: 5400,   avatar: '🦅' },
+        { level: 9,  title: "Maestru al Arhivelor",   minXP: 5400,  maxXP: 6900,   avatar: '🗝️' },
+        { level: 10, title: "Gvardian al Istoriei",   minXP: 6900,  maxXP: 8600,   avatar: '🛡️' },
+        { level: 11, title: "Arhitect al Epocilor",   minXP: 8600,  maxXP: 10500,  avatar: '🏛️' },
+        { level: 12, title: "Mare Cronicar",          minXP: 10500, maxXP: 12600,  avatar: '📜' },
+        { level: 13, title: "Comandant Suprem",       minXP: 12600, maxXP: 14900,  avatar: '⚔️' },
+        { level: 14, title: "Senator al Cunoașterii", minXP: 14900, maxXP: 17400,  avatar: '🏛️' },
+        { level: 15, title: "Erou al Neamului",       minXP: 17400, maxXP: 20100,  avatar: '👑' },
+        { level: 16, title: "Titan al Istoriei",      minXP: 20100, maxXP: 23000,  avatar: '🔱' },
+        { level: 17, title: "Marele Inquisitor",      minXP: 23000, maxXP: 26100,  avatar: '🦅' },
+        { level: 18, title: "Păzitorul Timpului",     minXP: 26100, maxXP: 29400,  avatar: '⏳' },
+        { level: 19, title: "Arhonte Suprem",         minXP: 29400, maxXP: 33000,  avatar: '👑' },
+        { level: 20, title: "Legendă Absolută",       minXP: 33000, maxXP: Infinity, avatar: '🌌' }
     ];
 
+    // Recompense rebalansate pentru Roata Norocului
     const WHEEL_SECTORS = [
-        { label: "+20 XP",  xp: 20,  color: "#8c5a2b", chance: 35 },
-        { label: "+50 XP",  xp: 50,  color: "#27ae60", chance: 30 },
-        { label: "+80 XP",  xp: 80,  color: "#2980b9", chance: 18 },
-        { label: "+100 XP", xp: 100, color: "#8e44ad", chance: 10 },
-        { label: "+150 XP", xp: 150, color: "#e67e22", chance: 5 },
-        { label: "+200 XP", xp: 200, color: "#f1c40f", chance: 2 }
+        { label: "+10 XP", xp: 10, color: "#8c5a2b", chance: 35 },
+        { label: "+20 XP", xp: 20, color: "#27ae60", chance: 30 },
+        { label: "+30 XP", xp: 30, color: "#2980b9", chance: 18 },
+        { label: "+50 XP", xp: 50, color: "#8e44ad", chance: 10 },
+        { label: "+80 XP", xp: 80, color: "#e67e22", chance: 5 },
+        { label: "+100 XP", xp: 100, color: "#f1c40f", chance: 2 }
     ];
 
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -879,8 +892,8 @@
                 `🎉 AI EVADAT CU SUCCES! Codul istoric descifrat al arhivei a fost: ${finalCodeStr}!`;
             document.getElementById('escapeInputArea').style.display = 'none';
 
-            // Declansăm animația spectaculoasă de deschidere a ușii!
-            playDoorUnlockAnimation(finalCodeStr, 100);
+            // Declansăm animația cu +50 XP
+            playDoorUnlockAnimation(finalCodeStr, 50);
         }
     }
 
@@ -891,7 +904,6 @@
         const victoryCard = document.getElementById('victoryCard');
         const victoryDetails = document.getElementById('victoryDetails');
 
-        // Resetăm stările
         door.classList.remove('open');
         key.classList.remove('insert', 'turn');
         key.style.opacity = '0';
@@ -899,25 +911,19 @@
         
         modal.style.display = 'flex';
 
-        // 1. Cheia coboară în broască
-        setTimeout(() => {
-            key.classList.add('insert');
-        }, 300);
+        setTimeout(() => { key.classList.add('insert'); }, 300);
 
-        // 2. Cheia se rotește în broască
         setTimeout(() => {
             key.classList.add('turn');
             playSound('correct');
         }, 1200);
 
-        // 3. Ușa se deschide larg
         setTimeout(() => {
             key.style.opacity = '0';
             door.classList.add('open');
             playSound('levelup');
         }, 1800);
 
-        // 4. Apare ecranul de victorie cu mesajul complet
         setTimeout(() => {
             victoryDetails.innerHTML = `
                 Ai deschis toate cele 4 lacăte!<br>
@@ -1457,13 +1463,18 @@
             }
 
             if (t.isCorrect) {
-                playSound('correct'); updateXP(50);
-                document.getElementById('quizFeedback').innerText = "🛡️ VICTORIE! Zidul inamic a fost spulberat cu succes! (+50 XP)";
+                playSound('correct'); 
+                // Recompensă ajustată: +20 XP per răspuns corect
+                updateXP(20);
+                document.getElementById('quizFeedback').innerText = "🛡️ VICTORIE! Zidul inamic a fost spulberat cu succes! (+20 XP)";
                 document.getElementById('quizFeedback').style.color = "#27ae60";
                 setTimeout(() => { currentQuizIndex++; loadQuestion(currentQuizIndex); }, 1800);
             } else {
-                playSound('wrong'); quizWrongAnswers++; updateXP(-10);
-                document.getElementById('quizFeedback').innerText = "⚔️ Cădere în luptă! Stânca a eșuat în fața zidului! (-10 XP)";
+                playSound('wrong'); 
+                quizWrongAnswers++; 
+                // Penalizare ajustată: -5 XP per răspuns greșit
+                updateXP(-5);
+                document.getElementById('quizFeedback').innerText = "⚔️ Cădere în luptă! Stânca a eșuat în fața zidului! (-5 XP)";
                 document.getElementById('quizFeedback').style.color = "#c0392b";
                 setTimeout(() => { canShoot = true; fireball = null; trail = []; explosionParticles = []; drawScene(); }, 1400);
             }
@@ -1598,6 +1609,10 @@
     updateXP(0);
     updateStreak();
 </script>
-
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js');
+  }
+</script>
 </body>
 </html>
