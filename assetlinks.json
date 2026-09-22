@@ -1,8 +1,0 @@
-[{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "com.crisseu.istorie.gimnaziu",
-        "sha256_cert_fingerprints": ["D6:77:77:B2:B7:6B:D1:60:EF:72:20:FD:72:63:FA:08:9C:4F:B1:AE:77:2E:28:0A:1A:9D:2B:2E:00:B9:59:E5"]
-      }
-    }]
