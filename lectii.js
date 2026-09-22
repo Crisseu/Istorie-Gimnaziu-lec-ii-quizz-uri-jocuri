@@ -49,7 +49,7 @@ const dbLectii = {
                 { q: "Care dintre următoarele elemente este un izvor istoric SCRIS?", opts: ["O sabie din bronz", "Un document sau o inscripție", "O ruină de cetate"], c: 1 },
                 { q: "Ce categorie de izvoare istorice reprezintă ruinele, uneltele și armele?", opts: ["Nescrise", "Scrise", "Orale"], c: 0 },
                 { q: "Relatările directe ale martorilor unui eveniment sunt considerate izvoare:", opts: ["Scrise", "Orale", "Arheologice"], c: 1 },
-                { q: "De la ce moment începe cronologic istoria omenirii studiată?", opts: ["De la apariția omului până în prezent", "Doar din Evul Mediu", "Din secolul al XIX-lea"], c: 0 },
+                { q: "De la ce moment începe studiată cronologic istoria omenirii?", opts: ["De la apariția omului până în prezent", "Doar din Evul Mediu", "Din secolul al XIX-lea"], c: 0 },
                 { q: "O carte veche sau o scrisoare descoperită într-o arhivă este un izvor:", opts: ["Scris", "Nescris", "Oral"], c: 0 },
                 { q: "Un mormânt antic sau un vas din ceramică spartă reprezintă un izvor:", opts: ["Nescris", "Scris", "Oral"], c: 0 }
             ]
@@ -118,7 +118,7 @@ const dbLectii = {
                 { q: "Ce reprezintă un mileniu?", opts: ["1 000 de ani", "100 de ani", "500 de ani"], c: 0 },
                 { q: "Ce instrument folosesc istoricii pentru a marca ordinea evenimentelor?", opts: ["Axa cronologică", "Busola", "Termometrul"], c: 0 },
                 { q: "Care epocă istorică urmează după Epoca Antică?", opts: ["Epoca Preistorică", "Epoca Medievală (Evul Mediu)", "Epoca Contemporană"], c: 1 },
-                { q: "Care este ultima epocă istorică enumerată?", opts: ["Epoca Modernă", "Epoca Contemporană", "Epoca Medievală"], c: 1 }
+                { q: "în ce epocă istorică trăim astăzi?", opts: ["Epoca Modernă", "Epoca Contemporană", "Epoca Medievală"], c: 1 }
             ]
         },
     {
@@ -135,7 +135,7 @@ const dbLectii = {
                 <ul>
                     <li>Unde au trăit diferite popoare;</li>
                     <li>Ce granițe aveau statele odinioară;</li>
-                    <li>Cum s-au mutat populațiile din un loc în altul.</li>
+                    <li>Cum s-au mutat populațiile dintr-un un loc în altul.</li>
                 </ul>
             `,
             escape: {
@@ -912,7 +912,7 @@ const dbLectii = {
             <p>Orașul s-a îmbogățit datorită comerțului și agriculturii. Oamenii făceau schimb de mărfuri, iar țăranii din satele vecine cultivau pământul și făceau rost de hrană pentru tot orașul. În fruntea tuturor se afla regele, care avea putere deplină.</p>
 
             <h3>4. Ce s-a întâmplat cu Babilonul?</h3>
-            <p>După mulți ani de glorie, Babilonul a fost cucerit de un alt popor puternic, persanii. Treptat, din cauza războaielor și a schimbărilor de mediu, orașul și-a pierdut importanța și a fost părăsit de locuitorii săi.</p>
+            <p>După mulți ani de glorie, Babilonul a fost cucerit de un alt popor puternic, perșii. Treptat, din cauza războaielor și a schimbărilor de mediu, orașul și-a pierdut importanța și a fost părăsit de locuitorii săi.</p>
         `,
         quiz: [
             {
@@ -978,7 +978,7 @@ const dbLectii = {
             {
                 q: "Ce popor a cucerit Babilonul, transformându-l într-un oraș mai puțin important?",
                 opts: [
-                    "Persanii",
+                    "Perșii",
                     "Egiptenii",
                     "Grecii",
                     "Rromii"
@@ -11351,7 +11351,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/50f08b048dcf410bba78b1b3092e1fd9?themeId=26&templateId=49&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce provincii pierdute dorea Franța să recupereze de la Germania? Alsacia și... (Vezi punctul 1)",
+                        code: "lorena",
+                        digitRevealed: "1",
+                        hint: "Verifică provinciile din paranteza de la prima bulină a punctului 1."
+                    },
+                    {
+                        puzzle: "2. Cum era numită cea mai tensionată zonă a Europei din cauza rivalităților dintre marile imperii? 'Butoiul cu...' (Vezi punctul 1)",
+                        code: "pulbere",
+                        digitRevealed: "9",
+                        hint: "Caută denumirea în ghilimele de la a treia bulină a punctului 1."
+                    },
+                    {
+                        puzzle: "3. În ce an a fost formată Tripla Alianță (Puterile Centrale) între Germania, Austro-Ungaria și Italia? (Vezi punctul 2)",
+                        code: "1882",
+                        digitRevealed: "0",
+                        hint: "Verifică anul îngroșat de la prima bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Cum se numea cealaltă mare alianță militară, numită și Tripla Înțelegere, formată din Franța, Rusia și Marea Britanie? (Vezi punctul 2)",
+                        code: "antanta",
+                        digitRevealed: "7",
+                        hint: "Caută denumirea din paranteză de la a doua bulină de la punctul 2."
+                    }
+                ]
+            }
       },
       {
         title: "2. Primul Război Mondial. Evoluția alianțelor. Fronturile de luptă",
@@ -11451,11 +11479,39 @@ const dbLectii = {
               "Bulgariei"
             ],
             c: 0
-          }
+          },
         ],
         game1: "https://wordwall.net/ro/embed/164a142ecdf74e8baa344a138b930da7?themeId=27&templateId=82&fontStackId=0",
         game2: "https://wordwall.net/ro/embed/84d26cd98028498fbcc173f69221ada5?themeId=54&templateId=2&fontStackId=0",
-        game3: "https://wordwall.net/ro/embed/def6ed6664964c4da47115e720e34550?themeId=53&templateId=22&fontStackId=0"
+        game3: "https://wordwall.net/ro/embed/def6ed6664964c4da47115e720e34550?themeId=53&templateId=22&fontStackId=0",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce oraș a avut loc asasinatul din 28 iunie 1914, considerat pretextul Primului Război Mondial? (Vezi punctul 1)",
+                        code: "sarajevo",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea orașului îngroșat de la punctul 1 din rezumat."
+                    },
+                    {
+                        puzzle: "2. Cum îl chema pe moștenitorul tronului Austro-Ungariei asasinat în 1914? Franz... (Vezi punctul 1)",
+                        code: "ferdinand",
+                        digitRevealed: "9",
+                        hint: "Caută numele arhiducului îngroșat de la prima bulină a punctului 1."
+                    },
+                    {
+                        puzzle: "3. În ce bătălie din 1914 au reușit francezii să oprească înaintarea surprinzătoare a Germaniei? Bătălia de pe... (Vezi punctul 2)",
+                        code: "marna",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea bătăliei îngroșate de la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. Alături de Somme, ce altă bătălie sângeroasă din 1916 a marcat războiul de uzură de pe Frontul de Vest? Bătălia de la... (Vezi punctul 2)",
+                        code: "verdun",
+                        digitRevealed: "4",
+                        hint: "Caută numele bătăliei îngroșate de la prima bulină a punctului 2."
+                    }
+                ]
+            }
       },
       {
         title: "3. Revoluția industrială și războiul. Noul armament și victimele lui",
@@ -11561,7 +11617,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/5455d0d663844918a54f0cb8302e02b2?themeId=23&templateId=49&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cine a preluat munca bărbaților din fabricile de armament pe durata războiului? (Vezi punctul 1)",
+                        code: "femeile",
+                        digitRevealed: "1",
+                        hint: "Verifică cine a preluat munca din fabrici îngroșat la punctul 1."
+                    },
+                    {
+                        puzzle: "2. În ce scop erau folosite avioanele în primii ani ai războiului, înainte de a fi dotate cu bombe? Pentru spionaj și... (Vezi punctul 2)",
+                        code: "observare",
+                        digitRevealed: "9",
+                        hint: "Caută utilitatea inițială a avioanelor din textul îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Ce stat a folosit pentru prima dată tancurile pe câmpul de luptă în anul 1916? Marea... (Vezi punctul 3)",
+                        code: "britanie",
+                        digitRevealed: "1",
+                        hint: "Verifică numele țării de la începutul punctului 3 din rezumat."
+                    },
+                    {
+                        puzzle: "4. Ce model de tanc francez a fost primul dotat cu o turelă rotativă la 360 de grade? Renault FT... (Scrie numărul exact) (Vezi punctul 3)",
+                        code: "17",
+                        digitRevealed: "6",
+                        hint: "Caută denumirea modelului francez din a doua bulină de la punctul 3."
+                    }
+                ]
+            }
     },
 {
         title: "4. Viața în tranșee și „frontul de acasă”",
@@ -11667,7 +11751,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/302a060b1eb04608b5e558e87e90b744?themeId=66&templateId=49&fontStackId=0",
         game2: "",
-        game3:""
+        game3:"",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce șanțuri adânci de peste 2 metri protejate cu sârmă ghimpată au transformat lupta într-un război de poziții? (Vezi punctul 1)",
+                        code: "transee",
+                        digitRevealed: "1",
+                        hint: "Verifică termenul îngroșat de la primul paragraf al punctului 1."
+                    },
+                    {
+                        puzzle: "2. Cum s-a numit războiul de pe linia frontului în care nicio armată nu reușea să înainteze? Război de poziții sau de... (Vezi punctul 1)",
+                        code: "uzura",
+                        digitRevealed: "9",
+                        hint: "Caută al doilea termen din paranteză de la al doilea paragraf al punctului 1."
+                    },
+                    {
+                        puzzle: "3. Cum s-a numit spațiul din spatele liniei de luptă care aproviziona armata cu hrană și muniție? Frontul de... (Vezi punctul 3)",
+                        code: "acasa",
+                        digitRevealed: "1",
+                        hint: "Verifică sintagma în ghilimele și îngroșată de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Ce epidemii și lipsuri cumplite au provocat moartea a aproape 7 milioane de civili în timpul războiului? (Vezi punctul 3)",
+                        code: "foametea",
+                        digitRevealed: "8",
+                        hint: "Caută primul termen îngroșat de la ultimul paragraf al punctului 3."
+                    }
+                ]
+            }
     },
 {
         title: "5. România și Primul Război Mondial",
@@ -11776,7 +11888,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/2605fc7a4b404e67b770eae2f7dd7429?themeId=46&templateId=48&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce regiune a țării s-au retras Regele, Guvernul și Armata după ocuparea Bucureștiului de către Puterile Centrale? (Vezi punctul 3)",
+                        code: "moldova",
+                        digitRevealed: "1",
+                        hint: "Verifică regiunea istorică îngroșată de la primul paragraf al punctului 3."
+                    },
+                    {
+                        puzzle: "2. Ce general francez a condus Misiunea Militară Franceză care a sprijinit reorganizarea armatei române? Generalul Henri... (Vezi punctul 4)",
+                        code: "berthelot",
+                        digitRevealed: "9",
+                        hint: "Caută numele de familie al generalului francez îngroșat de la punctul 4."
+                    },
+                    {
+                        puzzle: "3. Alături de Mărășești și Oituz, în ce altă localitate au obținut românii o victorie faimoasă în vara anului 1917? (Vezi punctul 4)",
+                        code: "marasti",
+                        digitRevealed: "1",
+                        hint: "Verifică prima localitate îngroșată menționată în bătăliile din 1917 de la punctul 4."
+                    },
+                    {
+                        puzzle: "4. Ce provincie istorică românească s-a unit în anul 1918 alături de Bucovina, Transilvania și Banat pentru a forma România Mare? (Vezi punctul 5)",
+                        code: "basarabia",
+                        digitRevealed: "8",
+                        hint: "Caută prima provincie istorică menționată în lista îngroșată de la punctul 5."
+                    }
+                ]
+            }
     },
 {
         title: "6. Sfârșitul războiului. Tratatele de pace. Noua hartă a Europei",
@@ -11885,7 +12025,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/617dc87bd14b486c9bf0e3310e761739?themeId=41&templateId=35&fontStackId=0",
         game2: "https://wordwall.net/ro/embed/617dc87bd14b486c9bf0e3310e761739?themeId=41&templateId=35&fontStackId=0",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce președinte al SUA a propus 'Cele 14 puncte' la Conferința de Pace de la Paris? Woodrow... (Vezi punctul 2)",
+                        code: "wilson",
+                        digitRevealed: "1",
+                        hint: "Verifică numele președintelui american îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "2. În ce palat/suburbie a Parisului s-a semnat tratatul de pace cu Germania, ce impunea acesteia despăgubiri uriașe? (Vezi punctul 3)",
+                        code: "versailles",
+                        digitRevealed: "9",
+                        hint: "Caută numele primului tratat menționat la punctul 3."
+                    },
+                    {
+                        puzzle: "3. Ce tratat de pace semnat cu Ungaria a confirmat recunoașterea noilor granițe și a Marii Uniri? (Vezi punctul 3)",
+                        code: "trianon",
+                        digitRevealed: "2",
+                        hint: "Verifică al doilea tratat îngroșat de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Ce organizație internațională a fost creată la propunerea SUA pentru a preveni viitoare războaie? Liga... (Vezi punctul 2)",
+                        code: "natiunilor",
+                        digitRevealed: "0",
+                        hint: "Caută denumirea organizației îngroșate de la a doua bulină a punctului 2."
+                    }
+                ]
+            }
     },
 {
         title: "7. Viața cotidiană în perioada interbelică",
@@ -11992,7 +12160,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/e4b35cd96ce54b179251b14849ebde50?themeId=22&templateId=30&fontStackId=0",
         game2: "https://wordwall.net/ro/embed/db0ec7900a114735b91f084e678d875e?themeId=27&templateId=3&fontStackId=0",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum au fost numiți anii '20 datorită avântului muzicii de jazz, al cinematografiei și al noilor dansuri? 'Anii...' (Vezi punctul 1)",
+                        code: "nebuni",
+                        digitRevealed: "1",
+                        hint: "Verifică termenul îngroșat în ghilimele de la primul paragraf al punctului 1."
+                    },
+                    {
+                        puzzle: "2. Ce mare zgârie-nori emblematic a fost construit în SUA în perioada interbelică? (Vezi punctul 2)",
+                        code: "empire state building",
+                        digitRevealed: "9",
+                        hint: "Caută denumirea clădirii în italice menționată în prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Ce prim antibiotic revoluționar a fost descoperit în perioada interbelică alături de insulină? (Vezi punctul 2)",
+                        code: "penicilina",
+                        digitRevealed: "3",
+                        hint: "Verifică prima descoperire medicală îngroșată de la a treia bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. În ce țară sud-americană s-a organizat prima Cupă Mondială de fotbal în anul 1930? (Vezi punctul 4)",
+                        code: "uruguay",
+                        digitRevealed: "0",
+                        hint: "Caută numele țării organizatoare de la punctul 4 din rezumat."
+                    }
+                ]
+            }
     },
 {
         title: "8. Femeia în viața publică",
@@ -12097,7 +12293,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/3fb8c395a1c448d18216c23652de7da4?themeId=23&templateId=30&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum s-au numit susținătoarele mișcării din Marea Britanie care luptau pentru dreptul de vot al femeilor? (Vezi punctul 1)",
+                        code: "sufragete",
+                        digitRevealed: "1",
+                        hint: "Verifică termenul îngroșat de la finalul primului paragraf al punctului 1."
+                    },
+                    {
+                        puzzle: "2. Cum s-a numit moda interbelică ce promova coafurile cu păr scurt pentru femei? Moda à la... (Vezi punctul 2)",
+                        code: "garconne",
+                        digitRevealed: "9",
+                        hint: "Caută termenul în italice de la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. În ce an au obținut pentru prima dată femeile din România dreptul de vot (cele peste 30 de ani, cu știință de carte)? (Vezi punctul 3)",
+                        code: "1938",
+                        digitRevealed: "3",
+                        hint: "Verifică primul an îngroșat menționat la punctul 3 din rezumat."
+                    },
+                    {
+                        puzzle: "4. În ce an a fost introdus votul universal pentru toate femeile de peste 21 de ani din România? (Vezi punctul 3)",
+                        code: "1946",
+                        digitRevealed: "8",
+                        hint: "Caută al doilea an îngroșat menționat la finalul punctului 3."
+                    }
+                ]
+            }
     },
 {
         title: "9. Cinematograful - artă și industrie",
@@ -12200,7 +12424,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/7bfe9c74b9ba4403bf3e48301a7ffe72?themeId=52&templateId=11&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce frați au realizat prima proiecție cinematografică din istorie la 28 decembrie 1895, la Paris? Frații Auguste și Louis... (Vezi punctul 1)",
+                        code: "lumiere",
+                        digitRevealed: "1",
+                        hint: "Verifică numele de familie al fraților inventatori îngroșat de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce zonă din statul California (SUA) a devenit centrul mondial al cinematografiei în perioada interbelică? (Vezi punctul 2)",
+                        code: "hollywood",
+                        digitRevealed: "9",
+                        hint: "Caută denumirea cartierului/orașului filmului îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Ce faimos comic al filmului mut a devenit o vedetă mondială prin comediile sale? Charlie... (Vezi punctul 2)",
+                        code: "chaplin",
+                        digitRevealed: "2",
+                        hint: "Verifică numele actorului de comedie menționat la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. În ce scop manipulativ a fost folosit cinematograful de către regimurile dictatoriale din URSS și Germania? Propagandă... (Vezi punctul 3)",
+                        code: "politica",
+                        digitRevealed: "7",
+                        hint: "Caută sintagma îngroșată de la punctul 3 din rezumat."
+                    }
+                ]
+            }
     },
 {
         title: "10. Crize economice",
@@ -12308,7 +12560,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/5cd3bbf25f2d4d25a805331a1a41b823?themeId=54&templateId=36&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum a fost numită ziua de 24 octombrie 1929, când a izbucnit crashul bursei din New York? 'Joia...' (Vezi punctul 2)",
+                        code: "neagra",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea în ghilimele de la punctul 2 din rezumat."
+                    },
+                    {
+                        puzzle: "2. Care a fost principala cauză a crizei când fabricile au produs mai multe bunuri decât se puteau cumpăra? (Vezi punctul 2)",
+                        code: "supraproductia",
+                        digitRevealed: "9",
+                        hint: "Caută primul termen îngroșat de la lista cu cauze de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Cum s-a numit programul economic al președintelui Franklin D. Roosevelt prin care a fost oprită criza în SUA? New... (Vezi punctul 3)",
+                        code: "deal",
+                        digitRevealed: "2",
+                        hint: "Verifică numele planului de la ultimul paragraf al punctului 3."
+                    },
+                    {
+                        puzzle: "4. Ce președinte al SUA a inițiat construcția de drumuri și baraje pentru a crea locuri de muncă? Franklin D. ... (Vezi punctul 3)",
+                        code: "roosevelt",
+                        digitRevealed: "9",
+                        hint: "Caută numele președintelui american îngroșat de la finalul punctului 3."
+                    }
+                ]
+            }
     },
 {
         title: "11. Cetățean și stat în democrație și totalitarism",
@@ -12420,7 +12700,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/d420e75119cc44ac92f04ea7d2661027?themeId=55&templateId=2&fontStackId=0",
         game2: "https://wordwall.net/ro/embed/5b6a8d01c6b3469c96dd44f5a53e6b84?themeId=48&templateId=30&fontStackId=0",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum se numește regimul politic în care puterea este deținută de un singur partid și un dictator, cetățenii pierzându-și drepturile? (Vezi punctul 1)",
+                        code: "totalitarism",
+                        digitRevealed: "1",
+                        hint: "Verifică al doilea termen îngroșat de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Care a fost primul stat totalitar comunist din lume, apărut în anul 1917? (Vezi punctul 3)",
+                        code: "urss",
+                        digitRevealed: "9",
+                        hint: "Caută denumirea statului din prima bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "3. Ce conducător fascist (extremă-dreapta) s-a instalat la putere în Italia în anul 1922? Benito... (Vezi punctul 3)",
+                        code: "mussolini",
+                        digitRevealed: "2",
+                        hint: "Verifică numele dictatorului italian de la a doua bulină de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Ce acțiune de protest/marș din anul 1922 i-a adus puterea lui Benito Mussolini în Italia? Marșul asupra... (Vezi punctul 3)",
+                        code: "romei",
+                        digitRevealed: "2",
+                        hint: "Caută denumirea marșului în italice de la a doua bulină de la punctul 3."
+                    }
+                ]
+            }
     },
 {
         title: "12. Un model democratic - SUA",
@@ -12523,7 +12831,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/c7a3ff15f99a43c8a4794a5690dd97f1?themeId=23&templateId=30&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Conform Consituției SUA, cine era șeful statului? (Vezi punctul 1)",
+                        code: "presedintele",
+                        digitRevealed: "1",
+                        hint: "Verifică punctului 1 referitor la separația puterilor."
+                    },
+                    {
+                        puzzle: "2. Cum se numește organismul bicameral american (Camera Reprezentanților și Senat) ce exercită puterea legislativă? (Vezi punctul 1)",
+                        code: "congres",
+                        digitRevealed: "9",
+                        hint: "Caută denumirea instituției de la prima bulină a punctului 1."
+                    },
+                    {
+                        puzzle: "3. Cum s-a numit politica externă de neintervenție a SUA în afacerile europene adoptată după Primul Război Mondial? (Vezi punctul 2)",
+                        code: "izolationism",
+                        digitRevealed: "2",
+                        hint: "Verifică termenul îngroșat de la primul paragraf al punctului 2."
+                    },
+                    {
+                        puzzle: "4. În ce an au primit femeile din SUA dreptul de vot? (Vezi punctul 1)",
+                        code: "1920",
+                        digitRevealed: "0",
+                        hint: "Caută anul menționat la finalul celei de-a doua buline de la punctul 1."
+                    }
+                ]
+            }
     },
 {
         title: "13. Comunismul. Nazismul",
@@ -12626,7 +12962,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/aa822cedd739474fb73f35b073218e6c?themeId=53&templateId=2&fontStackId=0",
         game2: "https://wordwall.net/ro/embed/aee3f90d6254449fbe4e35090fe86d13?themeId=55&templateId=36&fontStackId=0",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cine a preluat conducerea URSS în 1922 și a instaurat o dictatură bazată pe cultul personalității și teroare? Iosif V. ... (Vezi punctul 1)",
+                        code: "stalin",
+                        digitRevealed: "1",
+                        hint: "Verifică numele dictatorului sovietic îngroșat de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Cum se numea rețeaua uriașă de lagăre de muncă silnică din URSS unde au pierit milioane de oameni? (Vezi punctul 1)",
+                        code: "gulag",
+                        digitRevealed: "9",
+                        hint: "Caută denumirea lagărelor sovietice îngroșată la a doua bulină de la punctul 1."
+                    },
+                    {
+                        puzzle: "3. În ce an a ajuns Adolf Hitler la putere în Germania, instaurând regimul nazist? (Vezi punctul 2)",
+                        code: "1933",
+                        digitRevealed: "3",
+                        hint: "Verifică anul îngroșat de la primul paragraf al punctului 2."
+                    },
+                    {
+                        puzzle: "4. Cum se numea politica urii împotriva evreilor, aflată la baza doctrinei naziste? (Vezi punctul 2)",
+                        code: "antisemitism",
+                        digitRevealed: "3",
+                        hint: "Caută termenul îngroșat din prima bulină de la punctul 2."
+                    }
+                ]
+            }
     },
 {
         title: "14. Relațiile internaționale. Agresiunea statelor totalitare",
@@ -12728,7 +13092,35 @@ const dbLectii = {
         ],
         game1: "https://wordwall.net/ro/embed/476ac731b9564664b03571154be30c7a?themeId=51&templateId=3&fontStackId=0",
         game2: "",
-        game3: ""
+        game3: "",
+        escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce pact internațional de scoatere a războiului în afara legii a fost semnat în 1928, dar s-a dovedit ineficient? Pactul Briand–... (Vezi punctul 1)",
+                        code: "kellogg",
+                        digitRevealed: "1",
+                        hint: "Verifică al doilea nume din denumirea pactului îngroșat de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce alianță politico-militară au creat Germania și Italia în anul 1936? Axa... (Vezi punctul 2)",
+                        code: "roma berlin",
+                        digitRevealed: "9",
+                        hint: "Caută denumirea alianței îngroșate din a treia bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Cum s-a numit evenimentul din 1938 prin care Germania nazistă a anexat Austria? (Vezi punctul 2)",
+                        code: "anschluss",
+                        digitRevealed: "3",
+                        hint: "Verifică termenul german în italice de la finalul celei de-a treia buline de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Ce pact secret de neagresiune semnat la 23 august 1939 între Germania și URSS a împărțit Europa de Est? Pactul Ribbentrop–... (Vezi punctul 3)",
+                        code: "molotov",
+                        digitRevealed: "9",
+                        hint: "Caută al doilea nume din pactul menționat de la punctul 3."
+                    }
+                ]
+            }
     },
 {
     title: "15. Al Doilea Război Mondial (1939-1945). Alianțe și fronturi",
@@ -12804,7 +13196,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/8b7e4f1fa85f4767af75f56613b4f5b9?themeId=22&templateId=8&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce țară a fost atacată de Germania la 1 septembrie 1939, declanșând Al Doilea Război Mondial? (Vezi punctul 1)",
+                        code: "polonia",
+                        digitRevealed: "1",
+                        hint: "Verifică numele țării de la prima bulină a primului punct."
+                    },
+                    {
+                        puzzle: "2. Cum s-a numit strategia militară germană a 'războiului-fulger', bazată pe atacul combinat de tancuri și avioane? (Vezi punctul 2)",
+                        code: "blitzkrieg",
+                        digitRevealed: "9",
+                        hint: "Caută termenul german în paranteză de la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Ce invenție tehnică recentă i-a ajutat pe britanici să detecteze avioanele germane și să reziste în Bătălia Angliei? (Vezi punctul 2)",
+                        code: "radar",
+                        digitRevealed: "3",
+                        hint: "Verifică termenul îngroșat de la a doua bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. Ce pact semnat în 1940 a consolidat alianța militară dintre Germania, Italia și Japonia? Pactul... (Vezi punctul 1)",
+                        code: "tripartit",
+                        digitRevealed: "9",
+                        hint: "Caută denumirea pactului de la a doua bulină a primului punct."
+                    }
+                ]
+            }
 },
  {
     title: "16. Noile mijloace de distrugere în masă. Tehnologii și arme secrete",
@@ -12879,7 +13299,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/f181162e5bec4d45b524fc14a10e2515?themeId=43&templateId=8&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce rachetă germană creată de naziști a devenit la 20 iunie 1944 primul obiect creat de om ce a depășit atmosfera Pământului? (Vezi punctul 2)",
+                        code: "v-2",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea rachetei îngroșate de la a doua bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "2. Cum s-a numit proiectul secret american prin care au fost create primele bombe atomice din istorie? Proiectul... (Vezi punctul 3)",
+                        code: "manhattan",
+                        digitRevealed: "9",
+                        hint: "Caută numele proiectului îngroșat de la prima bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "3. Asupra cărui oraș japonez a fost lansată prima bombă atomică din lume la 6 august 1945? (Vezi punctul 3)",
+                        code: "hiroshima",
+                        digitRevealed: "4",
+                        hint: "Verifică primul oraș japonez îngroșat de la a doua bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "4. Care a fost al doilea oraș japonez asupra căruia a fost lansată bomba atomică la 9 august 1945? (Vezi punctul 3)",
+                        code: "nagasaki",
+                        digitRevealed: "5",
+                        hint: "Caută al doilea oraș japonez îngroșat de la a doua bulină a punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: " 17. Viața pe front și „frontul de acasă”",
@@ -12944,7 +13392,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/63e865180c5b40089b0f63dd187d6376?themeId=3&templateId=3&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Spre deosebire de primul război (bazat pe tranșee), ce fel de război a fost Al Doilea Război Mondial datorită vehiculelor motorizate? Război de... (Vezi punctul 1)",
+                        code: "miscare",
+                        digitRevealed: "1",
+                        hint: "Verifică termenul îngroșat de la prima bulină a primului punct."
+                    },
+                    {
+                        puzzle: "2. Prin ce mijloc principal își transmiteau soldații de pe front dorul de casă și legătura cu familia? Prin... (Vezi punctul 1)",
+                        code: "scrisori",
+                        digitRevealed: "9",
+                        hint: "Caută cuvântul menționat la ultima bulină de la primul punct."
+                    },
+                    {
+                        puzzle: "3. Ce adăposturi subterane publice erau folosite de civili în orașe în timpul bombardamentelor aeriene? Galeriile de... (Vezi punctul 2)",
+                        code: "metrou",
+                        digitRevealed: "4",
+                        hint: "Verifică ultimul cuvânt de la a treia bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. Ce măsură obligatorie de noapte impunea stingerea luminilor și acoperirea ferestrelor pentru a ascunde orașele de avioane? (Vezi punctul 2)",
+                        code: "camuflajul",
+                        digitRevealed: "0",
+                        hint: "Caută primul termen îngroșat de la ultima bulină a punctului 2."
+                    }
+                ]
+            }
 },
 {
     title: "18. Holocaustul",
@@ -13014,7 +13490,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/c29a85ae403047d2af52ab2885f890ae?themeId=48&templateId=30&fontStackId=0",
     game2: "https://view.genially.com/69371bea7598d78c39bb6c93",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum s-au numit legile rasiale discriminatorii adoptate de naziști prin care evreii au pierdut cetățenia? Legile de la... (Vezi punctul 1)",
+                        code: "nurnberg",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea orașului german îngroșat de la a doua bulină a primului punct."
+                    },
+                    {
+                        puzzle: "2. Cum numesc romii genocidul și tragedia prin care au trecut în timpul celui de-al Doilea Război Mondial? (Vezi punctul 2)",
+                        code: "porajmos",
+                        digitRevealed: "9",
+                        hint: "Caută termenul în italice din a doua bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Care a fost cel mai faimos și temut lagăr de exterminare naziști, eliberat de aliați? (Vezi punctul 2)",
+                        code: "auschwitz",
+                        digitRevealed: "4",
+                        hint: "Verifică numele primului lagăr îngroșat de la a treia bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. Ce stat independent a fost creat în anul 1948 ca refugiu și casă pentru poporul evreu? Statul... (Vezi punctul 3)",
+                        code: "israel",
+                        digitRevealed: "8",
+                        hint: "Caută numele statului îngroșat din a doua bulină a punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "19. Sfârșitul războiului. Conferința de Pace de la Paris",
@@ -13078,7 +13582,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/a3e29c0581d3437092950486b4443db3?themeId=46&templateId=48&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce regiune din nordul Franței a avut loc cea mai mare debarcare din istorie la 6 iunie 1944 ('Ziua Z')? (Vezi punctul 1)",
+                        code: "normandia",
+                        digitRevealed: "1",
+                        hint: "Verifică regiunea franceză îngroșată din al doilea paragraf al punctului 1."
+                    },
+                    {
+                        puzzle: "2. Ce rege al României a decis la 23 august 1944 întoarcerea armelor împotriva Germaniei naziste? Regele... (Vezi punctul 2)",
+                        code: "mihai",
+                        digitRevealed: "9",
+                        hint: "Caută numele monarhului român îngroșat de la primul paragraf al punctului 2."
+                    },
+                    {
+                        puzzle: "3. Ce teritoriu istoric important a reușit România să își recupereze în urma Tratatului de Pace de la Paris? Nord-Vestul... (Vezi punctul 3)",
+                        code: "transilvaniei",
+                        digitRevealed: "4",
+                        hint: "Verifică provincia îngroșată de la finalul primului paragraf al punctului 3."
+                    },
+                    {
+                        puzzle: "4. Ce organizație internațională creată la 24 octombrie 1945 a preluat misiunea de a menține pacea pe glob? (Abreviere din 3 litere) (Vezi punctul 3)",
+                        code: "onu",
+                        digitRevealed: "5",
+                        hint: "Caută acronimul din 3 litere îngroșat din ultimul paragraf al punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "20. Reconstrucția postbelică",
@@ -13136,7 +13668,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/64700ea10c494a64b8f0c0052935502c?themeId=22&templateId=71&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce plan de ajutor financiar de peste 12 miliarde de dolari au lansat SUA (1948–1952) pentru reconstrucția industriei europene? Planul... (Vezi punctul 2)",
+                        code: "marshall",
+                        digitRevealed: "1",
+                        hint: "Verifică numele planului american îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "2. Cine a fost secretarul de stat american care a conceput planul de reconstrucție economică a Europei postbelice? George... (Vezi punctul 2)",
+                        code: "marshall",
+                        digitRevealed: "9",
+                        hint: "Caută numele politicianului menționat la punctul 2 din rezumat."
+                    },
+                    {
+                        puzzle: "3. Ce organizație economică au creat sovieticii în 1949 pentru țările din blocul comunist, ca replică la Planul Marshall? (Abreviere din 4 litere) (Vezi punctul 3)",
+                        code: "caer",
+                        digitRevealed: "4",
+                        hint: "Verifică acronimul din 4 litere îngroșat de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. În ce an a fost creat Consiliul de Ajutor Economic Reciproc (CAER) de către URSS? (Vezi punctul 3)",
+                        code: "1949",
+                        digitRevealed: "8",
+                        hint: "Caută anul îngroșat menționat la punctul 3 din rezumat."
+                    }
+                ]
+            }
 },
 {
     title: "21. Viața cotidiană. De la dramele războiului la prosperitate",
@@ -13194,7 +13754,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/200a2ad99a2d4df6a6602538dd82826b?themeId=6&templateId=49&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum s-a numit perioada dificilă de după război când hrana era raționalizată pe cartele și resursele erau limitate? Măsuri de... (Vezi punctul 2)",
+                        code: "austeritate",
+                        digitRevealed: "1",
+                        hint: "Verifică termenul îngroșat de la al doilea paragraf al punctului 2."
+                    },
+                    {
+                        puzzle: "2. În ce organizații s-au grupat muncitorii rămași fără locuri de muncă după război pentru a-și apăra drepturile? (Vezi punctul 2)",
+                        code: "sindicate",
+                        digitRevealed: "9",
+                        hint: "Caută termenul îngroșat de la finalul punctului 2."
+                    },
+                    {
+                        puzzle: "3. Cum a fost numit fenomenul creșterii spectaculoase a populației după restabilirea păcii în Europa? (Vezi punctul 3)",
+                        code: "baby boom",
+                        digitRevealed: "4",
+                        hint: "Verifică sintagma în engleză îngroșată de la punctul 3 din rezumat."
+                    },
+                    {
+                        puzzle: "4. Ce electrocasnic devenit accesibil în perioada de prosperitate ajuta la păstrarea alimentelor proaspete în gospodării? (Vezi punctul 3)",
+                        code: "frigider",
+                        digitRevealed: "6",
+                        hint: "Caută primul aparat electrocasnic menționat în paranteză la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "22. Declarația Universală a Drepturilor Omului",
@@ -13252,7 +13840,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/ab73bea5d06a4babb41d86aaf5405120?themeId=21&templateId=69&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce an a fost adoptată Declarația Universală a Drepturilor Omului de către ONU? (Vezi punctul 1)",
+                        code: "1948",
+                        digitRevealed: "1",
+                        hint: "Verifică anul îngroșat de la primul punct."
+                    },
+                    {
+                        puzzle: "2. Ce organizație internațională creată după război a adoptat această declarație istorică? (Abreviere din 3 litere) (Vezi punctul 1)",
+                        code: "onu",
+                        digitRevealed: "9",
+                        hint: "Caută acronimul din 3 litere îngroșat din primul punct."
+                    },
+                    {
+                        puzzle: "3. Cum sunt considerate drepturile omului, având în vedere că aparțin fiecărei persoane din lume fără discriminare? (Vezi punctul 1)",
+                        code: "universale",
+                        digitRevealed: "4",
+                        hint: "Verifică al doilea termen îngroșat din primul punct."
+                    },
+                    {
+                        puzzle: "4. Ce drept fundamental crucial privitor la bunuri și pământuri a fost desființat/confiscat brutal de regimurile comuniste? Dreptul la proprietate... (Vezi punctul 3)",
+                        code: "privata",
+                        digitRevealed: "8",
+                        hint: "Caută termenul îngroșat de la finalul punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "23. Protestul tinerei generații",
@@ -13310,7 +13926,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/7afc8b2ed9db4285b846d345941bb822?themeId=21&templateId=69&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce presedinte al Frantei a fost forțat să demisioneze în 1969 în urma valului uriaș de proteste din 1968? Charles de... (Vezi punctul 2)",
+                        code: "gaulle",
+                        digitRevealed: "1",
+                        hint: "Verifică numele președintelui francez îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "2. Împotriva cărui război din Asia de Sud-Est s-a desfășurat cea mai puternică revoltă a tinerilor americani și europeni? Războiul din ... (Vezi punctul 3)",
+                        code: "vietnam",
+                        digitRevealed: "9",
+                        hint: "Caută numele țării asiatice îngroșate de la punctul 3."
+                    },
+                    {
+                        puzzle: "3. Din ce generație numeroasă născută după 1946 făceau parte tinerii rebeli ai anilor '60-'70? Generația... (Vezi punctul 1)",
+                        code: "baby boom",
+                        digitRevealed: "6",
+                        hint: "Verifică termenul în italice menționat la punctul 1."
+                    },
+                    {
+                        puzzle: "4. Ce fel de mișcări împotriva războiului au creat tinerii protestatari pentru promovarea păcii? Mișcări... (Vezi punctul 3)",
+                        code: "pacifiste",
+                        digitRevealed: "8",
+                        hint: "Caută tipul de mișcări menționat la finalul punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "24. Democrație vs comunism. Războiul Rece (1945–1991)",
@@ -13368,7 +14012,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/092849397b5a468793eb2f977b0d86af?themeId=21&templateId=69&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce alianță defensivă politico-militară a fost creată de SUA și aliații săi occidentali în anul 1949? (Abreviere din 4 litere) (Vezi punctul 2)",
+                        code: "nato",
+                        digitRevealed: "1",
+                        hint: "Verifică acronimul din 4 litere îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "2. Ce alianță militară a creat URSS în 1955 ca răspuns la NATO? Tratatul de la... (Vezi punctul 2)",
+                        code: "varsovia",
+                        digitRevealed: "9",
+                        hint: "Caută denumirea orașului îngroșat de la prima frază a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Care a fost cel mai periculos moment al Războiului Rece din anul 1962, când s-a fost la un pas de un război nuclear? Criza rachetelor din... (Vezi punctul 2)",
+                        code: "cuba",
+                        digitRevealed: "8",
+                        hint: "Verifică numele insulei în italice menționate la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Ce lider sovietic a inițiat reformele ce au dus la prăbușirea comunismului în 1989 și la destrămarea URSS? Mihail... (Vezi punctul 3)",
+                        code: "gorbaciov",
+                        digitRevealed: "9",
+                        hint: "Caută numele ultimului lider sovietic de la finalul punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "25. Uniunea Europeană",
@@ -13466,7 +14138,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/76227ef360ad451088fd477e3c5f5125?themeId=22&templateId=71&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce comunitate economică fondată în 1957 de cele 6 state membre a reprezentat nucleul viitoarei Uniuni Europene? (Abreviere din 3 litere) (Vezi punctul 1)",
+                        code: "cee",
+                        digitRevealed: "1",
+                        hint: "Verifică acronimul din 3 litere îngroșat de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Cum se numește spațiul creat în 1995 prin care au fost eliminate controalele la granițele interne dintre statele participante? Spațiul... (Vezi punctul 3)",
+                        code: "schengen",
+                        digitRevealed: "9",
+                        hint: "Caută denumirea tratatului/spațiului îngroșat de la punctul 3."
+                    },
+                    {
+                        puzzle: "3. Ce monedă unică europeană a fost introdusă pentru a crea o piață economică stabilă? (Vezi punctul 3)",
+                        code: "euro",
+                        digitRevealed: "9",
+                        hint: "Verifică numele monedei îngroșate de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Câte state membre numără Uniunea Europeană în prezent (după retragerea Marii Britanii)? (Vezi punctul 2)",
+                        code: "27",
+                        digitRevealed: "3",
+                        hint: "Caută numărul de state membre îngroșat de la punctul 2."
+                    }
+                ]
+            }
 },
 {
     title: "26. Lumea contemporană: globalizare, diversitate culturală, revoluție informațională",
@@ -13564,7 +14264,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/87980116076e4b65a130c45c8151352f?themeId=22&templateId=71&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum se numește procesul mondial de schimburi economice, culturale și de informații favorizat de transporturi și comunicații? (Vezi punctul 1)",
+                        code: "globalizare",
+                        digitRevealed: "1",
+                        hint: "Verifică al doilea termen îngroșat de la punctul 1 din rezumat."
+                    },
+                    {
+                        puzzle: "2. Ce rețea globală apărută în anul 1991 a conectat miliarde de oameni din întreaga lume? (Vezi punctul 3)",
+                        code: "internet",
+                        digitRevealed: "9",
+                        hint: "Caută termenul îngroșat de la punctul 3 ce are anul 1991 în paranteză."
+                    },
+                    {
+                        puzzle: "3. Ce abreviere din două litere desemnează calculatoarele personale devenite accesibile consumatorilor? (Vezi punctul 3)",
+                        code: "pc",
+                        digitRevealed: "9",
+                        hint: "Verifică acronimul din două litere aflat în paranteză la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Ce tehnologie modernă de programe capabile să învețe și să proceseze cantități uriașe de date reprezintă apogeul revoluției tehnologice? Inteligența... (Vezi punctul 3)",
+                        code: "artificiala",
+                        digitRevealed: "1",
+                        hint: "Caută sintagma îngroșată de la finalul punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "27. Noile forme de divertisment - jocurile și tehnologia",
@@ -13662,7 +14390,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/5bfcba28f6354406a6f40a29b3ecadab?themeId=21&templateId=69&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce scop manipulativ pot fi folosite uneori jocurile video de strategie și război pentru a distorsiona adevărul istoric? (Vezi punctul 2)",
+                        code: "propaganda",
+                        digitRevealed: "1",
+                        hint: "Verifică primul termen îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "2. Ce efect negativ asupra relațiilor umane poate provoca înlocuirea activităților reale cu cele digitale? Izolare... (Vezi punctul 2)",
+                        code: "sociala",
+                        digitRevealed: "9",
+                        hint: "Caută al doilea termen îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Ce tipuri de aplicații avansate ajută la antrenarea reflexelor și a abilităților practice pentru meserii precum ingineria sau aviația? Simulatoare... (Vezi punctul 3)",
+                        code: "profesionale",
+                        digitRevealed: "7",
+                        hint: "Verifică sintagma îngroșată de la finalul punctului 3."
+                    },
+                    {
+                        puzzle: "4. Ce stare fiziologică esențială pentru odihnă și sănătate este afectată negativ de timpul îndelungat petrecut în fața ecranelor? (Vezi punctul 3)",
+                        code: "somn",
+                        digitRevealed: "2",
+                        hint: "Caută al doilea element menționat la începutul punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "28. Terorismul",
@@ -13760,7 +14516,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/d2aa5101e10f4be39c5df0380b24511b?themeId=21&templateId=69&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce grupare separatistă din Țara Bascilor s-a remarcat în anii '70, iar ulterior a depus armele în urma negocierilor? (Abreviere din 3 litere) (Vezi punctul 2)",
+                        code: "eta",
+                        digitRevealed: "2",
+                        hint: "Verifică acronimul din 3 litere îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "2. Ce acorduri istorice de pace au determinat Organizația de Eliberare a Palestinei să renunțe la lupta armată? Acordurile de la... (Vezi punctul 2)",
+                        code: "oslo",
+                        digitRevealed: "0",
+                        hint: "Caută numele orașului îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. În ce zi și lună a anului 2001 au avut loc atacurile teroriste devastatoare din SUA asupra World Trade Center și Pentagon? (Exemplu: 24 octombrie) (Vezi punctul 3)",
+                        code: "11 septembrie",
+                        digitRevealed: "0",
+                        hint: "Verifică data îngroșată de la începutul punctului 3."
+                    },
+                    {
+                        puzzle: "4. Care este principala cale de combatere a terorismului pe termen lung, alături de toleranță și respectarea drepturilor omului? (Vezi punctul 3)",
+                        code: "educatia",
+                        digitRevealed: "1",
+                        hint: "Caută primul termen îngroșat de la finalul punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "29. Migrațiile în lumea contemporană",
@@ -13858,7 +14642,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/dd32188348654acf96eb382971179cf6?themeId=21&templateId=69&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum se numește tipul de migrație forțată când oamenii își părăsesc țara din cauza războaielor sau persecuțiilor? Migrație... (Vezi punctul 1)",
+                        code: "involuntara",
+                        digitRevealed: "2",
+                        hint: "Verifică termenul îngroșat de la finalul punctului 1."
+                    },
+                    {
+                        puzzle: "2. Ce document oficial reprezintă simbolul cetățeniei și permite deplasarea internațională a persoanelor? (Vezi punctul 2)",
+                        code: "pasaport",
+                        digitRevealed: "0",
+                        hint: "Caută termenul îngroșat de la punctul 2 din rezumat."
+                    },
+                    {
+                        puzzle: "3. Ce stat insular din Asia s-a dezvoltat spectaculos ca un 'tigru asiatic' datorită amestecului cultural și fluxului de imigranți? (Vezi punctul 3)",
+                        code: "singapore",
+                        digitRevealed: "0",
+                        hint: "Verifică numele statului asiatic îngroșat de la finalul punctului 3."
+                    },
+                    {
+                        puzzle: "4. În ce an populația urbană mondială a depășit-o pentru prima dată în istorie pe cea rurală? (Vezi punctul 1)",
+                        code: "2007",
+                        digitRevealed: "7",
+                        hint: "Caută anul îngroșat menționat în paranteză la punctul 1."
+                    }
+                ]
+            }
    },
        ],
     "VIII": [
