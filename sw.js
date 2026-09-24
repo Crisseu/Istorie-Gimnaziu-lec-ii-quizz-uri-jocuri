@@ -1,4 +1,4 @@
-const CACHE_NAME = 'istorie-v1';
+const CACHE_NAME = 'istorie-v2';
 const assets = [
   './',
   './index.html',
