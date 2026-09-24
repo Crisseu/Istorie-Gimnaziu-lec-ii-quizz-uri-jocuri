@@ -1,7 +1,8 @@
 {
   "name": "Istorie Gimnaziu",
   "short_name": "Istorie",
-  "start_url": "./index.html",
+  "start_url": "https://crisseu.github.io/Istorie-Gimnaziu-lec-ii-quizz-uri-jocuri/index.html",
+  "scope": "https://crisseu.github.io/Istorie-Gimnaziu-lec-ii-quizz-uri-jocuri/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
