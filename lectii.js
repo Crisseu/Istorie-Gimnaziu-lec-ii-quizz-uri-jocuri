@@ -14675,12 +14675,12 @@ const dbLectii = {
        ],
     "VIII": [
         {
-    title: "1. Spațiul geografic românesc",
+   title: "1. Spațiul geografic românesc",
     summary: `
         <h3> Așezare și repere geografice</h3>
         <p>Teritoriul României este situat în sud-estul Europei Centrale, la intersecția paralelei de <b>45° latitudine nordică</b> cu meridianul de <b>25° longitudine estică</b>. Datorită celor trei repere fundamentale – Munții Carpați, fluviul Dunărea (numit <i>Danubius</i> de romani, <i>Istros</i> de greci) și Marea Neagră (<i>Pontus Euxinus</i>) – istoricii numesc acest areal <b>spațiul carpato-danubiano-pontic</b>.</p>
 
-        <h3> Relief, apelor și resurse</h3>
+        <h3> Relief, ape și resurse</h3>
         <p>Relieful este variat, concentric și armonios. Lanțul Carpaților adăpostește Podișul Transilvaniei, furnizând lemn, pășuni și minereuri. Subcarpații și podișurile oferă petrol, cărbune și sare, iar câmpiile întinse (Câmpia Română, Câmpia Tisei) dețin soluri fertile pentru agricultură. Rețeaua hidrografică este bogată (Mureș, Olt, Siret, Prut etc.), având în centru <b>Dunărea</b> (aproape o treime din parcursul ei se află pe teritoriul țării) și deschiderea spre Orient prin Marea Neagră.</p>
 
         <h3> Locuire și ocupații</h3>
@@ -14770,7 +14770,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/c6905690a6c240688208775c8e7a265f?themeId=21&templateId=69&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum au numit grecii antici fluviul Dunărea? (Vezi punctul 1)",
+                        code: "istros",
+                        digitRevealed: "4",
+                        hint: "Verifică termenul în italice dat de greci pentru Dunăre la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Cum au numit romanii Marea Neagră? Pontus... (Vezi punctul 1)",
+                        code: "euxinus",
+                        digitRevealed: "5",
+                        hint: "Caută al doilea cuvânt al denumirii latine în italice de la punctul 1."
+                    },
+                    {
+                        puzzle: "3. Cum numesc istoricii arealul românesc datorită Carpaților, Dunării și Mării Negre? Spațiul carpato-danubiano-... (Vezi punctul 1)",
+                        code: "pontic",
+                        digitRevealed: "2",
+                        hint: "Verifică ultimul cuvânt din sintagma îngroșată de la finalul punctului 1."
+                    },
+                    {
+                        puzzle: "4. Ce important fluviu european străbate România pe aproape o treime din parcursul său? (Vezi punctul 2)",
+                        code: "dunarea",
+                        digitRevealed: "5",
+                        hint: "Caută denumirea fluviului îngroșat de la punctul 2."
+                    }
+                ]
+            }
 },
 {
     title: "2. Periodizarea istoriei românilor",
@@ -14882,7 +14910,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/10e1b9ec34ff4c3db32d2b1a9faf73c3?themeId=65&templateId=30&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce categorie de izvoare istorice se încadrează uneltele, armele, vasele și construcțiile? Izvoare... (Vezi punctul 1)",
+                        code: "nescrise",
+                        digitRevealed: "1",
+                        hint: "Verifică al doilea tip de izvoare îngroșate de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce mare epocă istorică universală debutează odată cu inventarea scrisului (cca. 3300 î.H.)? (Vezi punctul 2)",
+                        code: "antichitatea",
+                        digitRevealed: "4",
+                        hint: "Caută denumirea celei de-a doua epoci istorice îngroșate la punctul 2."
+                    },
+                    {
+                        puzzle: "3. În ce an a fost cucerit Constantinopolul de către otomani, marcând sfârșitul Evului Mediu în istoria universală? (Vezi punctul 2)",
+                        code: "1453",
+                        digitRevealed: "5",
+                        hint: "Verifică anul menționat în paranteză la a treia bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Ce proces istoric de formare a poporului român și a limbii române s-a desfășurat în Antichitate pe teritoriul nostru? (Vezi punctul 3)",
+                        code: "etnogeneza",
+                        digitRevealed: "3",
+                        hint: "Caută termenul din domeniul istoriei menționat la a doua bulină de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "3. Epoca Pietrei",
@@ -14992,7 +15048,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/17cfc4701f494301a77d81bfb7f363e7?themeId=59&templateId=35&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum se numeau uneltele din piatră de mici dimensiuni caracteristice Mezoliticului? (Vezi punctul 1)",
+                        code: "microlite",
+                        digitRevealed: "5",
+                        hint: "Verifică termenul îngroșat din paragraful dedicat Mezoliticului la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce vestită cultură eneolitică de pe teritoriul României este celebră pentru ceramica sa pictată? Cultura... (Vezi punctul 2)",
+                        code: "cucuteni",
+                        digitRevealed: "0",
+                        hint: "Caută prima cultură arheologică îngroșată de la finalul punctului 2."
+                    },
+                    {
+                        puzzle: "3. Din ce cultură eneolitică fac parte statuetele din lut cunoscute sub numele de 'Gânditorul și femeia lui'? Cultura... (Vezi punctul 2)",
+                        code: "hamangia",
+                        digitRevealed: "0",
+                        hint: "Verifică a doua cultură arheologică îngroșată de la finalul punctului 2."
+                    },
+                    {
+                        puzzle: "4. În ce peșteră din județul Bihor s-au descoperit picturi rupestre realizate cu cărbune în Paleolitic? Peștera... (Vezi punctul 3)",
+                        code: "coliboaia",
+                        digitRevealed: "0",
+                        hint: "Caută numele primei peșteri îngroșate de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "4. Epoca Metalelor",
@@ -15105,7 +15189,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/83ab51108cb9447398ef189f2a589197?themeId=22&templateId=35&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Din ce aliaj format din cupru și cositor (staniu) s-au creat primele unelte rezistente în prima parte a Epocii Metalelor? (Vezi punctul 1)",
+                        code: "bronz",
+                        digitRevealed: "1",
+                        hint: "Verifică al doilea termen îngroșat de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce cultură arheologică din Epoca Fierului atestă diferențierea geto-dacilor din masa tracilor? Cultura... (Vezi punctul 3)",
+                        code: "basarabi",
+                        digitRevealed: "2",
+                        hint: "Caută numele culturii îngroșate la finalul punctului 3."
+                    },
+                    {
+                        puzzle: "3. Cum se numea forma primitivă de comerț bazată pe schimbul direct de produse în natură? (Vezi punctul 2)",
+                        code: "troc",
+                        digitRevealed: "0",
+                        hint: "Verifică termenul îngroșat de la a treia bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. Ce cult religios important s-a impus în viața spirituală din Epoca Metalelor? Cultul... (Vezi punctul 4)",
+                        code: "soarelui",
+                        digitRevealed: "0",
+                        hint: "Caută sintagma îngroșată de la punctul 4."
+                    }
+                ]
+            }
 },
 {
     title: "5. Cultura Cucuteni",
@@ -15203,7 +15315,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/5b2f41578024430ab6707bd386ac555b?themeId=26&templateId=49&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce combinație de trei culori (tricromie) este caracteristică pentru ceramica pictată Cucuteni? Alb, roșu și... (Vezi punctul 1)",
+                        code: "negru",
+                        digitRevealed: "3",
+                        hint: "Verifică ultimele două culori menționate în paranteză la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce fel de vase ritualice compuse din două corpuri unite sunt specifice acestei culturi? Vasele-... (Vezi punctul 1)",
+                        code: "binoclu",
+                        digitRevealed: "5",
+                        hint: "Caută primul tip de vas ritualic îngroșat de la punctul 1."
+                    },
+                    {
+                        puzzle: "3. Ce element decorativ central din arta Cucuteni simbolizează succesiunea ciclurilor naturii? (Vezi punctul 3)",
+                        code: "spirala",
+                        digitRevealed: "0",
+                        hint: "Verifică cuvântul îngroșat din titlul și textul punctului 3."
+                    },
+                    {
+                        puzzle: "4. Ce cult religii important era patronat de statuetele din lut cu siluete stilizate? Cultul fecundității și al... (Vezi punctul 2)",
+                        code: "fertilitatii",
+                        digitRevealed: "0",
+                        hint: "Caută al doilea cuvânt al cultului menționat la punctul 2."
+                    }
+                ]
+            }
 },
 {
     title: "6. Cultura Hamangia",
@@ -15301,7 +15441,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/5eaf7dfa10d0468fa769736685b95a78?themeId=1&templateId=8&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce regiune istorică din sud-estul României este răspândită în principal Cultura Hamangia? (Vezi punctul 1)",
+                        code: "dobrogea",
+                        digitRevealed: "5",
+                        hint: "Verifică prima regiune îngroșată de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce metal a fost folosit pentru realizarea primelor podoabe de către locuitorii culturii Hamangia? (Vezi punctul 2)",
+                        code: "cupru",
+                        digitRevealed: "0",
+                        hint: "Caută metalul îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Prin ce domeniu artistic excelează cultura Hamangia la nivel mondial datorită statuetelor sale antropomorfe? Arta... (Vezi punctul 3)",
+                        code: "plastica",
+                        digitRevealed: "0",
+                        hint: "Verifică sintagma îngroșată de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Cum se numește astăzi comună/satul istoric de la care provine numele culturii Hamangia? Satul... (Vezi punctul 1)",
+                        code: "baia",
+                        digitRevealed: "0",
+                        hint: "Caută denumirea actuală a satului menționată în paranteză la punctul 1."
+                    }
+                ]
+            }
 },
 {
     title: "7. Cultura Sărata Monteoru",
@@ -15399,7 +15567,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/731aa8337ef74f97bc255acb91a4bf4b?themeId=66&templateId=49&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce mare epocă istorică s-a dezvoltat Cultura Sărata Monteoru? Epoca... (Vezi punctul 1)",
+                        code: "bronzului",
+                        digitRevealed: "1",
+                        hint: "Verifică epoca istorică îngroșată de la primul punct."
+                    },
+                    {
+                        puzzle: "2. Ce vase din ceramică decorate cu una sau două toarte supraînălțate se remarcau în această cultură? (Vezi punctul 2)",
+                        code: "cestile",
+                        digitRevealed: "8",
+                        hint: "Caută primul tip de vas ceramic îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Pentru ce tip de obiecte se folosea în special bronzul de către meșteșugarii acestei culturi? (Vezi punctul 3)",
+                        code: "arme",
+                        digitRevealed: "9",
+                        hint: "Verifică cuvântul îngroșat de la primul punct din secțiunea Unelte, arme și comerț."
+                    },
+                    {
+                        puzzle: "4. În ce an au fost făcute primele descoperiri ale Culturii Sărata Monteoru? (Vezi punctul 1)",
+                        code: "1895",
+                        digitRevealed: "5",
+                        hint: "Caută anul menționat la punctul 1 din rezumat."
+                    }
+                ]
+            }
 },
 {
     title: "8. Izvoare istorice despre geto-daci: Herodot, Strabon, Cassius Dio",
@@ -15508,7 +15704,35 @@ const dbLectii = {
     ],
     game1: "https://www.educaplay.com/game/25759401-geto_daci_adev_ruri_i_trucuri.html",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce operă istorică a menționat Herodot prima dată geții, numindu-i 'cei mai viteji și mai drepți dintre traci'? (Vezi punctul 1)",
+                        code: "istorii",
+                        digitRevealed: "5",
+                        hint: "Verifică titlul operei istorice în italice de la prima bulină a punctului 1."
+                    },
+                    {
+                        puzzle: "2. Cum se numeau așezările fortificate ale geto-dacilor? (Vezi punctul 2)",
+                        code: "dave",
+                        digitRevealed: "1",
+                        hint: "Caută termenul îngroșat de la finalul primului paragraf al punctului 2."
+                    },
+                    {
+                        puzzle: "3. Cum se numea zeul suprem al religiei politeiste a geto-dacilor? (Vezi punctul 3)",
+                        code: "zalmoxis",
+                        digitRevealed: "4",
+                        hint: "Verifică numele zeului suprem îngroșat de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Cum erau numiți oamenii de rând în societatea geto-dacă (termenul din limba latină)? (Vezi punctul 2)",
+                        code: "comati",
+                        digitRevealed: "0",
+                        hint: "Caută primul termen îngroșat de la a doua bulină a punctului 2."
+                    }
+                ]
+            }
 },
 {
     title: "9. Histria",
@@ -15526,7 +15750,7 @@ const dbLectii = {
         </ul>
 
         <h3> Părăsirea cetății</h3>
-        <p>În <b>secolul al VII-lea d.H.</b>, cetatea Histria a fost părăsită definitiv din cauza atacurilor migratorilor avari și a colmatării golfului (înnipiparea care a blocat accesul corăbiilor în port).</p>
+        <p>În <b>secolul al VII-lea d.H.</b>, cetatea Histria a fost părăsită definitiv din cauza atacurilor migratorilor avari și a colmatării golfului (înnisiparea care a blocat accesul corăbiilor în port).</p>
     `,
     quiz: [
         {
@@ -15612,7 +15836,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/072de2a974fa4a82bdde5f82c7791b0f?themeId=22&templateId=71&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Din ce mare oraș-metropolă grecesc proveneau coloniștii care au fondat Histria în secolul al VII-lea î.H.? (Vezi punctul 1)",
+                        code: "milet",
+                        digitRevealed: "1",
+                        hint: "Verifică numele orașului grecesc din care au venit coloniștii la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Care este cel mai vechi oraș de pe teritoriul României, fondat pe țărmul Mării Negre? (Vezi punctul 1)",
+                        code: "histria",
+                        digitRevealed: "3",
+                        hint: "Caută denumirea cetății îngroșate de la punctul 1."
+                    },
+                    {
+                        puzzle: "3. Ce rege dac a stăpânit cetatea Histria în secolul I î.H.? Regele... (Vezi punctul 2)",
+                        code: "burebista",
+                        digitRevealed: "0",
+                        hint: "Verifică numele regelui dac îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Cum se numeau băile publice romane construite la Histria în perioada romană de înflorire a cetății? (Vezi punctul 2)",
+                        code: "terme",
+                        digitRevealed: "0",
+                        hint: "Caută termenul din paranteză menționat la a treia bulină de la punctul 2."
+                    }
+                ]
+            }
 },
 {
     title: "10. Burebista. Decebal. Cucerirea dacilor de către romani",
@@ -15735,7 +15987,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/1dc6f7d67a4d4629a42522ff4e715573?themeId=48&templateId=30&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cine a fost marele preot care l-a ajutat pe Burebista să unifice triburile geto-dacice? (Vezi punctul 1)",
+                        code: "deceneu",
+                        digitRevealed: "0",
+                        hint: "Verifică numele marelui preot îngroșat de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce împărat roman a purtat două războaie decisive împotriva lui Decebal (101-102, 105-106)? (Vezi punctul 3)",
+                        code: "traian",
+                        digitRevealed: "1",
+                        hint: "Caută numele împăratului roman îngroșat de la punctul 3."
+                    },
+                    {
+                        puzzle: "3. Cine a fost celebrul arhitect grec care a construit podul peste Dunăre de la Drobeta? Apolodor din... (Vezi punctul 3)",
+                        code: "damasc",
+                        digitRevealed: "0",
+                        hint: "Verifică numele orașului de origine în italice de la a doua bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "4. În ce localitate a avut loc victoria romană principală din timpul primului război daco-roman (101-102)? (Vezi punctul 3)",
+                        code: "tapae",
+                        digitRevealed: "6",
+                        hint: "Caută denumirea în italice menționată la prima bulină a punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "11. Sarmizegetusa",
@@ -15858,7 +16138,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/1b06b48d84c846f6a3cd34ea3362ae5b?themeId=23&templateId=49&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce județ din România se află astăzi vestigiile capitalei Sarmizegetusa Regia? (Vezi punctul 1)",
+                        code: "hunedoara",
+                        digitRevealed: "1",
+                        hint: "Verifică județul menționat la primul punct în paranteză."
+                    },
+                    {
+                        puzzle: "2. Cum se numește tehnica de construcție folosită pentru zidurile fortificate ale cetății dacice? Murus... (Vezi punctul 2)",
+                        code: "dacicus",
+                        digitRevealed: "9",
+                        hint: "Caută al doilea cuvânt al tehnicii în italice de la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Cum numesc unii istorici Muntele Sfânt al dacilor asociat cu zona sacră a Sarmizegetusei? (Vezi punctul 2)",
+                        code: "kogaionon",
+                        digitRevealed: "9",
+                        hint: "Verifică numele în italice din paranteză de la a treia bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Ce piesă din andezit aflată în zona sacră indică caracterul solar al religiei geto-dacice? Discul... (Vezi punctul 3)",
+                        code: "solar",
+                        digitRevealed: "9",
+                        hint: "Caută primul cuvânt îngroșat de la punctul 3 din rezumat."
+                    }
+                ]
+            }
 },
 {
     title: "12. Podul de la Drobeta. Columna lui Traian. Monumentul de la Adamclisi",
@@ -15979,7 +16287,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/a3ebd1b67f9b4b56a48f99ee98f17258?themeId=2&templateId=2&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Câți piloni masivi de piatră susțineau Podul de la Drobeta construit de Apolodor din Damasc? (Vezi punctul 2)",
+                        code: "20",
+                        digitRevealed: "1",
+                        hint: "Verifică numărul de piloni menționat la punctul 2."
+                    },
+                    {
+                        puzzle: "2. În ce mare capitală antică este amplasată Columna lui Traian? (Vezi punctul 3)",
+                        code: "roma",
+                        digitRevealed: "9",
+                        hint: "Caută numele orașului menționat la începutul punctului 3."
+                    },
+                    {
+                        puzzle: "3. Cărui zeu roman al războiului îi era dedicat monumentul Tropaeum Traiani de la Adamclisi? Zeului... (Vezi punctul 4)",
+                        code: "marte",
+                        digitRevealed: "7",
+                        hint: "Verifică numele zeului în italice de la punctul 4."
+                    },
+                    {
+                        puzzle: "4. În ce an a fost reconstruit monumentul triunfal de la Adamclisi? (Vezi punctul 4)",
+                        code: "1977",
+                        digitRevealed: "7",
+                        hint: "Caută anul de la finalul punctului 4."
+                    }
+                ]
+            }
 },
 {
     title: "13. Dacia romană. Romanizare. Creștinism",
@@ -16107,7 +16443,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/431f3e954cbc4843b3606498fc1d5246?themeId=54&templateId=36&fontStackId=0",
     game2: "https://wordwall.net/ro/embed/23c7586249624a1c9a3732b41e4ff4c4?themeId=54&templateId=8&fontStackId=0",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce limbă oficială era folosită în administrația, armata și comerțul din Dacia romană? (Vezi punctul 1)",
+                        code: "latina",
+                        digitRevealed: "0",
+                        hint: "Verifică limba îngroșată menționată la primul punct."
+                    },
+                    {
+                        puzzle: "2. Cum se numeau așezările romane cu rangul urban cel mai înalt, precum Napoca sau Drobeta? (Vezi punctul 2)",
+                        code: "colonia",
+                        digitRevealed: "1",
+                        hint: "Caută primul termen în italice de la a patra bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. În ce localitate din județul Sibiu s-a descoperit faimosul donariu creștin de bronz din secolul al IV-lea? (Vezi punctul 3)",
+                        code: "biertan",
+                        digitRevealed: "0",
+                        hint: "Verifică prima localitate menționată în lista de descoperiri de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Care este termenul de origine latină din rezumat care denumește lăcașul de cult al creștinilor? (Vezi punctul 3)",
+                        code: "biserica",
+                        digitRevealed: "6",
+                        hint: "Caută primul cuvânt scris în italice din lista de termeni creștini de la finalul punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "14. Așezarea slavilor la sudul Dunării. Romanitatea orientală",
@@ -16233,7 +16597,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/abeaf3f8cb484a958d6fcdde51d1f93d?themeId=65&templateId=35&fontStackId=0",
     game2: "https://wordwall.net/ro/embed/b7b979b9860446dc98d2e4caa9eafee3?themeId=54&templateId=30&fontStackId=0",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce populație migratoare s-a așezat la sudul Dunării după anul 602 și a fost asimilată la nord de fluviu de dacoromani? (Vezi punctul 2)",
+                        code: "slavii",
+                        digitRevealed: "0",
+                        hint: "Verifică populația îngroșată de la începutul punctului 2."
+                    },
+                    {
+                        puzzle: "2. Cum au fost numiți de către bizantini românii din sudul Dunării? (Vezi punctul 2)",
+                        code: "vlahi",
+                        digitRevealed: "6",
+                        hint: "Caută termenul scris în italice de la a doua bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Ce dialect al limbii române s-a format și a evoluat continuu la nordul Dunării? Dialectul... (Vezi punctul 3)",
+                        code: "dacoroman",
+                        digitRevealed: "0",
+                        hint: "Verifică termenul în italice de la a doua bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "4. În ce an s-a prăbușit linia de apărare bizantină de la Dunăre, permițând trecerea slavilor în Balcani? (Vezi punctul 2)",
+                        code: "602",
+                        digitRevealed: "2",
+                        hint: "Caută anul îngroșat menționat la punctul 2 din rezumat."
+                    }
+                ]
+            }
 },
 {
     title: "15. Poporul român - popor romanic",
@@ -16361,7 +16753,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/8135e2ec262f4a19ad931910c585e408?themeId=26&templateId=30&fontStackId=0",
     game2: "https://wordwall.net/ro/embed/14f182ef8da34366bf4a1b9439fcff5e?themeId=48&templateId=3&fontStackId=0",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum s-a numit prima sinteză din procesul de formare a poporului român, realizată între geto-daci și romani? Populația... (Vezi punctul 2)",
+                        code: "dacoromana",
+                        digitRevealed: "0",
+                        hint: "Verifică termenul în italice de la prima bulină de la punctul 2. Îi poți schimba forma."
+                    },
+                    {
+                        puzzle: "2. Ce variantă a limbii latine vorbește populația din provinciile romane și stă la baza limbii române? Latina... (Vezi punctul 3)",
+                        code: "populara",
+                        digitRevealed: "8",
+                        hint: "Caută sintagma îngroșată de la începutul punctului 3."
+                    },
+                    {
+                        puzzle: "3. Cum se numește stratul de origine daco-moesică din limba română (peste 150-170 de cuvinte)? (Vezi punctul 3)",
+                        code: "substrat",
+                        digitRevealed: "0",
+                        hint: "Verifică primul cuvânt îngroșat de la a doua bulină de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Cum se numește influența slavă de aproximativ 20% care a îmbogățit lexicul limbii române? (Vezi punctul 3)",
+                        code: "adstrat",
+                        digitRevealed: "0",
+                        hint: "Caută cuvântul îngroșat de la a treia bulină de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "16. Surse istorice despre români la sfârșitul mileniului I",
@@ -16485,7 +16905,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/71cfce88fa12452581ac5b8cc13d1600?themeId=60&templateId=3&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Sub ce denumire comună utilizată de alte popoare apar românii în primele izvoare istorice străine? (Vezi punctul 1)",
+                        code: "vlahi",
+                        digitRevealed: "0",
+                        hint: "Verifică primul termen în italice de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce lucrare militară bizantină din secolul al VII-lea face primele referiri la daco-romani? (Vezi punctul 2)",
+                        code: "strategikon",
+                        digitRevealed: "9",
+                        hint: "Caută titlul îngroșat de la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Ce împărat bizantin a scris în secolul al X-lea lucrarea 'Despre administrarea imperiului'? Constantin al VII-lea... (Vezi punctul 2)",
+                        code: "porfirogenetul",
+                        digitRevealed: "0",
+                        hint: "Verifică numele împăratului de la a treia bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. Ce geograf din secolul al IX-lea amintește de țara numită Balak (Valahia)? Moise... (Vezi punctul 2)",
+                        code: "chorenati",
+                        digitRevealed: "0",
+                        hint: "Caută numele geografului de la a doua bulină a punctului 2."
+                    }
+                ]
+            }
 },
 {
     title: "17. Primele forme de organizare statală",
@@ -16609,7 +17057,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/aa36f29de32d48bb8fb2271ca39b32af?themeId=43&templateId=30&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce cronicar anonim maghiar atestă în cronica sa voievodatele lui Gelu, Glad și Menumorut din secolele IX-X? (Vezi punctul 2)",
+                        code: "anonymus",
+                        digitRevealed: "1",
+                        hint: "Verifică numele cronicarului îngroșat de la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "2. În ce important document din anul 1247 sunt menționate cnezatele lui Ioan și Farcaș și voievodatele lui Litovoi și Seneslau? Diploma cavalerilor... (Vezi punctul 2)",
+                        code: "ioaniti",
+                        digitRevealed: "2",
+                        hint: "Caută numele ordinului de cavaleri din titlul diplomei de la a doua bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. În ce reședință (cetate) din Crișana se afla centrul voievodatului condus de Menumorut? (Vezi punctul 2)",
+                        code: "biharea",
+                        digitRevealed: "4",
+                        hint: "Verifică denumirea cetății menționate în paranteză la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. Ce organizare politico-administrativă autohtonă a condus Litovoi la sud de Carpați? (Vezi punctul 2)",
+                        code: "voievodat",
+                        digitRevealed: "7",
+                        hint: "Caută forma de organizare menționată în dreptul lui Litovoi la a doua bulină de la punctul 2."
+                    }
+                ]
+            }
 },
 {
     title: "18. Statele medievale în spațiul românesc: Transilvania, Țara Românească, Moldova, Dobrogea",
@@ -16624,7 +17100,7 @@ const dbLectii = {
         <p>Constituirea Moldovei s-a desfășurat în două etape. Mai întâi s-a format o marcă de apărare împotriva tătarilor sub suzeranitate maghiară, condusă de Dragoș, voievod din Maramureș. Apoi, prin „descălecatul” lui Bogdan din Maramureș, sprijinit de boierii locali, urmașii lui Dragoș au fost înlăturați, iar Moldova și-a obținut independența în anul 1365.</p>
 
         <h3>Dobrogea și organizarea internă</h3>
-        <p>Coreleul statului dobrogean a fost Țara Cărvunei, unită în secolul al XIV-lea sub conducerea lui Dobrotici, desprinzându-se de sub stăpânirea bizantină. În 1388, Mircea cel Bătrân a alipit Dobrogea Țării Românești, dar în 1417 aceasta a fost cucerită de Imperiul Otoman. În Țara Românească și Moldova, principala instituție era domnia, ajutată de Sfatul Domnesc, apărarea fiind asigurată de cetăți și oaste.</p>
+        <p>Nucleul statului dobrogean a fost Țara Cărvunei, unită în secolul al XIV-lea sub conducerea lui Dobrotici, desprinzându-se de sub stăpânirea bizantină. În 1388, Mircea cel Bătrân a alipit Dobrogea Țării Românești, dar în 1417 aceasta a fost cucerită de Imperiul Otoman. În Țara Românească și Moldova, principala instituție era domnia, ajutată de Sfatul Domnesc, apărarea fiind asigurată de cetăți și oaste.</p>
     `,
     quiz: [
         {
@@ -16730,7 +17206,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/65593953ede04e4bbeb022bd74efacc9?themeId=26&templateId=2&fontStackId=0",
     game2: "https://wordwall.net/ro/embed/33b42fd48faf4880addeccfbf8f9491c?themeId=46&templateId=35&fontStackId=0",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce faimoasă bătălie din anul 1330 a obținut Basarab I independența Țării Românești împotriva regelui Carol Robert de Anjou? Bătălia de la... (Vezi punctul 2)",
+                        code: "posada",
+                        digitRevealed: "1",
+                        hint: "Verifică numele bătăliei îngroșate de la punctul 2."
+                    },
+                    {
+                        puzzle: "2. Ce voievod din Maramureș a condus al doilea 'descălecat' care a dus la independența Moldovei în anul 1365? (Vezi punctul 3)",
+                        code: "bogdan",
+                        digitRevealed: "3",
+                        hint: "Caută numele voievodului maramureșean îngroșat de la punctul 3."
+                    },
+                    {
+                        puzzle: "3. Cum se numea primul voievod al Transilvaniei atestat documentar în anul 1176? (Vezi punctul 1)",
+                        code: "leustachiu",
+                        digitRevealed: "3",
+                        hint: "Verifică numele propriu îngroșat de la punctul 1."
+                    },
+                    {
+                        puzzle: "4. Ce conducător a unit Dobrogea în secolul al XIV-lea, desprinzând-o de sub stăpânirea bizantină? (Vezi punctul 4)",
+                        code: "dobrotici",
+                        digitRevealed: "0",
+                        hint: "Caută numele conducătorului îngroșat de la primul paragraf al punctului 4."
+                    }
+                ]
+            }
 },
 {
     title: "19. Diversitate etnică și confesională în spațiul românesc",
@@ -16867,7 +17371,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/2606ddc453bc4bfdaebb8da90c3bae42?themeId=52&templateId=2&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce populație de origine germană a fost colonizată în Transilvania și a întemeiat orașe precum Sibiu, Brașov sau Sighișoara? (Vezi punctul 2)",
+                        code: "sasii",
+                        digitRevealed: "1",
+                        hint: "Verifică al doilea grup etnic de la punctul 2."
+                    },
+                    {
+                        puzzle: "2. Ce sarcini aveau predominant secuii colonizați în zonele de graniță ale Transilvaniei? Sarcini... (Vezi punctul 2)",
+                        code: "militare",
+                        digitRevealed: "5",
+                        hint: "Caută cuvântul îngroșat de la a treia bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Ce religie era specifică și predominantă în rândul populației românești? (Vezi punctul 4)",
+                        code: "ortodoxia",
+                        digitRevealed: "6",
+                        hint: "Verifică prima religie menționată la punctul 4."
+                    },
+                    {
+                        puzzle: "4. În ce regiune istorică erau mai numeroase populațiile care practicau Islamul? (Vezi punctul 4)",
+                        code: "dobrogea",
+                        digitRevealed: "8",
+                        hint: "Caută regiunea îngroșată de la ultima bulină a punctului 4."
+                    }
+                ]
+            }
 },
 {
     title: "20. Spațiul românesc și politica de „cruciadă târzie” de la Mircea cel Bătrân la Mihai Viteazul",
@@ -16998,7 +17530,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/60f564fd18d74bc68450c6e339343a4f?themeId=60&templateId=2&fontStackId=0",
     game2: "https://wordwall.net/ro/embed/18468b717da644c5a7c9399feb2a3a9b?themeId=54&templateId=30&fontStackId=0",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce tactică militară de demoralizare a inamicului foloseau voievozii prin distrugerea resurselor alimentare din calea turcilor? Tactica... (Vezi punctul 1)",
+                        code: "pamantului parjolit",
+                        digitRevealed: "1",
+                        hint: "Verifică sintagma în ghilimele și îngroșată de la a doua bulină a punctului 1."
+                    },
+                    {
+                        puzzle: "2. În ce faimoasă bătălie din anul 1475 l-a învins Ștefan cel Mare pe sultanul otoman la Podul Înalt? Bătălia de la... (Vezi punctul 3)",
+                        code: "vaslui",
+                        digitRevealed: "6",
+                        hint: "Caută primul nume de localitate îngroșat de la bulina lui Ștefan cel Mare de la punctul 3."
+                    },
+                    {
+                        puzzle: "3. Ce alianță creștină antiotomană a fost inițiată de Papalitate și la care a aderat Mihai Viteazul în 1594? (Vezi punctul 3)",
+                        code: "liga sfanta",
+                        digitRevealed: "0",
+                        hint: "Verifică denumirea alianței îngroșate de la bulina lui Mihai Viteazul de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. În ce an a realizat Mihai Viteazul prima unire a celor trei țări românești? (Vezi punctul 3)",
+                        code: "1600",
+                        digitRevealed: "0",
+                        hint: "Caută anul îngroșat menționat la finalul ultimei buline de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "21. Cetăți medievale",
@@ -17106,7 +17666,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/a93f7154a568477a8d0a9edf835a2fad?themeId=27&templateId=82&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce deschideri înguste în zidurile cetăților permiteau ostașilor să tragă asupra inamicului în siguranță? (Vezi punctul 2)",
+                        code: "creneluri",
+                        digitRevealed: "1",
+                        hint: "Verifică primul element de apărare îngroșat de la prima bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "2. Ce tip special de biserici au ridicat sașii și secuii în Transilvania (precum la Biertan sau Prejmer)? Biserici... (Vezi punctul 3)",
+                        code: "fortificate",
+                        digitRevealed: "3",
+                        hint: "Caută al doilea termen îngroșat de la prima bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "3. Ce celebră cetate din Moldova, alături de Suceava și Hotin, făcea parte din sistemul de apărare al țării? Cetatea... (Vezi punctul 3)",
+                        code: "neamt",
+                        digitRevealed: "8",
+                        hint: "Verifică al treilea nume de cetate moldoveană îngroșat de la ultima bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "4. Ce cetate din Transilvania, alături de Feldioara, este menționată ca fiind reprezentativă în rezumat? (Vezi punctul 3)",
+                        code: "bran",
+                        digitRevealed: "8",
+                        hint: "Caută primul nume de cetate din Transilvania îngroșat de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "22. Biserica episcopală de la Curtea de Argeș",
@@ -17209,7 +17797,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/a7c1887bfb5943e88914afb87882307b?themeId=23&templateId=49&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce domnitor al Țării Românești a ctitorit biserica episcopală de la Curtea de Argeș între anii 1515-1517? (Vezi punctul 1)",
+                        code: "neagoe basarab",
+                        digitRevealed: "1",
+                        hint: "Verifică numele domnitorului ctitor îngroșat de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce zugrav / pictor medieval a realizat pictura interioară a bisericii de la Curtea de Argeș? (Vezi punctul 2)",
+                        code: "dobromir",
+                        digitRevealed: "5",
+                        hint: "Caută numele meșterului zugrav îngroșat de la a doua bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Cum se numea soția Meșterului Manole pe care acesta a zidit-o în temelia mănăstirii, conform legendei? (Vezi punctul 3)",
+                        code: "ana",
+                        digitRevealed: "1",
+                        hint: "Verifică numele soției îngroșate de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Ce fel de plan arhitectural (în formă de treflă) are biserica de la Curtea de Argeș? Plan... (Vezi punctul 2)",
+                        code: "triconc",
+                        digitRevealed: "7",
+                        hint: "Caută termenul îngroșat de la prima bulină de la punctul 2."
+                    }
+                ]
+            }
 },
 {
     title: "23. Constantin Brâncoveanu. Dimitrie Cantemir",
@@ -17316,7 +17932,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/66b95a39969b4af693966538f3c09707?themeId=46&templateId=48&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce stil artistic reprezentativ, vizibil la Palatul Mogoșoaia și Mănăstirea Hurezi, a fost creat în timpul domniei lui Constantin Brâncoveanu? Stilul... (Vezi punctul 2)",
+                        code: "brancovenesc",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea stilului artistic îngroșat de la a doua bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "2. În ce oraș s-a încheiat tratatul secret din 1711 dintre Dimitrie Cantemir și țarul Petru cel Mare? Tratatul de la... (Vezi punctul 3)",
+                        code: "lutk",
+                        digitRevealed: "7",
+                        hint: "Caută numele orașului din titlul tratatului secret de la prima bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "3. În ce localitate a avut loc lupta din 1711 în care armatele ruso-moldovene au fost înfrânte de otomani? Lupta de la... (Vezi punctul 3)",
+                        code: "stanilesti",
+                        digitRevealed: "1",
+                        hint: "Verifică numele localității îngroșate de la a doua bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "4. Care este titlul lucrării geografice și politice fundamentale despre Moldova scrise de Dimitrie Cantemir? (Vezi punctul 3)",
+                        code: "descriptio moldaviae",
+                        digitRevealed: "4",
+                        hint: "Caută prima lucrare scrisă în italice de la a treia bulină a punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "24. Iluminism și reformism: Transilvania sub Habsburgi",
@@ -17418,7 +18062,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/d83d3a9c25b54e08aed5161dfefbb79e?themeId=27&templateId=82&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce act fundamental eliberat de împăratul de la Viena în 1691 stabilea statutul politic al Transilvaniei în Imperiul Habsburgic? Diploma... (Vezi punctul 1)",
+                        code: "leopoldina",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea diplomei îngroșate de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce episcop român a redactat memoriul 'Supplex Libellus' și este considerat fondatorul programului politic modern al românilor transilvăneni? Ioan Inochentie... (Vezi punctul 3)",
+                        code: "micu klein",
+                        digitRevealed: "7",
+                        hint: "Caută numele de familie al episcopului îngroșat de la prima bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "3. În ce an a fost redactat memoriul național al românilor din Transilvania intitulat 'Supplex Libellus Valachorum'? (Vezi punctul 3)",
+                        code: "1791",
+                        digitRevealed: "8",
+                        hint: "Verifică anul menționat la prima bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "4. Care a fost conducătorul marii răscoale țărănești din Transilvania din anii 1784-1785, alături de Cloșca și Crișan? (Vezi punctul 3)",
+                        code: "horea",
+                        digitRevealed: "4",
+                        hint: "Caută primul nume dintre cei trei conducători îngroșați de la a doua bulină a punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "25. Secolul fanariot",
@@ -17525,7 +18197,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/a1a439d899ae4c4081b2f18670b4b762?themeId=51&templateId=3&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Din ce cartier al orașului Constantinopol erau numiți domnitorii greci trimiși de Imperiul Otoman? (Vezi punctul 1)",
+                        code: "fanar",
+                        digitRevealed: "1",
+                        hint: "Verifică numele cartierului îngroșat de la primul paragraf."
+                    },
+                    {
+                        puzzle: "2. Ce domnitor fanariot reformator a desființat șerbia (legarea de glie) și a reorganizat sistemul fiscal? Constantin... (Vezi punctul 2)",
+                        code: "mavrocordat",
+                        digitRevealed: "8",
+                        hint: "Caută numele de familie al domnitorului îngroșat de la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Cum se numea taxa anuală (sau tributul) plătită de Principate către Poarta Otomană? (Vezi punctul 1)",
+                        code: "haraci",
+                        digitRevealed: "2",
+                        hint: "Verifică termenul din paranteză de la a doua bulină de la punctul 1."
+                    },
+                    {
+                        puzzle: "4. Ce cod de legi de modernizare juridică a fost promulgat în Țara Românească în anul 1818? Legiuirea... (Vezi punctul 2)",
+                        code: "caragea",
+                        digitRevealed: "2",
+                        hint: "Caută ultimul cod de legi scris în italice de la a doua bulină a punctului 2."
+                    }
+                ]
+            }
 },
 {
     title: "26. Școala Ardeleană. „Supplex Libellus Valachorum”",
@@ -17634,7 +18334,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/c4be91528df640d591a2993d20fcc0fa?themeId=22&templateId=71&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce mișcare culturală și națională iluministă din Transilvania a folosit cultura ca armă de luptă pentru emanciparea românilor? Școala... (Vezi punctul 1)",
+                        code: "ardeleana",
+                        digitRevealed: "1",
+                        hint: "Verifică al doilea cuvânt al mișcării îngroșate de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce cărturar reprezentant al Școlii Ardelene a mai fost alături de Gheorghe Șincai și Samuil Micu? Petru... (Vezi punctul 1)",
+                        code: "maior",
+                        digitRevealed: "7",
+                        hint: "Caută numele de familie al cărturarului menționat la reprezentanți la punctul 1."
+                    },
+                    {
+                        puzzle: "3. Cărui împărat habsburgic i-a fost adresat memoriul Supplex Libellus Valachorum în anul 1791? ... al II-lea (Vezi punctul 2)",
+                        code: "leopold",
+                        digitRevealed: "9",
+                        hint: "Verifică împăratul de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. În ce oraș s-a întrunit Dieta Transilvaniei care a respins memoriul românilor? (Vezi punctul 2)",
+                        code: "cluj",
+                        digitRevealed: "1",
+                        hint: "Caută numele orașului menționat la ultima bulină a punctului 2."
+                    }
+                ]
+            }
 },
 {
     title: "27. Românii între Orient și Occident. Conservatorism și modernizare",
@@ -17745,7 +18473,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/17ce60aa8c24452092a9f70f31822875?themeId=43&templateId=30&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cine a condus revoluția din 1821 care a dus la înlăturarea regimului fanariot? Tudor... (Vezi punctul 1)",
+                        code: "vladimirescu",
+                        digitRevealed: "1",
+                        hint: "Verifică numele de familie al conducătorului îngroșat de la a doua bulină a punctului 1."
+                    },
+                    {
+                        puzzle: "2. Ce teritoriu românesc dintre Prut și Nistru a fost anexat de Imperiul Rus prin Pacea de la București din 1812? (Vezi punctul 1)",
+                        code: "basarabia",
+                        digitRevealed: "8",
+                        hint: "Caută numele teritoriului îngroșat de la prima bulină a punctului 1."
+                    },
+                    {
+                        puzzle: "3. Ce general rus a coordonat introducerea Regulamentelor Organice în Principatele Române? Pavel... (Vezi punctul 2)",
+                        code: "kiseleff",
+                        digitRevealed: "2",
+                        hint: "Verifică numele de familie al generalului rus îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Ce proiect politic de reformă a redactat Ionică Tăutu în anul 1822? Constituția... (Vezi punctul 3)",
+                        code: "carvunarilor",
+                        digitRevealed: "9",
+                        hint: "Caută al doilea cuvânt al titlului în italice de la prima bulină a punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "28. Tudor Vladimirescu",
@@ -17852,7 +18608,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/67f1fe7cd9604f59b0871865452cf352?themeId=26&templateId=49&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce corp de oaste de voluntari din Oltenia a organizat și condus Tudor Vladimirescu? Oastea de... (Vezi punctul 1)",
+                        code: "panduri",
+                        digitRevealed: "1",
+                        hint: "Verifică funcția menționată în ultimul paragraf de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Cum se numea societatea secretă grecească creată la Odessa cu care a colaborat inițial Tudor? (Vezi punctul 1)",
+                        code: "eteria",
+                        digitRevealed: "8",
+                        hint: "Caută denumirea societății îngroșate de la primul paragraf al punctului 1."
+                    },
+                    {
+                        puzzle: "3. În ce localitate a fost lansat primul document programatic de chemare a populației la luptă? Proclamația de la... (Vezi punctul 2)",
+                        code: "pades",
+                        digitRevealed: "2",
+                        hint: "Verifică numele localității din primul titlu în italice de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Cine a fost conducătorul Eteriei din cauza căruia au apărut neînțelegeri politice, ducând la uciderea lui Tudor? Alexandru... (Vezi punctul 3)",
+                        code: "ipsilanti",
+                        digitRevealed: "1",
+                        hint: "Caută numele de familie al conducătorului Eteriei îngroșat de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "29. Generația pașoptistă. Programe și consecințe ale revoluției",
@@ -17958,7 +18742,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/abc45363fe3a4cabbc9fb3276dcba56f?themeId=22&templateId=71&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce lider pașoptist transilvănean a condus rezistența din Munții Apuseni în timpul revoluției de la 1848? Avram... (Vezi punctul 1)",
+                        code: "iancu",
+                        digitRevealed: "1",
+                        hint: "Verifică numele de familie al liderului revoluționar din paranteză de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. În ce oraș din Transilvania a avut loc Marea Adunare Națională din mai 1848 unde s-a adoptat Petiția Națională? (Vezi punctul 2)",
+                        code: "blaj",
+                        digitRevealed: "8",
+                        hint: "Caută numele orașului din titlul celui de-al doilea document de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. În ce localitate din Țara Românească a fost citită proclamația revoluționară la 9 iunie 1848? Proclamația de la... (Vezi punctul 2)",
+                        code: "islaz",
+                        digitRevealed: "4",
+                        hint: "Verifică numele localității din titlul documentului de la a patra bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. Ce mare istoric și om politic moldovean a redactat la Cernăuți documentul 'Dorințele partidei naționale în Moldova'? Mihail... (Vezi punctul 2)",
+                        code: "kogalniceanu",
+                        digitRevealed: "8",
+                        hint: "Caută numele autorului menționat la ultima bulină a punctului 2."
+                    }
+                ]
+            }
 },
 {
     title: "30. Romii - de la robie la emancipare",
@@ -18065,7 +18877,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/78f74937284c452483ae6a87a116baaf?themeId=21&templateId=69&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Din ce țară asiatică își au originea romii, ultimul popor indo-european migrat spre Europa? (Vezi punctul 1)",
+                        code: "india",
+                        digitRevealed: "1",
+                        hint: "Verifică țara de origine îngroșată la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Cărei mănăstiri din Țara Românească i-a dăruit domnitorul Dan I în 1385 prima șatră de robi atestată documentar? Mănăstirii... (Vezi punctul 2)",
+                        code: "tismana",
+                        digitRevealed: "8",
+                        hint: "Caută numele mănăstirii îngroșate de la începutul punctului 2."
+                    },
+                    {
+                        puzzle: "3. Cum se numeau robii specializați în spălarea nisipului aurifer și căutarea aurului? (Vezi punctul 2)",
+                        code: "zlatari",
+                        digitRevealed: "5",
+                        hint: "Verifică meseria tradițională în italice menționată la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. În ce an s-a adoptat legea dezrobirii definitive a romilor în Țara Românească? (Vezi punctul 3)",
+                        code: "1856",
+                        digitRevealed: "6",
+                        hint: "Caută anul îngroșat de la finalul ultimei buline de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "31. Formarea statului român modern. Domnia lui Alexandru Ioan Cuza",
@@ -18178,7 +19018,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/f6d3facc88f74505a0cb6dd94e7638e5?themeId=22&templateId=8&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce instituție comună pentru cele două Principate a fost înființată la Focșani prin Convenția de la Paris din 1858, alături de Înalta Curte de Casație? Comisia... (Vezi punctul 1)",
+                        code: "centrala",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea primei instituții comune din paranteză de la a doua bulină de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Unde a fost ales mai întâi Alexandru Ioan Cuza domnitor la 5 ianuarie 1859? În ... (Vezi punctul 1)",
+                        code: "moldova",
+                        digitRevealed: "8",
+                        hint: "Caută numele țării/regiunii menționate în dreptul datei de 5 ianuarie de la punctul 1."
+                    },
+                    {
+                        puzzle: "3. Ce reformă majoră din anul 1864 a desființat claca și a dus la împroprietărirea țăranilor? Reforma... (Vezi punctul 2)",
+                        code: "agrara",
+                        digitRevealed: "5",
+                        hint: "Verifică denumirea reformei din 1864 îngroșate la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Ce nume purta alianța politică dintre conservatori și liberalii radicali care l-a obligat pe Cuza să abdice în 1866? Monstruoasa... (Vezi punctul 3)",
+                        code: "coalitie",
+                        digitRevealed: "9",
+                        hint: "Caută al doilea cuvânt al alianței în ghilimele de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "32. Regatul României - Carol I",
@@ -18291,7 +19159,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/b848ba7c994d475f867528454563ce42?themeId=26&templateId=8&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Din ce dinastie germană provenea principele Carol I, sosit pe tronul României la 10 mai 1866? Carol de... (Vezi punctul 1)",
+                        code: "hohenzollern",
+                        digitRevealed: "1",
+                        hint: "Verifică primul nume din denumirea dinastică îngroșată de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce redutabilă cetate otomană a fost cucerită în Războiul de Independență prin victoriile armatei româno-ruse? (Vezi punctul 3)",
+                        code: "plevna",
+                        digitRevealed: "8",
+                        hint: "Caută prima localitate/cetate îngroșată menționată la prima bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "3. Ce inginer român a proiectat și construit faimosul pod feroviar de la Cernavodă? Anghel... (Vezi punctul 4)",
+                        code: "saligny",
+                        digitRevealed: "7",
+                        hint: "Verifică numele de familie al inginerului îngroșat de la a doua bulină a punctului 4."
+                    },
+                    {
+                        puzzle: "4. Ce teritoriu din sudul Dobrogei a fost anexat de România în 1913 în urma Tratatului de la București? (Vezi punctul 4)",
+                        code: "cadrilater",
+                        digitRevealed: "7",
+                        hint: "Caută numele teritoriului îngroșat de la finalul ultimei buline de la punctul 4."
+                    }
+                ]
+            }
 },
 {
     title: "33. Constituția din 1866",
@@ -18398,7 +19294,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/db7a3c53d7d14ed292f9a87ff05bfb1c?themeId=1&templateId=11&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. După modelul constituțional al cărei țări europene din 1831 a fost redactată Constituția României din 1866? (Vezi punctul 1)",
+                        code: "belgia",
+                        digitRevealed: "1",
+                        hint: "Verifică numele țării menționate la ultimul paragraf de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce principiu democratic fundamental presupune că puterea legislativă, executivă și judecătorească sunt separate în stat? Principiul ...(Vezi punctul 2)",
+                        code: "separarii puterilor",
+                        digitRevealed: "8",
+                        hint: "Caută sintagma de la a doua bulină de la punctul 2. Poate fi articulat/schimbată forma."
+                    },
+                    {
+                        puzzle: "3. Ce drept absolut de a bloca legile votate de Parlament avea monarhul conform Constituției din 1866? Drept de... (Vezi punctul 2)",
+                        code: "veto",
+                        digitRevealed: "6",
+                        hint: "Verifică prerogativele monarhului menționate la ultima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. Ce articol din Constituție a fost modificat în anul 1879 pentru a permite acordarea cetățeniei persoanelor de altă religie? Articolul... (Vezi punctul 3)",
+                        code: "7",
+                        digitRevealed: "6",
+                        hint: "Caută numărul articolului menționat la prima bulină a punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "34. Războiul de Independență",
@@ -18508,7 +19432,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/52ca68a9ee51494989091dd869be348e?themeId=51&templateId=3&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce ministru de externe a proclamat independența României în Adunarea Deputaților la 9 mai 1877? Mihail... (Vezi punctul 1)",
+                        code: "kogalniceanu",
+                        digitRevealed: "1",
+                        hint: "Verifică numele de familie al ministrului îngroșat de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce pașă otoman a condus apărarea cetății Plevna până la capitularea din noiembrie 1877? ... Pașa (Vezi punctul 2)",
+                        code: "osman",
+                        digitRevealed: "8",
+                        hint: "Caută titlul/numele militarului turc menționat în paranteză la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Ce redută importantă de la Plevna a fost cucerită de armata română în luptele sângeroase din 1877? (Vezi punctul 2)",
+                        code: "grivita",
+                        digitRevealed: "7",
+                        hint: "Verifică prima redută îngroșată menționată la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Ce regiune istorică dreptunghiulară și maritimă a revenit României la Congresul de la Berlin în schimbul celor trei județe din sudul Basarabiei? (Vezi punctul 3)",
+                        code: "dobrogea",
+                        digitRevealed: "8",
+                        hint: "Caută prima teritoriu preluat de România, îngroșat la punctul 3."
+                    }
+                ]
+            }
 }, 
 {
     title: "35. Opțiuni politice în România modernă",
@@ -18619,7 +19571,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/89c84e7448714be7a6bb2790d0c1573d?themeId=22&templateId=8&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce deviză / doctrină economică promovată de liberali susținea dezvoltarea industriei prin valorificarea resurselor autohtone? (Vezi punctul 2)",
+                        code: "prin noi insine",
+                        digitRevealed: "1",
+                        hint: "Verifică sintagma în ghilimele de la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "2. Ce importantă instituție financiară a fost înființată de liberali în anul 1880? Banca... (Vezi punctul 2)",
+                        code: "nationala a romaniei",
+                        digitRevealed: "8",
+                        hint: "Caută numele instituției financiare menționate la a treia bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Ce teorie cultural-politică celebră a formulat Titu Maiorescu pentru a critica preluarea instituțiilor occidentale fără pregătire? Teoria... (Vezi punctul 3)",
+                        code: "formelor fara fond",
+                        digitRevealed: "7",
+                        hint: "Verifică sintagma din ghilimele îngroșată la a doua bulină de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Ce important om politic conservator a mai existat, ca lider marcant, alături de Petre P. Carp și Titu Maiorescu ? Lascăr... (Vezi punctul 3)",
+                        code: "catargiu",
+                        digitRevealed: "5",
+                        hint: "Caută numele de familie al liderului conservator de la prima bulină a punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "36. Cultura în spațiul românesc",
@@ -18731,7 +19711,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/34ce1703f60845d4beb0cd722850d768?themeId=52&templateId=2&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce mare reformator al învățământului românesc a reorganizat școlile rurale și învățământul prin legea din 1898? Spiru... (Vezi punctul 1)",
+                        code: "haret",
+                        digitRevealed: "1",
+                        hint: "Verifică numele de familie al ministrului îngroșat de la prima bulină a punctului 1."
+                    },
+                    {
+                        puzzle: "2. Ce important for național de cultură și știință fondat în anul 1879 își are originile în Societatea Academică Română? (Vezi punctul 1)",
+                        code: "academia romana",
+                        digitRevealed: "8",
+                        hint: "Caută denumirea instituției de elită îngroșate la a doua bulină de la punctul 1."
+                    },
+                    {
+                        puzzle: "3. Ce arhitect de seamă a fost promotorul stilului neoromânesc? Ion... (Vezi punctul 2)",
+                        code: "mincu",
+                        digitRevealed: "8",
+                        hint: "Verifică numele de familie al arhitectului îngroșat de la a doua bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. Ce savant român este recunoscut ca fondatorul biospeologiei? Emil... (Vezi punctul 3)",
+                        code: "racovita",
+                        digitRevealed: "8",
+                        hint: "Caută numele cercetătorului de la domeniul Biologie și cercetare de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "37. România și Primul Război Mondial",
@@ -18834,7 +19842,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/773745730ad8494dbde7709c20c82f1a?themeId=22&templateId=35&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce alianță militară formată din Franța, Marea Britanie și Rusia i-a recunoscut României dreptul asupra Transilvaniei, Banatului și Bucovinei? (Vezi punctul 1)",
+                        code: "antanta",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea alianței îngroșate de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce general francez a condus misiunea militară de sprijin și reorganizare a armatei române în Moldova? Generalul Henri... (Vezi punctul 2)",
+                        code: "berthelot",
+                        digitRevealed: "9",
+                        hint: "Caută numele de familie al generalului francez îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. În ce bătălie din vara anului 1917 a obținut armata română prima mare victorie defensivă alături de cele de la Mărășești și Oituz? Bătălia de la... (Vezi punctul 2)",
+                        code: "marasti",
+                        digitRevealed: "1",
+                        hint: "Verifică prima localitate îngroșată menționată la campania din 1917 de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Ce personalitate regală feminină marcantă a jucat un rol esențial în susținerea cauzei românești la Conferința de Pace de la Paris? Regina... (Vezi punctul 3)",
+                        code: "maria",
+                        digitRevealed: "6",
+                        hint: "Caută numele reginei îngroșate de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "38. Marea Unire din 1918",
@@ -18941,7 +19977,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/f47c002ce99948869a2dbea1e5704d3f?themeId=65&templateId=2&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce organ legislativ și reprezentativ condus de Ion Inculeț a votat unirea Basarabiei cu România la 27 martie 1918? (Vezi punctul 2)",
+                        code: "sfatul tarii",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea organismului în italice de la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "2. Ce lider politic bucovinean a condus Consiliul Național Român de la Cernăuți care a decis unirea Bucovinei? Iancu... (Vezi punctul 2)",
+                        code: "flondor",
+                        digitRevealed: "9",
+                        hint: "Caută numele de familie al liderului bucovinean de la a doua bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Ce mare om politic a citit Rezoluția unirii în fața celor 1.228 de delegați la Marea Adunare Națională de la Alba Iulia? Vasile... (Vezi punctul 2)",
+                        code: "goldis",
+                        digitRevealed: "1",
+                        hint: "Verifică numele de familie al omului politic menționat la a treia bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. Ce tratat internațional de pace semnat în 1920 cu Ungaria a recunoscut oficial unirea Transilvaniei, Banatului, Crișanei și Maramureșului cu România? Tratatul de la... (Vezi punctul 3)",
+                        code: "trianon",
+                        digitRevealed: "8",
+                        hint: "Caută numele tratatului îngroșat de la a doua bulină a punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "39. România interbelică. Economie și societate – lumea urbană și lumea rurală",
@@ -19049,7 +20113,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/7af716c4a8ef45238d8c2adf26a57e4b?themeId=22&templateId=71&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce an s-a adoptat Marea Reformă Agrară din perioada interbelică prin care au fost împroprietărite circa 1,4 milioane de familii? (Vezi punctul 2)",
+                        code: "1921",
+                        digitRevealed: "1",
+                        hint: "Verifică anul îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "2. Ce companie românească din industria petrolieră a construit la Brazi cea mai modernă rafinărie din Europa? (Vezi punctul 3)",
+                        code: "creditul minier",
+                        digitRevealed: "9",
+                        hint: "Caută numele companiei în italice de la prima bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "3. În ce localitate a fost construită rafinăria modernă a companiei Creditul Minier? (Vezi punctul 3)",
+                        code: "brazi",
+                        digitRevealed: "2",
+                        hint: "Verifică numele localității de la prima bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "4. Ce ramură industrială a fost cea mai productivă în perioada interbelică în România? Ramura... (Vezi punctul 3)",
+                        code: "petroliera",
+                        digitRevealed: "1",
+                        hint: "Caută cuvântul îngroșat de la prima bulină a punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "40. Orașul: arhitectură modernă și tradiții rurale",
@@ -19150,7 +20242,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/a1ec9e725e054006a8293480ec1d7256?themeId=48&templateId=35&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce supranume celebru a primit Bucureștiul în perioada interbelică datorită atmosferei sale cosmopolite și arhitecturii elegante? (Vezi punctul 2)",
+                        code: "micul paris",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea în ghilimele și îngroșată de la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "2. Ce stil artistic modern, alături de cel neoromânesc și Art Nouveau, se regăsea în clădirile din centrul orașelor interbelice? Stilul... (Vezi punctul 2)",
+                        code: "art deco",
+                        digitRevealed: "9",
+                        hint: "Caută primul stil artistic în italice de la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Cum se numeau zonele periferice ale orașelor care păstrau un caracter puternic rural și lipsit de confort? (Vezi punctul 2)",
+                        code: "mahalale",
+                        digitRevealed: "3",
+                        hint: "Verifică al doilea termen îngroșat de la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. În ce an al recensământului populația urbană reprezenta circa 20% din populația țării? (Vezi punctul 1)",
+                        code: "1930",
+                        digitRevealed: "0",
+                        hint: "Caută anul menționat la începutul primului paragraf de la punctul 1."
+                    }
+                ]
+            }
 },
 {
     title: "41. Minorități naționale în România",
@@ -19254,7 +20374,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/c52663cb45a342a39ade4f0eef180ff4?themeId=23&templateId=35&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce tratat internațional important privind drepturile etniilor a fost semnat de România la Paris pe 9 decembrie 1919? Tratatul privind... (Vezi punctul 1)",
+                        code: "protectia minoritatilor",
+                        digitRevealed: "1",
+                        hint: "Verifică titlul în italice de la primul paragraf de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. În ce regiune istorică din vestul țării erau stabiliți șvabii, ca ramură a populației germane? (Vezi punctul 2)",
+                        code: "banat",
+                        digitRevealed: "9",
+                        hint: "Caută numele regiunii istorice menționate în dreptul șvabilor la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Ce populație slavă era stabilită predominant în nordul Bucovinei? (Vezi punctul 2)",
+                        code: "rutenii",
+                        digitRevealed: "2",
+                        hint: "Verifică denumirea etniei îngroșate de la a patra bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. În ce stat din Orientul Mijlociu au emigrat masiv evreii din România în perioada comunistă? (Vezi punctul 3)",
+                        code: "israel",
+                        digitRevealed: "3",
+                        hint: "Caută numele țării din paranteză de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "42. Constituțiile din perioada interbelică",
@@ -19363,7 +20511,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/00c42e3466d94642888d6940776c3542?themeId=23&templateId=2&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce rege a promulgat Constituția democratică a României Mari la 28 martie 1923? Regele... (Vezi punctul 2)",
+                        code: "ferdinand",
+                        digitRevealed: "1",
+                        hint: "Verifică numele regelui îngroșat de la primul paragraf de la punctul 2."
+                    },
+                    {
+                        puzzle: "2. Câte articole a preluat Constituția din 1923 din vechea Constituție de la 1866? (Vezi punctul 2)",
+                        code: "76",
+                        digitRevealed: "9",
+                        hint: "Caută numărul din paranteză de la prima bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Ce rege a aprobat prin plebiscit și a promulgat Constituția autoritară în februarie 1938? Regele...al II-lea (Vezi punctul 3)",
+                        code: "carol",
+                        digitRevealed: "3",
+                        hint: "Verifică numele regelui îngroșat de la primul paragraf de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Ce titlu oficial primea regele conform Constituției din 1938, având puteri supreme în stat? (Vezi punctul 3)",
+                        code: "capul statului",
+                        digitRevealed: "8",
+                        hint: "Caută sintagma din ghilimele de la a doua bulină de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "43. Idei politice în lumea românească interbelică",
@@ -19467,7 +20643,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/6c0c58479a8d4171b9bef8debf37faa0?themeId=22&templateId=35&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce an s-a format Partidul Național Țărănesc (PNȚ) prin fuziunea PNR cu Partidul Țărănesc? (Vezi punctul 2)",
+                        code: "1926",
+                        digitRevealed: "1",
+                        hint: "Verifică anul menționat la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "2. Ce doctrină economică promovată de PNȚ susținea sprijinirea industriei și economiei prin atragerea capitalului străin? Doctrina... (Vezi punctul 2)",
+                        code: "portilor deschise",
+                        digitRevealed: "9",
+                        hint: "Caută sintagma în italice de la finalul celei de-a doua buline de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. În ce an a fost scos în afara legii Partidul Comunist din cauza politicii sale antiromânești dictate de Moscova? (Vezi punctul 3)",
+                        code: "1924",
+                        digitRevealed: "2",
+                        hint: "Verifică anul din paranteză de la prima bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "4. Sub ce altă denumire a devenit cunoscută din anul 1930 mișcarea de extremă dreaptă Legiunea Arhanghelului Mihail? Garda de... (Vezi punctul 3)",
+                        code: "fier",
+                        digitRevealed: "7",
+                        hint: "Caută cuvântul îngroșat de la a doua bulină a punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "44. Monarhia după Primul Război Mondial",
@@ -19567,7 +20771,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/c790fdda74df400294169fdaab92ad2f?themeId=48&templateId=2&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce oraș istoric au fost încoronați Regele Ferdinand I și Regina Maria ca suverani ai României Mari pe 15 octombrie 1922? (Vezi punctul 2)",
+                        code: "alba iulia",
+                        digitRevealed: "1",
+                        hint: "Verifică numele orașului menționat la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "2. Cum se numea formațiunea politică unică înființată de Carol al II-lea după desființarea partidelor democratice? Frontul... (Vezi punctul 2)",
+                        code: "renasterii nationale",
+                        digitRevealed: "9",
+                        hint: "Caută denumirea partidului unic în italice de la a treia bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Ce organ sau autoritate provizorie a condus țara între 1927 și 1930 pe timpul minoratului principelui Mihai? (Vezi punctul 2)",
+                        code: "regenta",
+                        digitRevealed: "2",
+                        hint: "Verifică termenul îngroșat de la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. În ce zi din luna septembrie 1940 a abdicat regele Carol al II-lea în urma pierderilor teritoriale suferite de România? (Vezi punctul 2)",
+                        code: "6",
+                        digitRevealed: "2",
+                        hint: "Caută numărul zilei menționate la finalul celei de-a treia buline de la punctul 2."
+                    }
+                ]
+            }
 },
 {
     title: "45. România în Al Doilea Război Mondial",
@@ -19671,7 +20903,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/6c5947e9504344f0be4ad2f8ddafb8e2?themeId=21&templateId=69&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce mare alianță politico-militară creată de Germania, Italia și Japonia a fost semnată de România la 23 noiembrie 1940? Pactul... (Vezi punctul 2)",
+                        code: "tripartit",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea pactului îngroșat de la punctul 2."
+                    },
+                    {
+                        puzzle: "2. La ce mare bătălie din anul 1942 de pe Frontul de Est a suferit armata română o grea înfrângere, declanșând tatonările diplomatice de armistițiu? Bătălia de la... (Vezi punctul 2)",
+                        code: "stalingrad",
+                        digitRevealed: "9",
+                        hint: "Caută numele orașului sovietic/bătăliei menționat la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Ce general (apoi mareșal) a preluat conducerea statului în septembrie 1940 și a instaurat o dictatură militară? Ion... (Vezi punctul 1)",
+                        code: "antonescu",
+                        digitRevealed: "4",
+                        hint: "Verifică numele de familie al conducătorului îngroșat de la punctul 1."
+                    },
+                    {
+                        puzzle: "4. Alături de Carei, ce alt oraș din nord-vestul țării a fost eliberat de sub ocupație la 25 octombrie 1944? (Vezi punctul 3)",
+                        code: "satu mare",
+                        digitRevealed: "4",
+                        hint: "Caută al doilea oraș îngroșat de la punctul 3 (scris cu spațiu)."
+                    }
+                ]
+            }
 },
 {
     title: "46. Holocaustul în România: evreii și romii",
@@ -19777,7 +21037,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/d80b5de08b7e44819f5659e3015e6fed?themeId=48&templateId=35&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce regiune dintre Nistru și Bug au fost deportați evreii și romii de către regimul antonescian? (Vezi punctul 2)",
+                        code: "transnistria",
+                        digitRevealed: "1",
+                        hint: "Verifică numele regiunii de deportare de la a treia bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "2. Ce primar al Cernăuțiului a primit titlul 'Drept între Popoare' pentru că a salvat mii de evrei de la deportare? Traian... (Vezi punctul 3)",
+                        code: "popovici",
+                        digitRevealed: "9",
+                        hint: "Caută numele de familie al primarului îngroșat de la a doua bulină de la punctul 3."
+                    },
+                    {
+                        puzzle: "3. În ce oraș din Moldova a avut loc pe 29 iunie 1941 tragicul pogrom soldat cu uciderea a peste 13.000 de evrei? Pogromul de la... (Vezi punctul 2)",
+                        code: "iasi",
+                        digitRevealed: "4",
+                        hint: "Verifică numele orașului din titlul celei de-a doua buline de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Ce personalitate din Familia Regală a României a intervenit direct pentru salvarea evreilor, primind titlul de 'Drept între Popoare'? Regina-Mamă... (Vezi punctul 3)",
+                        code: "elena",
+                        digitRevealed: "1",
+                        hint: "Caută numele reginei îngroșate de la a doua bulină de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "47. România - stat comunist",
@@ -19884,7 +21172,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/a2201baf59344783ac7b43e1f18db089?themeId=27&templateId=82&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce prim-ministru a fost impus la conducerea guvernului pro-comunist în martie 1945? Petru... (Vezi punctul 1)",
+                        code: "groza",
+                        digitRevealed: "1",
+                        hint: "Verifică numele de familie al prim-ministrului îngroșat de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Cum se numea organul de poliție politică represivă creat de regimul comunist pentru a controla societatea? (Vezi punctul 2)",
+                        code: "securitatea",
+                        digitRevealed: "9",
+                        hint: "Caută denumirea organului de represiune îngroșat de la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Ce curent cultural de inspirație sovietică a fost impus în arta și cultura din perioada stalinistă? (Vezi punctul 2)",
+                        code: "proletcultismul",
+                        digitRevealed: "4",
+                        hint: "Verifică termenul în italice de la a treia bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. Ce alianță militară a statelor comuniste din Europa de Est a fost fondată în 1955 și a inclus România? Pactul de la... (Vezi punctul 2)",
+                        code: "varsovia",
+                        digitRevealed: "7",
+                        hint: "Caută numele orașului din titlul pactului îngroșat de la ultima bulină a punctului 2."
+                    }
+                ]
+            }
 },
 {
     title: "48. Rezistența anticomunistă",
@@ -19985,7 +21301,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/2cbccd6b8f7546a9a72f038f931e43ff?themeId=23&templateId=49&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce mare proiect de muncă silnică din perioada comunistă, alături de deportările în Bărăgan, a făcut parte din gulagul românesc? Canalul Dunăre-... (Vezi punctul 1)",
+                        code: "marea neagra",
+                        digitRevealed: "1",
+                        hint: "Verifică proiectul menționat în paranteză de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce important post de radio din Occident, alături de Vocea Americii, transmitea criticile disidenților români împotriva regimului? Europa... (Vezi punctul 2)",
+                        code: "libera",
+                        digitRevealed: "9",
+                        hint: "Caută denumirea postului de radio în italice de la a treia bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. Ce scriitor și disident anticomunist a fost opozant al intelectualilor alături de Doina Cornea și Monica Lovinescu? Paul... (Vezi punctul 2)",
+                        code: "goma",
+                        digitRevealed: "8",
+                        hint: "Verifică numele de familie al scriitorului disident de la a treia bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "4. Ce protest major al muncitorilor din industria auto a avut loc într-un mare oraș din Transilvania în anul 1987? Protestele de la... (Vezi punctul 2)",
+                        code: "brasov",
+                        digitRevealed: "9",
+                        hint: "Caută ultimul oraș menționat la a patra bulină de la punctul 2."
+                    }
+                ]
+            }
 },
 {
     title: "49. Viața cotidiană în perioada regimului comunist",
@@ -20090,7 +21434,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/f6deb18954f9495db707a83d307a798a?themeId=48&templateId=35&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce proces economic de trecere a fabricilor și uzinelor private în proprietatea statului a avut loc după război? Procesul de ... (Vezi punctul 1)",
+                        code: "nationalizare",
+                        digitRevealed: "1",
+                        hint: "Verifică termenul menționat la primul paragraf de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce instituție de control verifica cărțile, piese de teatru și spectacolele pentru a lăuda realizările regimului? (Vezi punctul 2)",
+                        code: "cenzura",
+                        digitRevealed: "9",
+                        hint: "Caută termenul îngroșat de la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. În ce perioadă situația cotidiană s-a înrăutățit grav din cauza raționalizării alimentelor și opririlor de curent? Anii... (Vezi punctul 1)",
+                        code: "80",
+                        digitRevealed: "8",
+                        hint: "Verifică perioada menționată la punctul 3."
+                    },
+                    {
+                        puzzle: "4. În ce an s-a încheiat regimul comunist prin izbucnirea Revoluției populare? (Vezi punctul 1)",
+                        code: "1989",
+                        digitRevealed: "9",
+                        hint: "Caută anul de la finalul primului paragraf de la punctul 1."
+                    }
+                ]
+            }
 },
 {
     title: "50. Manipulare și propagandă. „Omul nou”. Consecințe",
@@ -20196,7 +21568,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/760c5efc6fc446138b855d8f24f0c56e?themeId=27&templateId=82&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce ziar oficial al Partidului Comunist a reprezentat principalul canal de propagandă scrisă al regimului? (Vezi punctul 1)",
+                        code: "scanteia",
+                        digitRevealed: "1",
+                        hint: "Verifică numele ziarului în italice de la primul paragraf de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce festival/manifestare națională de masă a fost creat de regimul comunist pentru a promova cultura de propagandă? Cântarea... (Vezi punctul 2)",
+                        code: "romaniei",
+                        digitRevealed: "9",
+                        hint: "Caută al doilea cuvânt al festivalului în italice de la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Ce competiție sportivă de masă a fost organizată de regimul Ceaușescu pentru pregătirea tineretului? (Vezi punctul 2)",
+                        code: "daciada",
+                        digitRevealed: "7",
+                        hint: "Verifică numele competiției sportive în italice de la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Cum se numeau membrii organizației de partid destinate copiilor de grădiniță? Șoimii... (Vezi punctul 3)",
+                        code: "patriei",
+                        digitRevealed: "7",
+                        hint: "Caută al doilea cuvânt al organizației îngroșate de la prima bulină de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "51. Epoca Nicolae Ceaușescu",
@@ -20301,7 +21701,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/3b5172e483ad45cb88500a5dfc8c46a4?themeId=21&templateId=69&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Ce denumire oficială a primit statul român prin Constituția adoptată în anul 1965? Republica... (Vezi punctul 1)",
+                        code: "socialista romania",
+                        digitRevealed: "1",
+                        hint: "Verifică denumirea în italice de la primul paragraf de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce stat membru al Pactului de la Varșovia a fost invadat în 1968, acțiune condamnată public de Ceaușescu? (Vezi punctul 2)",
+                        code: "cehoslovacia",
+                        digitRevealed: "9",
+                        hint: "Caută numele țării menționate la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Ce documente din iulie 1971, inspirate din China și Coreea de Nord, au marcat reintroducerea controlului sever asupra culturii? Tezele din... (Vezi punctul 3)",
+                        code: "iulie",
+                        digitRevealed: "6",
+                        hint: "Verifică luna din titlul îngroșat de la prima bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "4. Ce clădire grandioasă din București a fost construită în anii '80 ca proiect gigantic al regimului? Casa... (Vezi punctul 3)",
+                        code: "poporului",
+                        digitRevealed: "5",
+                        hint: "Caută prima construcție din paranteză de la a treia bulină a punctului 3."
+                    }
+                ]
+            }
 },
 {
     title: "52. România în contextul Războiului Rece",
@@ -20405,7 +21833,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/0f892edcce4940c7ac946cff55bd7669?themeId=22&templateId=35&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. Cum s-a numit linia simbolică de separație dintre blocul democratic vestic și cel comunist estic? (Vezi punctul 1)",
+                        code: "cortina de fier",
+                        digitRevealed: "1",
+                        hint: "Verifică sintagma în italice de la primul paragraf de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce plan sovietic din 1964, care propunea transformarea României într-o zonă pur agrară, a fost respins de la București? Planul... (Vezi punctul 2)",
+                        code: "valev",
+                        digitRevealed: "9",
+                        hint: "Caută numele planului în italice de la a doua bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "3. Ce președinte american a efectuat o vizită istorică la București în perioada de deschidere internațională a regimului? Richard... (Vezi punctul 3)",
+                        code: "nixon",
+                        digitRevealed: "6",
+                        hint: "Verifică numele președintelui SUA menționat la prima bulină de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Ce lider sovietic a propus reformele de la sfârșitul anilor '80 pe care Nicolae Ceaușescu le-a refuzat categoric? Mihail... (Vezi punctul 3)",
+                        code: "gorbaciov",
+                        digitRevealed: "4",
+                        hint: "Caută numele liderului URSS de la a doua bulină de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "53. Regimul politic democratic din 1989 până azi",
@@ -20511,7 +21967,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/d54047a19d7a48a8a5afd244d667f7c8?themeId=60&templateId=30&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce oraș au izbucnit primele proteste ale Revoluției Române pe 16 decembrie 1989? (Vezi punctul 1)",
+                        code: "timisoara",
+                        digitRevealed: "1",
+                        hint: "Verifică numele orașului menționat la prima bulină de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. Ce formațiune politică condusă de Ion Iliescu a preluat puterea imediat după căderea regimului Ceaușescu? Frontul... (Vezi punctul 2)",
+                        code: "salvarii nationale",
+                        digitRevealed: "9",
+                        hint: "Caută denumirea organismului de tranziție de la prima bulină a punctului 2."
+                    },
+                    {
+                        puzzle: "3. În ce an a adoptat România noua Constituție democratică ce consacra republica semiprezidențială și pluralismul politic? (Vezi punctul 2)",
+                        code: "1991",
+                        digitRevealed: "9",
+                        hint: "Verifică anul de la începutul celei de-a doua buline de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. În ce alianță politico-militară euro-atlantică a fost primită România în anul 2004? (Vezi punctul 3)",
+                        code: "nato",
+                        digitRevealed: "1",
+                        hint: "Caută denumirea alianței îngroșate de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "54. Constituția din 1991",
@@ -20615,7 +22099,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/65b6adb4be3948e88824f2a7437c2b89?themeId=41&templateId=35&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. În ce zi din luna decembrie 1991 a fost validată prin referendum prima Constituție postdecembristă a României? (Vezi punctul 1)",
+                        code: "8",
+                        digitRevealed: "2",
+                        hint: "Verifică numărul zilei de dinaintea lunii decembrie de la primul paragraf de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. La câți ani a fost crescut mandatul Președintelui României prin revizuirea Constituției din 2003? De la 4 ani la... ani (Vezi punctul 3)",
+                        code: "5",
+                        digitRevealed: "0",
+                        hint: "Caută durata noului mandat de la prima bulină a punctului 3."
+                    },
+                    {
+                        puzzle: "3. Câte articole numără în prezent Constituția României în urma revizuirii? (Vezi punctul 3)",
+                        code: "156",
+                        digitRevealed: "0",
+                        hint: "Verifică numărul de articole de la finalul primei buline de la punctul 3."
+                    },
+                    {
+                        puzzle: "4. Ce instituție judecătorească specială veghează ca toate legile din țară să fie în conformitate cu legea fundamentală? Curtea... (Vezi punctul 3)",
+                        code: "constitutionala",
+                        digitRevealed: "3",
+                        hint: "Caută denumirea instituției îngroșate de la a doua bulină de la punctul 3."
+                    }
+                ]
+            }
 },
 {
     title: "55. Integrarea euroatlantică a României",
@@ -20714,7 +22226,35 @@ const dbLectii = {
     ],
     game1: "https://wordwall.net/ro/embed/3f8e26b1e69c4f498bd6ee11d2a5ddab?themeId=41&templateId=35&fontStackId=0",
     game2: "",
-    game3: ""
+    game3: "",
+    escape: {
+                locks: [
+                    {
+                        puzzle: "1. La ce program de colaborare militară propus de NATO a aderat România în anul 1994? Parteneriatul pentru... (Vezi punctul 1)",
+                        code: "pace",
+                        digitRevealed: "2",
+                        hint: "Verifică sintagma în italice de la primul paragraf de la punctul 1."
+                    },
+                    {
+                        puzzle: "2. În ce an a devenit România membru oficial al alianței NATO? (Vezi punctul 1)",
+                        code: "2004",
+                        digitRevealed: "0",
+                        hint: "Caută anul îngroșat din ultima propoziție de la punctul 1."
+                    },
+                    {
+                        puzzle: "3. În ce an a aderat oficial România la Uniunea Europeană?  (Vezi punctul 2)",
+                        code: "2007",
+                        digitRevealed: "0",
+                        hint: "Verifică anul îngroșat de la prima bulină de la punctul 2."
+                    },
+                    {
+                        puzzle: "4. Cum se numește spațiul european de liberă circulație fără controale la frontierele interne din care face parte și România? Spațiul... (Vezi punctul 2)",
+                        code: "schengen",
+                        digitRevealed: "7",
+                        hint: "Caută denumirea spațiului european îngroșat de la a treia bulină de la punctul 2."
+                    }
+                ]
+            }
 }
 ],
 }
