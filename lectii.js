@@ -14802,6 +14802,7 @@ const dbLectii = {
         <h3> Locuire și ocupații</h3>
         <p>Condițiile naturale favorabile au permis o locuire neîntreruptă din timpuri străvechi (urme umane datând de cca. 1.500.000 de ani). Ocupațiile tradiționale s-au diversificat în funcție de relief: agricultură și pomicultură la câmpie și deal, păstorit în zonele montane, pescuit pe cursul apelor, meșteșuguri și un comerț intens favorizat de rețelele fluviale și maritime.</p>
     `,
+    stiaiCa: "Știai că grecii antici numeau inițial Marea Neagră 'Pontus Axeinos' (Marea Neospitalieră) din cauza furtunilor năprasnice și a triburilor ostile de pe țărmuri, dar după ce au întemeiat colonii înfloritoare precum Histria, Tomis și Callatis au redenumit-o 'Pontus Euxinus' (Marea Ospitalieră)?",
     quiz: [
         {
             q: "Cum numeau grecii antici fluviul Dunărea?",
@@ -14942,6 +14943,7 @@ const dbLectii = {
             <li><b>Epoca Contemporană (1918 – prezent):</b> desăvârșirea și consolidarea statului național unitar român și integrarea euro-atlantică.</li>
         </ul>
     `,
+    stiaiCa: "Știai că cel mai vechi izvor scris descoperit pe teritoriul României este o inscripție pe un disc din lut găsit la Tărtăria (județul Alba), datând de peste 7.000 de ani, care conține semne ce ar putea reprezenta una dintre cele mai vechi forme de scriere din lume, anterioară celei sumeriene?",
     quiz: [
         {
             q: "Care dintre următoarele reprezintă un izvor istoric nescris?",
@@ -15080,6 +15082,7 @@ const dbLectii = {
             <li><b>Sculpturi antropomorfe și zoomorfe:</b> figurine din lut, os sau piatră (în special feminine), legate de cultul fecundității și al fertilității pământului.</li>
         </ul>
     `,
+    stiaiCa: "Știai că statuia din lut ars numită 'Gânditorul de la Hamangia' (descoperită la Cernavodă alături de 'Femeia șezând') este considerată o capodoperă a artei preistorice mondiale, reprezentând una dintre cele mai vechi reprezentări umane din lume surprinsă într-o postură de reflecție și meditație?",
     quiz: [
         {
             q: "Ce semnifică termenul de „Revoluție Neolitică”?",
@@ -15221,6 +15224,7 @@ const dbLectii = {
         <h3> Spiritualitate</h3>
         <p>Schimbările sociale au influențat și viața spirituală: s-a impus <b>cultul Soarelui</b>, au apărut <b>preoții</b>, iar ceramica s-a perfecționat prin preluarea <b>roții olarului</b> de la celți și greci.</p>
     `,
+    stiaiCa: "Știai că coiful princiar din aur pur descoperit la Coțofenești (care cântărește aproape un kilogram) și tezaurul de la Agighiol făceau parte din echipamentul de ceremonie al aristocrației războinice geto-dace, fiind împodobite cu simboluri magice și animale fantastice menite să-l protejeze pe conducător în luptă?",
     quiz: [
         {
             q: "Din ce aliaj de metale este format bronzul?",
@@ -15347,6 +15351,7 @@ const dbLectii = {
         <h3> Simbolistica spiralei</h3>
         <p>Spirala este elementul decorativ central în arta Cucuteni. Înlănțuită, secționată sau organizată în combinații de șiruri, spirala simbolizează <b>succesiunea ciclurilor naturii</b>, evoluția vieții și ideea de fertilitate, specifică societăților agricole care asociau rodnicia pământului cu fecunditatea feminină.</p>
     `,
+    stiaiCa: "Știai că oamenii din cultura Cucuteni își incendiau intenționat propriile sate din temelii la fiecare 60-80 de ani, construind ulterior noi case direct peste ruinele arse, un ritual misterios repetat timp de peste un mileniu pe care arheologii îl numesc 'Ciclu de Incendiere'?",
     quiz: [
         {
             q: "Care sunt cele trei culori folosite în pictarea ceramicii Cucuteni?",
@@ -15473,6 +15478,7 @@ const dbLectii = {
         <h3> Ceramică și arta plastică</h3>
         <p>Ceramica cuprinde o mare varietate de forme (străchini, cești, pocale, cupe). Cultura Hamangia excelează însă prin <b>arta plastică</b> (figurine de lut feminine în picioare cu gât înalt sau șezând), fiind renumită la nivel mondial prin statuetele antropomorfe de lut.</p>
     `,
+    stiaiCa: "Știai că necropola de la Cernavodă, aparținând culturii Hamangia, este cel mai mare cimitir neolitic cercetat din sud-estul Europei, unde arheologii au descoperit peste 400 de morminte, ceea ce a demonstrat că acești oameni aveau ritualuri funerare extrem de complexe și o credință puternică în viața de după moarte?",
     quiz: [
         {
             q: "Unde este localizată geografic Cultura Hamangia?",
@@ -15599,6 +15605,7 @@ const dbLectii = {
         <h3> Unelte, arme și comerț</h3>
         <p>Uneltele uzuale erau din piatră, os și corn. Bronzul se folosea în special pentru <b>arme</b>, iar aurul și argintul pentru bijuterii. Piesele străine de harnașament, armele și podoabele atestă comerțul intens, iar zonele sacre din sate indică practicarea cultelor religioase.</p>
     `,
+    stiaiCa: "Știai că în așezările culturii Sărata Monteoru au fost descoperite primele piese de harnașament din os și corn pentru cai de pe teritoriul României, dovadă că acești oameni foloseau deja carul de luptă tras de cai și aveau o elită militară extrem de bine organizată?",
     quiz: [
         {
             q: "Pentru ce epocă istorică este reprezentativă Cultura Sărata Monteoru?",
@@ -15736,6 +15743,7 @@ const dbLectii = {
         <h3> Influențe externe și spiritualitate</h3>
         <p>Schimburile culturale majore s-au realizat prin coloniile grecești (Histria, Tomis, Callatis), de unde au preluat roata olarului, moneda și modele de organizare. Religia lor era <b>politeistă</b>, având zeități precum Bendis sau Gebeleizis, în frunte cu zeul suprem <b>Zalmoxis</b>. Dețineau cunoștințe de astronomie și medicină.</p>
     `,
+    stiaiCa: "Știai că istoricul grec Herodot povestea că geții credeau că nu mor cu adevărat, ci merg după moarte la zeul lor Zalmoxis, iar o dată la cinci ani trimiteau un sol prin tragere la sorți, aruncându-l în sus peste vârful a trei sulițe pentru a-i transmite zeului cererile lor?",
     quiz: [
         {
             q: "Cine sunt geto-dacii?",
@@ -15868,6 +15876,7 @@ const dbLectii = {
         <h3> Părăsirea cetății</h3>
         <p>În <b>secolul al VII-lea d.H.</b>, cetatea Histria a fost părăsită definitiv din cauza atacurilor migratorilor avari și a colmatării golfului (înnisiparea care a blocat accesul corăbiilor în port).</p>
     `,
+    stiaiCa: "Știai că cetatea Histria a fost primul oraș de pe teritoriul României care a bătut proprie monedă din argint (în jurul anului 480 î.H.), având pe o parte un vultur care ține un delfin în gheare, iar pe cealaltă două capete umane alăturate și inversate?",
     quiz: [
         {
             q: "Care este cel mai vechi oraș atestat pe teritoriul României?",
@@ -15999,6 +16008,7 @@ const dbLectii = {
         </ul>
         <p>Marea parte a Daciei devine provincie romană, având noua capitală la <b>Ulpia Traiana Sarmizegetusa</b>.</p>
     `,
+    stiaiCa: "Știai că podul construit peste Dunăre la Drobeta de arhitectul Apolodor din Damasc pentru războiul lui Traian împotriva lui Decebal a fost considerat timp de peste o mie de ani cel mai lung pod din lume (avea peste 1.130 de metri lungime) și o adevărată minune ingineriască a Antichității?",
     quiz: [
         {
             q: "În ce perioadă a domnit regele Burebista?",
@@ -16150,6 +16160,7 @@ const dbLectii = {
         <h3> Sanctuarele și religia</h3>
         <p>Zona sacră adăpostea sanctuare patrulatere și circulare. Se remarcă <b>Marele sanctuar circular</b>, care atestă cunoașterea unui calendar exact, și <b>Discul solar de andezit</b>, care indică caracterul solar al religiei geto-dacice.</p>
     `,
+    stiaiCa: "Știai că blocurile uriașe de piatră din zidurile fortificațiilor dacice (tehnica murus dacicus) nu erau lipite cu mortar sau ciment, ci erau legate în interior cu barne masive din lemn introduse în jgheaburi speciale, o tehnică de construcție extrem de rezistentă care absorbea șocurile seismice și ale berbecilor de luptă?",
     quiz: [
         {
             q: "Ce rol a îndeplinit Sarmizegetusa Regia în statul dac?",
@@ -16299,6 +16310,7 @@ const dbLectii = {
         <h3> Monumentul de la Adamclisi (Tropaeum Traiani)</h3>
         <p>Ridicatul în Dobrogea și dedicat zeului <i>Marte Răzbunătorul</i>, monumentul omagia victoria din anul 102 împotriva dacilor și aliaților lor. Era alcătuit dintr-un tambur cilindric cu 54 de basoreliefuri și un trofeu în vârf. A fost reconstruit în anul 1977.</p>
     `,
+    stiaiCa: "Știai că friza sculptată a Columnei lui Traian desfășurată în linie dreaptă are o lungime de peste 200 de metri și conține mai mult de 2.500 de figuri umane sculptate în detaliu, fiind considerată de istorici 'cel mai mare basorelief al Antichității' și un veritabil film în piatră al războaielor daco-romane?",
     quiz: [
         {
             q: "Cine a fost arhitectul care a creat Podul de la Drobeta, Columna și Monumentul de la Adamclisi?",
@@ -16455,6 +16467,7 @@ const dbLectii = {
         <h3> Creștinismul</h3>
         <p>Răspândit prin coloniști, soldați și misionari în limba latină, creștinismul a fost un alt factor major de romanizare. Viața creștină intensă este atestată de bazilicile de la Tomis și Tropaeum Traiani, precum și de obiectele creștine descoperite la Biertan, Porolissum, Apulum sau Drobeta. Deși ulterior s-a practicat în formă ortodoxă, <b>creștinismul românesc are origine latină</b>, dovadă fiind termenii de bază: <i>biserică, Dumnezeu, botez, creștin, cruce, înger, Crăciun, Paște, preot</i>.</p>
     `,
+    stiaiCa: "Știai că celebrul Donariu de la Biertan (o piesă din bronz datând din secolul al IV-lea) conține inscripția latină 'Ego Zenovius votum posui' ('Eu, Zenovie, am oferit acest dar'), fiind cea mai veche dovadă arheologică directă a practicării creștinismului în limba latină la nord de Dunăre după retragerea aureliană?",
     quiz: [
         {
             q: "În ce an a fost creată provincia Dacia romană?",
@@ -16609,6 +16622,7 @@ const dbLectii = {
             <li><b>Nordul Dunării:</b> A avut o evoluție continuă, ducând la formarea poporului român și a <i>dialectului dacoromân</i>, menționat frecvent în izvoarele istorice medievale.</li>
         </ul>
     `,
+    stiaiCa: "Știai că anul 602 d.H., când granița fortificată a Imperiului Bizantin la Dunăre (limes-ul) s-a prăbușit definitiv în fața valurilor de slavi, este considerat de istorici momentul de cotitură care a izolat daco-romanii de lumea mediteraneană și a marcat definitiv trecerea de la Antichitate la Evul Mediu în spațiul nostru?",
     quiz: [
         {
             q: "Care a fost prima populație migratoare de neam germanic atestată la răsărit de Carpați și în Câmpia Română?",
@@ -16765,6 +16779,7 @@ const dbLectii = {
             <li><b>Adstratul (cca 20%):</b> Influențele slave care au îmbogățit lexicul și au adus unele caracteristici fonetice.</li>
         </ul>
     `,
+    stiaiCa: "Știai că limba română este singura limbă romanică din Europa care a păstrat intactă structura gramaticală a cazurilor (Genitiv-Dativ) moștenită direct din latina clasică, precum și declinarea cu articolul hotărât alipit la sfârșitul cuvântului (ex: 'omul', 'fata')?",
     quiz: [
         {
             q: "In ce categorie de popoare se încadrează poporul român, alături de francezi, italieni, spanioli și portughezi?",
@@ -16917,6 +16932,7 @@ const dbLectii = {
         <h3> Informații oferite de surse</h3>
         <p>Izvoarele consemnează continuitatea de viețuire în spațiul carpato-dunărean (menționând râul Samus, Dunărea, Munții Carpați), ocupațiile de păstori și agricultori, participarea la acțiuni militare și organizarea social-politică.</p>
     `,
+    stiaiCa: "Știai că în celebrul epos medieval german 'Cântecul Nibelungilor' (Nibelungenlied), scris în jurul anului 1200, apare menționat un Duce Ramunc din 'Țara Valahilor' (Lant der Wlachen), care a venit la curtea regelui hunilor însoțit de peste 700 de călăreți iscusiți?",
     quiz: [
         {
             q: "Ce termen de origine germanică folosit pentru romanici apare sub diferite variante (vlahi, valahi, volohi) în izvoarele medievale?",
@@ -17069,6 +17085,7 @@ const dbLectii = {
         <h3>Relațiile cu statele vecine și Statul româno-bulgar</h3>
         <p>Evoluția spre stat a fost influențată de migrațiile pecenegilor, uzilor, cumanilor și de invazia mongolă (tătară). În spațiul intracarpatic, regatul maghiar a cucerit Transilvania și a organizat-o ca voievodat. La sud de Dunăre, în urma răscoalei din 1185 conduse de frații Petru și Asan împotriva Imperiului Bizantin, s-a creat Statul româno-bulgar, care a existat până la cucerirea otomană din secolul al XIV-lea.</p>
     `,
+    stiaiCa: "Știai că în secolul al XII-lea, în zona Moldovei de sud, a existat o formațiune politică numită 'Țara Berladnicilor' (cu centrul în zona Bârladului de astăzi), iar locuitorii ei erau cunoscuți ca războinici iscusiți și corăbieri care navigau pe Siret și Prut până la Marea Neagră?",
     quiz: [
         {
             q: "Cum se numeau comunitățile rurale conduse de cnezi, juzi și sfatul bătrânilor în care au trăit daco-romanii?",
@@ -17218,6 +17235,7 @@ const dbLectii = {
         <h3>Dobrogea și organizarea internă</h3>
         <p>Nucleul statului dobrogean a fost Țara Cărvunei, unită în secolul al XIV-lea sub conducerea lui Dobrotici, desprinzându-se de sub stăpânirea bizantină. În 1388, Mircea cel Bătrân a alipit Dobrogea Țării Românești, dar în 1417 aceasta a fost cucerită de Imperiul Otoman. În Țara Românească și Moldova, principala instituție era domnia, ajutată de Sfatul Domnesc, apărarea fiind asigurată de cetăți și oaste.</p>
     `,
+    stiaiCa: "Știai că bătălia de la Posada (1330), în care Basarab I a obținut independența Țării Românești, a fost imortalizată în detaliu prin miniaturi colorate în Cronica Pictată de la Viena, arătând cum oastea română a zdrobit armata regelui Carol Robert de Anjou atacând-o dintr-o trecătoare îngustă de munte?",
     quiz: [
         {
             q: "Cine a fost primul voievod al Transilvaniei atestat documentar în anul 1176?",
@@ -17383,6 +17401,7 @@ const dbLectii = {
             <li><b>Islamul:</b> Practicat de populațiile turcice, mai numeroase în <b>Dobrogea</b>.</li>
         </ul>
     `,
+    stiaiCa: "Știai că Transilvania a fost primul stat din Europa care a adoptat libertatea religioasă prin Edictul de la Turda (1568), promulgat de Dieta Transilvaniei, decretând că 'credința este un dar al lui Dumnezeu' și interzicând persecutarea oricui pe criterii religioase?",
     quiz: [
         {
             q: "Care a fost religia predominantă practicată de populația românească în Evul Mediu?",
@@ -17542,6 +17561,7 @@ const dbLectii = {
             <li><b>Mihai Viteazul (1593–1601, Țara Românească):</b> A aderat la <b>Liga Sfântă</b>, declanșând răscoala antiotomană în 1594. A obținut victorii la <b>Călugăreni și Giurgiu</b>. Pentru a menține frontul antiotoman, a învins la <b>Șelimbăr (1599)</b> și a realizat <b>prima unire a celor trei țări românești (1600)</b>, destrămată rapid după uciderea sa.</li>
         </ul>
     `,
+    stiaiCa: "Știai că în noaptea de 16 spre 17 iunie 1462, Vlad Țepeș a condus personal celebrul 'Atac de noapte' de la Târgoviște, deghizat în haine turcești împreună cu câțiva oșteni, pătrunzând direct în tabăra sultanului Mahomed al II-lea (cuceritorul Constantinopolului) cu scopul de a-l elimina și de a semăna o panică uriașă în rândul armatei otomane?",
     quiz: [
         {
             q: "Care etapă a tacticii defensive presupunea demoralizarea inamicului prin pământ pârjolit?",
@@ -17698,6 +17718,7 @@ const dbLectii = {
             <li><b>Moldova:</b> Sistemul de cetăți vestite prin soliditate, precum <b>Hotin, Suceava, Neamț și Cetatea Albă</b>.</li>
         </ul>
     `,
+    stiaiCa: "Știai că Cetatea Neamțului a rezistat în anul 1476 unui asediu de opt zile condus de însuși sultanul Mahomed al II-lea (cuceritorul Constantinopolului), fiind apărată doar de câțiva plaieși care au folosit tunele secrete din munte și o ghiulea din piatră de o tonă lansată cu o catapultă uriașă?",
     quiz: [
         {
             q: "Care au fost principalele materiale folosite la construcția cetăților medievale?",
@@ -17829,6 +17850,7 @@ const dbLectii = {
         <h3>Legenda Meșterului Manole</h3>
         <p>De edificarea bisericii se leagă balada populară <b>„Mănăstirea Argeșului”</b> și mitul creator al <b>sacrificiului pentru construcție</b>. Legenda spune că zidurile se surpau noaptea, iar Meșterul Manole a fost nevoit să o zidească pe soția sa, <b>Ana</b>, pentru ca mănăstirea să reziste. La final, pentru a preveni ridicarea unei alte clădiri mai frumoase, domnitorul a dărâmat schelele, iar meșterii au încercat să zboare cu aripi din șindrilă, prăbușindu-se. Pe locul unde a căzut Manole a apărut o fântână.</p>
     `,
+    stiaiCa: "Știai că turlele Mănăstirii Curtea de Argeș au fost proiectate într-o iluzie optică unică, ornamentele lor din piatră fiind sculptate în răsucire spiralată, ceea ce dă privitorului senzația că turnurile se învârt neîncetat spre cer?",
     quiz: [
         {
             q: "În ce perioadă a fost edificată Biserica episcopală de la Curtea de Argeș?",
@@ -17964,6 +17986,7 @@ const dbLectii = {
             <li><b>Activitate științifică:</b> Cărturar de seamă, membru al <b>Academiei din Berlin (1714)</b>, a scris lucrări fundamentale precum <i>Descriptio Moldaviae</i> și <i>Istoria creșterii și descreșterii Imperiului Otoman</i>.</li>
         </ul>
     `,
+    stiaiCa: "Știai că Dimitrie Cantemir a fost primul român ales membru al Academiei de Științe din Berlin (în 1714), fiind un adevărat savant polimat al Iluminismului care cunoștea peste 10 limbi străine și a compus piese muzicale pentru curtea imperială otomană, inventând chiar și un sistem unic de notație muzicală?",
     quiz: [
         {
             q: "În ce an a fost fondat contextul 'Chestiunii Orientale' prin înfrângerea otomanilor la Viena?",
@@ -18094,6 +18117,7 @@ const dbLectii = {
             <li><b>Social:</b> Din cauza iobăgiei și a obligațiilor excesive, izbucnește <b>Răscoala condusă de Horea, Cloșca și Crișan (1784–1785)</b>. Înăbușită de trupele imperiale, răscoala s-a încheiat cu executarea lui Horea și Cloșca, dar a atras atenția Europei asupra situației românilor.</li>
         </ul>
     `,
+    stiaiCa: "Știai că memoriul politic 'Supplex Libellus Valachorum' din 1791, elaborat de cărturarii Școlii Ardelene, a fost tipărit la Viena și înaintat împăratului Leopold al II-lea aducând argumente istorice și demografice imbatabile, fiind considerat prima petiție modernă prin care românii ardeleni cereau drepturi egale cu celelalte națiuni privilegiate?",
     quiz: [
         {
             q: "Prin ce act din 1691 a obținut Transilvania un statut politic separat subordonat Curții de la Viena?",
@@ -18229,6 +18253,7 @@ const dbLectii = {
             <li><b>Codurile de legi:</b> Modernizarea juridică prin coduri precum <i>Pravilniceasca Condică</i> (Alexandru Ipsilanti, 1780), <i>Codul Callimachi</i> (1817) și <i>Legiuirea Caragea</i> (1818).</li>
         </ul>
     `,
+    stiaiCa: "Știai că domnitorul reformator Constantin Mavrocordat a desființat șerbia (legarea de glie a țăranilor) în Țara Românească (1746) și Moldova (1749) cu aproape două decenii înaintea reformelor similare din Imperiul Habsburgic, iar codul său de reforme publicat în presa franceză din spațiul parizian a fost lăudat de marii filosofi ai Iluminismului ca o adevărată Constituție?",
     quiz: [
         {
             q: "În ce interval de timp s-a desfășurat secolul fanariot în Principatele Române?",
@@ -18366,6 +18391,7 @@ const dbLectii = {
             <li><b>Rezultat și impact:</b> Împăratul a trimis memoriul Dietei de la Cluj (dominată de nobilime, având un singur român — episcopul Ioan Bob), care l-a respins. Cu toate acestea, memoriul a contribuit decisiv la formarea conștiinței naționale și la impulsionarea luptei politice.</li>
         </ul>
     `,
+    stiaiCa: "Știai că lingviștii Școlii Ardelene au fost primii care au propus înlocuirea alfabetului chirilic cu cel latin pentru scrierea limbii române, Samuil Micu și Gheorghe Șincai redactând în 1780 'Elementa linguae daco-romanae sive valachicae', prima gramatică tipărită a limbii române cu litere latine?",
     quiz: [
         {
             q: "În ce an a fost redactat cel mai important program politic al românilor din Transilvania, Supplex Libellus Valachorum?",
@@ -18505,6 +18531,7 @@ const dbLectii = {
             <li><b>Preluarea modelelor occidentale:</b> Adoptarea alfabetului latin, dezvoltarea presei și a învățământului, formarea tinerilor la universități din Paris, Viena sau Berlin.</li>
         </ul>
     `,
+    stiaiCa: "Știai că generalul rus Pavel Kiseleff, deși reprezenta o putere absolutistă, a îndrăgit atât de mult Bucureștiul încât a sprijinit extinderea și modernizarea orașului, motiv pentru care una dintre cele mai frumoase și elegante artere din capitală îi poartă numele până astăzi (Șoseaua Kiseleff)?",
     quiz: [
         {
             q: "În urma cărui tratat de pace din 1812 a fost anexată Basarabia de către Imperiul Rus?",
@@ -18640,6 +18667,7 @@ const dbLectii = {
         
         <p>Deși pandurii au fost înfrânți militar de turci, mișcarea a avut o consecință politică majoră: <b>înlăturarea regimului fanariot și revenirea la domniile pământene (1822)</b>.</p>
     `,
+    stiaiCa: "Știai că Tudor Vladimirescu vorbea fluent limba rusă și limba greacă, fusese decorat de țarul Rusiei cu Ordinul Sfântului Vladimir în timpul războiului ruso-turc (1806–1812) și a obținut prin această distincție un rang de cavaler care îi oferea protecție diplomatică personală?",
     quiz: [
         {
             q: "În ce an s-a desfășurat mișcarea revoluționară condusă de Tudor Vladimirescu?",
@@ -18774,6 +18802,7 @@ const dbLectii = {
         <h3>Consecințe și importanță istorică</h3>
         <p>Deși înfrântă militar prin intervenția trupelor otomane, rusești și habsburgice, Revoluția de la 1848 a pus bazele proiectului național modern. Obiectivele pașoptiste au fost îndeplinite ulterior prin <b>Unirea Principatelor (1859)</b>, <b>Reforma Agrară (1864)</b> și <b>Independența de Stat (1877)</b>.</p>
     `,
+    stiaiCa: "Știai că drapelul tricolor românesc (albastru, galben, roșu) cu deviza 'Dreptate, Frăție' scrisă pe el a fost adoptat oficial pentru prima dată ca steag național în timpul Revoluției de la 1848 din Țara Românească, prin decret al Guvernului Provizoriu?",
     quiz: [
         {
             q: "Care document programatic din 1848 formulează pentru prima dată în scris obiectivul Unirii Moldovei cu Țara Românească?",
@@ -18909,6 +18938,7 @@ const dbLectii = {
             <li><b>Legile dezrobirii definitive:</b> Romii și-au obținut libertatea deplină prin legile adoptate în <b>Moldova (1855)</b> și în <b>Țara Românească (1856)</b>.</li>
         </ul>
     `,
+    stiaiCa: "Știai că scriitorul și omul politic pașoptist Mihail Kogălniceanu a fost unul dintre cei mai fervenți susținători ai dezrobirii romilor, publicând încă din 1837 prima lucrare istorică și socială despre originea, limba și condiția lor drastice, pledând ferm pentru emanciparea lor umană și juridică?",
     quiz: [
         {
             q: "Din ce regiune a lumii au migrat inițial strămoșii romilor ca popor indo-european?",
@@ -19050,6 +19080,7 @@ const dbLectii = {
         <h3>Sfârșitul domniei (1866)</h3>
         <p>Stilul autoritar de guvernare a dus la formarea „Monstruoasei Coaliții” (aliată din liberali radicali și conservatori), care l-a obligat pe Cuza să <b>abdice la 11 februarie 1866</b> și să plece în exil. Cu toate acestea, domnia sa a pus bazele statului român modern.</p>
     `,
+    stiaiCa: "Știai că soluția ingenioasă a 'dublei alegeri' a lui Alexandru Ioan Cuza a fost posibilă deoarece textul Convenției de la Paris din 1858 preciza doar că domnitorii Moldovei și Țării Românești trebuie să fie cetățeni născuți în Principate, fără însă a interzice explicit ca una și aceeași persoană să candideze și să fie aleasă în ambele țări?",
     quiz: [
         {
             q: "În cadrul cărui Congres de Pace din 1856 s-a hotărât consultarea populației din Principate privind Unirea?",
@@ -19191,6 +19222,7 @@ const dbLectii = {
             <li><b>Politica externă:</b> Aderarea secretă la <b>Tripla Alianță (1883)</b>; participarea la Al Doilea Război Balcanic (1913) încheiată prin Pacea de la București, prin care România a anexat <b>Cadrilaterul</b>.</li>
         </ul>
     `,
+    stiaiCa: "Știai că coroana purtată de Regele Carol I la încoronarea sa ca prim rege al României în 1881 nu a fost realizată din aur sau argint, ci a fost turnată din oțelul unei țevi de tun turcesc capturat de armata română la Plevna în timpul Războiului de Independență, simbolizând vitejia oștenilor români?",
     quiz: [
         {
             q: "La ce dată a fost proclamată Independența de Stat a României în cadrul Parlamentului de la București?",
@@ -19326,6 +19358,7 @@ const dbLectii = {
             <li><b>1917:</b> Modificarea articolului privind proprietatea privată pentru a permite realizarea reformei agrare și a votului universal.</li>
         </ul>
     `,
+    stiaiCa: "Știai că în textul original al Constituției din 1866 a fost folosit oficial pentru prima dată numele de 'România' într-un act fundamental, ignorând deliberat denumirea de 'Principatele Unite' impusă de Marile Puteri la Paris și fără a face nicio mențiune despre suzeranitatea Imperiului Otoman?",
     quiz: [
         {
             q: "După modelul cărei constituții europene a fost redactată prima Constituție a României din 1866?",
@@ -19464,6 +19497,7 @@ const dbLectii = {
             <li><b>Schimburi teritoriale:</b> Cedarea către Rusia a celor trei județe din sudul Basarabiei/Moldovei (<b>Cahul, Ismail, Bolgrad</b>) în schimbul preluării de către România a <b>Dobrogei, Deltei Dunării și Insulei Șerpilor</b>.</li>
         </ul>
     `,
+    stiaiCa: "Știai că în iulie 1877, după două atacuri rusești eșuate dezastruos la Plevna, Marele Duce Nicolae i-a trimis principelui Carol I o telegramă disperată ('Turcii adunând cele mai mari mase de oaste la Plevna, ne zdrobesc. Rog să faci fuziune, demonstrațiune și, dacă se poate, trecerea Dunării'), moment în care Carol I a acceptat intrarea în luptă doar cu condiția de a prelua comanda supremă a tuturor trupelor aliate româno-ruse de la Plevna?",
     quiz: [
         {
             q: "Cine era ministrul de externe care a proclamat independența României la 9 mai 1877 în Adunarea Deputaților?",
@@ -19603,6 +19637,7 @@ const dbLectii = {
             <li><b>Mari realizări:</b> Legea tocmelilor agricole (1872), înființarea Jandarmeriei Rurale (1893), Legea minelor (1895) și Legea pentru încurajarea industriei naționale (1912).</li>
         </ul>
     `,
+    stiaiCa: "Știai că membrii fondatori ai Partidului Național Liberal s-au adunat pentru prima dată în mai 1875 într-o casă închiriată de la un inginer englez pe strada Manea Brutaru din București, creând așa-numita 'Coaliție de la Mazar Pașa' (numită după porecla otomană a inginerului Stephen Lakeman), iar la numai doi ani distanță au guvernat țara în timpul obținerii Independenței de Stat?",
     quiz: [
         {
             q: "În ce an s-a înființat formal Partidul Liberal, unul dintre cei doi piloni ai sistemului bipartid?",
@@ -19743,6 +19778,7 @@ const dbLectii = {
             <li><b>Biologie și cercetare:</b> Emil Racoviță (fondatorul biospeologiei) și Grigore Antipa (organizatorul Muzeului de Istorie Naturală).</li>
         </ul>
     `,
+    stiaiCa: "Știai că fondurile pentru construcția monumentalei clădiri a Ateneului Român (1888) au fost adunate printr-o loterie națională publică devenită celebră sub sloganul 'Dați un leu pentru Ateneu!', cetățenii cumpărând 500.000 de bilete de câte un leu pentru a susține ridicarea palatului culturii românești?",
     quiz: [
         {
             q: "Ce mare ministru al instrucției a conceput legea învățământului secundar și superior din 1898 și a promovat ridicarea lumii satelor?",
@@ -19874,6 +19910,7 @@ const dbLectii = {
         <h3>Recunoașterea internațională</h3>
         <p>Conferința de Pace de la Paris (1919-1920) a consacrat internațional Unirea din 1918. Un rol esențial în susținerea cauzei românești l-au avut oameni politici precum <b>Ion I.C. Brătianu</b>, <b>Alexandru Vaida-Voevod</b> și <b>Regina Maria</b>.</p>
     `,
+    stiaiCa: "Știai că în timpul Conferinței de Pace de la Paris din 1919, Regina Maria a României a efectuat o misiune diplomatică neoficială extraordinară, pledând personal cauza românească în fața prim-ministrului francez Georges Clemenceau și a președintelui american Woodrow Wilson, fermecând presa occidentală și obținând sprijin vital pentru recunoașterea Marii Uniri?",
     quiz: [
         {
             q: "În ce an și dată a fost proclamată neutralitatea României la începutul Primului Război Mondial?",
@@ -20009,6 +20046,7 @@ const dbLectii = {
             <li><b>Tratatul de la Paris (1920)</b> – recunoștea unirea Basarabiei.</li>
         </ul>
     `,
+    stiaiCa: "Știai că Rezoluția Unirii citită pe 1 Decembrie 1918 la Alba Iulia în fața celor peste 100.000 de români adunați pe Câmpul lui Horea a fost tipărită în noaptea de dinaintea adunării într-o tipografie din oraș, pe hârtie simplă de ziar, devenind cel mai important document din istoria modernă a României?",
     quiz: [
         {
             q: "Ce for legislativ constituit la Chișinău și condus de Ion Inculeț a votat unirea Basarabiei cu România?",
@@ -20145,6 +20183,7 @@ const dbLectii = {
             <li><b>Burghezia și Muncitorimea:</b> Categoriile cele mai dinamice din orașe. Condițiile dificile au generat numeroase greve muncitorești.</li>
         </ul>
     `,
+    stiaiCa: "Știai că în perioada interbelică România a ajuns al doilea mare producător de petrol din Europa și al șaselea din lume, iar rafinăria Creditul Minier de la Brazi, inaugurată în 1934, era considerată la acea vreme cea mai modernă instalație de rafinare a petrolului de pe întregul continent?",
     quiz: [
         {
             q: "Ce procent din populația României interbelice trăia în mediul rural?",
@@ -20274,6 +20313,7 @@ const dbLectii = {
         <h3>Diversitatea regională</h3>
         <p>Orașe precum Cluj, Cernăuți și Timișoara purtau amprenta stilului de viață occidental (austro-ungar), în timp ce Chișinăul reflecta influențe din cultura și civilizația rusă.</p>
     `,
+    stiaiCa: "Știai că Palatul Telefoanelor din București, inaugurat în 1934 pe Calea Victoriei, a fost primul zgârie-nori construit în stil Art Déco pe structură de oțel din România și cea mai înaltă clădire din capitală timp de aproape patru decenii (având 52.5 metri înălțime)?",
     quiz: [
         {
             q: "Ce procent din populația României reprezentau orășenii în anul 1930?",
@@ -20406,6 +20446,7 @@ const dbLectii = {
         <h3>Evoluția istorică ulterioară</h3>
         <p>În timpul Celui de-Al Doilea Război Mondial, evreii și romii au fost supuși persecuțiilor și deportărilor. În perioada comunistă s-au înregistrat emigrări masive ale evreilor (în Israel) și germanilor (în RFG). Astăzi, minoritățile sunt integrated în viața politică și culturală a României.</p>
     `,
+    stiaiCa: "Știai că în perioada interbelică, sașii și șvabii din Banat și Transilvania aveau un sistem propriu de școli, bănci și cooperative agricole atât de bine organizat, încât comunitățile lor aveau una dintre cele mai ridicate rate de alfabetizare și dezvoltare economică din întreaga Europă Centrală și de Est?",
     quiz: [
         {
             q: "În ce an a adoptat România Constituția care garanta egalitatea în drepturi a tuturor cetățenilor, indiferent de etnie?",
@@ -20543,6 +20584,7 @@ const dbLectii = {
             <li><b>Restricții:</b> Desființarea partidelor politice și a sindicatelor; interzicerea propagandei împotriva formei de guvernământ.</li>
         </ul>
     `,
+    stiaiCa: "Știai că în timp ce Constituția din 1923 garanta votul universal pentru toți bărbații de peste 21 de ani și menționa în premieră acordarea drepturilor politice femeilor prin legi speciale, Constituția autoritară din 1938 a acordat dreptul de vot femeilor doar dacă aveau peste 30 de ani și știau să scrie și să citească?",
     quiz: [
         {
             q: "Cine a promulgat Constituția din 28 martie 1923?",
@@ -20675,6 +20717,7 @@ const dbLectii = {
             <li><b>Extrema dreaptă:</b> Reprezentată în special de <b>Legiunea Arhanghelului Mihail (1927)</b>, cunoscută din 1930 ca <b>Garda de Fier</b>. Promova misticismul, antisemitismul, violența și asasinatul politic împotriva regimului democratic.</li>
         </ul>
     `,
+    stiaiCa: "Știai că în ciuda tensiunilor și a asasinatelor politice din anii '30, alegerile parlamentare din decembrie 1937 au fost ultimele alegeri libere din România până în anul 1990, reprezentând un moment de cotitură istoric deoarece nicio formațiune politică nu a reușit să obțină primele de majoritate de 40%, deschizând calea instaurării regimului autoritar al lui Carol al II-lea?",
     quiz: [
         {
             q: "În ce an a luat ființă Partidul Național Țărănesc (PNȚ) prin fuziunea PNR din Transilvania cu Partidul Țărănesc?",
@@ -20803,6 +20846,7 @@ const dbLectii = {
             <li><b>Mihai I (1927–1930, 1940–1947):</b> Ultimul rege al României, având o domnie desfășurată în perioada zbuciumată a Celui de-Al Doilea Război Mondial, marcând confruntarea cu dictatura, Holocaustul și reconfigurarea teritorială a țării.</li>
         </ul>
     `,
+    stiaiCa: "Știai că Regele Mihai I a urcat pe tron de două ori în condiții cu totul speciale: prima dată la doar 5 ani (în 1927), devenind unul dintre cei mai tineri monarhi din istoria Europei, iar a doua oară la 18 ani (în 1940), conducând țara prin una dintre cele mai dificile perioade din istoria sa contemporană?",
     quiz: [
         {
             q: "În ce zi și an au fost încoronați Ferdinand și Regina Maria ca suverani ai României Mari la Alba Iulia?",
@@ -20935,6 +20979,7 @@ const dbLectii = {
         <h3>Actul de la 23 August 1944 și finalul războiului</h3>
         <p>La <b>23 august 1944</b>, Regele Mihai I l-a înlăturat pe Ion Antonescu prin lovitură de stat și a întors armele împotriva Germaniei, alăturându-se Națiunilor Unite. Armata română a luptat pentru eliberarea Transilvaniei (ultimele localități, Carei și Satu Mare, au fost eliberate la <b>25 octombrie 1944</b> — devenită <i>Ziua Armatei Române</i>), continuând apoi luptele în Ungaria, Cehoslovacia și Austria. România a suferit pierderi de peste 880 000 de oameni.</p>
     `,
+    stiaiCa: "Știai că întoarcerea armelor de la 23 august 1944 condusă de Regele Mihai I a fost considerată de istorici și de marii strategi militari ai vremii drept una dintre cele mai decisive decizii politice ale războiului, scurtând conflagrația mondială în Europa cu cel puțin 6 luni și salvând sute de mii de vieți?",
     quiz: [
         {
             q: "La ce dată și-a proclamat România neutralitatea la începutul Celui de-Al Doilea Război Mondial?",
@@ -21069,6 +21114,7 @@ const dbLectii = {
             <li><b>Bilanț tragic:</b> Conform Comisiei Internaționale, între 280 000 și 380 000 de evrei au pierit în România și în teritoriile aflate sub controlul ei.</li>
         </ul>
     `,
+    stiaiCa: "Știai că Traian Popovici, primarul Cernăuțiului în timpul Celui de-Al Doilea Război Mondial, a reușit să salveze direct de la deportarea în Transnistria peste 19.000 de evrei prin eliberarea unor autorizații speciale de muncă, fiind distins ulterior de Institutul Yad Vashem din Israel cu titlul de 'Drept între Popoare'?",
     quiz: [
         {
             q: "În ce perioadă au fost inițiate în România primele legi cu caracter explicit antisemit?",
@@ -21204,6 +21250,7 @@ const dbLectii = {
             <li><b>Căderea Regimului:</b> Degradarea dramatică a nivelului de trai și represiunea au dus la Revoluția din <b>decembrie 1989</b> și prăbușirea dictaturii.</li>
         </ul>
     `,
+    stiaiCa: "Știai că în august 1968, refuzul public și vehement al lui Nicolae Ceaușescu de a participa la invadarea Cehoslovaciei de către trupele Pactului de la Varșovia i-a adus acestuia vizite oficiale la București din partea unor mari lideri occidentali precum președintele american Richard Nixon și cel francez Charles de Gaulle?",
     quiz: [
         {
             q: "In ce an a fost impus guvernul condus de Petru Groza, dominat de comuniști?",
@@ -21333,6 +21380,7 @@ const dbLectii = {
             <li><b>Disidența din interiorul PCR:</b> În 1989, un grup de veterani comuniști a transmis <i>Scrisoarea celor 6</i>, criticând regimul Ceaușescu pentru încălcarea drepturilor omului și scăderea dramatică a nivelului de trai.</li>
         </ul>
     `,
+    stiaiCa: "Știai că rezistența armată anticomunistă din munții României a fost una dintre cele mai îndelungate din întregul bloc de est, grupuri de partizani precum 'Haiducii Muscelului' conduși de Elisabeta Rizea și frații Arnăuțoiu rezistând în munții Făgăraș până la sfârșitul anilor '50?",
     quiz: [
         {
             q: "Ce termen generic desemnează sistemul opresiv de închisori și lagăre de muncă silnică din perioada comunistă?",
@@ -21466,6 +21514,7 @@ const dbLectii = {
             <li><b>Traiul zilnic greu:</b> În anii '80, oamenii sufereau din cauza lipsei de alimente de bază, a opririlor frecvente de curent electric și a lipsei de căldură în case.</li>
         </ul>
     `,
+    stiaiCa: "Știai că în anii '80, programul Televiziunii Române fusese redus la doar două ore pe zi (între 20:00 și 22:00), iar cea mai mare parte a emisiei era dedicată activității și discursurilor lui Nicolae și Elenei Ceaușescu?",
     quiz: [
         {
             q: "În ce perioadă a existat o scurtă relaxare și o ușoară creștere a nivelului de trai în România comunistă?",
@@ -21600,6 +21649,7 @@ const dbLectii = {
             <li><b>Uteciștii (U.T.C.):</b> pentru tinerii de la 14 ani (Membri ai Uniunii Tineretului Comunist).</li>
         </ul>
     `,
+    stiaiCa: "Știai că organizația 'Șoimii Patriei', creată în 1977 pentru copiii cu vârste între 4 și 7 ani, a fost unică în întregul bloc comunist est-european, România fiind singura țară care începuse îndoctrinarea ideologică instituționalizată încă de la grădiniță?",
     quiz: [
         {
             q: "Care a fost obiectivul principal al propagandei comuniste în România?",
@@ -21733,6 +21783,7 @@ const dbLectii = {
             <li><b>Muncile și marile proiecte:</b> Anii '80 au fost marcați de raționalizări severe (hrană, energie) și de construcția unor proiecte grandioase (Casa Poporului, Canalul Dunăre-Marea Neagră, Transfăgărășanul). Regimul s-a încheiat violent în 1989.</li>
         </ul>
     `,
+    stiaiCa: "Știai că celebra schimbare de direcție ideologică din 1971, cunoscută sub numele de 'Tezele din Iulie', a fost lansată de Nicolae Ceaușescu după vizitele sale oficiale în China și Coreea de Nord, unde a fost fascinat de paradele megalomanice și cultul extrem al personalității dedicat lui Mao Zedong și Kim Ir-sen?",
     quiz: [
         {
             q: "În ce an s-a schimbat denumirea țării în Republica Socialistă România prin adoptarea unei noi Constituții?",
@@ -21865,6 +21916,7 @@ const dbLectii = {
             <li><b>Izolarea din anii '80:</b> Din cauza neostalinismului, violării drepturilor omului și refuzului reformelor propuse de Mihail Gorbaciov, România a ajuns izolată complet pe plan internațional. Regimul s-a prăbușit în 1989.</li>
         </ul>
     `,
+    stiaiCa: "Știai că în 1964, conducerea comunistă a României a respins categoric 'Planul Valev' propus de Moscova (care voia să transforme sudul țării într-o regiune exclusiv agricolă în subordinea URSS) și a emis 'Declarația din Aprilie 1964', considerată o adevărată declarație de independență politică și economică față de blocul sovietic?",
     quiz: [
         {
             q: "Cum s-a numit metaforic linia de demarcație dintre blocurile democratice din Vest și cele comuniste din Est?",
@@ -21999,6 +22051,7 @@ const dbLectii = {
         <h3>Consolidarea democrației (2004–prezent)</h3>
         <p>Integrarea în structurile euro-atlantice – <b>NATO (2004)</b> și <b>Uniunea Europeană (2007)</b> – a consolidat statul de drept, un rol activ avându-l societatea civilă în dezbaterile privind lupta anticorupție și independența justiției.</p>
     `,
+    stiaiCa: "Știai că primele alegeri libere din România postcomunistă, desfășurate pe 20 mai 1990 și cunoscute sub numele de 'Duminica Orbului', au înregistrat o prezență la vot istorică de peste 86%, peste 14 milioane de cetățeni prezentându-se la urne pentru a-și exprima votul democratic după mai bine de jumătate de secol de dictatură?",
     quiz: [
         {
             q: "În ce oraș din România au izbucnit primele mișcări de protest în decembrie 1989?",
@@ -22131,6 +22184,7 @@ const dbLectii = {
             <li><b>Curtea Constituțională:</b> Instituție judecătorească specială creată pentru a veghea ca legile și hotărârile să fie în conformitate cu legea fundamentală.</li>
         </ul>
     `,
+    stiaiCa: "Știai că referendumul din 2003 pentru revizuirea Constituției din 1991 a fost prelungit pentru prima dată pe durata a două zile (18 și 19 octombrie) pentru a se atinge pragul minim de prezență necesar validării, asigurând astfel cadrul juridic obligatoriu pentru aderarea României la NATO și Uniunea Europeană?",
     quiz: [
         {
             q: "În ce zi și an a fost validată prin referendum prima Constituție postdecembristă a României?",
@@ -22258,6 +22312,7 @@ const dbLectii = {
             <li><b>Instituții și securitate:</b> România este reprezentată în Comisia Europeană și Parlamentul European, susține obiectivele strategice ale UE și este membră a spațiului Schengen (zonă de liberă circulație fără controale la frontiere).</li>
         </ul>
     `,
+    stiaiCa: "Știai că deși România a devenit oficial membru NATO la 29 martie 2004, ceremonialul ridicării drapelului românesc la sediul NATO din Bruxelles a avut loc pe 2 aprilie 2004, moment în care steagul României a fost arborat alături de cele ale altor 25 de state membre în acordurile Marelui Imn al NATO?",
     quiz: [
         {
             q: "În ce an a depus România cererea oficială de aderare la NATO?",
