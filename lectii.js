@@ -8944,6 +8944,7 @@ const dbLectii = {
           <p><strong>Arte vizuale:</strong> În pictură s-au remarcat <em>Peter Paul Rubens</em> și <em>Rembrandt van Rijn</em>, iar în sculptură și arhitectură <em>Gian Lorenzo Bernini</em>.</p>
           <p><strong>Muzică:</strong> A cunoscut o dezvoltare uriașă, în special prin utilizarea <strong>orgii</strong> în Biserică și creațiile compozitorilor <em>Johann Sebastian Bach</em> și <em>Antonio Vivaldi</em>.</p>
         `,
+        stiaiCa: "Știai că cuvântul 'baroc' provine de la termenul portughez 'barroco', folosit de negustorii de perle pentru a descrie o perlă de o formă ciudată, neregulată și imperfectă? Inițial, termenul a fost folosit ca o insultă la adresa clădirilor și picturilor din această epocă, criticii considerându-le mult prea exagerate și încărcate!",
         quiz: [
           {
             q: "Unde s-a născut stilul baroc în secolul al XVI-lea?",
@@ -9078,6 +9079,7 @@ const dbLectii = {
             </ul>
             <p><strong>În alte țări:</strong> <em>Petru cel Mare</em> în Rusia (care a modernizat țara) și <em>Soliman Magnificul</em> în Imperiul Otoman.</p>
         `,
+        stiaiCa: "Știai că Ludovic al XIV-lea ('Regele Soare') a ordonat ca toți marii nobili din Franța să locuiască alături de el la Palatul Versailles, special pentru a-i putea supraveghea atent și a-i împiedica să comploteze împotriva sa? El a transformat viața de la curte într-un spectacol zilnic, unde nobililor li se părea o mare onoare chiar și simplul fapt de a-i ține lumânarea sau ciorapii regelui când acesta se trezea dimineața!",
         quiz: [
             {
                 q: "Ce caracteristică fundamentală definește regimul politic numit absolutism monarhic?",
@@ -9210,6 +9212,7 @@ const dbLectii = {
             <h3>3. Pasiune pentru artă și construcții spectaculoase</h3>
             <p>Pe lângă războaie, Soliman iubea foarte mult cultura. Scria poezii de o frumusețe rară sub numele tainic de <strong>Muhibbi</strong>. A construit școli, poduri rezistente, moschei grandioase și palate spectaculoase. De asemenea, a refăcut zidurile de apărare ale orașului Ierusalim și a restaurat celebrul monument numit Domul Stâncii.</p>
         `,
+        stiaiCa: "Știai că Soliman Magnificul a murit în cortul său de campanie în timpul asediului cetății Szigetvár din Ungaria (1566), însă moartea sa a fost ținută secretă de marele vizir timp de 48 de zile pentru a preveni revoltarea armatei otomane înainte de finalizarea luptei?",
         quiz: [
             {
                 q: "În ce an au cucerit turcii otomani Constantinopolul, transformându-l în capitală?",
@@ -9341,6 +9344,7 @@ const dbLectii = {
             <h3>3. Palatul Versailles: O bijuterie de poveste</h3>
             <p>Pentru a-și arăta puterea uriașă, regele a construit lângă Paris cel mai spectaculos palat din lume: <strong>Versailles</strong> (inaugurat în 1682). Cu sute de camere decorate cu aur, oglinzi uriașe, grădini imense și fântâni arteziene care păreau magice, Versailles a devenit casa regelui și locul de unde conducea totul. Toți ceilalți regi din Europa au încercat apoi să îi copieze stilul.</p>
         `,
+        stiaiCa: "Știai că în ciuda strălucirii și opulenței de la Versailles, palatul nu a avut toalete funcționale din construcție timp de zeci de ani, iar curtenii foloseau vase de noapte sau colțurile ascunse ale holurilor, fiind nevoie de tone de parfumuri și flori proaspete aduse zilnic pentru a acoperi mirosurile neplăcute?",
         quiz: [
             {
                 q: "La ce vârstă a devenit Ludovic al XIV-lea rege al Franței în anul 1643?",
@@ -9474,6 +9478,7 @@ const dbLectii = {
             <p>A purtat războaie împotriva <strong>Imperiului Otoman</strong> (unde a obținut cetatea Azov în 1696) și împotriva <strong>Suediei</strong> în <em>Marele Război al Nordului (1700-1721)</em>. În celebra <strong>Bătălie de la Poltava (1709)</strong>, armata lui Petru a zdrobit armata regelui suedez Carol al XII-lea, asigurând Rusiei controlul la Marea Baltică.</p>
             <p>În anul <strong>1703</strong>, la vărsarea râului Neva în Marea Baltică, Petru a început construcția unui oraș superb: <strong>Sankt Petersburg</strong>. În anul <strong>1712</strong>, el a mutat oficial capitala de la Moscova acolo, numind noul oraș „fereastra Rusiei spre Europa”.</p>
         `,
+        stiaiCa: "Știai că în timpul 'Mării Ambasade' prin Europa, Petru cel Mare a lucrat timp de patru luni incognito sub numele fals de 'Petru Mihailov' pe un șantier naval din Olanda, trăind într-o căsuță simplă de lemn și învățând meseria de dulgher de la zero pentru a putea construi personal prima flotă militară a Rusiei?",
         quiz: [
             {
                 q: "Unde a mutat țarul Petru cel Mare capitala Rusiei pentru a oferi țării o deschidere spre Occident?",
@@ -9601,6 +9606,7 @@ const dbLectii = {
             <p>După moartea lui Cromwell, regii au încercat din nou să conducă de unii singuri. În <strong>1688</strong>, Parlamentul l-a alungat pe rege fără vărsare de sânge și l-a adus pe tron pe <strong>Wilhelm de Orania</strong>.</p>
             <p>În anul <strong>1689</strong>, noul rege a semnat <strong>Declarația drepturilor</strong>. Prin acest document, Anglia a devenit o <strong>monarhie parlamentară</strong>, unde regele conduce doar respectând legile făcute de Parlament. Această schimbare pașnică s-a numit <em>Revoluția Glorioasă</em>.</p>
         `,
+        stiaiCa: "Știai că schimarea din 1688 a fost numită 'Revoluția Glorioasă' (sau 'Revoluția fără Sânge') deoarece regele Iacob al II-lea a fugit fără luptă în Franța, aruncând Marele Sigiliu al Regatului în râul Tamisa pentru a încerca să oprească funcționarea Guvernului în lipsa sa?",
         quiz: [
             {
                 q: "Ce dinastie a preluat tronul Angliei după moartea reginei Elisabeta I în anul 1603?",
@@ -9735,6 +9741,7 @@ const dbLectii = {
             <p>Unii regi absolutiști au fost influențați de aceste idei și au făcut reforme în școli, sănătate și economie (cum ar fi Frederic al II-lea în Prusia sau Iosif al II-lea în Austria), fiind numiți <em>„monarhi luminați”</em>.</p>
             <p>Mai mult, ideile iluminiștilor au fost scânteia care a aprins mari schimbări în lume, ducând la crearea Statelor Unite ale Americii și la izbucnirea <strong>Revoluției Franceze din 1789</strong>.</p>
         `,
+        stiaiCa: "Știai că scriitorul iluminist Voltaire iubea atât de mult cafeaua încât se spune că bea peste 40 de cești pe zi în timp ce scria, iar când medicul său l-a avertizat că această băutură este un 'venin lent', filozoful i-a răspuns râzând: 'Chiar așa trebuie să fie, din moment ce îl beau de mai bine de jumătate de secol și încă n-am murit!'?",
         quiz: [
             {
                 q: "Care este considerat principalul instrument de cunoaștere în viziunea iluministă?",
@@ -9872,6 +9879,7 @@ const dbLectii = {
             </ul>
             <p>Cele trei puteri trebuie să fie separate și să se controleze reciproc. De asemenea, Montesquieu s-a opus ferm sclaviei.</p>
         `,
+        stiaiCa: "Știai că principiul separației celor trei puteri în stat formulat de Montesquieu în lucrarea 'Spiritul legilor' este cel care stă la baza constituțiilor aproape tuturor statelor democratice moderne din ziua de azi, inclusiv la baza sistemului politic din România?",
         quiz: [
             {
                 q: "Care este principala contribuție a lui Charles de Montesquieu la organizarea statului modern?",
@@ -10002,6 +10010,7 @@ const dbLectii = {
           <p>Elitele urbane socializau în saloane de lectură, cafenele, la teatru, operă, concerte și la promenadă. Dezvoltarea presei, a ziarelor și a cluburilor a permis cetățenilor să dezbată liber modul de guvernare al țării.</p>
           <p>Astfel s-a născut <strong>opinia publică</strong> — părerea împărtășită de populația informată, care adesea critica conducerea și care a contribuit decisiv la modernizarea societății.</p>
         `,
+        stiaiCa: "Știai că primele cafenele din Londra și Paris din secolul al XVIII-lea erau poreclite 'universități de un penny' (penny universities), deoarece pentru prețul unei singure cești de cafea oricine putea intra să citească ziarele proaspăt tipărite și să dezbată politică și filozofie cu marii intelectuali ai vremii?",
         quiz: [
           {
             q: "Ce plante de origine americană au contribuit substanțial la îmbunătățirea alimentației europenilor în secolul al XVIII-lea?",
@@ -10132,6 +10141,7 @@ const dbLectii = {
           <h3>3. Constituția SUA (1787)</h3>
           <p>În 1787 a fost adoptată <strong>prima constituție scrisă din lume</strong> (valabilă și astăzi cu amendamente). SUA au devenit un <strong>stat federal și republican</strong>, bazat pe separația puterilor în stat. În 1789, George Washington a fost ales primul președinte al SUA.</p>
         `,
+        stiaiCa: "Știai că în timpul evenimentului 'Partida de ceai de la Boston' din 1773, coloniștii americani s-au deghizat în indieni mohawk și au aruncat peste bordul vaselor britanice 342 de lăzi cu ceai, cantitate echivalentă cu peste 46 de tone de frunze de ceai, valoarea pagubei depășind astăzi un milion de dolari?",
         quiz: [
           {
             q: "Câte colonii engleze s-au format pe coasta atlantică a Americii de Nord în secolele XVII-XVIII?",
@@ -10265,6 +10275,7 @@ const dbLectii = {
           <h3>4. Directoratul (1795) și Consecințele Revoluției</h3>
           <p>Prin Constituția din 1795, puterea executivă este preluată de un <strong>Directorat (5 directori)</strong>. Revoluția Franceză a desființat definitiv vechiul regim absolutist, a proclamat egalitatea cetățenilor și a răspândit în întreaga Europă idealurile de libertate și egalitate.</p>
         `,
+        stiaiCa: "Știai că în momentul în care protestatarii au dărâmat închisoarea Bastilia la 14 iulie 1789 — eveniment considerat simbolul izbucnirii Revoluției Franceze —, în uriașa fortăreață medievală mai erau închiși doar 7 deținuți, dar cetatea a fost atacată în principal pentru a captura cele peste 30.000 de puști și tonele de praf de pușcă depozitate acolo?",
         quiz: [
           {
             q: "Ce eveniment simbolic din 14 iulie 1789 a marcat începutul Revoluției Franceze?",
@@ -10396,6 +10407,7 @@ const dbLectii = {
           <h3>3. Codul civil napoleonian (1804)</h3>
           <p>Adoptat în 1804, <strong>Codul civil</strong> a reprezentat cea mai importantă reformă legislativă a lui Napoleon, garantând egalitatea cetățenilor în fața legii, libertatea individuală, dreptul de proprietate privată și instituția căsătoriei civile. Răspândit în Europa și America Latină, a stat la baza sistemelor juridice moderne.</p>
         `,
+        stiaiCa: "Știai că în timpul campaniei din Egipt (1798), soldații și savanții din expediția lui Napoleon au descoperit Piatra de la Rosetta, un bloc de piatră sculptat în trei scrieri diferite care a permis mai târziu savantului Jean-François Champollion să descifreze pentru prima dată hieroglifele egiptene antice?",
         quiz: [
           {
             q: "În ce an a preluat Napoleon Bonaparte puterea în Franța ca prim-consul?",
@@ -10529,6 +10541,7 @@ const dbLectii = {
             <p>Locul vechilor ateliere a fost luat de <strong>fabrică</strong>, iar orașele au crescut rapid. În această perioadă s-a format o nouă clasă socială: <strong>muncitorimea (proletariatul)</strong>.</p>
             <p>La început, muncitorii aveau o viață foarte grea (lucrau și 12 ore pe zi, aveau salarii mici și condiții periculoase). Pentru a-și apăra drepturile și a obține condiții mai bune, ei s-au unit în <strong>sindicate</strong> și au organizat <strong>greve</strong>.</p>
         `,
+        stiaiCa: "Știai că prima linie de cale ferată comercială din lume, deschisă în 1830 între Liverpool și Manchester, a înregistrat și primul accident feroviar mortal din istorie, când politicianul britanic William Huskisson a fost lovit chiar de celebra locomotivă 'The Rocket' proiectată de Stephenson?",
         quiz: [
             {
                 q: "Cine a perfecționat și creat un motor cu abur practic și eficient în a doua jumătate a secolului al XVIII-lea?",
@@ -10664,6 +10677,7 @@ const dbLectii = {
                 <li><strong>Românii (1821):</strong> Revoluția condusă de <strong>Tudor Vladimirescu</strong> a pus capăt regimului fanariot și a readus la conducere domnii pământeni.</li>
             </ul>
         `,
+        stiaiCa: "Știai că lupta grecilor pentru independență din 1821 a atras un sprijin uriaș în întreaga Europă, celebrul poet britanic Lord Byron vânzându-și moșia din Anglia pentru a finanța flota grecească și plecând personal să lupte pe front, unde a și murit ca un erou național al Greciei?",
         quiz: [
             {
                 q: "Ce alianță a fost creată în 1815 de monarhii Rusiei, Austriei și Prusiei pentru a opri mișcările revoluționare?",
@@ -10801,6 +10815,7 @@ const dbLectii = {
           <h3>3. Urmările revoluției</h3>
           <p>Chiar dacă armatele marilor imperii (Rusia, Austria, Imperiul Otoman) au oprit revoluțiile, ideile de <strong>libertate, egalitate și unire</strong> s-au răspândit definitiv. În anii următori, mulți țărani au primit libertate și s-a extins dreptul de vot.</p>
         `,
+        stiaiCa: "Știai că anul 1848 a fost numit 'Primăvara Popoarelor' deoarece peste 50 de țări și regiuni din Europa au fost cuprinse simultan de valul revoluționar, fiind cea mai răspândită mișcare revoluționară din istoria continentului european?",
         quiz: [
           {
             q: "Cum a fost numit valul de revoluții care a cuprins Europa în anul 1848?",
@@ -10934,6 +10949,7 @@ const dbLectii = {
             <li><strong>Proclamarea Regatului (1881):</strong> România devine regat, iar Carol I devine primul rege. Se construiesc căi ferate, poduri moderne și se dezvoltă orașele.</li>
           </ul>
         `,
+        stiaiCa: "Știai că dubla alegere a lui Alexandru Ioan Cuza în Moldova (5 ianuarie 1859) și în Țara Românească (24 ianuarie 1859) a fost o soluție de geniu a diplomației românești pentru a ocoli interdicția Marilor Puteri, care acceptaseră unirea doar în privința instituțiilor, dar nu specificaseră explicit că cele două țări nu pot avea același domnitor?",
         quiz: [
           {
             q: "Cine a fost ales domnitor al Moldovei și al Țării Românești în ianuarie 1859, realizând Unirea Principatelor?",
@@ -11066,6 +11082,7 @@ const dbLectii = {
             <li><strong>18 ianuarie 1871:</strong> La Palatul Versailles, regele Prusiei, <strong>Wilhelm I</strong>, este proclamat împărat al Germaniei unificate.</li>
           </ul>
         `,
+        stiaiCa: "Știai că unificarea Germaniei a fost proclamată pe 18 ianuarie 1871 chiar în celebra Sală a Oglinzilor din Palatul Versailles din Franța, ca un gest deliberat de umilire a francezilor proaspăt înfrânți în războiul franco-prusac?",
         quiz: [
           {
             q: "Cine a condus Prusia în calitate de cancelar și a realizat unificarea Germaniei?",
@@ -11201,6 +11218,7 @@ const dbLectii = {
           <p>Franța a fost centrul cultural și artistic al lumii. În pictură a apărut curentul numit <strong>impresionism</strong> (care punea accent pe lumină și natură), iar în arhitectură stilul <strong>Art Nouveau</strong> (folosind sticla și structurile din metal).</p>
           <p>Parisul a fost numit <strong>„Orașul Luminilor”</strong> atât datorită iluminatului electric, cât și pentru viața sa culturală strălucitoare.</p>
         `,
+        stiaiCa: "Știai că Turnul Eiffel din Paris, cel mai faimos simbol al perioadei La Belle Époque, a fost construit inițial doar ca o structură temporară pentru Expoziția Universală din 1889 și trebuia demolat după 20 de ani, fiind salvat în ultimul moment datorită utilității sale ca antenă de transmisie radio?",
         quiz: [
           {
             q: "După numele cărui monarh a fost denumită „Epoca victoriană” în Marea Britanie?",
@@ -11336,6 +11354,7 @@ const dbLectii = {
           </ul>
           <p>La începutul anului 1914, ambele blocuri militare erau complet înarmate și pregătite pentru un mare conflict.</p>
         `,
+        stiaiCa: "Știai că deși România și Italia au fost membre ale Triplei Alianțe (Puterile Centrale) din secolul al XIX-lea, ambele au refuzat să intre în război alături de Germania și Austro-Ungaria în 1914, declarându-se neutre și alăturându-se ulterior Antantei?",
         quiz: [
           {
             q: "Care erau cele două provincii bogate pe care Franța dorea să le recupereze de la Germania?",
