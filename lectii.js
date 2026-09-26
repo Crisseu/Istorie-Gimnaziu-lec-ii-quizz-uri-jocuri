@@ -1,18 +1,19 @@
 const dbLectii = {
     "V": [
         {
-            title: "1. Ce este Istoria? Izvoare istorice",
-            summary: `
-                <h3>1. Ce este Istoria?</h3>
-                <p>Istoria este știința care reconstituie povestea întregii omeniri, de la apariția omului până azi. Persoanele care cercetează trecutul se numesc <strong>istorici</strong>.</p>
-                <h3>2. Izvoarele Istorice</h3>
-                <p>Mărturiile pe baza cărora reconstituim trecutul:</p>
-                <ul>
-                    <li><strong>Scrise:</strong> inscripții, cărți, documente, scrisori.</li>
-                    <li><strong>Nescrise:</strong> ruine, unelte, arme, morminte, vase.</li>
-                    <li><strong>Orale:</strong> relatări directe ale martorilor.</li>
-                </ul>
-            `,
+        title: "1. Ce este Istoria? Izvoare istorice",
+        summary: `
+            <h3>1. Ce este Istoria?</h3>
+            <p>Istoria este știința care reconstituie povestea întregii omeniri, de la apariția omului până azi. Persoanele care cercetează trecutul se numesc <strong>istorici</strong>.</p>
+            <h3>2. Izvoarele Istorice</h3>
+            <p>Mărturiile pe baza cărora reconstituim trecutul:</p>
+            <ul>
+                <li><strong>Scrise:</strong> inscripții, cărți, documente, scrisori.</li>
+                <li><strong>Nescrise:</strong> ruine, unelte, arme, morminte, vase.</li>
+                <li><strong>Orale:</strong> relatări directe ale martorilor.</li>
+            </ul>
+        `,
+        stiaiCa: "Știai că primii oameni nu foloseau focul doar pentru a se încălzi sau a găti, ci și ca loc de adunare unde vânători bătrâni le povesteau celor tineri despre marile pericole ale haitelor de fiare, creând primele forme de istorie orală?",
            escape: {
     locks: [
         {
@@ -79,6 +80,7 @@ const dbLectii = {
                     <li>Epoca Contemporană</li>
                 </ul>
             `,
+            stiaiCa: "Știai că anul 46 î.Hr. a fost numit 'cel mai lung an din istorie'? Împăratul Iulius Cezar a trebuit să adauge 67 de zile suplimentare în calendar pentru a alinia lunile cu anotimpurile reale, astfel că anul respectiv a avut 445 de zile!",
             escape: {
                 locks: [
                     {
@@ -138,6 +140,7 @@ const dbLectii = {
                     <li>Cum s-au mutat populațiile dintr-un un loc în altul.</li>
                 </ul>
             `,
+            stiaiCa: "Știai că cel mai vechi obiect considerat o 'hartă' din istorie are peste 14.000 de ani? A fost descoperit într-o peșteră din Spania și este o piatră gravată cu relieful din jur, râurile și locurile de vânătoare folosite de oamenii din Preistorie!",
             escape: {
                 locks: [
                     {
@@ -272,6 +275,7 @@ const dbLectii = {
                 <h3>4. Homo Sapiens</h3>
                 <p>Omul modern (<strong>Homo sapiens</strong>) a apărut acum 200.000 de ani. A trăit o vreme alături de alte specii (cum era omul de Neanderthal), dar a supraviețuit până azi pentru că s-a adaptat cel mai rapid și mai bine la mediu.</p>
             `,
+            stiaiCa: "Știai că amprentele lăsate pe picturile rupestre din peșteri arată că mulți dintre 'artiștii' Preistoriei erau copii și femei? Aceștia își puneau palma pe perete și suflau pigmenți de culoare printr-un os gol, lăsându-ne 'semnătura' lor de acum zeci de mii de ani!",
             quiz: [
     {
         q: "Ce marchează începutul și sfârșitul Preistoriei?",
@@ -389,6 +393,7 @@ const dbLectii = {
                 <h3>4. Semiluna Fertilă</h3>
                 <p>Această „revoluție” agricolă a pornit din zona numită <strong>„Semiluna Fertilă”</strong> și s-a răspândit pe tot globul, dând naștere primelor mari civilizații.</p>
             `,
+            stiaiCa: "Știai că prima 'pâine' din istorie a fost coaptă cu mii de ani înainte de apariția agriculturii? Arheologii au descoperit într-un cuptor din Iordania rămășițe de lipie vechi de peste 14.000 de ani, făcute din cereale sălbatice măcinate și amestecate cu apă!",
             quiz: [
     {
         q: "Ce reprezintă agricultura?",
@@ -521,6 +526,7 @@ const dbLectii = {
                     <li><strong>Epoca fierului:</strong> Mai târziu, fierul a înlocuit bronzul. Armele și uneltele de fier erau mult mai dure, mai puternice și ofereau un mare avantaj în lupte (deși rugineau mai ușor).</li>
                 </ul>
             `,
+            stiaiCa: "Știai că primele unelte și podoabe din fier folosite de oameni au fost făcute din meteoriți căzuți din spațiu? Deoarece fierul din minereuri terestre necesită cuptoare la temperaturi uriașe pentru a fi topit, vechii egipteni numeau fierul 'metalul din cer'!",
             quiz: [
     {
         q: "Ce reprezintă metalurgia?",
@@ -656,6 +662,7 @@ const dbLectii = {
             <h3>4. Invenții și locuințe</h3>
             <p>Oamenii Orientului Antic ne-au lăsat invenții extraordinare: calendarul, primele școli, biblioteci, legile scrise și medicina. Locuințele erau făcute din lut (cărămizi uscate la soare), aveau acoperișuri plate pentru treburile zilnice, curte interioară și cuptoare de lut pentru pâine.</p>
         `,
+        stiaiCa: "Știai că în Mesopotamia antică, salariile lucrătorilor la construcții și piramide erau plătite direct în bere? Aceasta nu era doar o băutură, ci o sursă hrănitoare și sigură de hidratare, fiind mult mai curată și mai bogată în calorii decât apa din fluvii!",
         quiz: [
             {
                 q: "De ce s-au așezat primele comunități sedentare în preajma unor fluvii precum Nil, Tigru și Eufrat?",
@@ -785,6 +792,7 @@ const dbLectii = {
                 <h3>4. Piramidele din Egipt</h3>
                 <p><strong>Piramidele</strong> erau morminte masive construite pentru regii Egiptului (faraonii), care erau venerați ca zei. Înainte de piramide foloseau morminte numite <em>mastaba</em>, iar mai târziu au trecut la morminte săpate direct în stâncă.</p>
             `,
+            stiaiCa: "Știai că Marea Piramidă din Giza a fost cea mai înaltă construcție din lume făcută de om timp de peste 3.800 de ani? A fost depășită abia în anul 1311, când a fost finalizată Catedrala din Lincoln (Anglia), a cărei turlă din lemn a depășit înălțimea piramidei!",
             quiz: [
     {
         q: "De ce au construit societățile Orientului Antic monumente impunătoare?",
@@ -914,6 +922,7 @@ const dbLectii = {
             <h3>4. Ce s-a întâmplat cu Babilonul?</h3>
             <p>După mulți ani de glorie, Babilonul a fost cucerit de un alt popor puternic, perșii. Treptat, din cauza războaielor și a schimbărilor de mediu, orașul și-a pierdut importanța și a fost părăsit de locuitorii săi.</p>
         `,
+        stiaiCa: "Știai că Regele Hammurabi a creat unul dintre primele coduri de legi scrise din lume, iar regula 'ochi pentru ochi, dinte pentru dinte' era gravată pe un stâlp uriaș de piatră neagră? Legile erau atât de stricte încât, dacă un constructor făcea o casă proastă și ea se prăbușea peste proprietar, constructorul plătea cu propria viață!",
         quiz: [
             {
                 q: "Ce este un stat?",
@@ -1048,6 +1057,7 @@ const dbLectii = {
                 <h3>4. Popoarele izolate</h3>
                 <p>Unele civilizații au avut limbi complet izolate, fără alte neamuri înrudite (de exemplu, sumerienii). De cele mai multe ori, acestea au fost în cele din urmă asimilate de popoarele cuceritoare.</p>
             `,
+            stiaiCa: "Știai că fenicienii, un popor de navigatori din familia semiților, au inventat primul alfabet din lume doar pentru a-și ușura socotelile comerciale? Sistemul lor de 22 de litere a fost atât de practic încât a fost preluat de greci și romani, devenind baza alfabetului pe care îl folosim noi astăzi!",
             quiz: [
     {
         q: "Ce definește în primul rând un popor din Orientul Antic?",
@@ -1177,6 +1187,7 @@ const dbLectii = {
                 <h3>4. Confucius</h3>
                 <p>Filosoful <strong>Confucius</strong> (Kong Qiu) a pus bazele confucianismului, promovând respectul reciproc, armonia în familie și regula de aur: <em>„ce ție nu-ți place, altuia nu-i face”</em>.</p>
             `,
+            stiaiCa: "Știai că primul împărat al Chinei, Qin Shi Huang, era atât de obsedat de viața veșnică încât a fost îngropat alături de o 'armată de teracotă' formată din peste 8.000 de soldați din lut în mărime naturală? Fiecare statuie are trăsături faciale unice, nicio față nu se repetă!",
             quiz: [
     {
         q: "Unde și când a apărut civilizația chineză?",
@@ -1306,6 +1317,7 @@ const dbLectii = {
                 <h3>4. Cuceririle și Tora</h3>
                 <p>Regatele au fost în cele din urmă cucerite: Israelul de asirieni (722 î.H.), iar Iudeea de babilonieni (586 î.H.). Primele cinci cărți ale Vechiului Testament (Tora) reprezintă scrierile lor sfinte.</p>
             `,
+            stiaiCa: "Știai că Regele Solomon a folosit un număr uriaș de 180.000 de muncitori, cioplitori în piatră și cărăuși pentru a construi Primul Templu din Ierusalim? Clădirea a fost realizată din blocuri masive de piatră fasonate direct la carieră, astfel încât în timpul construcției nu s-a auzit niciun sunet de ciocan sau unealtă de fier pe șantier!",
             quiz: [
     {
         q: "Ce caracteristică specială aveau vechii evrei în materie de religie?",
@@ -1435,6 +1447,7 @@ const dbLectii = {
                 <h3>4. Alfabetul fenician</h3>
                 <p>Fenicienii au inventat primul **alfabet** (cu litere pentru sunete), care a devenit strămoșul alfabetelor grec, latin, chirilic, arab și evreiesc. Cuvântul „alfabet” vine de la primele litere grecești (*alpha* și *beta*).</p>
             `,
+            stiaiCa: "Știai că hieroglifele egiptene au rămas un mister complet timp de peste 1.500 de ani, până când a fost descoperită Piatra de la Rosetta? Aceasta conținea același text scris în trei limbaje diferite, permițându-le cercetătorilor să 'descuie' secretele scrierii egiptene!",
             quiz: [
     {
         q: "Din ce motive practice a fost inventat scrisul în Orientul Antic?",
@@ -1564,6 +1577,7 @@ const dbLectii = {
                 <h3>4. Tăblițele de lut</h3>
                 <p>Poemul explorează lupta omului cu soarta și moartea. Aproape jumătate din cele 3.600 de versuri s-au păstrat pe <strong>12 tăblițe de lut ars</strong>, descoperite în biblioteca regelui asirian Assurbanipal.</p>
             `,
+            stiaiCa: "Știai că povestea Marelui Potop din Epopeea lui Ghilgameș este uimitor de similară cu cea a Corăbiei lui Noe din Biblie? Eroul Ut-napiștim construiește o corabie uriașă, o umple cu animale din toate speciile și trimite un porumbel și un corb pentru a vedea dacă apele au retras!",
             quiz: [
     {
         q: "Ce este Epopeea lui Ghilgameș în istoria literaturii?",
@@ -1693,6 +1707,7 @@ const dbLectii = {
                 <h3>4. Răspândirea istorică</h3>
                 <p>Codul lui Hammurabi a fost preluat ulterior de vechii perși și utilizat, cu mici modificări, până la cucerirea macedoneană din anul <strong>330 î.H.</strong></p>
             `,
+            stiaiCa: "Știai că stela pe care a fost gravat Codul lui Hammurabi are o înălțime de peste 2 metri și este sculptată la bază în bazalt negru durabil? În partea de sus este sculptat regele Hammurabi primind legile direct de la Shamash, zeul babilonian al soarelui și al dreptății!",
             quiz: [
     {
         q: "Din ce perioadă datează Codul lui Hammurabi?",
@@ -1822,6 +1837,7 @@ const dbLectii = {
             <h3>4. Cum arătau casele grecilor?</h3>
             <p>Casa unui grec (numită <em>oikos</em>) era construită în jurul unei <strong>curți interioare</strong> unde familia își petrecea timpul la aer curat. Casele aveau camere pentru dormit, bucătărie și spații speciale pentru treburile casnice, unde lucrau uneori și sclavii familiei.</p>
         `,
+        stiaiCa: "Știai că uleiul de măsline era numit de poetul Homer 'aurul lichid' al Greciei? Grecii nu îl foloseau doar la mâncare, ci își ungeau corpul cu el înainte de sport, îl foloseau drept săpun pentru curățare și îl ardeau în lămpi mici de lut pentru a lumina casele noaptea!",
         quiz: [
             {
                 q: "Ce aveau în comun toți grecii din vechime?",
@@ -1951,6 +1967,7 @@ const dbLectii = {
                 <h3>4. Valoarea obiectelor ceramice</h3>
                 <p>Valoarea unui vas de ceramică nu era dată doar de conținutul său (mărfurile transportate), ci și de frumusețea și măiestria picturilor de pe exterior.</p>
             `,
+            stiaiCa: "Știai că în Grecia Antică, câștigătorii probelor de la Jocurile Panatenaice nu primeau medalii, ci amfore uriașe pline cu ulei de măsline de calitate superioară? Un singur atlet putea câștiga până la 100 de astfel de amfore pictate, ceea ce reprezenta o adevărată avere!",
             quiz: [
     {
         q: "Care erau principalele utilizări practice ale ceramicii la vechii greci?",
@@ -2080,6 +2097,7 @@ const dbLectii = {
                 <h3>4. Istorie și legendă</h3>
                 <p>Deși Iliada a fost tratată mult timp ca o operă literară plină de legende, descoperirea ruinelor Troiei în anul 1871 (în Turcia de azi) a dovedit că războiul a avut o bază istorică reală, desfășurat probabil în secolul al XII-lea î.H.</p>
             `,
+            stiaiCa: "Știai că ruinele cetății Troia au fost descoperite de un arheolog amator bogat, Heinrich Schliemann, care se ghida pe teren ținând cartea 'Iliada' a lui Homer în mână? Majoritatea istoricilor din vremea lui râdeau de el, crezând că Troia este doar un basm inventat de poeți!",
             quiz: [
     {
         q: "Unde credeau vechii greci că locuiau cei 12 zei principali conduși de Zeus?",
@@ -2213,6 +2231,7 @@ const dbLectii = {
             <h3>4. Cum era condus orașul?</h3>
             <p>Orașele grecești aveau moduri diferite de conducere. Când puterea aparținea tuturor cetățenilor liberi, sistemul se numea <strong>democrație</strong>. Când orașul era condus doar de un grup restrâns de oameni bogați, sistemul se numea <strong>aristocrație</strong>. Deciziile mari se luau prin vot în Adunarea Generală a cetățenilor.</p>
         `,
+        stiaiCa: "Știai că în agora grecească exista un pietroi special pe care se urcau oratorii pentru a vorbi mulțimii, dar dacă cineva propunea o lege rea sau nepopulară, cetățenii puteau arunca în el cu coji de smochine sau legume stricate?",
         quiz: [
             {
                 q: "Ce reprezenta un polis în Grecia Antică?",
@@ -2342,6 +2361,7 @@ const dbLectii = {
             <h3>4. Stilul de viață spartan</h3>
             <p>Spartanii urau luxul și preferau o viață simplă și curajoasă. Ei erau cunoscuți și pentru că vorbeau scurt, clar și direct, fără să risipească cuvintele (stil de vorbire numit <strong>laconic</strong>).</p>
         `,
+        stiaiCa: "Știai că expresia 'stil laconic' vine direct de la regiunea Spartei (Laconia)? Când un rege cuceritor le-a trimis spartanilor un mesaj lung în care îi amenința: 'Dacă intru în orașul vostru, îl voi rade de pe fața pământului', spartanii i-au trimis înapoi un singur cuvânt scris pe papirus: 'Dacă'!",
         quiz: [
             {
                 q: "Care era principala ocupație a cetățenilor din Sparta (spartiații)?",
@@ -2479,6 +2499,7 @@ const dbLectii = {
             <h3>5. Atena – orașul culturii și al școlilor</h3>
             <p>Atena a fost un mare centru de cultură, artă și învățătură. Celebrul gânditor <strong>Platon</strong> a întemeiat o școală numită <em>Academia</em>, unde tinerii învățau matematică, filosofie și alte științe importante.</p>
         `,
+        stiaiCa: "Știai că de la bucățile de ceramică sparte folosite de atenieni pentru a vota alungarea politicienilor periculoși (numite 'ostraka') vine cuvântul modern 'ostracizare'? Arheologii au descoperit mii de astfel de bucăți de lut scrise, unele având același nume scris cu același scris, dovedind că se făceau și atunci 'manevre' la vot!",
         quiz: [
             {
                 q: "Ce formă de conducere renumită a apărut în orașul Atena?",
@@ -2605,6 +2626,7 @@ const dbLectii = {
                 <h3>3. Impactul economic și cultural</h3>
                 <p>Coloniile reprezentau piețe majore de desfacere pentru mărfurile din metropolă. Totodată, întemeierea lor pe teritorii străine a dus la un intens schimb de idei și comerț cu populațiile locale (numite de greci „barbari”). Prin colonizare, limba, religia și cultura greacă s-au răspândit în întreaga lume antică.</p>
             `,
+            stiaiCa: "Știai că grecii nu plecau niciodată să întemeieze o colonie nouă fără să consulte mai întâi Oracolul din Delphi? Preoteasa Pythia le dădea indicații geografice (adesea sub formă de ghicitori enigmatice) despre locul exact unde aveau să găsească pământuri rodnice și siguranță!",
             quiz: [
     {
         q: "În ce perioadă s-a desfășurat procesul de colonizare a grecilor în Marea Mediterană și Marea Neagră?",
@@ -2734,6 +2756,7 @@ const dbLectii = {
                 <h3>4. Schimburile comerciale și influența asupra geților</h3>
                 <p>Grecii aduceau vin, ulei de măsline, bijuterii și marmură, primind la schimb cereale și produse locale de la geți. Prin acest contact, geții au preluat scrierea, moneda și tehnici avansate de prelucrare a ceramicii și metalelor. În secolul I î.H., cetățile au intrat sub stăpânire romană.</p>
             `,
+            stiaiCa: "Știai că cetatea Histria a fost primul loc de pe teritoriul României de astăzi unde s-a bătut monedă proprie, încă din secolul al V-lea î.H.? Monedele mici din bronz aveau turnate pe o parte un delfin, simbolizând marea și comerțul maritim!",
             quiz: [
     {
         q: "Cum numeau grecii Marea Neagră datorită condițiilor favorabile de navigație?",

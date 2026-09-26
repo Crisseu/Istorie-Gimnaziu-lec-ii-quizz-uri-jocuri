@@ -215,6 +215,50 @@
         #wheelCanvas { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .wheel-pointer { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 14px solid transparent; border-right: 14px solid transparent; border-top: 24px solid #c0392b; z-index: 10; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4)); }
 
+        /* Stiluri Antrenament Solo */
+        .duel-box {
+            background: #fffdf7;
+            border: 2px solid #8c5a2b;
+            border-radius: 12px;
+            padding: 20px;
+            color: #2c1d11;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .duel-group {
+            background: #f0e3c4;
+            border: 1px solid #d4a359;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .duel-slider-row {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            color: #4a2e1b;
+            margin-bottom: 8px;
+        }
+        .duel-slider-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .duel-slider-container input[type="range"] {
+            width: 100%;
+            accent-color: #8c5a2b;
+            cursor: pointer;
+        }
+        .duel-options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        @media (max-width: 600px) {
+            .duel-options-grid { grid-template-columns: 1fr; }
+        }
+
         @media (min-width: 600px) {
             .screen { max-width: 850px; margin: 0 auto; width: 100%; }
         }
@@ -249,9 +293,77 @@
         <div class="card" onclick="openClass('VII')"><span>🏰 Clasa a VII-a</span></div>
         <div class="card" onclick="openClass('VIII')"><span>👑 Clasa a VIII-a</span></div>
 
-        <div style="text-align: center; margin-top: 20px;">
+        <div style="text-align: center; margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px;">
             <button id="btnDailyChest" class="btn-action" onclick="openWheelModal()">🎁 Cufăr Istoric Zilnic</button>
+            <button id="btnSolo" class="btn-action" onclick="openDuelSetup()">⚔️ Antrenament Solo</button>
             <button id="btnDespre" class="btn-action" onclick="deschideDespre()">ℹ️ Despre aplicație</button>
+        </div>
+    </div>
+
+    <!-- ECRAN CONFIGURARE ANTRENAMENT SOLO -->
+    <div id="screenDuelSetup" class="screen">
+        <div class="duel-box">
+            <h2 style="color: #4a2e1b; margin-bottom: 8px; text-align: center;">⚔️ Antrenament Solo</h2>
+            <p style="font-size:0.9rem; color:#5c3a21; margin-bottom:15px; text-align: center;">Alege clasa și intervalul de lecții pentru testul cronometrat!</p>
+
+            <div class="duel-group">
+                <label for="duelClassSelect"><b>Alege Clasa:</b></label><br>
+                <select id="duelClassSelect" onchange="updateDuelSliders()" style="width: 100%; padding: 10px; font-size: 1rem; border-radius: 8px; border: 1px solid #8c5a2b; margin-top: 5px; background: #fffdf7; font-weight: bold; color: #4a2e1b;">
+                    <option value="V">Clasa a V-a</option>
+                    <option value="VI">Clasa a VI-a</option>
+                    <option value="VII">Clasa a VII-a</option>
+                    <option value="VIII">Clasa a VIII-a</option>
+                </select>
+            </div>
+
+            <div class="duel-group">
+                <div class="duel-slider-row">
+                    <span>De la lecția: <strong id="valMinLectie">1</strong></span>
+                    <span>Până la lecția: <strong id="valMaxLectie">10</strong></span>
+                </div>
+                <div class="duel-slider-container">
+                    <input type="range" id="sliderMin" min="1" max="59" value="1" oninput="handleRangeSliders()">
+                    <input type="range" id="sliderMax" min="1" max="59" value="10" oninput="handleRangeSliders()">
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn-action" style="background: #27ae60; color: #fff; border-color: #2ecc71; width: 100%; font-size: 1.1rem;" onclick="startDuel()">🚀 Începe Antrenamentul!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ECRAN JOC ANTRENAMENT SOLO -->
+    <div id="screenDuelGame" class="screen">
+        <div class="duel-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; background: #4a2e1b; color: #f3e5ab; padding: 10px 14px; border-radius: 8px; font-weight: bold; margin-bottom: 15px;">
+                <div>⏳ <span id="duelTimer" style="color:#f1c40f; font-size:1.1rem;">15</span>s</div>
+                <div>🏆 Scor: <span id="duelScore">0</span></div>
+                <div>Întrebarea <span id="duelQNum">1</span>/10</div>
+            </div>
+
+            <h3 id="duelQuestionText" style="color: #4a2e1b; margin-bottom: 15px; font-size: 1.1rem;">Aici va fi întrebarea...</h3>
+            <div id="duelOptionsContainer" class="duel-options-grid"></div>
+        </div>
+    </div>
+
+    <!-- ECRAN REZULTAT SOLO & INSIGNĂ -->
+    <div id="screenDuelResult" class="screen">
+        <div class="duel-box" style="text-align: center;">
+            <h2 style="color: #4a2e1b;">🎉 Antrenament Finalizat</h2>
+            <div style="font-size: 2.2rem; font-weight: bold; color: #d35400; margin: 10px 0;">
+                <span id="finalDuelScore">0</span> Puncte
+            </div>
+            
+            <div id="badgeContainer" style="background: #f0e3c4; border: 2px solid #d4a359; border-radius: 10px; padding: 15px; margin: 15px 0;">
+                <div id="badgeIcon" style="font-size: 3rem; margin-bottom: 5px;">🛡️</div>
+                <div id="badgeTitle" style="font-weight: bold; color: #4a2e1b; font-size: 1.1rem;">Insigna obținută</div>
+                <div id="badgeDesc" style="font-size: 0.85rem; color: #5c3a21; margin-top: 4px;"></div>
+            </div>
+
+            <p id="duelResultMessage" style="font-weight: bold; color: #27ae60; margin-bottom: 15px;"></p>
+
+            <button class="btn-action" style="width: 100%; background: #8c5a2b; color: white;" onclick="goBack()">🏠 Înapoi la Meniu</button>
         </div>
     </div>
 
@@ -363,10 +475,18 @@
             <li>Jocuri didactice interactive externe.</li>
         </ul>
         <p style="margin-top:10px;">Toate lecțiile/rezumatele, quizz-urile și jocurile Wordwall/Genially sunt realizate în concordanță cu <strong>Programa școlară</strong> actuală la <strong>Istorie</strong>, având ca sursă informațională manualele școlare ale editurilor <strong>CD Press</strong> (clasele V-VII) și <strong>Art Klett</strong> (clasa a VIII-a).</p>
-    </ul>
         <p style="margin-top:10px;"><strong>prof. Cristi AMĂRIUȚEI</strong></p>
         <p style="margin-top:10px;">Școala Gimnazală „Gheorghe și Maria Tașcă„ comuna Bălăbănești, jud. Galați</p>
         <p style="margin-top:10px;">Școala Gimnazală Nr. 1 comuna Bălășești, jud. Galați</p>
+    </div>
+</div>
+<!-- MODAL POP-UP "ȘTIAI CĂ...?" -->
+<div id="modalStiaiCa" class="modal">
+    <div class="modal-content" style="border-color: #d35400; background: #fffdf7;">
+        <span class="close-btn" onclick="inchideModal('modalStiaiCa')">&times;</span>
+        <h2 style="color: #d35400; border-bottom-color: #e67e22;">💡 Știai că...?</h2>
+        <p id="stiaiCaText" style="font-size: 1.05rem; line-height: 1.6; color: #2c1d11; margin-top: 10px;"></p>
+        <button class="btn-action" style="margin-top: 20px; background: #d35400; color: white; border-color: #e67e22;" onclick="inchideModal('modalStiaiCa')">Am aflat secretul! 🕵️‍♂️</button>
     </div>
 </div>
 
@@ -414,8 +534,8 @@
     let currentQuizIndex = 0;
     let currentLockIndex = 0;
 
-  const LEVELS = [
-        { level: 1,  title: "Mic Arheolog",           minXP: 0,     maxXP: 200,    avatar: '🛡️' },
+    const LEVELS = [
+        { level: 1,  title: "Mic Arheolog",            minXP: 0,     maxXP: 200,    avatar: '🛡️' },
         { level: 2,  title: "Explorator de Istorie",  minXP: 200,   maxXP: 500,    avatar: '🏛️' },
         { level: 3,  title: "Scrib Regal",            minXP: 500,   maxXP: 900,    avatar: '📜' },
         { level: 4,  title: "Cronicar de Seamă",       minXP: 900,   maxXP: 1400,   avatar: '⚔️' },
@@ -432,12 +552,11 @@
         { level: 15, title: "Erou al Neamului",       minXP: 17400, maxXP: 20100,  avatar: '👑' },
         { level: 16, title: "Titan al Istoriei",      minXP: 20100, maxXP: 23000,  avatar: '🔱' },
         { level: 17, title: "Marele Inquisitor",      minXP: 23000, maxXP: 26100,  avatar: '🦅' },
-        { level: 18, title: "Păzitorul Timpului",     minXP: 26100, maxXP: 29400,  avatar: '⏳' },
-        { level: 19, title: "Arhonte Suprem",         minXP: 29400, maxXP: 33000,  avatar: '👑' },
+        { level: 18, title: "Păzitorul Timpului",      minXP: 26100, maxXP: 29400,  avatar: '⏳' },
+        { level: 19, title: "Arhonte Suprem",          minXP: 29400, maxXP: 33000,  avatar: '👑' },
         { level: 20, title: "Legendă Absolută",       minXP: 33000, maxXP: Infinity, avatar: '🌌' }
     ];
 
-    // Recompense rebalansate pentru Roata Norocului
     const WHEEL_SECTORS = [
         { label: "+10 XP", xp: 10, color: "#8c5a2b", chance: 35 },
         { label: "+20 XP", xp: 20, color: "#27ae60", chance: 30 },
@@ -704,7 +823,7 @@
         });
     }
 
-    function openLessonDetail(clsKey, lessonIdx) {
+   function openLessonDetail(clsKey, lessonIdx) {
         currentLessonData = dbLectii[clsKey][lessonIdx];
         currentLessonIdx = lessonIdx;
         currentQuizIndex = 0;
@@ -714,7 +833,17 @@
         document.getElementById('screenLessons').classList.remove('active-screen');
         document.getElementById('screenDetail').classList.add('active-screen');
 
-        document.getElementById('summaryBoxContent').innerHTML = currentLessonData.summary;
+        // Construim rezumatul și atașăm automat butonul "Știai că...?" dacă există în lecție
+        let htmlRezumat = currentLessonData.summary || "";
+        if (currentLessonData.stiaiCa) {
+            htmlRezumat += `
+                <br><div style="text-align: center; margin-top: 20px;">
+                    <button class="btn-action" style="background: #f39c12; color: #fff; border-color: #d35400; font-size: 0.9rem;" onclick="deschideStiaiCa()">
+                        💡 Știai că...? (Secret Istoric)
+                    </button>
+                </div>`;
+        }
+        document.getElementById('summaryBoxContent').innerHTML = htmlRezumat;
         
         let ifr1 = document.getElementById('iframeGame1');
         let ifr2 = document.getElementById('iframeGame2');
@@ -725,11 +854,33 @@
         switchTab('summary');
     }
 
+    function deschideStiaiCa() {
+        if (currentLessonData && currentLessonData.stiaiCa) {
+            document.getElementById('stiaiCaText').innerText = currentLessonData.stiaiCa;
+            document.getElementById('modalStiaiCa').style.display = 'block';
+            playSound('correct');
+        }
+    }
+
     function goBack() {
         const detail = document.getElementById('screenDetail');
         const lessons = document.getElementById('screenLessons');
+        const setupDuel = document.getElementById('screenDuelSetup');
+        const gameDuel = document.getElementById('screenDuelGame');
+        const resultDuel = document.getElementById('screenDuelResult');
         
-        if(detail.classList.contains('active-screen')) {
+        if (gameDuel.classList.contains('active-screen') || resultDuel.classList.contains('active-screen')) {
+            clearInterval(duelState.timer);
+            gameDuel.classList.remove('active-screen');
+            resultDuel.classList.remove('active-screen');
+            setupDuel.classList.add('active-screen');
+            document.getElementById('headerTitle').innerText = "⚔️ Antrenament Solo";
+        } else if (setupDuel.classList.contains('active-screen')) {
+            setupDuel.classList.remove('active-screen');
+            document.getElementById('screenClasses').classList.add('active-screen');
+            document.getElementById('headerTitle').innerText = APP_TITLE;
+            document.getElementById('backBtn').style.display = 'none';
+        } else if(detail.classList.contains('active-screen')) {
             detail.classList.remove('active-screen');
             lessons.classList.add('active-screen');
             document.getElementById('headerTitle').innerText = "Clasa a " + currentClassKey + "-a";
@@ -809,192 +960,437 @@
     }
 
     /* ===================================================
-       LOGICĂ ESCAPE ROOM CU 4 LACĂTE & ANIMAȚIE UȘĂ
+       LOGICĂ ANTRENAMENT SOLO
     =================================================== */
-    function initEscapeRoom() {
-        document.getElementById('escapeInput').value = '';
-        document.getElementById('escapeFeedback').innerText = '';
-        document.getElementById('escapeHintText').style.display = 'none';
+    let duelState = {
+        clasa: 'V',
+        minLecție: 1,
+        maxLecție: 10,
+        intrebari: [],
+        indexCurent: 0,
+        scor: 0,
+        timer: null,
+        timpRamas: 15
+    };
 
-        const hasEscape = currentLessonData && 
-                          currentLessonData.escape && 
-                          Array.isArray(currentLessonData.escape.locks) && 
-                          currentLessonData.escape.locks.length > 0;
+    function openDuelSetup() {
+        document.getElementById('screenClasses').classList.remove('active-screen');
+        document.getElementById('screenDuelSetup').classList.add('active-screen');
+        document.getElementById('headerTitle').innerText = "⚔️ Antrenament Solo";
+        document.getElementById('backBtn').style.display = 'block';
+        document.getElementById('duelClassSelect').value = 'V';
+        updateDuelSliders();
+    }
 
-        if (!hasEscape) {
-            document.getElementById('escapePuzzleText').innerText = 
-                "🔒 Modulul Escape Room pentru această lecție nu a fost încă configurat de profesor.";
-            document.querySelector('.locks-row').style.display = 'none';
-            document.getElementById('escapeInputArea').style.display = 'none';
+    function updateDuelSliders() {
+        let cls = document.getElementById('duelClassSelect').value;
+        let lessons = dbLectii[cls] || [];
+        let maxLectii = lessons.length > 0 ? lessons.length : 50;
+
+        let sMin = document.getElementById('sliderMin');
+        let sMax = document.getElementById('sliderMax');
+
+        sMin.min = "1";
+        sMin.max = maxLectii.toString();
+        sMax.min = "1";
+        sMax.max = maxLectii.toString();
+
+        sMin.value = "1";
+        sMax.value = Math.min(10, maxLectii).toString();
+
+        handleRangeSliders();
+    }
+
+    function handleRangeSliders() {
+        let sMin = document.getElementById('sliderMin');
+        let sMax = document.getElementById('sliderMax');
+
+        let minVal = parseInt(sMin.value) || 1;
+        let maxVal = parseInt(sMax.value) || 1;
+
+        if (minVal > maxVal) {
+            sMin.value = maxVal;
+            minVal = maxVal;
+        }
+
+        document.getElementById('valMinLectie').innerText = minVal;
+        document.getElementById('valMaxLectie').innerText = maxVal;
+
+        duelState.minLecție = minVal;
+        duelState.maxLecție = maxVal;
+    }
+
+    function startDuel() {
+        duelState.clasa = document.getElementById('duelClassSelect').value;
+        duelState.scor = 0;
+        duelState.indexCurent = 0;
+
+        duelState.intrebari = extrageIntrebariInInterval(duelState.clasa, duelState.minLecție, duelState.maxLecție, 10);
+
+        if (duelState.intrebari.length === 0) {
+            alert("Nu am găsit întrebări disponibile în intervalul de lecții selectat!");
             return;
         }
 
-        document.querySelector('.locks-row').style.display = 'flex';
-        
-        let escapeKey = `escape_solved_${currentClassKey}_${currentLessonIdx}`;
-        let isSolved = localStorage.getItem(escapeKey) === 'true';
-        let locksData = currentLessonData.escape.locks;
+        document.getElementById('screenDuelSetup').classList.remove('active-screen');
+        document.getElementById('screenDuelGame').classList.add('active-screen');
+        incarcaIntrebareDuel();
+    }
 
-        if (isSolved) {
-            for (let i = 0; i < 4; i++) {
-                let card = document.getElementById(`lockCard${i}`);
-                card.className = "lock-card solved-lock";
-                document.getElementById(`lockIcon${i}`).innerText = '🔓';
-                document.getElementById(`lockDigit${i}`).innerText = locksData[i].digitRevealed;
+    function extrageIntrebariInInterval(clsKey, minL, maxL, limita) {
+        let intrebari = [];
+        let lessons = dbLectii[clsKey] || [];
+
+        lessons.forEach((l, idx) => {
+            let nrLectie = idx + 1;
+            if (nrLectie >= minL && nrLectie <= maxL && l.quiz && Array.isArray(l.quiz)) {
+                l.quiz.forEach(qItem => {
+                    intrebari.push({
+                        intrebare: qItem.q,
+                        optiuni: qItem.opts,
+                        corect: qItem.c
+                    });
+                });
             }
-            let finalCodeStr = locksData.map(l => l.digitRevealed).join('');
-            document.getElementById('escapePuzzleText').innerText = 
-                `🎉 AI EVADAT CU SUCCES! Codul istoric descifrat al arhivei a fost: ${finalCodeStr}!`;
-            document.getElementById('escapeInputArea').style.display = 'none';
-        } else {
-            document.getElementById('escapeInputArea').style.display = 'block';
-            updateLocksUI(locksData);
-        }
+        });
+
+        intrebari.sort(() => Math.random() - 0.5);
+        return intrebari.slice(0, limita);
     }
 
-    function updateLocksUI(locksData) {
-        let savedProgressKey = `escape_progress_${currentClassKey}_${currentLessonIdx}`;
-        let savedProgress = parseInt(localStorage.getItem(savedProgressKey)) || 0;
-        currentLockIndex = savedProgress;
+    function incarcaIntrebareDuel() {
+        clearInterval(duelState.timer);
 
-        for (let i = 0; i < 4; i++) {
-            let card = document.getElementById(`lockCard${i}`);
-            let icon = document.getElementById(`lockIcon${i}`);
-            let digit = document.getElementById(`lockDigit${i}`);
+        let q = duelState.intrebari[duelState.indexCurent];
+        document.getElementById('duelQNum').innerText = duelState.indexCurent + 1;
+        document.getElementById('duelScore').innerText = duelState.scor;
+        document.getElementById('duelQuestionText').innerText = q.intrebare;
 
-            if (i < currentLockIndex) {
-                card.className = "lock-card solved-lock";
-                icon.innerText = '🔓';
-                digit.innerText = locksData[i].digitRevealed;
-            } else if (i === currentLockIndex) {
-                card.className = "lock-card active-lock";
-                icon.innerText = '🔒';
-                digit.innerText = '?';
-            } else {
-                card.className = "lock-card";
-                icon.innerText = '🔒';
-                digit.innerText = '-';
+        let container = document.getElementById('duelOptionsContainer');
+        container.innerHTML = '';
+
+        q.optiuni.forEach((opt, idx) => {
+            let btn = document.createElement('button');
+            btn.className = 'btn-action';
+            btn.style.width = '100%';
+            btn.style.margin = '0';
+            btn.style.textAlign = 'center';
+            btn.innerText = opt;
+            btn.onclick = () => verificaRaspunsDuel(idx === q.corect);
+            container.appendChild(btn);
+        });
+
+        duelState.timpRamas = 15;
+        document.getElementById('duelTimer').innerText = duelState.timpRamas;
+
+        duelState.timer = setInterval(() => {
+            duelState.timpRamas--;
+            document.getElementById('duelTimer').innerText = duelState.timpRamas;
+
+            if (duelState.timpRamas <= 0) {
+                clearInterval(duelState.timer);
+                verificaRaspunsDuel(false);
             }
-        }
-
-        if (currentLockIndex < 4) {
-            document.getElementById('escapePuzzleText').innerText = locksData[currentLockIndex].puzzle;
-            document.getElementById('escapeHintText').innerText = locksData[currentLockIndex].hint || "Verifică rezumatul!";
-            document.getElementById('escapeInput').value = '';
-        } else {
-            // Când toate cele 4 lacăte s-au deschis:
-            let escapeKey = `escape_solved_${currentClassKey}_${currentLessonIdx}`;
-            localStorage.setItem(escapeKey, 'true');
-
-            let finalCodeStr = locksData.map(l => l.digitRevealed).join('');
-            
-            document.getElementById('escapePuzzleText').innerText = 
-                `🎉 AI EVADAT CU SUCCES! Codul istoric descifrat al arhivei a fost: ${finalCodeStr}!`;
-            document.getElementById('escapeInputArea').style.display = 'none';
-
-            // Declansăm animația cu +50 XP
-            playDoorUnlockAnimation(finalCodeStr, 50);
-        }
+        }, 1000);
     }
 
-    function playDoorUnlockAnimation(code, wonXP) {
-        const modal = document.getElementById('doorModal');
-        const door = document.getElementById('mainDoor');
-        const key = document.getElementById('animatedKey');
-        const victoryCard = document.getElementById('victoryCard');
-        const victoryDetails = document.getElementById('victoryDetails');
+    function verificaRaspunsDuel(isCorect) {
+        clearInterval(duelState.timer);
 
-        door.classList.remove('open');
-        key.classList.remove('insert', 'turn');
-        key.style.opacity = '0';
-        victoryCard.classList.remove('show');
-        
-        modal.style.display = 'flex';
-
-        setTimeout(() => { key.classList.add('insert'); }, 300);
-
-        setTimeout(() => {
-            key.classList.add('turn');
+        if (isCorect) {
             playSound('correct');
-        }, 1200);
-
-        setTimeout(() => {
-            key.style.opacity = '0';
-            door.classList.add('open');
-            playSound('levelup');
-        }, 1800);
-
-        setTimeout(() => {
-            victoryDetails.innerHTML = `
-                Ai deschis toate cele 4 lacăte!<br>
-                Codul/Anul descifrat din arhivă este: <strong style="color:#f1c40f; font-size: 20px;">${code}</strong>!<br>
-                <span style="color: #2ecc71; font-weight: bold; font-size: 18px;">+${wonXP} XP</span><br><br>
-                🔓 <strong>UȘA MARE S-A DEBLOCAT CU SUCCES!</strong>
-            `;
-            victoryCard.classList.add('show');
-            updateXP(wonXP);
-        }, 2500);
-    }
-
-    function closeDoorModal() {
-        document.getElementById('doorModal').style.display = 'none';
-    }
-
-    function removeDiacritics(str) {
-        return str
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .replace(/â|ă/g, "a")
-            .replace(/î/g, "i")
-            .replace(/ș|ş/g, "s")
-            .replace(/ț|ţ/g, "t")
-            .toLowerCase()
-            .trim();
-    }
-
-    function checkCurrentLock() {
-        if (!currentLessonData || !currentLessonData.escape || !currentLessonData.escape.locks) return;
-
-        let rawInput = document.getElementById('escapeInput').value;
-        if (!rawInput.trim()) return;
-
-        let inputVal = removeDiacritics(rawInput);
-        let locksData = currentLessonData.escape.locks;
-        let correctCode = removeDiacritics(locksData[currentLockIndex].code.toString());
-
-        if (inputVal === correctCode) {
-            playSound('correct');
-            document.getElementById('escapeFeedback').innerText = 
-                `🔓 Lacătul ${currentLockIndex + 1} s-a deschis! Ai deblocat cifra/litera '${locksData[currentLockIndex].digitRevealed}'!`;
-            document.getElementById('escapeFeedback').style.color = "#2ecc71";
-
-            currentLockIndex++;
-            let savedProgressKey = `escape_progress_${currentClassKey}_${currentLessonIdx}`;
-            localStorage.setItem(savedProgressKey, currentLockIndex);
-
-            document.getElementById('escapeHintText').style.display = 'none';
-            setTimeout(() => {
-                document.getElementById('escapeFeedback').innerText = '';
-                updateLocksUI(locksData);
-            }, 1200);
+            duelState.scor += 100 + (duelState.timpRamas * 10);
         } else {
             playSound('wrong');
-            document.getElementById('escapeFeedback').innerText = 
-                "❌ Cod incorect pentru acest lacăt! Verifică rezumatul și încearcă din nou.";
-            document.getElementById('escapeFeedback').style.color = "#e74c3c";
         }
-    }
 
-    function toggleHint() {
-        let hintElem = document.getElementById('escapeHintText');
-        if (!hintElem) return;
+        duelState.indexCurent++;
 
-        if (hintElem.style.display === 'none' || hintElem.style.display === '') {
-            hintElem.style.display = 'block';
+        if (duelState.indexCurent < duelState.intrebari.length) {
+            incarcaIntrebareDuel();
         } else {
-            hintElem.style.display = 'none';
+            afiseazaRezultatDuel();
         }
     }
+
+    function afiseazaRezultatDuel() {
+        document.getElementById('screenDuelGame').classList.remove('active-screen');
+        document.getElementById('screenDuelResult').classList.add('active-screen');
+
+        document.getElementById('finalDuelScore').innerText = duelState.scor;
+        document.getElementById('duelResultMessage').innerText = "Felicitări pentru antrenament! Continuă tot așa!";
+
+        let earnedXP = Math.floor(duelState.scor / 10);
+        updateXP(earnedXP);
+
+        let badgeIcon = "🛡️";
+        let badgeTitle = "Recruit al Istoriei";
+        let badgeDesc = "Ai finalizat antrenamentul cu succes!";
+
+        if (duelState.scor >= 1800) {
+            badgeIcon = "👑";
+            badgeTitle = "Insigna: Mare Strateg Regal";
+            badgeDesc = "Performanță absolută! Cunoștințe impecabile de istorie!";
+        } else if (duelState.scor >= 1200) {
+            badgeIcon = "⚔️";
+            badgeTitle = "Insigna: Cavaler Cronicar";
+            badgeDesc = "Rezultat excelent! Ai stăpânit foarte bine lecțiile!";
+        } else if (duelState.scor >= 600) {
+            badgeIcon = "📜";
+            badgeTitle = "Insigna: Scrib Harnic";
+            badgeDesc = "Un rezultat bun! Ești pe drumul cel bun spre excelență.";
+        } else {
+            badgeIcon = "🛡️";
+            badgeTitle = "Insigna: Ucenic Arheolog";
+            badgeDesc = "Ai început antrenamentul. Mai aprofundează lecțiile și vei excela!";
+        }
+
+        document.getElementById('badgeIcon').innerText = badgeIcon;
+        document.getElementById('badgeTitle').innerText = badgeTitle;
+        document.getElementById('badgeDesc').innerText = badgeDesc;
+    }
+
+   /* ===================================================
+   LOGICĂ ESCAPE ROOM CU 4 LACĂTE & ANIMAȚIE UȘĂ
+=================================================== */
+function getEscapeStorageKeys() {
+    let cKey = (typeof currentClassKey !== 'undefined') ? currentClassKey : 'cls';
+    let lIdx = (typeof currentLessonIdx !== 'undefined') ? currentLessonIdx : 0;
+    return {
+        solvedKey: `escape_solved_${cKey}_${lIdx}`,
+        progressKey: `escape_progress_${cKey}_${lIdx}`
+    };
+}
+
+function initEscapeRoom() {
+    const hasEscape = currentLessonData && 
+                      currentLessonData.escape && 
+                      Array.isArray(currentLessonData.escape.locks) && 
+                      currentLessonData.escape.locks.length > 0;
+
+    if (!hasEscape) {
+        document.getElementById('escapePuzzleText').innerText = 
+            "🔒 Modulul Escape Room pentru această lecție nu a fost încă configurat de profesor.";
+        document.querySelector('.locks-row').style.display = 'none';
+        document.getElementById('escapeInputArea').style.display = 'none';
+        return;
+    }
+
+    document.querySelector('.locks-row').style.display = 'flex';
+    
+    let keys = getEscapeStorageKeys();
+    let isSolved = localStorage.getItem(keys.solvedKey) === 'true';
+    let locksData = currentLessonData.escape.locks;
+
+    if (isSolved) {
+        for (let i = 0; i < 4; i++) {
+            let card = document.getElementById(`lockCard${i}`);
+            if (card) card.className = "lock-card solved-lock";
+            
+            let icon = document.getElementById(`lockIcon${i}`);
+            if (icon) icon.innerText = '🔓';
+            
+            let digit = document.getElementById(`lockDigit${i}`);
+            if (digit) digit.innerText = locksData[i] ? locksData[i].digitRevealed : '';
+        }
+        let finalCodeStr = locksData.map(l => l.digitRevealed).join('');
+        
+        document.getElementById('escapePuzzleText').innerHTML = 
+            `🎉 AI EVADAT CU SUCCES!<br>Codul descifrat al arhivei a fost: <strong>${finalCodeStr}</strong>!`;
+        
+        document.getElementById('escapeInputArea').style.display = 'block';
+        document.getElementById('escapeInputArea').innerHTML = `
+            <button class="btn-action" style="background: #e67e22; color: #fff; border-color: #d35400; font-size: 1rem;" onclick="resetEscapeRoom()">
+                🔄 Reîncearcă Evadarea (Reset)
+            </button>
+        `;
+    } else {
+        restoreEscapeInputArea();
+        updateLocksUI(locksData);
+    }
+}
+
+function restoreEscapeInputArea() {
+    document.getElementById('escapeInputArea').style.display = 'block';
+    document.getElementById('escapeInputArea').innerHTML = `
+        <input type="text" id="escapeInput" class="escape-input" placeholder="Răspuns..." autocomplete="off">
+        <br>
+        <button class="btn-action" style="background: #27ae60; color: #fff; border-color: #2ecc71;" onclick="checkCurrentLock()">🔓 Deschide Lacătul!</button>
+        <button class="btn-action" style="background: #e67e22; color: #fff; border-color: #d35400;" onclick="toggleHint()">💡 Indiciu</button>
+    `;
+    document.getElementById('escapeFeedback').innerText = '';
+    document.getElementById('escapeHintText').style.display = 'none';
+}
+
+function resetEscapeRoom() {
+    let keys = getEscapeStorageKeys();
+    
+    // Ștergem salvările din localStorage pentru această lecție
+    localStorage.removeItem(keys.solvedKey);
+    localStorage.removeItem(keys.progressKey);
+    
+    currentLockIndex = 0;
+
+    // Restabilim formularul de introducere a răspunsurilor
+    restoreEscapeInputArea();
+
+    // Reîncărcăm datele și lacătele pentru lecția curentă
+    if (currentLessonData && currentLessonData.escape && currentLessonData.escape.locks) {
+        updateLocksUI(currentLessonData.escape.locks);
+    }
+}
+
+function updateLocksUI(locksData) {
+    let keys = getEscapeStorageKeys();
+    let savedProgress = parseInt(localStorage.getItem(keys.progressKey)) || 0;
+    currentLockIndex = savedProgress;
+
+    for (let i = 0; i < 4; i++) {
+        let card = document.getElementById(`lockCard${i}`);
+        let icon = document.getElementById(`lockIcon${i}`);
+        let digit = document.getElementById(`lockDigit${i}`);
+
+        if (i < currentLockIndex) {
+            if (card) card.className = "lock-card solved-lock";
+            if (icon) icon.innerText = '🔓';
+            if (digit) digit.innerText = locksData[i].digitRevealed;
+        } else if (i === currentLockIndex) {
+            if (card) card.className = "lock-card active-lock";
+            if (icon) icon.innerText = '🔒';
+            if (digit) digit.innerText = '?';
+        } else {
+            if (card) card.className = "lock-card";
+            if (icon) icon.innerText = '🔒';
+            if (digit) digit.innerText = '-';
+        }
+    }
+
+    if (currentLockIndex < 4) {
+        document.getElementById('escapePuzzleText').innerText = locksData[currentLockIndex].puzzle;
+        document.getElementById('escapeHintText').innerText = locksData[currentLockIndex].hint || "Verifică rezumatul!";
+        let inp = document.getElementById('escapeInput');
+        if (inp) inp.value = '';
+    } else {
+        let keys = getEscapeStorageKeys();
+        localStorage.setItem(keys.solvedKey, 'true');
+
+        let finalCodeStr = locksData.map(l => l.digitRevealed).join('');
+        
+        document.getElementById('escapePuzzleText').innerHTML = 
+            `🎉 AI EVADAT CU SUCCES! Codul istoric descifrat al arhivei a fost: <strong>${finalCodeStr}</strong>!`;
+        
+        document.getElementById('escapeInputArea').style.display = 'block';
+        document.getElementById('escapeInputArea').innerHTML = `
+            <button class="btn-action" style="background: #e67e22; color: #fff; border-color: #d35400; font-size: 1rem;" onclick="resetEscapeRoom()">
+                🔄 Reîncearcă Evadarea (Reset)
+            </button>
+        `;
+
+        playDoorUnlockAnimation(finalCodeStr, 50);
+    }
+}
+
+function playDoorUnlockAnimation(code, wonXP) {
+    const modal = document.getElementById('doorModal');
+    const door = document.getElementById('mainDoor');
+    const key = document.getElementById('animatedKey');
+    const victoryCard = document.getElementById('victoryCard');
+    const victoryDetails = document.getElementById('victoryDetails');
+
+    door.classList.remove('open');
+    key.classList.remove('insert', 'turn');
+    key.style.opacity = '0';
+    victoryCard.classList.remove('show');
+    
+    modal.style.display = 'flex';
+
+    setTimeout(() => { key.classList.add('insert'); }, 300);
+
+    setTimeout(() => {
+        key.classList.add('turn');
+        playSound('correct');
+    }, 1200);
+
+    setTimeout(() => {
+        key.style.opacity = '0';
+        door.classList.add('open');
+        playSound('levelup');
+    }, 1800);
+
+    setTimeout(() => {
+        victoryDetails.innerHTML = `
+            Ai deschis toate cele 4 lacăte!<br>
+            Codul/Anul descifrat din arhivă este: <strong style="color:#f1c40f; font-size: 20px;">${code}</strong>!<br>
+            <span style="color: #2ecc71; font-weight: bold; font-size: 18px;">+${wonXP} XP</span><br><br>
+            🔓 <strong>UȘA MARE S-A DEBLOCAT CU SUCCES!</strong>
+        `;
+        victoryCard.classList.add('show');
+        updateXP(wonXP);
+    }, 2500);
+}
+
+function closeDoorModal() {
+    document.getElementById('doorModal').style.display = 'none';
+}
+
+function removeDiacritics(str) {
+    return str
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/â|ă/g, "a")
+        .replace(/î/g, "i")
+        .replace(/ș|ş/g, "s")
+        .replace(/ț|ţ/g, "t")
+        .toLowerCase()
+        .trim();
+}
+
+function checkCurrentLock() {
+    if (!currentLessonData || !currentLessonData.escape || !currentLessonData.escape.locks) return;
+
+    let inpElem = document.getElementById('escapeInput');
+    if (!inpElem) return;
+
+    let rawInput = inpElem.value;
+    if (!rawInput.trim()) return;
+
+    let inputVal = removeDiacritics(rawInput);
+    let locksData = currentLessonData.escape.locks;
+    let correctCode = removeDiacritics(locksData[currentLockIndex].code.toString());
+
+    if (inputVal === correctCode) {
+        playSound('correct');
+        document.getElementById('escapeFeedback').innerText = 
+            `🔓 Lacătul ${currentLockIndex + 1} s-a deschis! Ai deblocat cifra/litera '${locksData[currentLockIndex].digitRevealed}'!`;
+        document.getElementById('escapeFeedback').style.color = "#2ecc71";
+
+        currentLockIndex++;
+        let keys = getEscapeStorageKeys();
+        localStorage.setItem(keys.progressKey, currentLockIndex);
+
+        document.getElementById('escapeHintText').style.display = 'none';
+        setTimeout(() => {
+            document.getElementById('escapeFeedback').innerText = '';
+            updateLocksUI(locksData);
+        }, 1200);
+    } else {
+        playSound('wrong');
+        document.getElementById('escapeFeedback').innerText = 
+            "❌ Cod incorect pentru acest lacăt! Verifică rezumatul și încearcă din nou.";
+        document.getElementById('escapeFeedback').style.color = "#e74c3c";
+    }
+}
+
+function toggleHint() {
+    let hintElem = document.getElementById('escapeHintText');
+    if (!hintElem) return;
+
+    if (hintElem.style.display === 'none' || hintElem.style.display === '') {
+        hintElem.style.display = 'block';
+    } else {
+        hintElem.style.display = 'none';
+    }
+}
 
     /* ===================================================
        JOC ASEDIU MEDIEVAL SI ANIMAȚIE DE CUCERIRE
@@ -1464,7 +1860,6 @@
 
             if (t.isCorrect) {
                 playSound('correct'); 
-                // Recompensă ajustată: +20 XP per răspuns corect
                 updateXP(20);
                 document.getElementById('quizFeedback').innerText = "🛡️ VICTORIE! Zidul inamic a fost spulberat cu succes! (+20 XP)";
                 document.getElementById('quizFeedback').style.color = "#27ae60";
@@ -1472,7 +1867,6 @@
             } else {
                 playSound('wrong'); 
                 quizWrongAnswers++; 
-                // Penalizare ajustată: -5 XP per răspuns greșit
                 updateXP(-5);
                 document.getElementById('quizFeedback').innerText = "⚔️ Cădere în luptă! Stânca a eșuat în fața zidului! (-5 XP)";
                 document.getElementById('quizFeedback').style.color = "#c0392b";
