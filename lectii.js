@@ -2886,6 +2886,7 @@ const dbLectii = {
                 <h3>4. Urmările războaielor</h3>
                 <p>Pacea încheiată a asigurat autonomia cetăților grecești din Ionia și a oprit expansiunea Imperiului Persan. Cu toate acestea, lumea greacă a rămas divizată între aliații Spartei și cei ai Atenei.</p>
             `,
+            stiaiCa: "Știai că proba modernă de maraton are o lungime de fix 42,195 km datorită Familiei Regale a Marii Britanii? La Jocurile Olimpice din Londra (1908), traseul a fost extins de la distanța istorică de 40 km pentru ca cursa să înceapă chiar la Castelul Windsor și să se termine exact în fața lojei regale de pe stadion!",
             quiz: [
     {
         q: "În ce an au izbucnit revoltele grecilor din Ionia împotriva stăpânirii persane?",
@@ -3019,6 +3020,7 @@ const dbLectii = {
             <h3>4. Sfârșitul războiului</h3>
             <p>Războiul lung și obositor s-a încheiat cu victoria Spartei. Atena a fost obligată să își dărâme zidurile de apărare și să renunțe la democrație. Totuși, din cauza luptelor dintre frați, toate orașele grecești au ieșit slăbite din acest război.</p>
         `,
+        stiaiCa: "Știai că epidemia teribilă care a izbucnit în Atena în timpul Războiului peloponesiac și i-a curmat viața Marelui Pericle a fost agravată chiar de strategia atenienilor? Pentru a se proteja de armata terestră a Spartei, toți locuitorii din mediul rural s-au adăpostit în interiorul zidurilor orașului, suprapopularea favorizând răspândirea rapidă a bolii!",
         quiz: [
             {
                 q: "Care au fost cele două mari orașe rivale care s-au înfruntat în Războiul peloponesiac?",
@@ -3148,6 +3150,7 @@ const dbLectii = {
             <h3>4. Împărțirea maretului imperiu</h3>
             <p>Alexandru a murit de tânăr, la doar 32 de ani. Deoarece nu avea un moștenitor pregătit, uriașul său imperiu a fost împărțit între generalii din armata sa (cum au fost Ptolemeu în Egipt sau Seleucus în Siria), care au creat regate separate.</p>
         `,
+    stiaiCa: "Știai că după moartea sa la Babilon, trupul lui Alexandru cel Mare a fost păstrat într-un sarcofag umplut cu miere de albine pură pentru a preveni descompunerea? Ulterior, generalul Ptolemeu i-a dus trupul în Egipt, unde a fost așezat într-un mormânt monumental din aur și sticlă la Alexandria!",
         quiz: [
             {
                 q: "Cine a fost regele Macedoniei care a unificat orașele grecești înainte de Alexandru?",
@@ -3277,6 +3280,7 @@ const dbLectii = {
             <h3>4. Știința în Grecia Antică</h3>
             <p>Grecii au inventat discipline noi precum istoria și geografia și au pus bazele matematicii, fizicii și medicinei moderne. Datorită artei și științei lor, Grecia a rămas un model de cultură pentru întreaga lume.</p>
         `,
+        stiaiCa: "Știai că arhitecții greci au folosit o iluzie optică genială când au construit Partenonul din Atena? Niciuna dintre liniile clădirii nu este perfect dreaptă, ci ușor curbată spre exterior, deoarece ochiul uman percepe liniile perfect drepte ca fiind curbate spre interior!",
         quiz: [
             {
                 q: "Care sunt cele trei stiluri principale de coloane create de greci?",
@@ -3409,6 +3413,7 @@ const dbLectii = {
 
             <p>Peste tot ansamblul veghea o statuie uriașă de 10 metri a zeiței, numită <strong>Atena Promahos</strong>, realizată de sculptorul <strong>Fidias</strong>. Vârful lămcii și coiful ei de aur străluceau atât de tare încât marinarii le puteau vedea de departe, de pe mare.</p>
         `,
+        stiaiCa: "Știai că friza din marmură a Partenonului a fost cumpărată și dusă la Londra în secolul al XIX-lea de lordul britanic Elgin, care a obținut permisiunea de la Imperiul Otoman (care stăpânea atunci Grecia)? În prezent, 'Marmurele Partenonului' sunt expuse la British Museum, generând o dispută celebră între Marea Britanie și Grecia!",
         quiz: [
             {
                 q: "Ce înseamnă cuvântul „Acropole” din limba greacă?",
@@ -3551,6 +3556,7 @@ const dbLectii = {
             <h3>4. Medicina</h3>
             <p>Cel mai faimos medic din Grecia Antică a fost <strong>Hipocrat</strong>. El a învățat oamenii că bolile se tratează prin îngrijire și igienă, nu prin magie. Astăzi, toți studenții care devin medici depun <strong>Jurământul lui Hipocrat</strong>, promițând să ajute mereu bolnavii.</p>
         `,
+        stiaiCa: "Știai că savantul Eratostene a calculat circumferința Pământului acum peste 2.200 de ani folosind doar un băț înfipt în pământ, umbra acestuia și elemente simple de geometrie? Măsurătoarea sa a fost incredibil de precisă, având o eroare de mai puțin de 2% față de dimensiunea reală calculată azi cu sateliții!",
         quiz: [
             {
                 q: "Din ce tip de ceremonii religioase s-a dezvoltat teatrul grecesc?",
@@ -3680,6 +3686,7 @@ const dbLectii = {
                 <h3>4. Interzicerea și reluarea jocurilor</h3>
                 <p>Jocurile Olimpice antice au fost interzise în secolul IV d.H. de împăratul roman creștin <strong>Teodosios cel Mare</strong>. Ele au fost reluate abia în Epoca Modernă, devenind cea mai mare competiție sportivă a lumii.</p>
             `,
+            stiaiCa: "Știai că pe durata Jocurilor Olimpice antice, femeile măritate nu aveau voie nici măcar să fie spectatoare, pedepsa fiind aruncarea de pe stânci? Cu toate acestea, o femeie pe nume Kallipateira s-a deghizat în antrenor bărbat pentru a-și vedea fiul luptând, fiind iertată doar datorită gloriei sportive a întregii sale familii!",
             quiz: [
     {
         q: "În cinstea cărui zeu erau organizate Jocurile Olimpice la Olimpia?",
@@ -3809,6 +3816,7 @@ const dbLectii = {
                 <h3>4. Moștenirea civilizației romane</h3>
                 <p>Alături de Grecia, Roma antică stă la baza civilizației europene moderne, având o influență uriașă asupra dreptului (sistemul juridic), organizării militare și politice. Limba latină stă la originea limbilor romanice, inclusiv a limbii române.</p>
             `,
+            stiaiCa: "Știai că lingviștii și istoricii bănuiesc că povestea lupoaicei care i-a salvat pe Romulus și Remus ar putea proveni dintr-o confuzie de cuvinte? În limba latină vorbită, cuvântul 'lupa' însemna atât 'lupoaică', cât și 'femeie de moravuri ușoare' sau curtezană, ceea ce sugerează că gemenii ar fi putut fi găsiți și crescuți de o femeie din mediul rural!",
             quiz: [
     {
         q: "Cine erau cei doi frați gemeni din legenda întemeierii Romei?",
@@ -3943,6 +3951,7 @@ const dbLectii = {
                 <li>După această victorie, Roma a devenit stăpâna Mării Mediterane, cucerind Sicilia, Spania și Nordul Africii.</li>
             </ul>
         `,
+        stiaiCa: "Știai că expresia 'victorie la pyrrhic' (sau victorie cu un preț uriaș) provine din timpul cuceririi Italiei, când regele Pirus al Epirului i-a învins pe romani, dar a pierdut atât de mulți soldați încât a exclamat: 'Încă o astfel de victorie și suntem ruinați!'?",
         quiz: [
             {
                 q: "Care a fost prima formă de conducere din istoria Romei?",
@@ -4069,6 +4078,7 @@ const dbLectii = {
                 <h3>3. Cum arăta Imperiul Roman la apogeu</h3>
                 <p>În secolul al II-lea d.H., Imperiul Roman se întindea din Britania până în Egipt. Romanii au construit drumuri pavate cu piatră, un sistem rapid de poștă, poduri solide și <strong>apeducte</strong> (canale uriașe care aduceau apă proaspătă în orașe).</p>
             `,
+            stiaiCa: "Știai că bogățiile din aur și argint confiscate de Traian după cucerirea Daciei au fost atât de uriașe încât împăratul a anulat toate impozitele cetățenilor romani din Italia pentru un an întreg și a organizat o sărbătoare gigantică la Roma ce a durat 123 de zile consecutiv?",
             quiz: [
     {
         q: "Cine a fost primul împărat din istoria statului roman?",
@@ -4195,6 +4205,7 @@ const dbLectii = {
                 <h3>3. Căderea Romei și moștenirea Cetății Eterne</h3>
                 <p>În anul <strong>476 d.H.</strong>, Imperiul Roman de Apus prăbușește când germanicii ocupă Roma și înlătură ultimul împărat. Partea de Răsărit a supraviețuit sub numele de <strong>Imperiul Bizantin</strong>, iar orașul Roma a rămas un centru spiritual important (condus de Papă), primind numele de „Cetatea Eternă”.</p>
             `,
+            stiaiCa: "Știai că ultimul împărat al Imperiului Roman de Apus purta numele de Romulus Augustulus? Printr-o coincidență istorică incredibilă, el combina numele fondatorului legendar al Romei (Romulus) și pe cel al primului împărat roman (Augustus), iar diminutivul 'Augustulus' însemna 'micul Augustus', deoarece avea doar 14 ani când a fost detronat!",
             quiz: [
     {
         q: "Ce provincie romană a fost abandonată în secolul al III-lea pentru o mai bună apărare la linia Dunării?",
@@ -4321,6 +4332,7 @@ const dbLectii = {
                 <h3>3. Organizarea legiunilor</h3>
                 <p>Armata era împărțită în <strong>legiuni</strong> (câte 5.000–6.000 de soldați). O legiune era alcătuită din 10 cohorte, iar fiecare cohortă din 6 centurii conduse de un <strong>centurion</strong>. Pentru apărare și atac, legionarii foloseau sulițe, sabia scurtă (<em>gladius</em>), coifuri, scuturi rezistente și cămăși de zale.</p>
             `,
+            stiaiCa: "Știai că pedeapsa extremă aplicată legiunilor romane care dădeau dovadă de lașitate sau se revoltau se numea 'decimare'? Soldații din unitatea pedepsită erau împărțiți în grupuri de câte zece, iar prin tragere la sorți, unul dintre ei era executat chiar de către ceilalți nouă colegi de grup!",
             quiz: [
     {
         q: "Cum s-a schimbat armata romană începând din secolul al II-lea î.H.?",
@@ -4447,6 +4459,7 @@ const dbLectii = {
                 <h3>3. Jocurile și copilăria</h3>
                 <p>Copiii se jucau cu nuci, mingi, titirezi, cercuri, săbii din lemn sau imitau meseriile adulților („de-a soldații”, „de-a senatorii”). Jocurile cu reguli clare erau încurajate pentru a-i pregăti pe copii să respecte legile statului la maturitate.</p>
             `,
+            stiaiCa: "Știai că în loc de săpun, romanii foloseau ulei de măsline pentru a se curăța la terme? Își ungeau corpul cu ulei și apoi răzuiau murdăria și transpirația de pe piele folosind un instrument curbat din metal numit 'strigil'!",
             quiz: [
     {
         q: "Cum se numeau băile publice unde romanii mergeau pentru relaxare și discuții politice?",
@@ -4573,6 +4586,7 @@ const dbLectii = {
                 <h3>3. Termele – complexe de relaxare și inginerie</h3>
                 <p>Termele erau băi publice dotate cu sistem ingenios de încălzire prin podea. Aveau bazine cu apă caldă (<em>caldarium</em>), călduță (<em>tepidarium</em>) și rece (<em>frigidarium</em>). Cele mai mari au fost <strong>Termele lui Caracalla</strong>, ce puteau primi peste 1.600 de oameni.</p>
             `,
+            stiaiCa: "Știai că romanii aveau un sistem de încălzire prin pardoseală numit 'hypocaust' pentru încălzirea băilor publice? Aerul cald și fumul de la un cuptor central erau direcționate prin spații goale lăsate sub podele și prin cărămizi tubulare din pereți, transformând clădirile în adevărate saune!",
             quiz: [
     {
         q: "Ce expresie latină înseamnă „Centrul Lumii” sau „Capătul Lumii”, referindu-se la Roma?",
@@ -4699,6 +4713,7 @@ const dbLectii = {
                 <h3>3. O comoară pentru istorici</h3>
                 <p>Stratul gros de cenușă a conservat perfect clădirile, picturile și obiectele de zi cu zi. Astfel, Pompeii a devenit una dintre cele mai importante surse arheologice pentru înțelegerea vieții cotidiene romane.</p>
             `,
+            stiaiCa: "Știai că arheologii au reușit să reconstituie chipurile și corpurile victimelor din Pompeii turnând ghips lichid în golurile lăsate în cenușa vulcanică întărită, unde trupurile descompuse dispăruseră în timp? Matrițele rezultate arată extrem de detaliat ultimele clipe, hainele și chiar expresiile de groază ale locuitorilor!",
             quiz: [
     {
         q: "La poalele cărui munte vulcanic se afla orașul roman Pompeii?",
@@ -4825,6 +4840,7 @@ const dbLectii = {
                 <h3>3. Tipuri de gladiatori</h3>
                 <p>Existau peste 10 tipuri de gladiatori, diferențiați prin echipament. De exemplu, <strong>retiarul</strong> lupta înarmat cu o plasă, un trident și un pumnal, în timp ce <strong>secutorul</strong> purta coif, scut și o spadă scurtă.</p>
             `,
+            stiaiCa: "Știai că în Colosseum aveau loc și simulări de bătălii navale numite 'naumachiae'? Subsolul arenei era inundat complet prin canale speciale aduse de la apeducte, iar în amfiteatru pluteau corăbii reale pe care gladiatori și condamnați la moarte simulau mari bătălii maritime în fața zecilor de mii de spectatori!",
             quiz: [
     {
         q: "Cine erau în general gladiatorii care luptau în amfiteatrele romane?",
@@ -4951,6 +4967,7 @@ const dbLectii = {
                 <h3>3. Panteonul din Roma</h3>
                 <p><strong>Panteonul</strong> este cel mai bine conservat templu antic din lume, refăcut în timpul împăratului Hadrian. Spre deosebire de templele obișnuite dedicate unui singur zeu, Panteonul a fost închinat <em>tuturor zeilor</em>. Este renumit pentru uriașa sa cupolă din beton antic.</p>
             `,
+            stiaiCa: "Știai că domul Panteonului din Roma are o deschidere circulară în vârf numită 'oculus' (ochiul), prin care lumina soarelui și ploaia intră direct în clădire? Pentru ca templul să nu se inunde, podeaua din marmură a fost construită ușor bombată în centru și dotată cu 22 de canale discrete prin care apa de ploaie se scurge instantaneu!",
             quiz: [
     {
         q: "Cine era cel mai important zeu roman, stăpânul tunetului și al cerului?",
@@ -5077,6 +5094,7 @@ const dbLectii = {
                 <h3>3. Impactul social și liderii bisericii</h3>
                 <p>Creștinismul a adus schimbări majore: interzicerea luptelor de gladiatori, îmbunătățirea condiției sclavilor și înființarea de spitale și azile. Conducerea comunităților era asigurată de episcopi, cei mai importanți fiind <strong>Papa</strong> la Roma și <strong>Patriarhul</strong> la Constantinopol.</p>
             `,
+            stiaiCa: "Știai că în perioadele de mari persecuții, creștinii din Roma foloseau simbolul unui pește (numit 'Ichthys') ca un cod secret pentru a se recunoaște între ei fără să atragă atenția autorităților romane? Când două persoane se întâlneau, una desena pe pământ un arc de cerc, iar dacă cealaltă persoană completa desenul formând un pește, știau amândoi că sunt de aceeași credință!",
             quiz: [
     {
         q: "În ce provincie a Imperiului Roman a apărut religia creștină?",
@@ -5203,6 +5221,7 @@ const dbLectii = {
                 <h3>3. Popoare neromanizate și moștenirea romană</h3>
                 <p>Nu toate popoarele s-au romanizat: grecii au păstrat-o pe a lor deoarece aveau o cultură comparabilă sau superioară, iar evreii datorită religiei monoteiste mult diferite. Deși Imperiul Roman de Apus s-a prăbușit, populația romanizată s-a amestecat ulterior cu migratorii barbari, dând naștere popoarelor neolatine de astăzi.</p>
             `,
+            stiaiCa: "Știai că expresia 'Toate drumurile duc la Roma' era la propriu adevărată în Antichitate? Imperiul avea o rețea de peste 80.000 km de drumuri pietruite super-rezistente, iar în centrul Romei se afla 'Miliarium Aureum' (Borna de Aur), un monument din bronz poleit de unde începeau și erau măsurate toate distanțele către marile orașe din provincii!",
             quiz: [
     {
         q: "Cum se numește procesul prin care popoarele cucerite de romani au adoptat limba latină, religia și modul de viață roman?",
@@ -5329,6 +5348,7 @@ const dbLectii = {
                 <h3>3. Religia și influențele externe</h3>
                 <p>Religia dacilor era politeistă, zeul suprem fiind <strong>Zalmoxis</strong>, iar un rol important l-a avut marele preot Deceneu. Prin contactul cu grecii și romanii, geto-dacii au preluat scrierea, moneda, roata olarului și tehnici avansate de construcție.</p>
             `,
+            stiaiCa: "Știai că dacii aveau o credință atât de puternică în nemurire încât nu se temeau de moarte, ci o sărbătoreau? Ei credeau că cel care moare merge la zeul Zalmoxis, motiv pentru care la înmormântări făceau petreceri, iar când un copil se năștea, plângeau pentru suferințele pe care le va îndura în viață!",
             quiz: [
     {
         q: "Din ce mare neam de popoare antice făceau parte geții și dacii?",
@@ -5455,6 +5475,7 @@ const dbLectii = {
                 <h3>3. Sfârșitul domniei și moștenirea statală</h3>
                 <p>După înfrângerea lui Pompei, Iulius Cezar a pregătit o campanie militară împotriva Daciei, dar a fost asasinat în anul <strong>44 î.H.</strong> În același an a fost înlăturat și Burebista, iar statul său s-a destrămat în mai multe părți. Cu toate acestea, s-a păstrat un nucleu statal în Munții Orăștiei, condus ulterior de regi precum Deceneu, Comosicus, Scorilo și Duras.</p>
             `,
+            stiaiCa: "Știai că istoricul grec Strabon povestește că marele preot Deceneu l-a convins pe Burebista să taie vița-de-vie din întregul regat pentru ca dacii să nu mai fie tentați de băutură și să devină mai disciplinați și mai pregătiți de luptă?",
             quiz: [
     {
         q: "În jurul cărui an a reușit Burebista să unifice triburile geto-dacilor?",
@@ -5586,6 +5607,7 @@ const dbLectii = {
                 <h3>3. Urmările victoriei și moștenirea istorică</h3>
                 <p>Traian a sărbătorit victoria la Roma timp de 123 de zile, a ridicat <em>Columna lui Traian</em> și și-a luat titlul de <em>Dacicus</em>. În noua provincie au fost aduși coloniști, s-au întemeiat orașe și s-au deschis mine. Dacia a rămas provincie romană până în anul <strong>271 d.H.</strong>, amestecul populației romanice cu dacii punând bazele formării poporului român.</p>
             `,
+            stiaiCa: "Știai că regele Decebal a încercat să ascundă comoara faimoasă a Daciei abătând cursul râului Sargeția (Sargetia), îngropând tone de aur și argint în matcă și readucând apa peste ascunzătoare? Vicleșugul a fost însă trădat romanilor de către un apropiat al regelui pe nume Bicilis, iar Traian a capturat peste 160 de tone de aur și 330 de tone de argint!",
             quiz: [
     {
         q: "Care împărat roman a condus armata de circa 150.000 de soldați pentru a cuceri Dacia?",
@@ -5720,6 +5742,7 @@ const dbLectii = {
                 <h3>3. Contribuții la civilizația universală</h3>
                 <p>Lumea islamică a transmis Europei mari invenții și cunoștințe: <strong>cifrele arabe</strong> (preluate de la indieni, unde cuvântul <em>sefr</em> înseamnă zero), hârtia și praful de pușcă din China, cafeaua din Etiopia, algebrul și medicina, precum și redescoperirea filosofiei grecești antice. În artă și arhitectură, din cauza interdicției de a reprezenta oameni și animale, musulmanii au dezvoltat <strong>caligrafia</strong> și motivele geometrice.</p>
             `,
+            stiaiCa: "Știai că noțiunea de 'cifre arabe' este un termen ușor înșelător, deoarece arabii le-au preluat de fapt din India, numindu-le 'cifre indiene'? Cu toate acestea, matematicienii musulmani au revoluționat lumea inventând algebra (termen derivat din cartea 'Al-Jabr' a învățatului Al-Khwarizmi) și introducând conceptul și cifra 'zero' în calcule!",
             quiz: [
     {
         q: "În ce secol a fost fondat Islamul de către Profetul Muhammad?",
@@ -5857,6 +5880,7 @@ const dbLectii = {
                 <li><strong>Adstratul slav (~20%):</strong> cuvinte preluate mai târziu de la slavi.</li>
             </ul>
         `,
+        stiaiCa: "Știai că limba română este singura limbă romanică din Europa de Est care a supraviețuit complet izolată de restul 'surorilor' sale latine (cum sunt italiana, franceza sau spaniola), păstrând structuri gramaticale latine extrem de vechi pe care celelalte limbi vestice le-au pierdut de-a lungul secolelor?",
         quiz: [
             {
                 q: "Cum se numește procesul istoric de formare a unui popor nou?",
@@ -5991,6 +6015,7 @@ const dbLectii = {
                 <li><strong>Biserica Ortodoxă</strong> (înseamnă „a dreptei credințe”) – condusă de patriarhi în Estul Europei.</li>
             </ul>
         `,
+        stiaiCa: "Știai că în mănăstirile medievale, călugării 'copiști' lucrau luni sau chiar ani de zile pentru a transcrie de mână o singură carte pe pergament din piele de animal, motiv pentru care o singură biblie valora cât o moșie întreagă sau un sat întreg și era uneori legată cu lanțuri de pult pentru a nu fi furată?",
         quiz: [
             {
                 q: "Cum era privit statul (țara) în Evul Mediu?",
@@ -6118,6 +6143,7 @@ const dbLectii = {
             <h3>3. Ce s-a întâmplat după Carol cel Mare?</h3>
             <p>După moartea împăratului, atacurile <strong>vikingilor</strong> au slăbit statul. În anul <strong>843</strong>, imperiul a fost împărțit între cei trei nepoți ai lui Carol. Din aceste bucăți s-au format ulterior <strong>Franța</strong> și <strong>Germania</strong>.</p>
         `,
+        stiaiCa: "Știai că împăratul Carol cel Mare, deși vorbea fluent latina și înțelegea greaca, nu a învățat niciodată să scrie corect? El își ținea tăblițe de ceară și pergamente sub pernă pentru a exersa trasarea literelor în timpul nopții când nu putea dormi, însă a început această încercare mult prea târziu în viață pentru a-și desăvârși scrisul!",
         quiz: [
             {
                 q: "În ce mare bătălie i-au ajutat francii pe romani împotriva hunilor?",
@@ -6244,6 +6270,7 @@ const dbLectii = {
                 <h3>3. Religia și declinul imperiului</h3>
                 <p>Bizanțul s-a definit prin creștinsmul ortodox, iar Patriarhul de la Constantinopol era a doua persoană ca importanță după împărat. Imperiul decade din secolul al XII-lea, fiind afectat de atacurile turcilor și de cucerirea cruciaților din <strong>1204</strong>. Sfârșitul Imperiului Bizantin survine în anul <strong>1453</strong>, când Constantinopolul este cucerit de turci.</p>
             `,
+    stiaiCa: "Știai că secretul militar cel mai bine păstrat al Imperiului Bizantin a fost 'focul grecesc'? Această substanță lichidă inflamabilă misterioasă era pulverizată prin tuburi de aramă montate pe corăbii și ardea chiar și pe suprafața apei, neputând fi stinsă cu apă, ceea ce a salvat Constantinopolul de la invazii timp de secole!",
             quiz: [
     {
         q: "Care a fost capitala Imperiului Roman de Răsărit (Bizantin), considerată cel mai mare și mai frumos oraș din spațiul creștin medieval?",
@@ -6377,6 +6404,7 @@ const dbLectii = {
             </ul>
             <p>Din secolele XI-XII au apărut inventii care au ușurat munca: <strong>plugul de fier</strong>, <strong>moara de apă</strong> și <strong>moara de vânt</strong>. De asemenea, prelucrarea metalelor a devenit mai bună decât în Antichitate.</p>
         `,
+        stiaiCa: "Știai că în Evul Mediu piperul era atât de scump și de valoros încât era folosit ca monedă de schimb și pentru plata chiriilor sau a impozitelor, iar un singur sac cu boabe de piper valora cât viața unui om?",
         quiz: [
             {
                 q: "Unde trăia majoritatea populației în perioada Evului Mediu?",
@@ -6503,6 +6531,7 @@ const dbLectii = {
                 <h3>3. Castelul nobilului</h3>
                 <p>Centrul domeniului feudal era <strong>castelul</strong>, o fortăreață construită pentru a fi greu de cucerit, capabilă să adăpostească armata, servitorii și magaziile de provizii. Locuința fortificată a nobilului din interiorul castelului era turnul numit <strong>donjon</strong>.</p>
             `,
+            stiaiCa: "Știai că scările în spirală din turnurile și donjoanele castelelor medievale erau construite aproape întotdeauna în sensul acelor de ceasornic pe măsură ce urcau? Această inginerie ingenioasă oferea un avantaj uriaș apărătorilor care coborau: având peretele pe partea stângă, ei își puteau folosi liber mâna dreaptă pentru a mânui sabia, în timp ce atacatorii care urcau își loveau sabia de zidul central!",
             quiz: [
     {
         q: "Cine era considerat stăpânul întregului pământ într-un stat organizat după sistemul feudal?",
@@ -6629,6 +6658,7 @@ const dbLectii = {
                 <h3>3. Cultura cavalerească și ordinele religios-militare</h3>
                 <p>Faptele de vitejie erau preamărite în cântece și poezii, precum <em>chansons de geste</em> în Franța (cea mai celebră fiind <strong>Cântecul lui Roland</strong>). În timpul cruciadelor s-au format ordine de cavaleri-călugări: templierii, ioaniții și teutonii.</p>
             `,
+            stiaiCa: "Știai că expresia modernă 'a-i arunca cuiva mănușa' provine dintr-un obicei cavaleresc medieval? Când un cavaler voia să provoace pe altul la un duel pentru a-și apăra onoarea, își scoatea mănușa din zale sau piele și o arunca la picioarele adversarului; dacă celălalt o ridica, însemna că a acceptat provocarea!",
             quiz: [
     {
         q: "Cum se numeau întrecerile cavalerești destinate menținerii capacității de luptă a cavalerilor?",
@@ -6760,6 +6790,7 @@ const dbLectii = {
             <h3>3. Cum arăta un oraș medieval?</h3>
             <p>Orașele erau înconjurate de <strong>ziduri groase și turnuri de apărare</strong>, iar străzile erau înguste. Cele mai bogate orașe s-au dezvoltat în Italia (Veneția, Genova, Florența) și în Germania (Lübeck, Hamburg).</p>
         `,
+        stiaiCa: "Știai că în Evul Mediu exista o regulă juridică celebră care spunea că 'aerul orașului te face liber'? Dacă un țăran dependent (iagă) fugea de pe domeniul nobilului său și reușea să locuiască într-un oraș liber timp de un an și o zi fără să fie prins, devenea automat om liber!",
         quiz: [
             {
                 q: "În ce secol a reînceput dezvoltarea puternică a orașelor medievale în Europa?",
@@ -6895,6 +6926,7 @@ const dbLectii = {
             <h3>3. Cum învățau studenții medievali?</h3>
             <p>Studenții aveau între 14 și 20 de ani. Ei scriau pe <strong>pergament</strong> (piele de animal), ascultau lecturile profesorilor și făceau dezbateri. La finalul studiilor, absolvenții primeau <strong>roba și toca</strong>.</p>
         `,
+        stiaiCa: "Știai că primele universități medievale nu aveau clădiri proprii, iar profesorii și studenții își închiriau pur și simplu săli prin oraș? Dacă orașul sau biserica locală încerca să le impună taxe mari sau reguli stricte, întreaga universitate intra în 'grevă' și se muta peste noapte într-un alt oraș primitor – așa luând naștere, de exemplu, Universitatea din Cambridge, fondată de profesori plecați de la Oxford!",
         quiz: [
             {
                 q: "Ce stil arhitectural predomina până în secolul al XII-lea, fiind caracterizat prin ziduri masive și arcuri rotunde?",
@@ -7028,6 +7060,7 @@ const dbLectii = {
                 <li><strong>Pozitive:</strong> au dezvoltat comerțul dintre Europa și Orient și au extins cunoștințele de navigație și geografie.</li>
             </ul>
         `,
+        stiaiCa: "Știai că participanții la aceste războaie s-au numit 'cruciați' deoarece își coseau o cruce din pânză roșie pe haine (pe piept la plecare și pe spate la întoarcere) ca simbol al jurământului lor de a elibera Ierusalimul?",
         quiz: [
             {
                 q: "Care a fost scopul principal al cruciadelor organizate de europenii occidentali?",
@@ -7160,6 +7193,7 @@ const dbLectii = {
             <h3>3. Anglia: Cucerirea normandă și Magna Carta</h3>
             <p>În <strong>1066</strong>, <strong>Wilhelm Cuceritorul</strong> (ducele Normandiei) cucerește Anglia. În <strong>1215</strong>, baronii îi impun regelui Ioan Fără de Țară documentul <strong>Magna Carta Libertatum</strong>, care limita puterea regală și punea bazele Parlamentului englez.</p>
         `,
+        stiaiCa: "Știai că regele englez Ioan Fără de Țară a fost obligat să semneze faimoasa 'Magna Carta' pe o pajiște numită Runnymede, lângă râul Tisa, deoarece baronii înarmați care îl încercuiseră refuzau să intre în vreun castel regal de frică să nu fie prinși în capcană de gărzile regelui?",
         quiz: [
             {
                 q: "Cum se numește procesul istoric din Spania medievală de eliberare a teritoriilor de sub stăpânirea arabă?",
@@ -7296,6 +7330,7 @@ const dbLectii = {
             <h3>3. Rolul Bisericii și apărarea țării</h3>
             <p>Biserica Ortodoxă oferea legitimitate domnilor medievali prin ceremonia ungerii cu mir la înscăunare. În secolul al XV-lea, ambele state s-au opus expansiunii otomane prin domnitori importanți precum <strong>Vlad Țepeș</strong> și <strong>Ștefan cel Mare</strong>.</p>
         `,
+        stiaiCa: "Știai că bătălia de la Posada (1330) a fost reconstituită în detaliu de cronicarii maghiari într-o faimoasă carte numită 'Cronica pictată de la Viena'? În ilustrațiile acesteia se poate vedea cum oastea lui Basarab I, ascunsă pe stâncile unei trecători înguste, a distrus armata regelui Ungariei aruncând asupra ei bolovani, stânci și ploi de săgeți!",
         quiz: [
             {
                 q: "În urma cărei bătălii din 9–12 noiembrie 1330 a obținut Basarab I independența Țării Românești față de Ungaria?",
@@ -7422,6 +7457,7 @@ const dbLectii = {
                 <h3>3. Alte centre multiculturale</h3>
                 <p>Alte orașe importante din Transilvania întemeiate de sași, ce aveau un caracter multicultural pronunțat, au fost Sibiu, Sighișoara, Mediaș, Bistrița și Orăștie.</p>
             `,
+            stiaiCa: "Știai că numele germane ale multor orașe din Transilvania păstrează memoria celor 'șapte cetăți' construite de sași? În limba germană, Transilvania se numește 'Siebenbürgen' (care înseamnă chiar 'Șapte Cetăți'), referindu-se la fortărețele din Sibiu, Brașov, Cluj, Sighișoara, Mediaș, Sebeș și Bistrița!",
             quiz: [
     {
         q: "Cum era organizată Transilvania în cadrul regatului maghiar după cucerirea ei din secolele IX–XI?",
@@ -7558,6 +7594,7 @@ const dbLectii = {
                 <li><strong>Marco Polo:</strong> negustor venețian care a călătorit în China (1271–1295), consemnându-și experiențele în celebra lucrare <em>Cartea minunilor lumii</em>.</li>
             </ul>
         `,
+        stiaiCa: "Știai că povestirile negustorului venețian Marco Polo despre China (cum ar fi folosirea banilor de hârtie sau arderea 'pietrelor negre' – cărbunele – pentru căldură) erau atât de incredibile pentru europenii din secolul al XIII-lea încât mulți au crezut că cartea sa este o lucrare de ficțiune, poreclindu-l 'Milioane' din cauza exagerărilor de care îl bănuiau?",
         quiz: [
             {
                 q: "Care a fost cauza principală a majorității călătoriilor din Evul Mediu?",
@@ -7699,6 +7736,7 @@ const dbLectii = {
                 <li><strong>Răspândirea culturii:</strong> limbi precum spaniola și portugheza, dar și religia creștină, s-au extins pe noile continente.</li>
             </ul>
         `,
+        stiaiCa: "Știai că din cele 5 corăbii și aproximativ 270 de oameni care au plecat în 1519 sub comanda lui Fernando Magellan în prima călătorie în jurul lumii, doar o singură corabie ('Victoria') și 18 marinari s-au mai întors acasă în Spania trei ani mai târziu, dar încărcătura ei de cuișoare și mirodenii a acoperit tot costul expediției?",
         quiz: [
             {
                 q: "Care a fost principala marfă extrem de valoroasă pe care europenii o căutau în India?",
@@ -7827,6 +7865,7 @@ const dbLectii = {
                 <li><strong>Schimbul de plante și animale:</strong> europenii au dus în America animale pe care localnicii nu le văzuseră niciodată (cai, vaci, oi) și plante noi (grâu, viță-de-vie), iar creștinismul a devenit principala religie.</li>
             </ul>
         `,
+        stiaiCa: "Știai că regele incaș Atahualpa a oferit conchistadorului Francisco Pizarro cea mai mare răscumpărare din istorie pentru a fi eliberat: a umplut o cameră întreagă de 6 metri lungime și 5 metri lățime cu aur pur până la înălțimea brațului ridicat, plus încă două camere pline cu argint, însă spaniolii au luat comoara și tot l-au executat?",
         quiz: [
             {
                 q: "Prin ce tratat din 1494 au împărțit Spania și Portugalia zonele de stăpânire?",
@@ -7967,6 +8006,7 @@ const dbLectii = {
                 <li><strong>Medicină:</strong> <strong>Miguel Servet</strong> a explicat cum circulă sângele prin plămâni, iar <strong>Ambroise Paré</strong> a pus bazele chirurgiei moderne.</li>
             </ul>
         `,
+        stiaiCa: "Știai că prima carte tipărită de Johannes Gutenberg în jurul anului 1455 a fost Biblia, iar pentru a tipări aproximativ 180 de exemplare a fost nevoie de atât de mult pergament încât a fost necesară sacrificarea a peste 5.000 de oi?",
         quiz: [
             {
                 q: "Care a fost principala regiune din care s-a răspândit Renașterea în Europa?",
@@ -8107,6 +8147,7 @@ const dbLectii = {
                 <li><strong>Teatrul:</strong> a ajuns la cel mai înalt nivel prin piesele scrise de marele dramaturg englez <strong>William Shakespeare</strong> (precum <em>Romeo și Julieta</em> sau <em>Hamlet</em>).</li>
             </ul>
         `,
+        stiaiCa: "Știai că Michelangelo a pictat plafonul Capelei Sixtine (peste 500 de metri pătrați de frescă) stând în picioare pe o schelă specială proiectată de el, cu capul lăsat pe spate timp de patru ani, din cauza căruia vopseaua care îi picura constant în ochi i-a afectat temporar vederea?",
         quiz: [
             {
                 q: "Ce inovație tehnică și estetică a apărut în pictura Renașterii față de cea medievală?",
@@ -8233,6 +8274,7 @@ const dbLectii = {
           <p><strong>Sculptură:</strong> Statuia nud <em>David</em> (5,17 m înălțime), <em>Pietà</em> și <em>Moise</em>.</p>
           <p><strong>Pictură & Arhitectură:</strong> A decorat bolta și peretele altarului din <strong>Capela Sixtină</strong> (Vatican), acoperind 500 mp în 4 ani de muncă (cu scene precum <em>Crearea lui Adam</em> și <em>Judecata de Apoi</em>). Ca arhitect, a creat cupola Bazilicii Sfântul Petru și Piața Campidoglio din Roma.</p>
         `,
+        stiaiCa: "Știai că deși au fost contemporani și au trăit în aceleași orașe, Leonardo da Vinci și Michelangelo s-au urât de moarte și s-au certat public pe stradă, Michelangelo criticându-l pe Leonardo că nu a reușit să termine multe dintre lucrările sale, iar Leonardo ironizând musculatura exagerată din sculpturile lui Michelangelo?",
         quiz: [
           {
             q: "De ce este considerat Leonardo da Vinci întruchiparea „omului universal”?",
@@ -8373,6 +8415,7 @@ const dbLectii = {
                 <li>În 1633 a fost judecat de Inchiziție și forțat să își retragă afirmațiile despre mișcarea Pământului.</li>
             </ul>
         `,
+        stiaiCa: "Știai că deși Galileo Galilei a fost forțat de Inchiziție să abjure public și să declare că Pământul este fix, legenda spune că, imediat după ce a semnat retragerea afirmațiilor, el a șoptit sfidător în șoaptă celebra frază 'Eppur si muove' ('Și totuși se mișcă')?",
         quiz: [
             {
                 q: "Ce teorie astronomică susținută de Copernic a fost îmbrățișată atât de Giordano Bruno, cât și de Galileo Galilei?",
@@ -8501,6 +8544,7 @@ const dbLectii = {
             <h3>3. Părintele științelor politice</h3>
             <p>O altă scriere valoroasă a sa este <em>Istorii florentine</em>. Prin faptul că a analizat realistic modul în care un conducător obține și își păstrează puterea, Machiavelli este considerat <strong>părintele științelor politice moderne</strong>.</p>
         `,
+        stiaiCa: "Știai că deși expresia celebră 'scopul scuză mijloacele' este asociată peste tot cu numele lui Machiavelli și cu noțiunea de machiavelism, el nu a scris niciodată exact aceste cuvinte în cartea sa Principele, ci doar a argumentat că un conducător trebuie judecat după rezultatul final al acțiunilor sale pentru salvarea statului?",
         quiz: [
             {
                 q: "În ce oraș-stat italian a activat Niccolò Machiavelli ca secretar al „Consiliului celor 10”?",
@@ -8634,6 +8678,7 @@ const dbLectii = {
             <h3>3. Moștenirea și influența operei</h3>
             <p>Piesele sale sunt jucate și astăzi pe tot globul. Shakespeare a avut un impact uriaș asupra <strong>limbii engleze</strong>, introducând aproape 300 de cuvinte noi și numeroase expresii intrate în limbajul cotidian (precum celebra replică: <em>„Lumea-ntreagă e o scenă / Și toți oamenii-s actori”</em> din piesa <em>Cum vă place</em>).</p>
         `,
+        stiaiCa: "Știai că în timpul reginei Elisabeta I, femeile nu aveau voie legală să joace pe scenă, astfel încât toate rolurile feminine din piesele lui Shakespeare – inclusiv Julieta, Ophelia sau Lady Macbeth – erau interpretate de băieți tineri sau adolescenți îmbrăcați în rochii?",
         quiz: [
             {
                 q: "În timpul cărei mari regine a Angliei s-a desfășurat cea mai mare parte a vieții lui William Shakespeare?",
@@ -8771,6 +8816,7 @@ const dbLectii = {
             <p>Un rol esențial în Contrareformă l-a avut <strong>Ordinul Iezuiților</strong> (înființat în 1534 de <strong>Ignațiu de Loyola</strong>). Prin disciplină riguroasă și școli de mare calitate, iezuiții au readus mulți credincioși la catolicism.</p>
             <p>Biserica Catolică și-a recâștigat influența în regiuni precum <strong>Austria, Bavaria și Polonia</strong>. Tot în această perioadă a apărut <strong>stilul baroc</strong>, caracterizat prin măreție și decorat bogat, menit să impresioneze credincioșii și să sporească atractivitatea bisericilor catolice.</p>
         `,
+        stiaiCa: "Știai că banii strânși din vânzarea agresivă a indulgențelor de către Biserica Catolică — practica criticată direct de Martin Luther în cele 95 de teze — au fost folosiți în mare parte pentru finanțarea construirii giganticei Bazilici Sfântul Petru din Roma?",
         quiz: [
             {
                 q: "În cadrul cărui conciliu (1545-1563) a stabilit Biserica Catolică măsurile de reformare internă?",
