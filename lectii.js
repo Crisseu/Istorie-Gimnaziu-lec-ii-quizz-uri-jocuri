@@ -11487,6 +11487,7 @@ const dbLectii = {
             <li><strong>Frontul de Est:</strong> Germania a obținut victorii împotriva armatei ruse la <strong>Tannenberg</strong> și <strong>Lacurile Mazuriene</strong>. În 1917, după preluarea puterii de către comuniști, Rusia s-a retras din război.</li>
           </ul>
         `,
+        stiaiCa: "Știai că în timpul Bătăliei de la Verdun din 1916 (una dintre cele mai sângeroase din istorie, durând 300 de zile), bombardamentele de artilerie au fost atât de intense încât au modificat complet relieful regiunii, ștergând definitiv de pe hartă nouă sate franceze care nu au mai fost reconstruite niciodată?",
         quiz: [
           {
             q: "Ce eveniment din 28 iunie 1914 a reprezentat pretextul izbucnirii Primului Război Mondial?",
@@ -11621,6 +11622,7 @@ const dbLectii = {
             </ul>
             <p>Marea Britanie și Franța au fabricat peste 5.500 de tancuri pe parcursul războiului, în timp ce germanii au produs doar 20 de bucăți.</p>
         `,
+        stiaiCa: "Știai că primele tancuri britanice din 1916 au primit numele de cod 'tanc' (care în engleză înseamnă restrâns 'rezervor de apă') doar pentru a-i păcăli pe spionii germani că pe linia de producție se fabrică simple recipiente metalice de apă pentru armată?",
         quiz: [
             {
                 q: "Cine a preluat în mod special munca în fabricile de armament în lipsa bărbaților plecați pe front?",
@@ -11755,6 +11757,7 @@ const dbLectii = {
             <p>Lipsa bărbaților s-a simțit puternic: în Germania anului 1918, peste <strong>55% din muncitorii din fabrici erau femei</strong>. Muncile agricole au devenit extrem de grele, mai ales că animalele de tracțiune (caii și boii) fuseseră luate pentru nevoile armatei.</p>
             <p>Lipsurile au dus la <strong>foamete și epidemii cumplite</strong>. Din cauza acestora, aproape 7 milioane de civili au murit în timpul războiului – un număr aproape egal cu cel al soldaților căzuți pe câmpul de luptă.</p>
         `,
+        stiaiCa: "Știai că umezeala constantă și noroiul din șanțuri au provocat o afecțiune gravă numită 'piciorul de tranșee', de care au suferit sute de mii de soldați, singura modalitate de prevenție fiind schimbarea zilnică a șosetelor uscate și ungerea picioarelor cu grăsime de balenă?",
         quiz: [
             {
                 q: "Ce erau tranșeele folosite pe scară largă în Primul Război Mondial?",
@@ -11892,6 +11895,7 @@ const dbLectii = {
             <p>După ce Rusia a ieșit din război în urma revoluției, România a rămas izolată și a fost obligată să semneze o pace nefavorabilă. Totuși, victoriile Antantei de pe Frontul de Vest și destrămarea marilor imperii vecine au permis realizarea visului național.</p>
             <p>În anul <strong>1918</strong>, românii au hotărât unirea cu Țara a tuturor provinciilor istorice: <strong>Basarabia, Bucovina, Transilvania și Banatul</strong>, formând <strong>România Mare</strong>.</p>
         `,
+        stiaiCa: "Știai că în vara anului 1917, în timpul bătăliei de la Mărășești, soldații români din Batalionul 32 Infanterie au fost surprinși de un atac cu gaze toxice germane în timp ce se aflau la baie și, neavând timp să se îmbrace, au șarjat la baionetă dezbrăcați doar în izmene, reușind să pună pe fugă trupele inamice uluite?",
         quiz: [
             {
                 q: "Ce decizie a luat România în anul 1914, la izbucnirea Primului Război Mondial?",
@@ -12029,6 +12033,7 @@ const dbLectii = {
             </ul>
             <p>Marile imperii s-au prăbușit, harta Europei a fost redesenată, iar <strong>SUA au devenit prima putere mondială</strong>. Totuși, nemulțumirile lăsate de aceste tratate vor duce mai târziu la Al Doilea Război Mondial.</p>
         `,
+        stiaiCa: "Știai că Armistițiul din 11 noiembrie 1918 a fost semnat într-un vagon de tren de comandament al mareșalului francez Ferdinand Foch în pădurea Compiègne, iar 22 de ani mai târziu, în 1940, Adolf Hitler a obligat Franța să semneze capitularea exact în același vagon pentru a se răzbuna pentru umilința de la Versailles?",
         quiz: [
             {
                 q: "La ce dată a fost semnat armistițiul care a pus capăt luptelor din Primul Război Mondial?",
@@ -12164,6 +12169,7 @@ const dbLectii = {
             <h3>4. Dezvoltarea sportului și Prima Cupă Mondială</h3>
             <p>Fotbalul a devenit un sport extrem de popular. În anul <strong>1930</strong> a fost organizată prima <strong>Cupă Mondială de fotbal în Uruguay</strong>, la care au participat 13 echipe, inclusiv naționala României (susținută de Regele Carol al II-lea).</p>
         `,
+        stiaiCa: "Știai că Regele Carol al II-lea al României s-a implicat personal în alcătuirea lotului naționalei de fotbal pentru prima Cupă Mondială din Uruguay (1930) și le-a acordat jucătorilor concediu plătit de la locurile lor de muncă pentru ca aceștia să poată face lunga călătorie de două săptămâni cu vaporul Conte Verde până la Montevideo?",
         quiz: [
             {
                 q: "Cum au fost numiți anii '20 ai secolului al XX-lea datorită dorinței de distracție și noilor ritmuri muzicale?",
@@ -12297,6 +12303,7 @@ const dbLectii = {
             <p>Inegalitățile au continuat: salariile femeilor erau mai mici, iar accesul la funcții publice era limitat de prejudecăți. Prima femeie prim-ministru din istorie a fost Sirimavo Bandaranaike (Sri Lanka, 1960).</p>
             <p>În <strong>România</strong>, femeile au creat asociații importante (Consiliul Național al Femeilor Române) și au obținut dreptul de vot treptat: în <strong>1938</strong> (cele de peste 30 de ani, cu știință de carte) și universal în <strong>1946</strong> (peste 21 de ani).</p>
         `,
+        stiaiCa: "Știai că prima țară din lume care le-a acordat femeilor drepturi egale de vot a fost Noua Zeelandă în anul 1893, în urma unei petiții uriașe semnate de aproape un sfert din populația adultă feminină a țării și strânsă pe role de hârtie lipite una de alta, lungi de peste 270 de metri?",
         quiz: [
             {
                 q: "Cum s-au numit femeile care militau pentru obținerea dreptului de vot în Marea Britanie și alte țări?",
@@ -12428,6 +12435,7 @@ const dbLectii = {
             <h3>3. Filmul ca instrument politic</h3>
             <p>Pe lângă divertisment și reclamă, cinematografia a fost folosită ca mijloc de <strong>propagandă politică</strong>. Regimurile dictatoriale (comunist în URSS și nazist în Germania) au folosit filmele și jurnalele de știri de pe ecran pentru a influența și controla opinia publică.</p>
         `,
+        stiaiCa: "Știai că la una dintre primele proiecții ale fraților Lumière din 1895, care prezenta sosirea unui tren în gară ('L'Arrivée d'un train en gare de La Ciotat'), unii spectatori din sală s-au speriat atât de tare încât s-au ridicat de pe scaune și au fugit, crezând că trenul de pe ecran va intra direct în ei?",
         quiz: [
             {
                 q: "Cine au fost cei doi frați care au realizat prima proiecție cinematografică la Paris în anul 1895?",
@@ -12564,6 +12572,7 @@ const dbLectii = {
             </ul>
             <p>În SUA, criza a fost oprită prin planul <strong>New Deal (1933)</strong> al președintelui <strong>Franklin D. Roosevelt</strong>, care a creat locuri de muncă prin construcția de drumuri, poduri și baraje.</p>
         `,
+       stiaiCa: "Știai că după prăbușirea bursei din octombrie 1929, panica generată de falimentul băncilor a fost atât de mare încât „banii gheață„ deveniseră extrem de rari, iar în unele orașe americane comunitățile au fost nevoite să emită propria lor monedă temporară, confecționată din scoici, jetoane de metal sau bucăți din lemn de arțar?",
         quiz: [
             {
                 q: "Cum s-a numit ziua de 24 octombrie 1929, când prăbușirea bursei din New York a declanșat Marea Criză?",
@@ -12704,6 +12713,7 @@ const dbLectii = {
                 <li><strong>Germania nazistă:</strong> condusă de Adolf Hitler (extremă-dreapta), din 1933.</li>
             </ul>
         `,
+        stiaiCa: "Știai că în timpul 'Marșului asupra Romei' din 1922, Benito Mussolini nu a marșăluit efectiv alături de cămășile negre pe străzi, ci a așteptat rezultatul la Milano și a călătorit la Roma la clasa întâi cu un tren de noapte, după ce regele Victor Emanuel al III-lea l-a invitat oficial prin telegramă să formeze guvernul?",
         quiz: [
             {
                 q: "Care este principala caracteristică a unui sistem politic democratic?",
@@ -12835,6 +12845,7 @@ const dbLectii = {
             <h3>3. Prosperitatea și sistemul politic</h3>
             <p>Prosperitatea SUA s-a bazat pe un <strong>sistem bipartit</strong> (Partidul Democrat și Partidul Republican), care au alternat la guvernare. În mod tradițional, statul nu intervenea în economie, însă pentru depășirea Marii Crize a fost necesară intervenția fermă prin programul <em>New Deal</em>.</p>
         `,
+        stiaiCa: "Știai că deși Constituția Statelor Unite a fost redactată în 1787 și este cea mai veche constituție scrisă încă în vigoare din lume, ea conține doar 4.543 de cuvinte și în peste 230 de ani i-au fost aduse doar 27 de amendamente?",
         quiz: [
             {
                 q: "În ce an a fost adoptată Constituția Statelor Unite ale Americii, valabilă până astăzi?",
@@ -12966,6 +12977,7 @@ const dbLectii = {
                 <li><strong>Pregătirea de război:</strong> Hitler a reînarmat Germania, a încălcat prevederile Tratatului de la Versailles și a declanșat Al Doilea Război Mondial.</li>
             </ul>
         `,
+        stiaiCa: "Știai că deși regimurile comunist și nazist erau ideologic la poli opuși, ambele au folosit structuri de teroare aproape identice, Gulagul sovietic și sistemul de lagăre de concentrare nazist fiind construite pe aceleași metode de muncă forțată și dezumanizare a opozanților politici?",
         quiz: [
             {
                 q: "În ce țară și în ce an a fost instaurat comunismul pentru prima dată sub conducerea lui Lenin?",
@@ -13096,6 +13108,7 @@ const dbLectii = {
             <h3>3. Drumul spre Al Doilea Război Mondial</h3>
             <p>La <strong>23 august 1939</strong>, Germania și URSS au semnat Pactul de neagresiune (Ribbentrop-Molotov), împărțind în secret Europa de Est (inclusiv Polonia) și deschizând calea spre un nou război mondial.</p>
         `,
+        stiaiCa: "Știai că deși Pactul Ribbentrop-Molotov din 23 august 1939 era prezentat oficial ca un simplu tratat de neagresiune între Germania și URSS, el conținea un protocol adițional secret prin care Hitler și Stalin și-au împărțit practic Europa de Est în sfere de influență, hotărând în secret anexarea Poloniei, Țărilor Baltice și a Basarabiei?",
         quiz: [
             {
                 q: "Ce teritoriu chinez bogat în resurse a fost ocupat de Japonia în anul 1931?",
@@ -13240,6 +13253,7 @@ const dbLectii = {
             <li><b>Marea Alianță:</b> S-a format coaliția „Națiunile Unite” (SUA, Marea Britanie, URSS și aliații lor) împotriva Axei, extinzând războiul pe tot globul.</li>
         </ul>
     `,
+    stiaiCa: "Știai că în timpul Bătăliei Angliei din 1940, pentru a păstra secretă invenția recentă a radarului de către britanici, guvernul a lansat o campanie de propagandă susținând că piloții RAF aveau o vedere nocturnă excepțională datorită consumului masiv de morcovi, un mit care a rămas popular până astăzi?",
     quiz: [
         {
             q: "La ce dată a izbucnit Al Doilea Război Mondial prin atacarea Poloniei?",
@@ -13343,6 +13357,7 @@ const dbLectii = {
             <li><b>Lagărele de exterminare:</b> Au fost folosite de naziști ca o armă „eficientă” pentru uciderea a peste 6 milioane de oameni (prizonieri, femei, copii, bătrâni).</li>
         </ul>
     `,
+    stiaiCa: "Știai că creatorul rachetei germane V-2, inginerul Wernher von Braun, a fost recuperat la sfârșitul războiului de către americani în cadrul operațiunii secrete Paperclip și a devenit ulterior arhitectul principal al rachetei Saturn V din programul Apollo, care i-a dus pe primii oameni pe Lună în 1969?",
     quiz: [
         {
             q: "Câți oameni au murit în total în Al Doilea Război Mondial (aproximativ 3% din populația globului)?",
@@ -13436,6 +13451,7 @@ const dbLectii = {
             <li><b>Camuflajul de noapte:</b> Oamenii erau obligați să stingă luminile și să acopere ferestrele seara, pentru ca orașele să nu poată fi identificate din avion.</li>
         </ul>
     `,
+    stiaiCa: "Știai că în timpul bombardamentelor aeriene germane asupra Londrei (Brazda / Blitz-ul), stațiile de metrou au fost transformate în adevărate orașe subterane în care peste 150.000 de civili dormeau în fiecare noapte pe platforme, linia ferată fiind deconectată de la curent pentru siguranță?",
     quiz: [
         {
             q: "Ce tip de război a fost Al Doilea Război Mondial, spre deosebire de primul?",
@@ -13534,6 +13550,7 @@ const dbLectii = {
             <li><b>Păstrăm memoria vie:</b> Pentru a ne asigura că astfel de erori nu se vor mai repeta, ne amintim de victime pe <b>27 ianuarie</b> (Ziua Internațională) și pe <b>9 octombrie</b> (Ziua Națională în România).</li>
         </ul>
     `,
+    stiaiCa: "Știai că 'Jurnalului Annei Frank', redactat de o adolescentă evreică de 13 ani în timp ce se ascundea de naziști într-o anexă secretă din Amsterdam, a devenit ulterior una dintre cele mai citite cărți din lume, fiind tradusă în peste 70 de limbi și transformată într-un simbol universal al memoriei Holocaustului?",
     quiz: [
         {
             q: "Ce reprezintă termenul 'antisemitism'?",
@@ -13626,6 +13643,7 @@ const dbLectii = {
 
         <p>Lăsând în urmă peste 60 de milioane de morți și o Europă ruinată, omenirea a înțeles că are nevoie de un scut împotriva viitoarelor războaie. Astfel, la <b>24 octombrie 1945 a fost creată Organizația Națiunilor Unite (ONU)</b>, purtând misiunea de a menține pacea pe glob.</p>
     `,
+    stiaiCa: "Știai că în timpul debarcării din Normandia ('Ziua Z', 6 iunie 1944), Aliații au folosit mii de manechine din cauciuc îmbrăcate în uniforme militare și echipate cu parașute speciale care explodau la aterizare, lansate în zone greșite ale Franței pentru a-i induce în eroare pe germani cu privire la locul real al atacului?",
     quiz: [
         {
             q: "Care a fost cea mai mare bătălie de tancuri din istorie, câștigată de sovietici în 1943?",
@@ -13712,6 +13730,7 @@ const dbLectii = {
         <h3> Răspunsul Uniunii Sovietice: Crearea CAER</h3>
         <p>URSS nu a privit cu ochi buni ajutorul american și a obligat țările din sfera sa de influență (din estul Europei) să refuze Planul Marshall. În loc să accepte modelul capitalist, sovieticii au creat în <b>1949 Consiliul de Ajutor Economic Reciproc (CAER)</b>. Scopul acestuia era să lege economiile țărilor comuniste între ele, dar în realitate le-a subordonat direct intereselor Moscovei.</p>
     `,
+    stiaiCa: "Știai că în cadrul Planului Marshall, pentru a livra rapid ajutoare financiare și resurse, americanii au trimis în Europa peste 13 milioane de tone de hrană, cărbune și echipamente industriale, iar printre pachete au inclus chiar și mii de muli și cai pentru a ajuta fermierii europeni să-și reia munca pe câmp?",
     quiz: [
         {
             q: "Ce procent aproximativ din populația planetei a murit în Al Doilea Război Mondial?",
@@ -13798,6 +13817,7 @@ const dbLectii = {
         <h3> „Baby Boom” și drumul spre o viață confortabilă</h3>
         <p>Odată cu venirea păcii, populația Europei a crescut spectaculos, fenomen numit <b>Baby Boom</b> („explozia de bebeluși”), ceea ce a determinat guvernele să investească masiv în școli și spitale. Cu timpul, economiile și-au revenit, aducând prosperitatea: oamenii aveau un loc de muncă stabil, o casă, o mașină și bunuri care le făceau viața mai ușoară (frigider, mașină de spălat, aspirator), dar și acces la produse delicioase precum cafeaua, ciocolata și fructele tropicale.</p>
     `,
+    stiaiCa: "Știai că raționalizarea alimentelor în Marea Britanie nu s-a încheiat odată cu sfârșitul războiului în 1945, ci a continuat până în 1954, cartelele pentru ouă, unt, carne și ciocolată rămânând în vigoare aproape un deceniu din cauza deficitului economic postbelic?",
     quiz: [
         {
             q: "Ce fenomen demografic a apărut imediat după terminarea războiului în 1945?",
@@ -13884,6 +13904,7 @@ const dbLectii = {
         <h3> Democrație versus Comunism: Două lumi complet diferite</h3>
         <p>În timp ce în statele democratice drepturile omului garantau libertatea și echilibrul în societate, <b>regimurile comuniste le priveau cu totul altfel</b>. Comuniștii susțineau că drepturile individuale sunt „egoiste” și le-au călcat în picioare în numele „bunăstării poporului”. Cel mai grav lovit a fost <b>dreptul la proprietate privată</b> (confiscată de stat), dar au fost eliminate brutal și libertatea de exprimare, libertatea religioasă, dreptul la vot liber și libertatea de mișcare.</p>
     `,
+    stiaiCa: "Știai că Declarația Universală a Drepturilor Omului este cel mai tradus document din întreaga lume, fiind tradusă în peste 500 de limbi și dialecte (de la spaniolă și chineză până la dialectul Maya sau limba Quechua)?",
     quiz: [
         {
             q: "În ce an a adoptat Adunarea Generală a ONU Declarația Universală a Drepturilor Omului?",
@@ -13970,6 +13991,7 @@ const dbLectii = {
         <h3> „Războaie decise de bătrâni, în care mor tinerii”</h3>
         <p>Cea mai puternică revoltă a tinerilor din Occident a fost împotriva războaielor precum cele din <b>Coreea</b>, <b>Algeria</b> și mai ales <b>Vietnam</b>. Tinerii americani și europeni refuzau să mai fie înrolați și să își riște viața în conflicte îndepărtate pe care le considerau inutile. Susținuți de familiile soldaților de pe front, ei au creat mișcări pacifiste masive care au schimbat definitiv mentalitatea lumii moderne.</p>
     `,
+    stiaiCa: "Știai că mișcarea pacifistă a tinerilor din anii '60 împotriva Războiului din Vietnam a popularizat celebrul simbol al păcii (cercul cu cele trei linii în interior), creat inițial în 1958 de un designer britanic din combinarea semnalelor de semafor maritim pentru literele N și D (de la Nuclear Disarmament / Dezarmare Nucleara)?",
     quiz: [
         {
             q: "De ce erau părinții tinerilor din perioada postbelică foarte conservatori și prudenți?",
@@ -14056,6 +14078,7 @@ const dbLectii = {
         <h3> Prăbușirea comunismului și sfârșitul Războiului Rece</h3>
         <p>Cursa înarmărilor și cea spațială au stors resursele economice ale URSS și ale statelor sale satelit, ducând la scăderea dramatică a nivelului de trai. În România anilor '80, acest efort s-a tradus prin raționalizarea severă a hranei și energiei electrice. Popoarele din Est au încercat repetat să scape de sub opresiune (Ungaria 1956, Cehoslovacia 1968, mișcarea <i>Solidaritatea</i> din Polonia). În final, reformele lui Mihail Gorbaciov au dus la prăbușirea regimurilor comuniste în <b>1989</b> și la dezmembrarea URSS în <b>1991</b>.</p>
     `,
+    stiaiCa: "Știai că în timpul Războiului Rece, din cauza liniei telefonice directe de urgență făcute între Casa Albă și Kremlin ('Telefonul Roșu') create după Criza Rachetelor din Cuba (1962), liderii din SUA și URSS nu vorbeau direct la telefon, ci își trimiteau mesaje scrise prin telegraf și ulterior prin fax, pentru a evita greșelile de traducere sau de interpretare în momente critice?",
     quiz: [
         {
             q: "Cum s-a numit rivalitatea fără conflict direct dintre SUA și URSS (1945–1991)?",
@@ -14142,6 +14165,7 @@ const dbLectii = {
         <h3> Spațiul Schengen și Moneda Euro</h3>
         <p>Principiul de bază al UE este libera circulație a persoanelor, mărfurilor și capitalului. Prin <b>Tratatul Schengen (1995)</b> au fost eliminate controalele la granițele interne între statele participante. În paralel, a fost introdusă moneda unică <b>Euro</b> pentru a crea o piață stabilă, fiind adoptată astăzi de numeroase state membre și de anumite țări non-UE prin acorduri speciale.</p>
     `,
+    stiaiCa: "Știai că steagul Uniunii Europene, cu cele 12 stele aurii pe fundal albastru, nu reprezintă numărul țărilor membre (care a crescut de-a lungul timpului), ci numărul 12 a fost ales ca simbol al perfecțiunii, unității și completitudinii, la fel ca cele 12 luni ale anului sau cele 12 ore de pe cadranul unui ceas?",
     quiz: [
         {
             q: "Care a fost primul pas concret în reconcilierea franco-germană din 1951?",
@@ -14268,6 +14292,7 @@ const dbLectii = {
         <h3> Revoluția informațională și Inteligența Artificială</h3>
         <p>Tehnologii concepute inițial pentru armată au fost adaptate de companii private pentru consumatorii obișnuiți: sateliții au creat telefonia mobilă, iar calculatoarele au devenit <b>computere personale (PC)</b>. Apariția <b>internetului (1991)</b> a conectat miliarde de oameni, iar suporturile de stocare au evoluat rapid (dischetă → CD → DVD → memorie flash). În prezent, avântul tehnologic a culminat cu dezvoltarea <b>inteligenței artificiale</b>, programe capabile să învețe și să proceseze cantități uriașe de date.</p>
     `,
+    stiaiCa: "Știai că prima pagină web din istorie, creată de Tim Berners-Lee în 1991 la laboratorul CERN din Elveția, era un simplu fișier text care explica ce este World Wide Web și cum se folosește internetul, neavând imagini, culori sau grafica sofisticată pe care o cunoaștem astăzi?",
     quiz: [
         {
             q: "Ce tip de lume a luat locul sistemului bipolar după încheierea Războiului Rece?",
@@ -14394,6 +14419,7 @@ const dbLectii = {
         <h3> Sănătate vs. Beneficii cognitive și profesionale</h3>
         <p>Folosirea îndelungată a ecranelor afectează vederea, somnul și postura corporală, iar lipsa mișcării poate provoca obezitate. Totuși, jocurile au și efecte pozitive: sunt studiate în universități pentru modul în care dezvoltă reflexele, iar <b>simulatoarele profesionale</b> stimulează creativitatea și antrenează abilități practice utile în meseriile viitorului (arhitectură, inginerie etc.).</p>
     `,
+    stiaiCa: "Știai că primele simulatoare de zbor profesionale folosite pentru antrenarea piloților au fost create încă din anii '30 fără monitoare sau grafică digitală, fiind dispozitive pur mecanice și pneumatice numite 'Link Trainer', care reacționau la comenzile din cabină pentru a imita mișcările reale ale unui avion?",
     quiz: [
         {
             q: "Ce strategie folosesc uneori companiile de jocuri pentru a vinde experiența completă?",
@@ -14520,6 +14546,7 @@ const dbLectii = {
         <h3> Terorismul în secolul al XXI-lea</h3>
         <p>Atentatele din <b>11 septembrie 2001</b> de la World Trade Center și Pentagon (SUA), soldate cu aproape 3.000 de victime, au schimbat radical securitatea aeroportuară mondială. În secolul al XXI-lea, terorismul s-a transformat: organizațiile ierarhizate au fost înlocuite tot mai mult de persoane radicalizate prin propagandă care acționează individual. Combaterea terorismului pe termen lung se face prin <b>educație, toleranță și respectarea drepturilor omului</b>.</p>
     `,
+    stiaiCa: "Știai că atacurile de la 11 septembrie 2001 au dus la cea mai mare reorganizare a securității aeriene din istorie, determinând introducerea scanerelor corporale avansate în aeroporturi, interzicerea lichidelor în bagajul de mână și blindarea ușilor de la cabinele piloților pentru a nu mai putea fi forțate din exterior?",
     quiz: [
         {
             q: "Prin ce se diferențiază terorismul de un război convențional?",
@@ -14646,6 +14673,7 @@ const dbLectii = {
         <h3> Consecințe economice și culturale</h3>
         <p>Migrația are efecte mixte: țările de origine pot pierde forță de muncă specializată (exodul creierelor), în timp ce țările de destinație beneficiază de o piață a muncii mai dinamică, dar pot înregistra o competiție crescută pentru locuințe și resurse. State din „Lumea Nouă” (SUA, Canada, Australia) și din Europa Occidentală s-au dezvoltat semnificativ prin contribuția imigranților. Un exemplu de succes în Asia este <b>Singapore</b>, care a devenit un „tigru asiatic” datorită amestecului cultural și fluxului constant de migranți.</p>
     `,
+    stiaiCa: "Știai că anul 2007 a fost un punct de cotitură istoric pentru omenire, fiind prima dată în întreaga existență a civilizației umane când numărul oamenilor care trăiau la oraș a depășit numărul celor care trăiau în mediul rural?",
     quiz: [
         {
             q: "În ce an a depășit populația urbană mondială pe cea rurală pentru prima dată în istorie?",
