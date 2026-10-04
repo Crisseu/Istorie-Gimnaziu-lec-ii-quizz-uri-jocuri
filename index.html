@@ -15,7 +15,6 @@
         html, body { 
             background-color: #2b1d0c; 
             min-height: 100vh; 
-            overscroll-behavior-y: none; 
         }
         
         body { display: flex; justify-content: center; }
@@ -31,50 +30,62 @@
             position: relative; 
         }
         
-        header { background: linear-gradient(135deg, #4a2e1b, #2c1d11); color: #f3e5ab; padding: 16px; text-align: center; font-size: 1.2rem; font-weight: bold; position: relative; border-bottom: 4px solid #d4a359; }
-        .back-btn { position: absolute; left: 12px; top: 12px; background: #8c5a2b; border: 1px solid #d4a359; color: #fff; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-weight: bold; display: none; }
+        header { background: linear-gradient(135deg, #4a2e1b, #2c1d11); color: #f3e5ab; padding: 14px 16px; text-align: center; font-size: 1.15rem; font-weight: bold; position: relative; border-bottom: 4px solid #d4a359; flex-shrink: 0; }
+        .back-btn { position: absolute; left: 12px; top: 10px; background: #8c5a2b; border: 1px solid #d4a359; color: #fff; padding: 4px 10px; border-radius: 6px; cursor: pointer; font-weight: bold; display: none; }
         
-        .player-bar { background: #3d2516; color: #f3e5ab; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; border-bottom: 2px solid #8c5a2b; }
-        .player-profile { display: flex; align-items: center; gap: 10px; cursor: pointer; }
-        .avatar-icon { font-size: 1.8rem; background: #2c1d11; border: 2px solid #d4a359; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
-        .streak-badge { background: #d35400; color: #fff; padding: 3px 8px; border-radius: 12px; font-weight: bold; font-size: 0.8rem; margin-left: 6px; border: 1px solid #e67e22; }
+        .player-bar { background: #3d2516; color: #f3e5ab; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; border-bottom: 2px solid #8c5a2b; flex-shrink: 0; }
+        .player-profile { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+        .avatar-icon { font-size: 1.8rem; background: #2c1d11; border: 2px solid #d4a359; border-radius: 50%; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; }
+        .streak-badge { background: #d35400; color: #fff; padding: 2px 8px; border-radius: 12px; font-weight: bold; font-size: 0.8rem; margin-left: 4px; border: 1px solid #e67e22; }
         .xp-info { text-align: right; }
-        .xp-bar-bg { width: 110px; background: #2c1d11; height: 10px; border-radius: 5px; overflow: hidden; border: 1px solid #d4a359; margin-top: 3px; display: inline-block; }
+        .xp-bar-bg { width: 100px; background: #2c1d11; height: 10px; border-radius: 5px; overflow: hidden; border: 1px solid #d4a359; margin-top: 4px; display: inline-block; }
         .xp-bar-fill { width: 0%; height: 100%; background: linear-gradient(90deg, #2ecc71, #27ae60); transition: width 0.4s ease; }
 
-        .screen { display: none; padding: 20px; flex-grow: 1; overflow-y: auto; }
+        .screen { display: none; padding: 16px; flex-grow: 1; overflow-y: auto; }
         .active-screen { display: flex; flex-direction: column; }
 
-        .card { background: #fffdf7; border: 1px solid #d4a359; border-left: 6px solid #8c5a2b; padding: 16px; margin-bottom: 12px; border-radius: 10px; cursor: pointer; font-weight: bold; color: #4a2e1b; box-shadow: 0 4px 6px rgba(0,0,0,0.04); font-size: 1.05rem; transition: transform 0.1s ease; display: flex; justify-content: space-between; align-items: center; }
+        /* Meniu principal aerisit și proporționat */
+        #screenClasses {
+            padding: 16px;
+            padding-bottom: 24px;
+        }
+
+        .card { background: #fffdf7; border: 1px solid #d4a359; border-left: 6px solid #8c5a2b; padding: 14px 16px; margin-bottom: 12px; border-radius: 10px; cursor: pointer; font-weight: bold; color: #4a2e1b; box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-size: 1.05rem; transition: transform 0.1s ease; display: flex; justify-content: space-between; align-items: center; }
         .card:active { transform: scale(0.98); }
         .lesson-stars { font-size: 1rem; color: #f39c12; }
 
-        .tabs { display: flex; border-bottom: 2px solid #d4a359; margin-bottom: 18px; background: #ebdcb9; border-radius: 8px 8px 0 0; overflow: hidden; flex-shrink: 0; }
-        .tab-btn { flex: 1; padding: 12px 3px; border: none; background: transparent; cursor: pointer; font-weight: bold; color: #5c3a21; font-size: 0.78rem; text-align: center; }
+        /* Sectiuni butoane extra */
+        .extra-section { margin-top: 10px; text-align: center; }
+        .extra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+        .btn-extra { background: #fffdf7; border: 2px solid #8c5a2b; color: #4a2e1b; padding: 12px 8px; font-weight: bold; font-size: 0.9rem; border-radius: 10px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center; gap: 6px; transition: transform 0.1s; }
+        .btn-extra:active { transform: scale(0.98); }
+
+        .tabs { display: flex; border-bottom: 2px solid #d4a359; margin-bottom: 14px; background: #ebdcb9; border-radius: 8px 8px 0 0; overflow: hidden; flex-shrink: 0; }
+        .tab-btn { flex: 1; padding: 10px 3px; border: none; background: transparent; cursor: pointer; font-weight: bold; color: #5c3a21; font-size: 0.8rem; text-align: center; }
         .tab-btn.active { background: #8c5a2b; color: white; }
 
         .tab-content { display: none; }
         .tab-content.active { display: block; }
 
-        .summary-box { background: #ffffff; border: 1px solid #d4a359; padding: 18px; border-radius: 10px; line-height: 1.6; font-size: 1rem; color: #2c1d11; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .summary-box h3 { color: #c0392b; margin-top: 16px; border-bottom: 2px dashed #d4a359; padding-bottom: 4px; font-size: 1.15rem; }
+        .summary-box { background: #ffffff; border: 1px solid #d4a359; padding: 16px; border-radius: 10px; line-height: 1.5; font-size: 0.95rem; color: #2c1d11; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .summary-box h3 { color: #c0392b; margin-top: 12px; border-bottom: 2px dashed #d4a359; padding-bottom: 4px; font-size: 1.1rem; }
         .summary-box h3:first-child { margin-top: 0; }
-        .summary-box ul { margin-left: 20px; margin-top: 8px; }
+        .summary-box ul { margin-left: 18px; margin-top: 6px; }
 
-        /* Stiluri specifice Escape Room cu 4 lacăte */
-        .escape-box { background: #2c1d11; color: #f3e5ab; border: 3px solid #d4a359; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
-        .locks-row { display: flex; justify-content: center; gap: 10px; margin-bottom: 15px; }
-        .lock-card { background: #3d2516; border: 2px solid #8c5a2b; border-radius: 8px; padding: 10px 5px; width: 65px; text-align: center; }
+        /* Escape Room */
+        .escape-box { background: #2c1d11; color: #f3e5ab; border: 3px solid #d4a359; padding: 16px; border-radius: 12px; text-align: center; box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
+        .locks-row { display: flex; justify-content: center; gap: 8px; margin-bottom: 14px; }
+        .lock-card { background: #3d2516; border: 2px solid #8c5a2b; border-radius: 8px; padding: 8px 4px; width: 60px; text-align: center; }
         .lock-card.active-lock { border-color: #f1c40f; box-shadow: 0 0 8px #f1c40f; }
         .lock-card.solved-lock { border-color: #2ecc71; background: #1e3d23; }
-        .lock-icon { font-size: 1.5rem; }
-        .lock-digit { font-size: 1.4rem; font-weight: bold; color: #f1c40f; min-height: 30px; line-height: 30px; }
+        .lock-icon { font-size: 1.3rem; }
+        .lock-digit { font-size: 1.2rem; font-weight: bold; color: #f1c40f; min-height: 25px; line-height: 25px; }
 
-        .escape-puzzle { font-size: 1rem; line-height: 1.5; background: #3d2516; padding: 15px; border-radius: 8px; border: 1px solid #8c5a2b; margin-bottom: 15px; color: #fffdf7; text-align: left; }
-        .escape-input { width: 80%; max-width: 280px; padding: 12px; font-size: 1.2rem; font-weight: bold; text-align: center; border: 2px solid #d4a359; border-radius: 8px; background: #fdf6e2; color: #2c1d11; margin-bottom: 12px; text-transform: uppercase; }
-        .escape-hint { font-size: 0.85rem; color: #e67e22; margin-top: 10px; font-style: italic; display: none; }
+        .escape-puzzle { font-size: 0.95rem; line-height: 1.4; background: #3d2516; padding: 12px; border-radius: 8px; border: 1px solid #8c5a2b; margin-bottom: 14px; color: #fffdf7; text-align: left; }
+        .escape-input { width: 80%; max-width: 260px; padding: 10px; font-size: 1.1rem; font-weight: bold; text-align: center; border: 2px solid #d4a359; border-radius: 8px; background: #fdf6e2; color: #2c1d11; margin-bottom: 10px; text-transform: uppercase; }
+        .escape-hint { font-size: 0.85rem; color: #e67e22; margin-top: 8px; font-style: italic; display: none; }
 
-        /* ANIMATIE DESCHIDERE UȘĂ ESCAPE ROOM */
+        /* Animație Ușă Escape Room */
         .door-modal {
             display: none;
             position: fixed;
@@ -90,7 +101,7 @@
 
         .door-frame {
             position: relative;
-            width: 220px; height: 320px;
+            width: 200px; height: 290px;
             background: #2b1d0c;
             border: 8px solid #8c5a2b;
             border-radius: 12px 12px 0 0;
@@ -105,7 +116,7 @@
             width: 100%; height: 100%;
             background: radial-gradient(circle, #fff9c4 10%, #fbc02d 60%, #e67e22 100%);
             display: flex; justify-content: center; align-items: center;
-            font-size: 60px;
+            font-size: 50px;
         }
 
         .door {
@@ -124,23 +135,23 @@
         }
 
         .keyhole {
-            width: 36px; height: 50px;
+            width: 32px; height: 45px;
             background: #1a0f0a;
             border: 3px solid #d4a359;
-            border-radius: 18px 18px 8px 8px;
+            border-radius: 16px 16px 8px 8px;
             position: relative;
         }
 
         .animated-key {
             position: absolute;
-            font-size: 48px;
-            top: -120px;
+            font-size: 42px;
+            top: -110px;
             opacity: 0;
             transition: all 0.8s ease;
         }
 
         .animated-key.insert {
-            top: calc(50% - 25px);
+            top: calc(50% - 22px);
             opacity: 1;
         }
 
@@ -152,13 +163,13 @@
             opacity: 0;
             transform: scale(0.8);
             transition: all 0.8s ease;
-            margin-top: 20px;
+            margin-top: 15px;
             text-align: center;
             color: #fff;
             max-width: 90%;
             background: #3d2516;
             border: 2px solid #d4a359;
-            padding: 15px 20px;
+            padding: 14px 18px;
             border-radius: 12px;
         }
 
@@ -173,12 +184,12 @@
             background: #f0e3c4; 
             border: 2px solid #8c5a2b; 
             border-radius: 12px; 
-            padding: 10px; 
+            padding: 8px; 
             box-shadow: inset 0 0 10px rgba(0,0,0,0.1); 
             text-align: center; 
         }
         
-        .question-banner { background: #4a2e1b; color: #f3e5ab; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 1.05rem; margin-bottom: 10px; border: 1px solid #d4a359; min-height: 60px; display: flex; align-items: center; justify-content: center; }
+        .question-banner { background: #4a2e1b; color: #f3e5ab; padding: 10px; border-radius: 8px; font-weight: bold; font-size: 0.95rem; margin-bottom: 8px; border: 1px solid #d4a359; min-height: 50px; display: flex; align-items: center; justify-content: center; }
         
         canvas { 
             background: #e8d5b5; 
@@ -196,40 +207,40 @@
             -webkit-touch-callout: none;
         }
         
-        .quiz-feedback { margin-top: 8px; font-weight: bold; min-height: 24px; font-size: 1rem; }
+        .quiz-feedback { margin-top: 6px; font-weight: bold; min-height: 20px; font-size: 0.9rem; }
 
-        .btn-action { background-color: #fffdf7; color: #4a2e1b; border: 2px solid #8c5a2b; padding: 12px 20px; font-size: 0.95rem; font-weight: bold; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08); transition: all 0.2s ease; margin: 5px; }
-        .btn-action:hover { background-color: #8c5a2b; color: #ffffff; transform: translateY(-2px); }
+        .btn-action { background-color: #fffdf7; color: #4a2e1b; border: 2px solid #8c5a2b; padding: 12px 16px; font-size: 0.95rem; font-weight: bold; border-radius: 10px; cursor: pointer; box-shadow: 0 3px 5px rgba(0, 0, 0, 0.08); transition: all 0.2s ease; }
+        .btn-action:hover { background-color: #8c5a2b; color: #ffffff; }
 
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(3px); overscroll-behavior: none; }
-        .modal-content { background-color: #fdf6e2; margin: 10% auto; padding: 24px; border: 3px solid #8c5a2b; border-radius: 12px; width: 90%; max-width: 550px; color: #2c1d11; box-shadow: 0 10px 25px rgba(0,0,0,0.3); position: relative; text-align: center; }
-        .modal-content h2 { margin-top: 0; color: #4a2e1b; border-bottom: 2px solid #d4a359; padding-bottom: 8px; margin-bottom: 14px; }
-        .close-btn { color: #8c5a2b; float: right; font-size: 28px; font-weight: bold; cursor: pointer; line-height: 20px; }
+        .modal-content { background-color: #fdf6e2; margin: 10% auto; padding: 20px; border: 3px solid #8c5a2b; border-radius: 12px; width: 90%; max-width: 550px; color: #2c1d11; box-shadow: 0 10px 25px rgba(0,0,0,0.3); position: relative; text-align: center; }
+        .modal-content h2 { margin-top: 0; color: #4a2e1b; border-bottom: 2px solid #d4a359; padding-bottom: 6px; margin-bottom: 12px; }
+        .close-btn { color: #8c5a2b; float: right; font-size: 26px; font-weight: bold; cursor: pointer; line-height: 18px; }
 
-        .avatar-grid { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 15px; }
-        .avatar-option { font-size: 2.2rem; background: #fffdf7; border: 2px solid #d4a359; border-radius: 12px; padding: 10px; cursor: pointer; transition: transform 0.2s; }
+        .avatar-grid { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+        .avatar-option { font-size: 2rem; background: #fffdf7; border: 2px solid #d4a359; border-radius: 10px; padding: 8px; cursor: pointer; transition: transform 0.2s; }
         .avatar-option:hover { transform: scale(1.1); }
         .avatar-option.locked { opacity: 0.4; cursor: not-allowed; filter: grayscale(1); }
 
-        .wheel-wrapper { position: relative; width: 100%; max-width: 280px; aspect-ratio: 1 / 1; margin: 15px auto; display: flex; justify-content: center; align-items: center; }
+        .wheel-wrapper { position: relative; width: 100%; max-width: 260px; aspect-ratio: 1 / 1; margin: 12px auto; display: flex; justify-content: center; align-items: center; }
         #wheelCanvas { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        .wheel-pointer { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 14px solid transparent; border-right: 14px solid transparent; border-top: 24px solid #c0392b; z-index: 10; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4)); }
+        .wheel-pointer { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 20px solid #c0392b; z-index: 10; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4)); }
 
         /* Stiluri Antrenament Solo */
         .duel-box {
             background: #fffdf7;
             border: 2px solid #8c5a2b;
             border-radius: 12px;
-            padding: 20px;
+            padding: 16px;
             color: #2c1d11;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         .duel-group {
             background: #f0e3c4;
             border: 1px solid #d4a359;
-            padding: 12px;
+            padding: 10px;
             border-radius: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             text-align: left;
         }
         .duel-slider-row {
@@ -237,11 +248,12 @@
             justify-content: space-between;
             font-weight: bold;
             color: #4a2e1b;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
         }
         .duel-slider-container {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             align-items: center;
         }
         .duel-slider-container input[type="range"] {
@@ -252,8 +264,8 @@
         .duel-options-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 8px;
+            margin-top: 12px;
         }
         @media (max-width: 600px) {
             .duel-options-grid { grid-template-columns: 1fr; }
@@ -286,29 +298,92 @@
         </div>
     </div>
 
+    <!-- ECRAN PRINCIPAL -->
     <div id="screenClasses" class="screen active-screen">
-        <h3 style="margin-bottom: 14px; color: #4a2e1b;">Alege Clasa:</h3>
-        <div class="card" onclick="openClass('V')"><span>📜 Clasa a V-a</span></div>
-        <div class="card" onclick="openClass('VI')"><span>⚔️ Clasa a VI-a</span></div>
-        <div class="card" onclick="openClass('VII')"><span>🏰 Clasa a VII-a</span></div>
-        <div class="card" onclick="openClass('VIII')"><span>👑 Clasa a VIII-a</span></div>
-
-        <div style="text-align: center; margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px;">
-            <button id="btnDailyChest" class="btn-action" onclick="openWheelModal()">🎁 Cufăr Istoric Zilnic</button>
-            <button id="btnSolo" class="btn-action" onclick="openDuelSetup()">⚔️ Antrenament Solo</button>
-            <button id="btnDespre" class="btn-action" onclick="deschideDespre()">ℹ️ Despre aplicație</button>
+        <div>
+            <h3 style="margin-bottom: 10px; color: #4a2e1b; font-size: 1.05rem;">Alege Clasa:</h3>
+            <div class="card" onclick="openClass('V')"><span>📜 Clasa a V-a</span></div>
+            <div class="card" onclick="openClass('VI')"><span>⚔️ Clasa a VI-a</span></div>
+            <div class="card" onclick="openClass('VII')"><span>🏰 Clasa a VII-a</span></div>
+            <div class="card" onclick="openClass('VIII')"><span>👑 Clasa a VIII-a</span></div>
         </div>
+
+        <!-- Section: Curiozități & Picanterii -->
+        <div class="extra-section">
+            <h4 style="color: #4a2e1b; font-size: 0.95rem; margin-bottom: 4px;">✨ Curiozități & Picanterii Istorice</h4>
+            <div class="extra-grid">
+                <button class="btn-extra" onclick="deschideModulBarfeSelectSursa()">
+                    <span>💬</span> Bârfele Cetății
+                </button>
+                <button class="btn-extra" onclick="deschideModulAsasinateEpoci()">
+                    <span>🗡️</span> Asasinate Celebre
+                </button>
+            </div>
+        </div>
+
+        <!-- Section: Cufăr Zilnic & Antrenament Solo (2 Coloane) -->
+        <div class="extra-grid" style="margin-top: 10px;">
+            <button id="btnDailyChest" class="btn-action" style="width: 100%;" onclick="openWheelModal()">🎁 Cufăr Istoric Zilnic</button>
+            <button id="btnSolo" class="btn-action" style="width: 100%;" onclick="openDuelSetup()">⚔️ Antrenament Solo</button>
+        </div>
+
+        <!-- Section: Despre aplicație -->
+        <div style="text-align: center; margin-top: 14px;">
+            <button id="btnDespre" class="btn-action" style="width: 80%;" onclick="deschideDespre()">ℹ️ Despre aplicație</button>
+        </div>
+    </div>
+
+    <!-- ECRANE BÂRFELE CETĂȚII -->
+    <div id="screenBarfeSursa" class="screen">
+        <h3 style="margin-bottom: 14px; color: #4a2e1b;">💬 Bârfele Cetății:</h3>
+        <div class="card" onclick="alegeSursaBarfe('universal')"><span>🌍 Istorie Universală</span></div>
+        <div class="card" onclick="alegeSursaBarfe('romani')"><span>🇷🇴 Istoria Românilor</span></div>
+    </div>
+
+    <div id="screenBarfeEpoci" class="screen">
+        <h3 id="barfeEpociTitle" style="margin-bottom: 14px; color: #4a2e1b;">Alege Epoca:</h3>
+        <div class="card" onclick="deschideListaBarfe('antichitate')"><span>🏛️ Antichitate</span></div>
+        <div class="card" onclick="deschideListaBarfe('evulMediu')"><span>⚔️ Evul Mediu</span></div>
+        <div class="card" onclick="deschideListaBarfe('epocamoderna')"><span>🎩 Epoca Modernă</span></div>
+        <div class="card" onclick="deschideListaBarfe('contemporana')"><span>🚀 Epoca Contemporană</span></div>
+    </div>
+
+    <div id="screenBarfeLista" class="screen">
+        <h3 id="barfeListaTitle" style="margin-bottom: 14px; color: #4a2e1b;">Subiecte Picanterii</h3>
+        <div id="barfeContainer"></div>
+    </div>
+
+    <div id="screenBarfeDetail" class="screen">
+        <div class="summary-box" id="barfeDetailContent"></div>
+    </div>
+
+    <!-- ECRANE ASASINATE CELEBRE -->
+    <div id="screenAsasinateEpoci" class="screen">
+        <h3 style="margin-bottom: 14px; color: #4a2e1b;">🗡️ Asasinate Celebre - Alege Epoca:</h3>
+        <div class="card" onclick="deschideListaAsasinate('antichitate')"><span>🏛️ Antichitate</span></div>
+        <div class="card" onclick="deschideListaAsasinate('evulMediu')"><span>⚔️ Evul Mediu</span></div>
+        <div class="card" onclick="deschideListaAsasinate('epocamoderna')"><span>🎩 Epoca Modernă</span></div>
+        <div class="card" onclick="deschideListaAsasinate('contemporana')"><span>🚀 Epoca Contemporană</span></div>
+    </div>
+
+    <div id="screenAsasinateLista" class="screen">
+        <h3 id="asasinateListaTitle" style="margin-bottom: 14px; color: #4a2e1b;">Asasinate Istorice</h3>
+        <div id="asasinateContainer"></div>
+    </div>
+
+    <div id="screenAsasinateDetail" class="screen">
+        <div class="summary-box" id="asasinateDetailContent"></div>
     </div>
 
     <!-- ECRAN CONFIGURARE ANTRENAMENT SOLO -->
     <div id="screenDuelSetup" class="screen">
         <div class="duel-box">
             <h2 style="color: #4a2e1b; margin-bottom: 8px; text-align: center;">⚔️ Antrenament Solo</h2>
-            <p style="font-size:0.9rem; color:#5c3a21; margin-bottom:15px; text-align: center;">Alege clasa și intervalul de lecții pentru testul cronometrat!</p>
+            <p style="font-size:0.88rem; color:#5c3a21; margin-bottom:12px; text-align: center;">Alege clasa și intervalul de lecții pentru testul cronometrat!</p>
 
             <div class="duel-group">
                 <label for="duelClassSelect"><b>Alege Clasa:</b></label><br>
-                <select id="duelClassSelect" onchange="updateDuelSliders()" style="width: 100%; padding: 10px; font-size: 1rem; border-radius: 8px; border: 1px solid #8c5a2b; margin-top: 5px; background: #fffdf7; font-weight: bold; color: #4a2e1b;">
+                <select id="duelClassSelect" onchange="updateDuelSliders()" style="width: 100%; padding: 8px; font-size: 0.95rem; border-radius: 8px; border: 1px solid #8c5a2b; margin-top: 4px; background: #fffdf7; font-weight: bold; color: #4a2e1b;">
                     <option value="V">Clasa a V-a</option>
                     <option value="VI">Clasa a VI-a</option>
                     <option value="VII">Clasa a VII-a</option>
@@ -327,8 +402,8 @@
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 20px;">
-                <button class="btn-action" style="background: #27ae60; color: #fff; border-color: #2ecc71; width: 100%; font-size: 1.1rem;" onclick="startDuel()">🚀 Începe Antrenamentul!</button>
+            <div style="text-align: center; margin-top: 15px;">
+                <button class="btn-action" style="background: #27ae60; color: #fff; border-color: #2ecc71; width: 100%; font-size: 1rem;" onclick="startDuel()">🚀 Începe Antrenamentul!</button>
             </div>
         </div>
     </div>
@@ -336,13 +411,13 @@
     <!-- ECRAN JOC ANTRENAMENT SOLO -->
     <div id="screenDuelGame" class="screen">
         <div class="duel-box">
-            <div style="display: flex; justify-content: space-between; align-items: center; background: #4a2e1b; color: #f3e5ab; padding: 10px 14px; border-radius: 8px; font-weight: bold; margin-bottom: 15px;">
-                <div>⏳ <span id="duelTimer" style="color:#f1c40f; font-size:1.1rem;">15</span>s</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; background: #4a2e1b; color: #f3e5ab; padding: 8px 12px; border-radius: 8px; font-weight: bold; margin-bottom: 12px;">
+                <div>⏳ <span id="duelTimer" style="color:#f1c40f; font-size:1.05rem;">15</span>s</div>
                 <div>🏆 Scor: <span id="duelScore">0</span></div>
                 <div>Întrebarea <span id="duelQNum">1</span>/10</div>
             </div>
 
-            <h3 id="duelQuestionText" style="color: #4a2e1b; margin-bottom: 15px; font-size: 1.1rem;">Aici va fi întrebarea...</h3>
+            <h3 id="duelQuestionText" style="color: #4a2e1b; margin-bottom: 12px; font-size: 1rem;">Aici va fi întrebarea...</h3>
             <div id="duelOptionsContainer" class="duel-options-grid"></div>
         </div>
     </div>
@@ -351,24 +426,24 @@
     <div id="screenDuelResult" class="screen">
         <div class="duel-box" style="text-align: center;">
             <h2 style="color: #4a2e1b;">🎉 Antrenament Finalizat</h2>
-            <div style="font-size: 2.2rem; font-weight: bold; color: #d35400; margin: 10px 0;">
+            <div style="font-size: 2rem; font-weight: bold; color: #d35400; margin: 8px 0;">
                 <span id="finalDuelScore">0</span> Puncte
             </div>
             
-            <div id="badgeContainer" style="background: #f0e3c4; border: 2px solid #d4a359; border-radius: 10px; padding: 15px; margin: 15px 0;">
-                <div id="badgeIcon" style="font-size: 3rem; margin-bottom: 5px;">🛡️</div>
-                <div id="badgeTitle" style="font-weight: bold; color: #4a2e1b; font-size: 1.1rem;">Insigna obținută</div>
-                <div id="badgeDesc" style="font-size: 0.85rem; color: #5c3a21; margin-top: 4px;"></div>
+            <div id="badgeContainer" style="background: #f0e3c4; border: 2px solid #d4a359; border-radius: 10px; padding: 12px; margin: 12px 0;">
+                <div id="badgeIcon" style="font-size: 2.5rem; margin-bottom: 4px;">🛡️</div>
+                <div id="badgeTitle" style="font-weight: bold; color: #4a2e1b; font-size: 1rem;">Insigna obținută</div>
+                <div id="badgeDesc" style="font-size: 0.82rem; color: #5c3a21; margin-top: 2px;"></div>
             </div>
 
-            <p id="duelResultMessage" style="font-weight: bold; color: #27ae60; margin-bottom: 15px;"></p>
+            <p id="duelResultMessage" style="font-weight: bold; color: #27ae60; margin-bottom: 12px; font-size: 0.9rem;"></p>
 
             <button class="btn-action" style="width: 100%; background: #8c5a2b; color: white;" onclick="goBack()">🏠 Înapoi la Meniu</button>
         </div>
     </div>
 
     <div id="screenLessons" class="screen">
-        <h3 id="lessonsCategoryTitle" style="margin-bottom: 14px; color: #4a2e1b;">Lecții</h3>
+        <h3 id="lessonsCategoryTitle" style="margin-bottom: 12px; color: #4a2e1b;">Lecții</h3>
         <div id="lessonsListContainer"></div>
     </div>
 
@@ -394,8 +469,8 @@
 
         <div id="tabEscape" class="tab-content">
             <div class="escape-box">
-                <h3 style="color: #f1c40f; margin-bottom: 10px;">🗝️ Evadarea din Arhivă (4 Lacăte)</h3>
-                <p style="font-size:0.85rem; color:#d4a359; margin-bottom:15px;">Deschide fiecare lacăt pentru a obține cifrele codului de evadare!</p>
+                <h3 style="color: #f1c40f; margin-bottom: 8px;">🗝️ Evadarea din Arhivă (4 Lacăte)</h3>
+                <p style="font-size:0.82rem; color:#d4a359; margin-bottom:12px;">Deschide fiecare lacăt pentru a obține cifrele codului de evadare!</p>
 
                 <div class="locks-row">
                     <div class="lock-card" id="lockCard0"><div class="lock-icon" id="lockIcon0">🔒</div><div class="lock-digit" id="lockDigit0">?</div></div>
@@ -414,30 +489,30 @@
                 </div>
                 
                 <div id="escapeHintText" class="escape-hint"></div>
-                <p id="escapeFeedback" style="margin-top: 12px; font-weight: bold; min-height: 25px;"></p>
+                <p id="escapeFeedback" style="margin-top: 10px; font-weight: bold; min-height: 20px; font-size: 0.9rem;"></p>
             </div>
         </div>
 
         <div id="tabGenially" class="tab-content">
-            <p style="font-size:0.9rem; color:#5c3a21; margin-bottom:8px; font-weight:bold;">Resurse interactive externe:</p>
-            <div style="background: #fff8eb; border: 1px dashed #d4a359; border-radius: 8px; padding: 10px; margin-bottom: 15px; font-size: 0.85rem; color: #5c3a21; line-height: 1.4;">
+            <p style="font-size:0.85rem; color:#5c3a21; margin-bottom:6px; font-weight:bold;">Resurse interactive externe:</p>
+            <div style="background: #fff8eb; border: 1px dashed #d4a359; border-radius: 8px; padding: 8px; margin-bottom: 12px; font-size: 0.8rem; color: #5c3a21; line-height: 1.3;">
                 💡 <strong>Sfat pentru telefon:</strong> După ce selectezi jocul dorit, apasă pe simbolul de <strong>Full-Screen</strong> ⛶ din ecranul jocului și rotește telefonul pe orizontală pentru o vizualizare optimă!
             </div>
             
-            <div style="background: #fffdf7; border: 1px solid #d4a359; border-radius: 10px; padding: 12px; margin-bottom: 15px;">
-                <p style="color: #c0392b; font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">1. Resursa 1</p>
+            <div style="background: #fffdf7; border: 1px solid #d4a359; border-radius: 10px; padding: 10px; margin-bottom: 12px;">
+                <p style="color: #c0392b; font-weight: bold; margin-bottom: 6px; font-size: 0.9rem;">1. Resursa 1</p>
                 <div style="width: 100%; position: relative; padding-bottom: 56.25%; height: 0;">
                     <iframe id="iframeGame1" frameborder="0" width="100%" height="100%" style="position: absolute; left: 0; top: 0; border-radius: 6px;" src="" allowfullscreen="true"></iframe>
                 </div>
             </div>
-            <div style="background: #fffdf7; border: 1px solid #d4a359; border-radius: 10px; padding: 12px; margin-bottom: 15px;">
-                <p style="color: #c0392b; font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">2. Resursa 2</p>
+            <div style="background: #fffdf7; border: 1px solid #d4a359; border-radius: 10px; padding: 10px; margin-bottom: 12px;">
+                <p style="color: #c0392b; font-weight: bold; margin-bottom: 6px; font-size: 0.9rem;">2. Resursa 2</p>
                 <div style="width: 100%; position: relative; padding-bottom: 56.25%; height: 0;">
                     <iframe id="iframeGame2" frameborder="0" width="100%" height="100%" style="position: absolute; left: 0; top: 0; border-radius: 6px;" src="" allowfullscreen="true"></iframe>
                 </div>
             </div>
-            <div style="background: #fffdf7; border: 1px solid #d4a359; border-radius: 10px; padding: 12px; margin-bottom: 15px;">
-                <p style="color: #c0392b; font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">3. Resursa 3</p>
+            <div style="background: #fffdf7; border: 1px solid #d4a359; border-radius: 10px; padding: 10px; margin-bottom: 12px;">
+                <p style="color: #c0392b; font-weight: bold; margin-bottom: 6px; font-size: 0.9rem;">3. Resursa 3</p>
                 <div style="width: 100%; position: relative; padding-bottom: 56.25%; height: 0;">
                     <iframe id="iframeGame3" frameborder="0" width="100%" height="100%" style="position: absolute; left: 0; top: 0; border-radius: 6px;" src="" allowfullscreen="true"></iframe>
                 </div>
@@ -456,9 +531,9 @@
     </div>
 
     <div class="victory-card" id="victoryCard">
-        <h2 style="color: #f1c40f; font-size: 22px; margin-bottom: 10px;">🎉 FELICITĂRI!</h2>
-        <p style="font-size: 16px; color: #fff; line-height: 1.5;" id="victoryDetails"></p>
-        <button onclick="closeDoorModal()" class="btn-action" style="margin-top: 15px; background: #27ae60; color: white; border: none;">Continuă Aventura! 🚀</button>
+        <h2 style="color: #f1c40f; font-size: 20px; margin-bottom: 8px;">🎉 FELICITĂRI!</h2>
+        <p style="font-size: 15px; color: #fff; line-height: 1.4;" id="victoryDetails"></p>
+        <button onclick="closeDoorModal()" class="btn-action" style="margin-top: 12px; background: #27ae60; color: white; border: none;">Continuă Aventura! 🚀</button>
     </div>
 </div>
 
@@ -468,7 +543,7 @@
         <h2>📜 Despre Aplicație</h2>
         <p><strong>Istorie gimnaziu: lecții, quizz-uri, jocuri</strong> este o platformă educațională digitală concepută pentru a sprijini elevii din clasele V–VIII în parcurgerea și aprofundarea materiei de Istorie.</p>
         <p style="margin-top:10px;">Aplicația oferă:</p>
-        <ul style="margin-left:20px; margin-top:8px;">
+        <ul style="margin-left:20px; margin-top:6px;">
             <li>Sinteze concise și structurate ale lecțiilor.</li>
             <li>Joc interactiv de Asediu Medieval cu Catapultă dinamică și Stânci Incendiare.</li>
             <li>Modul interactiv "Escape Room" cu 4 lacăte de deblocat.</li>
@@ -476,17 +551,18 @@
         </ul>
         <p style="margin-top:10px;">Toate lecțiile/rezumatele, quizz-urile și jocurile Wordwall/Genially sunt realizate în concordanță cu <strong>Programa școlară</strong> actuală la <strong>Istorie</strong>, având ca sursă informațională manualele școlare ale editurilor <strong>CD Press</strong> (clasele V-VII) și <strong>Art Klett</strong> (clasa a VIII-a).</p>
         <p style="margin-top:10px;"><strong>prof. Cristi AMĂRIUȚEI</strong></p>
-        <p style="margin-top:10px;">Școala Gimnazală „Gheorghe și Maria Tașcă„ comuna Bălăbănești, jud. Galați</p>
-        <p style="margin-top:10px;">Școala Gimnazală Nr. 1 comuna Bălășești, jud. Galați</p>
+        <p style="margin-top:8px;">Școala Gimnazială „Gheorghe și Maria Tașcă” comuna Bălăbănești, jud. Galați</p>
+        <p style="margin-top:4px;">Școala Gimnazială Nr. 1 comuna Bălășești, jud. Galați</p>
     </div>
 </div>
+
 <!-- MODAL POP-UP "ȘTIAI CĂ...?" -->
 <div id="modalStiaiCa" class="modal">
     <div class="modal-content" style="border-color: #d35400; background: #fffdf7;">
         <span class="close-btn" onclick="inchideModal('modalStiaiCa')">&times;</span>
         <h2 style="color: #d35400; border-bottom-color: #e67e22;">💡 Știai că...?</h2>
-        <p id="stiaiCaText" style="font-size: 1.05rem; line-height: 1.6; color: #2c1d11; margin-top: 10px;"></p>
-        <button class="btn-action" style="margin-top: 20px; background: #d35400; color: white; border-color: #e67e22;" onclick="inchideModal('modalStiaiCa')">Am aflat secretul! 🕵️‍♂️</button>
+        <p id="stiaiCaText" style="font-size: 1rem; line-height: 1.5; color: #2c1d11; margin-top: 8px;"></p>
+        <button class="btn-action" style="margin-top: 15px; background: #d35400; color: white; border-color: #e67e22;" onclick="inchideModal('modalStiaiCa')">Am aflat secretul! 🕵️‍♂️</button>
     </div>
 </div>
 
@@ -494,7 +570,7 @@
     <div class="modal-content">
         <span class="close-btn" onclick="inchideModal('modalAvatar')">&times;</span>
         <h2>🎭 Alege Avatarul Istoric</h2>
-        <p style="font-size:0.9rem; color:#5c3a21;">Crește în nivel pentru a debloca noi caractere!</p>
+        <p style="font-size:0.85rem; color:#5c3a21;">Crește în nivel pentru a debloca noi caractere!</p>
         <div class="avatar-grid" id="avatarGrid"></div>
     </div>
 </div>
@@ -503,13 +579,13 @@
     <div class="modal-content">
         <span class="close-btn" onclick="inchideModal('modalWheel')">&times;</span>
         <h2>🎡 Roata Norocului Istoric</h2>
-        <p style="font-size:0.9rem; color:#5c3a21;">Învârte roata pentru a primi bonusul tău zilnic de XP!</p>
+        <p style="font-size:0.85rem; color:#5c3a21;">Învârte roata pentru a primi bonusul tău zilnic de XP!</p>
         <div class="wheel-wrapper">
             <div class="wheel-pointer"></div>
             <canvas id="wheelCanvas" width="300" height="300"></canvas>
         </div>
         <button id="btnSpinWheel" class="btn-action" onclick="spinWheel()">🎰 Învârte Roata!</button>
-        <p id="wheelResultText" style="font-size: 1.1rem; font-weight: bold; color: #27ae60; margin-top: 12px; min-height: 25px;"></p>
+        <p id="wheelResultText" style="font-size: 1rem; font-weight: bold; color: #27ae60; margin-top: 10px; min-height: 22px;"></p>
     </div>
 </div>
 
@@ -517,12 +593,16 @@
     <div class="modal-content">
         <span class="close-btn" onclick="inchideModal('modalLevelUp')">&times;</span>
         <h2 style="color:#27ae60;">🎉 LEVEL UP!</h2>
-        <p style="font-size:1.2rem; font-weight:bold; margin-top:10px;" id="levelUpText"></p>
-        <button class="btn-action" style="margin-top:20px;" onclick="inchideModal('modalLevelUp')">Continuă Aventura! ⚔️</button>
+        <p style="font-size:1.1rem; font-weight:bold; margin-top:8px;" id="levelUpText"></p>
+        <button class="btn-action" style="margin-top:15px;" onclick="inchideModal('modalLevelUp')">Continuă Aventura! ⚔️</button>
     </div>
 </div>
 
+<!-- FIȘIERELE CU DATE ȘI SCRIPTURI -->
 <script src="lectii.js"></script>
+<script src="barfe.js"></script>
+<script src="asasinate.js"></script>
+
 <script>
     const APP_TITLE = "Istorie gimnaziu: lecții, quizz-uri, jocuri";
     let xp = parseInt(localStorage.getItem('userXP')) || 0;
@@ -534,10 +614,14 @@
     let currentQuizIndex = 0;
     let currentLockIndex = 0;
 
+    let barfeSursaCurenta = 'universal';
+    let barfeEpocaCurenta = '';
+    let asasinateEpocaCurenta = '';
+
     const LEVELS = [
         { level: 1,  title: "Mic Arheolog",            minXP: 0,     maxXP: 200,    avatar: '🛡️' },
         { level: 2,  title: "Explorator de Istorie",  minXP: 200,   maxXP: 500,    avatar: '🏛️' },
-        { level: 3,  title: "Scrib Regal",            minXP: 500,   maxXP: 900,    avatar: '📜' },
+        { level: 3,  title: "Scrib Regal",             minXP: 500,   maxXP: 900,    avatar: '📜' },
         { level: 4,  title: "Cronicar de Seamă",       minXP: 900,   maxXP: 1400,   avatar: '⚔️' },
         { level: 5,  title: "Centurion al Cunoașterii",minXP: 1400,  maxXP: 2100,   avatar: '🗡️' },
         { level: 6,  title: "Cavaler al Coroanei",     minXP: 2100,  maxXP: 3000,   avatar: '🏰' },
@@ -802,7 +886,7 @@
     function openClass(clsKey) {
         currentClassKey = clsKey;
         document.getElementById('headerTitle').innerText = "Clasa a " + clsKey + "-a";
-        document.getElementById('screenClasses').classList.remove('active-screen');
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
         document.getElementById('screenLessons').classList.add('active-screen');
         document.getElementById('backBtn').style.display = 'block';
 
@@ -830,15 +914,14 @@
         quizWrongAnswers = 0;
 
         document.getElementById('headerTitle').innerText = currentLessonData.title;
-        document.getElementById('screenLessons').classList.remove('active-screen');
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
         document.getElementById('screenDetail').classList.add('active-screen');
 
-        // Construim rezumatul și atașăm automat butonul "Știai că...?" dacă există în lecție
         let htmlRezumat = currentLessonData.summary || "";
         if (currentLessonData.stiaiCa) {
             htmlRezumat += `
-                <br><div style="text-align: center; margin-top: 20px;">
-                    <button class="btn-action" style="background: #f39c12; color: #fff; border-color: #d35400; font-size: 0.9rem;" onclick="deschideStiaiCa()">
+                <br><div style="text-align: center; margin-top: 15px;">
+                    <button class="btn-action" style="background: #f39c12; color: #fff; border-color: #d35400; font-size: 0.88rem;" onclick="deschideStiaiCa()">
                         💡 Știai că...? (Secret Istoric)
                     </button>
                 </div>`;
@@ -852,6 +935,106 @@
 
         initEscapeRoom();
         switchTab('summary');
+    }
+
+    function deschideModulBarfeSelectSursa() {
+        document.getElementById('headerTitle').innerText = "💬 Bârfele Cetății";
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById('screenBarfeSursa').classList.add('active-screen');
+        document.getElementById('backBtn').style.display = 'block';
+    }
+
+    function alegeSursaBarfe(sursa) {
+        barfeSursaCurenta = sursa;
+        let titluSursa = (sursa === 'universal') ? "Istorie Universală" : "Istoria Românilor";
+        document.getElementById('barfeEpociTitle').innerText = "💬 Bârfele Cetății (" + titluSursa + ") - Alege Epoca:";
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById('screenBarfeEpoci').classList.add('active-screen');
+    }
+
+    function deschideListaBarfe(epoca) {
+        barfeEpocaCurenta = epoca;
+        const container = document.getElementById('barfeContainer');
+        container.innerHTML = '';
+
+        let denumireEpoci = { antichitate: "Antichitate", evulMediu: "Evul Mediu", epocamoderna: "Epoca Modernă", contemporana: "Epoca Contemporană" };
+        document.getElementById('barfeListaTitle').innerText = "💬 " + denumireEpoci[epoca];
+
+        let lista = (typeof barfeData !== 'undefined' && barfeData[barfeSursaCurenta] && barfeData[barfeSursaCurenta][epoca]) ? barfeData[barfeSursaCurenta][epoca] : [];
+
+        if(lista.length === 0) {
+            container.innerHTML = "<p style='text-align:center; padding:20px; color:#5c3a21;'>Nu există picanterii adăugate încă pentru această epocă.</p>";
+        } else {
+            lista.forEach((item, idx) => {
+                let div = document.createElement('div');
+                div.className = 'card';
+                div.innerHTML = `<span>${item.titlu}</span>`;
+                div.onclick = () => afiseazaDetaliuBarfa(item);
+                container.appendChild(div);
+            });
+        }
+
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById('screenBarfeLista').classList.add('active-screen');
+    }
+
+    function afiseazaDetaliuBarfa(item) {
+        document.getElementById('headerTitle').innerText = item.titlu;
+        document.getElementById('barfeDetailContent').innerHTML = `
+            <h3 style="color:#c0392b; margin-bottom:12px;">${item.titlu}</h3>
+            <div style="font-size:1rem; line-height:1.5; color:#2c1d11;">${item.detalii}</div>
+        `;
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById('screenBarfeDetail').classList.add('active-screen');
+    }
+
+    function deschideModulAsasinateEpoci() {
+        document.getElementById('headerTitle').innerText = "🗡️ Asasinate Celebre";
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById('screenAsasinateEpoci').classList.add('active-screen');
+        document.getElementById('backBtn').style.display = 'block';
+    }
+
+    function deschideListaAsasinate(epoca) {
+        asasinateEpocaCurenta = epoca;
+        const container = document.getElementById('asasinateContainer');
+        container.innerHTML = '';
+
+        let denumireEpoci = { antichitate: "Antichitate", evulMediu: "Evul Mediu", epocamoderna: "Epoca Modernă", contemporana: "Epoca Contemporană" };
+        document.getElementById('asasinateListaTitle').innerText = "🗡️ " + denumireEpoci[epoca];
+
+        let lista = (typeof asasinateData !== 'undefined' && asasinateData[epoca]) ? asasinateData[epoca] : [];
+
+        if(lista.length === 0) {
+            container.innerHTML = "<p style='text-align:center; padding:20px; color:#5c3a21;'>Nu există asasinate adăugate încă pentru această epocă.</p>";
+        } else {
+            lista.forEach((item, idx) => {
+                let div = document.createElement('div');
+                div.className = 'card';
+                div.innerHTML = `<span>${item.titlu}</span>`;
+                div.onclick = () => afiseazaDetaliuAsasinat(item);
+                container.appendChild(div);
+            });
+        }
+
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById('screenAsasinateLista').classList.add('active-screen');
+    }
+
+    function afiseazaDetaliuAsasinat(item) {
+        document.getElementById('headerTitle').innerText = item.titlu;
+        
+        let htmlContent = `<h3 style="color:#c0392b; margin-bottom:10px;">${item.titlu}</h3>`;
+        if(item.victima) htmlContent += `<p style="margin-bottom:4px;"><b>👤 Victima:</b> ${item.victima}</p>`;
+        if(item.an) htmlContent += `<p style="margin-bottom:4px;"><b>📅 Anul/Data:</b> ${item.an}</p>`;
+        if(item.faptas) htmlContent += `<p style="margin-bottom:4px;"><b>🗡️ Autorul:</b> ${item.faptas}</p>`;
+        if(item.context) htmlContent += `<p style="margin-bottom:4px;"><b>🎯 Motiv/Context:</b> ${item.context}</p>`;
+        if(item.detalii) htmlContent += `<br><div style="font-size:0.95rem; line-height:1.5; color:#2c1d11;">${item.detalii}</div>`;
+        if(item.impact) htmlContent += `<br><p style="color:#8c5a2b; font-weight:bold;"><b>💥 Impact istoric:</b> ${item.impact}</p>`;
+
+        document.getElementById('asasinateDetailContent').innerHTML = htmlContent;
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById('screenAsasinateDetail').classList.add('active-screen');
     }
 
     function deschideStiaiCa() {
@@ -869,7 +1052,49 @@
         const gameDuel = document.getElementById('screenDuelGame');
         const resultDuel = document.getElementById('screenDuelResult');
         
-        if (gameDuel.classList.contains('active-screen') || resultDuel.classList.contains('active-screen')) {
+        const barfeSursa = document.getElementById('screenBarfeSursa');
+        const barfeEpoci = document.getElementById('screenBarfeEpoci');
+        const barfeLista = document.getElementById('screenBarfeLista');
+        const barfeDetail = document.getElementById('screenBarfeDetail');
+
+        const asasinateEpoci = document.getElementById('screenAsasinateEpoci');
+        const asasinateLista = document.getElementById('screenAsasinateLista');
+        const asasinateDetail = document.getElementById('screenAsasinateDetail');
+
+        if (barfeDetail.classList.contains('active-screen')) {
+            barfeDetail.classList.remove('active-screen');
+            barfeLista.classList.add('active-screen');
+            let denumireEpoci = { antichitate: "Antichitate", evulMediu: "Evul Mediu", epocamoderna: "Epoca Modernă", contemporana: "Epoca Contemporană" };
+            document.getElementById('headerTitle').innerText = "💬 " + denumireEpoci[barfeEpocaCurenta];
+        } else if (barfeLista.classList.contains('active-screen')) {
+            barfeLista.classList.remove('active-screen');
+            barfeEpoci.classList.add('active-screen');
+            let titluSursa = (barfeSursaCurenta === 'universal') ? "Istorie Universală" : "Istoria Românilor";
+            document.getElementById('headerTitle').innerText = "💬 Bârfele Cetății (" + titluSursa + ")";
+        } else if (barfeEpoci.classList.contains('active-screen')) {
+            barfeEpoci.classList.remove('active-screen');
+            barfeSursa.classList.add('active-screen');
+            document.getElementById('headerTitle').innerText = "💬 Bârfele Cetății";
+        } else if (barfeSursa.classList.contains('active-screen')) {
+            barfeSursa.classList.remove('active-screen');
+            document.getElementById('screenClasses').classList.add('active-screen');
+            document.getElementById('headerTitle').innerText = APP_TITLE;
+            document.getElementById('backBtn').style.display = 'none';
+        } else if (asasinateDetail.classList.contains('active-screen')) {
+            asasinateDetail.classList.remove('active-screen');
+            asasinateLista.classList.add('active-screen');
+            let denumireEpoci = { antichitate: "Antichitate", evulMediu: "Evul Mediu", epocamoderna: "Epoca Modernă", contemporana: "Epoca Contemporană" };
+            document.getElementById('headerTitle').innerText = "🗡️ " + denumireEpoci[asasinateEpocaCurenta];
+        } else if (asasinateLista.classList.contains('active-screen')) {
+            asasinateLista.classList.remove('active-screen');
+            asasinateEpoci.classList.add('active-screen');
+            document.getElementById('headerTitle').innerText = "🗡️ Asasinate Celebre";
+        } else if (asasinateEpoci.classList.contains('active-screen')) {
+            asasinateEpoci.classList.remove('active-screen');
+            document.getElementById('screenClasses').classList.add('active-screen');
+            document.getElementById('headerTitle').innerText = APP_TITLE;
+            document.getElementById('backBtn').style.display = 'none';
+        } else if (gameDuel.classList.contains('active-screen') || resultDuel.classList.contains('active-screen')) {
             clearInterval(duelState.timer);
             gameDuel.classList.remove('active-screen');
             resultDuel.classList.remove('active-screen');
@@ -959,22 +1184,10 @@
         document.getElementById('modalAvatar').style.display = 'block';
     }
 
-    /* ===================================================
-       LOGICĂ ANTRENAMENT SOLO
-    =================================================== */
-    let duelState = {
-        clasa: 'V',
-        minLecție: 1,
-        maxLecție: 10,
-        intrebari: [],
-        indexCurent: 0,
-        scor: 0,
-        timer: null,
-        timpRamas: 15
-    };
+    let duelState = { clasa: 'V', minLecție: 1, maxLecție: 10, intrebari: [], indexCurent: 0, scor: 0, timer: null, timpRamas: 15 };
 
     function openDuelSetup() {
-        document.getElementById('screenClasses').classList.remove('active-screen');
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
         document.getElementById('screenDuelSetup').classList.add('active-screen');
         document.getElementById('headerTitle').innerText = "⚔️ Antrenament Solo";
         document.getElementById('backBtn').style.display = 'block';
@@ -990,10 +1203,8 @@
         let sMin = document.getElementById('sliderMin');
         let sMax = document.getElementById('sliderMax');
 
-        sMin.min = "1";
-        sMin.max = maxLectii.toString();
-        sMax.min = "1";
-        sMax.max = maxLectii.toString();
+        sMin.min = "1"; sMin.max = maxLectii.toString();
+        sMax.min = "1"; sMax.max = maxLectii.toString();
 
         sMin.value = "1";
         sMax.value = Math.min(10, maxLectii).toString();
@@ -1008,10 +1219,7 @@
         let minVal = parseInt(sMin.value) || 1;
         let maxVal = parseInt(sMax.value) || 1;
 
-        if (minVal > maxVal) {
-            sMin.value = maxVal;
-            minVal = maxVal;
-        }
+        if (minVal > maxVal) { sMin.value = maxVal; minVal = maxVal; }
 
         document.getElementById('valMinLectie').innerText = minVal;
         document.getElementById('valMaxLectie').innerText = maxVal;
@@ -1022,9 +1230,7 @@
 
     function startDuel() {
         duelState.clasa = document.getElementById('duelClassSelect').value;
-        duelState.scor = 0;
-        duelState.indexCurent = 0;
-
+        duelState.scor = 0; duelState.indexCurent = 0;
         duelState.intrebari = extrageIntrebariInInterval(duelState.clasa, duelState.minLecție, duelState.maxLecție, 10);
 
         if (duelState.intrebari.length === 0) {
@@ -1032,7 +1238,7 @@
             return;
         }
 
-        document.getElementById('screenDuelSetup').classList.remove('active-screen');
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
         document.getElementById('screenDuelGame').classList.add('active-screen');
         incarcaIntrebareDuel();
     }
@@ -1045,11 +1251,7 @@
             let nrLectie = idx + 1;
             if (nrLectie >= minL && nrLectie <= maxL && l.quiz && Array.isArray(l.quiz)) {
                 l.quiz.forEach(qItem => {
-                    intrebari.push({
-                        intrebare: qItem.q,
-                        optiuni: qItem.opts,
-                        corect: qItem.c
-                    });
+                    intrebari.push({ intrebare: qItem.q, optiuni: qItem.opts, corect: qItem.c });
                 });
             }
         });
@@ -1114,7 +1316,7 @@
     }
 
     function afiseazaRezultatDuel() {
-        document.getElementById('screenDuelGame').classList.remove('active-screen');
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
         document.getElementById('screenDuelResult').classList.add('active-screen');
 
         document.getElementById('finalDuelScore').innerText = duelState.scor;
@@ -1123,26 +1325,14 @@
         let earnedXP = Math.floor(duelState.scor / 10);
         updateXP(earnedXP);
 
-        let badgeIcon = "🛡️";
-        let badgeTitle = "Recruit al Istoriei";
-        let badgeDesc = "Ai finalizat antrenamentul cu succes!";
+        let badgeIcon = "🛡️", badgeTitle = "Recruit al Istoriei", badgeDesc = "Ai finalizat antrenamentul cu succes!";
 
         if (duelState.scor >= 1800) {
-            badgeIcon = "👑";
-            badgeTitle = "Insigna: Mare Strateg Regal";
-            badgeDesc = "Performanță absolută! Cunoștințe impecabile de istorie!";
+            badgeIcon = "👑"; badgeTitle = "Insigna: Mare Strateg Regal"; badgeDesc = "Performanță absolută! Cunoștințe impecabile de istorie!";
         } else if (duelState.scor >= 1200) {
-            badgeIcon = "⚔️";
-            badgeTitle = "Insigna: Cavaler Cronicar";
-            badgeDesc = "Rezultat excelent! Ai stăpânit foarte bine lecțiile!";
+            badgeIcon = "⚔️"; badgeTitle = "Insigna: Cavaler Cronicar"; badgeDesc = "Rezultat excelent! Ai stăpânit foarte bine lecțiile!";
         } else if (duelState.scor >= 600) {
-            badgeIcon = "📜";
-            badgeTitle = "Insigna: Scrib Harnic";
-            badgeDesc = "Un rezultat bun! Ești pe drumul cel bun spre excelență.";
-        } else {
-            badgeIcon = "🛡️";
-            badgeTitle = "Insigna: Ucenic Arheolog";
-            badgeDesc = "Ai început antrenamentul. Mai aprofundează lecțiile și vei excela!";
+            badgeIcon = "📜"; badgeTitle = "Insigna: Scrib Harnic"; badgeDesc = "Un rezultat bun! Ești pe drumul cel bun spre excelență.";
         }
 
         document.getElementById('badgeIcon').innerText = badgeIcon;
@@ -1150,251 +1340,179 @@
         document.getElementById('badgeDesc').innerText = badgeDesc;
     }
 
-   /* ===================================================
-   LOGICĂ ESCAPE ROOM CU 4 LACĂTE & ANIMAȚIE UȘĂ
-=================================================== */
-function getEscapeStorageKeys() {
-    let cKey = (typeof currentClassKey !== 'undefined') ? currentClassKey : 'cls';
-    let lIdx = (typeof currentLessonIdx !== 'undefined') ? currentLessonIdx : 0;
-    return {
-        solvedKey: `escape_solved_${cKey}_${lIdx}`,
-        progressKey: `escape_progress_${cKey}_${lIdx}`
-    };
-}
-
-function initEscapeRoom() {
-    const hasEscape = currentLessonData && 
-                      currentLessonData.escape && 
-                      Array.isArray(currentLessonData.escape.locks) && 
-                      currentLessonData.escape.locks.length > 0;
-
-    if (!hasEscape) {
-        document.getElementById('escapePuzzleText').innerText = 
-            "🔒 Modulul Escape Room pentru această lecție nu a fost încă configurat de profesor.";
-        document.querySelector('.locks-row').style.display = 'none';
-        document.getElementById('escapeInputArea').style.display = 'none';
-        return;
+    function getEscapeStorageKeys() {
+        let cKey = (typeof currentClassKey !== 'undefined') ? currentClassKey : 'cls';
+        let lIdx = (typeof currentLessonIdx !== 'undefined') ? currentLessonIdx : 0;
+        return { solvedKey: `escape_solved_${cKey}_${lIdx}`, progressKey: `escape_progress_${cKey}_${lIdx}` };
     }
 
-    document.querySelector('.locks-row').style.display = 'flex';
-    
-    let keys = getEscapeStorageKeys();
-    let isSolved = localStorage.getItem(keys.solvedKey) === 'true';
-    let locksData = currentLessonData.escape.locks;
+    function initEscapeRoom() {
+        const hasEscape = currentLessonData && currentLessonData.escape && Array.isArray(currentLessonData.escape.locks) && currentLessonData.escape.locks.length > 0;
 
-    if (isSolved) {
+        if (!hasEscape) {
+            document.getElementById('escapePuzzleText').innerText = "🔒 Modulul Escape Room pentru această lecție nu a fost încă configurat de profesor.";
+            document.querySelector('.locks-row').style.display = 'none';
+            document.getElementById('escapeInputArea').style.display = 'none';
+            return;
+        }
+
+        document.querySelector('.locks-row').style.display = 'flex';
+        let keys = getEscapeStorageKeys();
+        let isSolved = localStorage.getItem(keys.solvedKey) === 'true';
+        let locksData = currentLessonData.escape.locks;
+
+        if (isSolved) {
+            for (let i = 0; i < 4; i++) {
+                let card = document.getElementById(`lockCard${i}`);
+                if (card) card.className = "lock-card solved-lock";
+                let icon = document.getElementById(`lockIcon${i}`);
+                if (icon) icon.innerText = '🔓';
+                let digit = document.getElementById(`lockDigit${i}`);
+                if (digit) digit.innerText = locksData[i] ? locksData[i].digitRevealed : '';
+            }
+            let finalCodeStr = locksData.map(l => l.digitRevealed).join('');
+            document.getElementById('escapePuzzleText').innerHTML = `🎉 AI EVADAT CU SUCCES!<br>Codul descifrat al arhivei a fost: <strong>${finalCodeStr}</strong>!`;
+            document.getElementById('escapeInputArea').style.display = 'block';
+            document.getElementById('escapeInputArea').innerHTML = `<button class="btn-action" style="background: #e67e22; color: #fff; border-color: #d35400; font-size: 0.9rem;" onclick="resetEscapeRoom()">🔄 Reîncearcă Evadarea (Reset)</button>`;
+        } else {
+            restoreEscapeInputArea();
+            updateLocksUI(locksData);
+        }
+    }
+
+    function restoreEscapeInputArea() {
+        document.getElementById('escapeInputArea').style.display = 'block';
+        document.getElementById('escapeInputArea').innerHTML = `
+            <input type="text" id="escapeInput" class="escape-input" placeholder="Răspuns..." autocomplete="off">
+            <br>
+            <button class="btn-action" style="background: #27ae60; color: #fff; border-color: #2ecc71;" onclick="checkCurrentLock()">🔓 Deschide Lacătul!</button>
+            <button class="btn-action" style="background: #e67e22; color: #fff; border-color: #d35400;" onclick="toggleHint()">💡 Indiciu</button>
+        `;
+        document.getElementById('escapeFeedback').innerText = '';
+        document.getElementById('escapeHintText').style.display = 'none';
+    }
+
+    function resetEscapeRoom() {
+        let keys = getEscapeStorageKeys();
+        localStorage.removeItem(keys.solvedKey);
+        localStorage.removeItem(keys.progressKey);
+        currentLockIndex = 0;
+        restoreEscapeInputArea();
+        if (currentLessonData && currentLessonData.escape && currentLessonData.escape.locks) {
+            updateLocksUI(currentLessonData.escape.locks);
+        }
+    }
+
+    function updateLocksUI(locksData) {
+        let keys = getEscapeStorageKeys();
+        let savedProgress = parseInt(localStorage.getItem(keys.progressKey)) || 0;
+        currentLockIndex = savedProgress;
+
         for (let i = 0; i < 4; i++) {
             let card = document.getElementById(`lockCard${i}`);
-            if (card) card.className = "lock-card solved-lock";
-            
             let icon = document.getElementById(`lockIcon${i}`);
-            if (icon) icon.innerText = '🔓';
-            
             let digit = document.getElementById(`lockDigit${i}`);
-            if (digit) digit.innerText = locksData[i] ? locksData[i].digitRevealed : '';
+
+            if (i < currentLockIndex) {
+                if (card) card.className = "lock-card solved-lock";
+                if (icon) icon.innerText = '🔓';
+                if (digit) digit.innerText = locksData[i].digitRevealed;
+            } else if (i === currentLockIndex) {
+                if (card) card.className = "lock-card active-lock";
+                if (icon) icon.innerText = '🔒';
+                if (digit) digit.innerText = '?';
+            } else {
+                if (card) card.className = "lock-card";
+                if (icon) icon.innerText = '🔒';
+                if (digit) digit.innerText = '-';
+            }
         }
-        let finalCodeStr = locksData.map(l => l.digitRevealed).join('');
-        
-        document.getElementById('escapePuzzleText').innerHTML = 
-            `🎉 AI EVADAT CU SUCCES!<br>Codul descifrat al arhivei a fost: <strong>${finalCodeStr}</strong>!`;
-        
-        document.getElementById('escapeInputArea').style.display = 'block';
-        document.getElementById('escapeInputArea').innerHTML = `
-            <button class="btn-action" style="background: #e67e22; color: #fff; border-color: #d35400; font-size: 1rem;" onclick="resetEscapeRoom()">
-                🔄 Reîncearcă Evadarea (Reset)
-            </button>
-        `;
-    } else {
-        restoreEscapeInputArea();
-        updateLocksUI(locksData);
-    }
-}
 
-function restoreEscapeInputArea() {
-    document.getElementById('escapeInputArea').style.display = 'block';
-    document.getElementById('escapeInputArea').innerHTML = `
-        <input type="text" id="escapeInput" class="escape-input" placeholder="Răspuns..." autocomplete="off">
-        <br>
-        <button class="btn-action" style="background: #27ae60; color: #fff; border-color: #2ecc71;" onclick="checkCurrentLock()">🔓 Deschide Lacătul!</button>
-        <button class="btn-action" style="background: #e67e22; color: #fff; border-color: #d35400;" onclick="toggleHint()">💡 Indiciu</button>
-    `;
-    document.getElementById('escapeFeedback').innerText = '';
-    document.getElementById('escapeHintText').style.display = 'none';
-}
-
-function resetEscapeRoom() {
-    let keys = getEscapeStorageKeys();
-    
-    // Ștergem salvările din localStorage pentru această lecție
-    localStorage.removeItem(keys.solvedKey);
-    localStorage.removeItem(keys.progressKey);
-    
-    currentLockIndex = 0;
-
-    // Restabilim formularul de introducere a răspunsurilor
-    restoreEscapeInputArea();
-
-    // Reîncărcăm datele și lacătele pentru lecția curentă
-    if (currentLessonData && currentLessonData.escape && currentLessonData.escape.locks) {
-        updateLocksUI(currentLessonData.escape.locks);
-    }
-}
-
-function updateLocksUI(locksData) {
-    let keys = getEscapeStorageKeys();
-    let savedProgress = parseInt(localStorage.getItem(keys.progressKey)) || 0;
-    currentLockIndex = savedProgress;
-
-    for (let i = 0; i < 4; i++) {
-        let card = document.getElementById(`lockCard${i}`);
-        let icon = document.getElementById(`lockIcon${i}`);
-        let digit = document.getElementById(`lockDigit${i}`);
-
-        if (i < currentLockIndex) {
-            if (card) card.className = "lock-card solved-lock";
-            if (icon) icon.innerText = '🔓';
-            if (digit) digit.innerText = locksData[i].digitRevealed;
-        } else if (i === currentLockIndex) {
-            if (card) card.className = "lock-card active-lock";
-            if (icon) icon.innerText = '🔒';
-            if (digit) digit.innerText = '?';
+        if (currentLockIndex < 4) {
+            document.getElementById('escapePuzzleText').innerText = locksData[currentLockIndex].puzzle;
+            document.getElementById('escapeHintText').innerText = locksData[currentLockIndex].hint || "Verifică rezumatul!";
+            let inp = document.getElementById('escapeInput');
+            if (inp) inp.value = '';
         } else {
-            if (card) card.className = "lock-card";
-            if (icon) icon.innerText = '🔒';
-            if (digit) digit.innerText = '-';
+            let keys = getEscapeStorageKeys();
+            localStorage.setItem(keys.solvedKey, 'true');
+            let finalCodeStr = locksData.map(l => l.digitRevealed).join('');
+            document.getElementById('escapePuzzleText').innerHTML = `🎉 AI EVADAT CU SUCCES! Codul istoric descifrat al arhivei a fost: <strong>${finalCodeStr}</strong>!`;
+            document.getElementById('escapeInputArea').style.display = 'block';
+            document.getElementById('escapeInputArea').innerHTML = `<button class="btn-action" style="background: #e67e22; color: #fff; border-color: #d35400; font-size: 0.9rem;" onclick="resetEscapeRoom()">🔄 Reîncearcă Evadarea (Reset)</button>`;
+            playDoorUnlockAnimation(finalCodeStr, 50);
         }
     }
 
-    if (currentLockIndex < 4) {
-        document.getElementById('escapePuzzleText').innerText = locksData[currentLockIndex].puzzle;
-        document.getElementById('escapeHintText').innerText = locksData[currentLockIndex].hint || "Verifică rezumatul!";
-        let inp = document.getElementById('escapeInput');
-        if (inp) inp.value = '';
-    } else {
-        let keys = getEscapeStorageKeys();
-        localStorage.setItem(keys.solvedKey, 'true');
+    function playDoorUnlockAnimation(code, wonXP) {
+        const modal = document.getElementById('doorModal');
+        const door = document.getElementById('mainDoor');
+        const key = document.getElementById('animatedKey');
+        const victoryCard = document.getElementById('victoryCard');
+        const victoryDetails = document.getElementById('victoryDetails');
 
-        let finalCodeStr = locksData.map(l => l.digitRevealed).join('');
-        
-        document.getElementById('escapePuzzleText').innerHTML = 
-            `🎉 AI EVADAT CU SUCCES! Codul istoric descifrat al arhivei a fost: <strong>${finalCodeStr}</strong>!`;
-        
-        document.getElementById('escapeInputArea').style.display = 'block';
-        document.getElementById('escapeInputArea').innerHTML = `
-            <button class="btn-action" style="background: #e67e22; color: #fff; border-color: #d35400; font-size: 1rem;" onclick="resetEscapeRoom()">
-                🔄 Reîncearcă Evadarea (Reset)
-            </button>
-        `;
-
-        playDoorUnlockAnimation(finalCodeStr, 50);
-    }
-}
-
-function playDoorUnlockAnimation(code, wonXP) {
-    const modal = document.getElementById('doorModal');
-    const door = document.getElementById('mainDoor');
-    const key = document.getElementById('animatedKey');
-    const victoryCard = document.getElementById('victoryCard');
-    const victoryDetails = document.getElementById('victoryDetails');
-
-    door.classList.remove('open');
-    key.classList.remove('insert', 'turn');
-    key.style.opacity = '0';
-    victoryCard.classList.remove('show');
-    
-    modal.style.display = 'flex';
-
-    setTimeout(() => { key.classList.add('insert'); }, 300);
-
-    setTimeout(() => {
-        key.classList.add('turn');
-        playSound('correct');
-    }, 1200);
-
-    setTimeout(() => {
+        door.classList.remove('open');
+        key.classList.remove('insert', 'turn');
         key.style.opacity = '0';
-        door.classList.add('open');
-        playSound('levelup');
-    }, 1800);
+        victoryCard.classList.remove('show');
+        modal.style.display = 'flex';
 
-    setTimeout(() => {
-        victoryDetails.innerHTML = `
-            Ai deschis toate cele 4 lacăte!<br>
-            Codul/Anul descifrat din arhivă este: <strong style="color:#f1c40f; font-size: 20px;">${code}</strong>!<br>
-            <span style="color: #2ecc71; font-weight: bold; font-size: 18px;">+${wonXP} XP</span><br><br>
-            🔓 <strong>UȘA MARE S-A DEBLOCAT CU SUCCES!</strong>
-        `;
-        victoryCard.classList.add('show');
-        updateXP(wonXP);
-    }, 2500);
-}
-
-function closeDoorModal() {
-    document.getElementById('doorModal').style.display = 'none';
-}
-
-function removeDiacritics(str) {
-    return str
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/â|ă/g, "a")
-        .replace(/î/g, "i")
-        .replace(/ș|ş/g, "s")
-        .replace(/ț|ţ/g, "t")
-        .toLowerCase()
-        .trim();
-}
-
-function checkCurrentLock() {
-    if (!currentLessonData || !currentLessonData.escape || !currentLessonData.escape.locks) return;
-
-    let inpElem = document.getElementById('escapeInput');
-    if (!inpElem) return;
-
-    let rawInput = inpElem.value;
-    if (!rawInput.trim()) return;
-
-    let inputVal = removeDiacritics(rawInput);
-    let locksData = currentLessonData.escape.locks;
-    let correctCode = removeDiacritics(locksData[currentLockIndex].code.toString());
-
-    if (inputVal === correctCode) {
-        playSound('correct');
-        document.getElementById('escapeFeedback').innerText = 
-            `🔓 Lacătul ${currentLockIndex + 1} s-a deschis! Ai deblocat cifra/litera '${locksData[currentLockIndex].digitRevealed}'!`;
-        document.getElementById('escapeFeedback').style.color = "#2ecc71";
-
-        currentLockIndex++;
-        let keys = getEscapeStorageKeys();
-        localStorage.setItem(keys.progressKey, currentLockIndex);
-
-        document.getElementById('escapeHintText').style.display = 'none';
+        setTimeout(() => { key.classList.add('insert'); }, 300);
+        setTimeout(() => { key.classList.add('turn'); playSound('correct'); }, 1200);
+        setTimeout(() => { key.style.opacity = '0'; door.classList.add('open'); playSound('levelup'); }, 1800);
         setTimeout(() => {
-            document.getElementById('escapeFeedback').innerText = '';
-            updateLocksUI(locksData);
-        }, 1200);
-    } else {
-        playSound('wrong');
-        document.getElementById('escapeFeedback').innerText = 
-            "❌ Cod incorect pentru acest lacăt! Verifică rezumatul și încearcă din nou.";
-        document.getElementById('escapeFeedback').style.color = "#e74c3c";
+            victoryDetails.innerHTML = `
+                Ai deschis toate cele 4 lacăte!<br>
+                Codul/Anul descifrat din arhivă este: <strong style="color:#f1c40f; font-size: 18px;">${code}</strong>!<br>
+                <span style="color: #2ecc71; font-weight: bold; font-size: 16px;">+${wonXP} XP</span><br><br>
+                🔓 <strong>UȘA MARE S-A DEBLOCAT CU SUCCES!</strong>
+            `;
+            victoryCard.classList.add('show');
+            updateXP(wonXP);
+        }, 2500);
     }
-}
 
-function toggleHint() {
-    let hintElem = document.getElementById('escapeHintText');
-    if (!hintElem) return;
+    function closeDoorModal() { document.getElementById('doorModal').style.display = 'none'; }
 
-    if (hintElem.style.display === 'none' || hintElem.style.display === '') {
-        hintElem.style.display = 'block';
-    } else {
-        hintElem.style.display = 'none';
+    function removeDiacritics(str) {
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/â|ă/g, "a").replace(/î/g, "i").replace(/ș|ş/g, "s").replace(/ț|ţ/g, "t").toLowerCase().trim();
     }
-}
 
-    /* ===================================================
-       JOC ASEDIU MEDIEVAL SI ANIMAȚIE DE CUCERIRE
-    =================================================== */
+    function checkCurrentLock() {
+        if (!currentLessonData || !currentLessonData.escape || !currentLessonData.escape.locks) return;
+        let inpElem = document.getElementById('escapeInput');
+        if (!inpElem) return;
+        let rawInput = inpElem.value;
+        if (!rawInput.trim()) return;
+
+        let inputVal = removeDiacritics(rawInput);
+        let locksData = currentLessonData.escape.locks;
+        let correctCode = removeDiacritics(locksData[currentLockIndex].code.toString());
+
+        if (inputVal === correctCode) {
+            playSound('correct');
+            document.getElementById('escapeFeedback').innerText = `🔓 Lacătul ${currentLockIndex + 1} s-a deschis! Ai deblocat cifra/litera '${locksData[currentLockIndex].digitRevealed}'!`;
+            document.getElementById('escapeFeedback').style.color = "#2ecc71";
+
+            currentLockIndex++;
+            let keys = getEscapeStorageKeys();
+            localStorage.setItem(keys.progressKey, currentLockIndex);
+            document.getElementById('escapeHintText').style.display = 'none';
+            setTimeout(() => { document.getElementById('escapeFeedback').innerText = ''; updateLocksUI(locksData); }, 1200);
+        } else {
+            playSound('wrong');
+            document.getElementById('escapeFeedback').innerText = "❌ Cod incorect pentru acest lacăt! Verifică rezumatul și încearcă din nou.";
+            document.getElementById('escapeFeedback').style.color = "#e74c3c";
+        }
+    }
+
+    function toggleHint() {
+        let hintElem = document.getElementById('escapeHintText');
+        if (!hintElem) return;
+        hintElem.style.display = (hintElem.style.display === 'none' || hintElem.style.display === '') ? 'block' : 'none';
+    }
+
+    /* JOC ASEDIU MEDIEVAL */
     const canvas = document.getElementById('archeryCanvas');
     const ctx = canvas.getContext('2d');
     
@@ -1402,16 +1520,12 @@ function toggleHint() {
     let catY = canvas.height - 40;
     let targets = [], canShoot = true, fireball = null, trail = [], explosionParticles = [];
     let catapultAngle = 0;
-    
     let isVictory = false, victoryAnimationId = null, fireworks = [], fwParticles = [], fireEffectParticles = [];
 
     function initArcheryGame() {
         isVictory = false;
         if(victoryAnimationId) cancelAnimationFrame(victoryAnimationId);
-        fireworks = [];
-        fwParticles = [];
-        fireEffectParticles = [];
-        
+        fireworks = []; fwParticles = []; fireEffectParticles = [];
         if (!currentLessonData || !currentLessonData.quiz || currentLessonData.quiz.length === 0) return;
         loadQuestion(currentQuizIndex);
     }
@@ -1430,13 +1544,7 @@ function toggleHint() {
             document.getElementById('quizFeedback').innerText = "Fortăreața a fost cucerită! Revino la lecții pentru următoarea luptă.";
             document.getElementById('quizFeedback').style.color = "#27ae60";
             
-            targets = []; 
-            fireball = null; 
-            trail = []; 
-            explosionParticles = []; 
-            catapultAngle = 0; 
-            canShoot = false;
-            
+            targets = []; fireball = null; trail = []; explosionParticles = []; catapultAngle = 0; canShoot = false;
             isVictory = true;
             launchFirework();
             animateVictory();
@@ -1451,183 +1559,81 @@ function toggleHint() {
         canShoot = true; fireball = null; trail = []; explosionParticles = []; catapultAngle = 0;
         const opts = qData.opts; targets = [];
         
-        const targetPositions = [
-            { x: 195, y: 120 },
-            { x: 605, y: 120 },
-            { x: 195, y: 300 },
-            { x: 605, y: 300 }
-        ];
-        
-        const targetWidth = 370;
-        const targetHeight = 115;
+        const targetPositions = [ { x: 195, y: 120 }, { x: 605, y: 120 }, { x: 195, y: 300 }, { x: 605, y: 300 } ];
+        const targetWidth = 370, targetHeight = 115;
 
         for (let i = 0; i < opts.length; i++) {
             targets.push({ 
-                x: targetPositions[i].x, 
-                y: targetPositions[i].y, 
-                width: targetWidth, 
-                height: targetHeight, 
-                text: opts[i], 
-                isCorrect: (i === qData.c), 
-                hit: false 
+                x: targetPositions[i].x, y: targetPositions[i].y, 
+                width: targetWidth, height: targetHeight, 
+                text: opts[i], isCorrect: (i === qData.c), hit: false 
             });
         }
         drawScene();
     }
 
     function drawDetailedSoldier(x, y, scale = 1) {
-        ctx.save();
-        ctx.translate(x, y);
-        ctx.scale(scale, scale);
-
-        ctx.fillStyle = "#8b0000";
-        ctx.beginPath();
-        ctx.roundRect(-7, -12, 14, 22, 4);
-        ctx.fill();
-        ctx.lineWidth = 1;
-        ctx.strokeStyle = "#4a1c1c";
-        ctx.stroke();
-
-        ctx.fillStyle = "#3d2516";
-        ctx.fillRect(-7, -2, 14, 3);
-
-        ctx.fillStyle = "#f5d0b1";
-        ctx.beginPath();
-        ctx.arc(0, -17, 6, 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.fillStyle = "#7f8c8d";
-        ctx.beginPath();
-        ctx.arc(0, -18, 6.5, Math.PI, 0, false);
-        ctx.fill();
-        ctx.fillRect(-7, -18, 14, 2);
-
-        ctx.restore();
+        ctx.save(); ctx.translate(x, y); ctx.scale(scale, scale);
+        ctx.fillStyle = "#8b0000"; ctx.beginPath(); ctx.roundRect(-7, -12, 14, 22, 4); ctx.fill();
+        ctx.lineWidth = 1; ctx.strokeStyle = "#4a1c1c"; ctx.stroke();
+        ctx.fillStyle = "#3d2516"; ctx.fillRect(-7, -2, 14, 3);
+        ctx.fillStyle = "#f5d0b1"; ctx.beginPath(); ctx.arc(0, -17, 6, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = "#7f8c8d"; ctx.beginPath(); ctx.arc(0, -18, 6.5, Math.PI, 0, false); ctx.fill();
+        ctx.fillRect(-7, -18, 14, 2); ctx.restore();
     }
 
     function drawWoodenLadder(x, y, width, height) {
-        ctx.save();
-        ctx.fillStyle = "#8c5a2b";
-        ctx.strokeStyle = "#4a2e1b";
-        ctx.lineWidth = 2;
-
-        ctx.fillRect(x, y, 4, height);
-        ctx.fillRect(x + width - 4, y, 4, height);
-
-        for (let stepY = y + 8; stepY < y + height; stepY += 12) {
-            ctx.fillRect(x, stepY, width, 3);
-        }
+        ctx.save(); ctx.fillStyle = "#8c5a2b"; ctx.strokeStyle = "#4a2e1b"; ctx.lineWidth = 2;
+        ctx.fillRect(x, y, 4, height); ctx.fillRect(x + width - 4, y, 4, height);
+        for (let stepY = y + 8; stepY < y + height; stepY += 12) { ctx.fillRect(x, stepY, width, 3); }
         ctx.restore();
     }
 
     function drawWall(isConquered = false) {
         ctx.save();
-        
-        ctx.fillStyle = isConquered ? "#535c5d" : "#7f8c8d";
-        ctx.strokeStyle = "#2c3e50";
-        ctx.lineWidth = 3;
-
-        ctx.beginPath();
-        ctx.moveTo(60, 430);
-        ctx.quadraticCurveTo(400, 455, 740, 430);
-        ctx.lineTo(740, 520);
-        ctx.quadraticCurveTo(400, 545, 60, 520);
-        ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
+        ctx.fillStyle = isConquered ? "#535c5d" : "#7f8c8d"; ctx.strokeStyle = "#2c3e50"; ctx.lineWidth = 3;
+        ctx.beginPath(); ctx.moveTo(60, 430); ctx.quadraticCurveTo(400, 455, 740, 430);
+        ctx.lineTo(740, 520); ctx.quadraticCurveTo(400, 545, 60, 520); ctx.closePath(); ctx.fill(); ctx.stroke();
 
         ctx.fillStyle = isConquered ? "#6b7778" : "#95a5a6";
         for(let wx = 90; wx < 710; wx += 45) {
-            ctx.fillRect(wx, 440, 35, 18);
-            ctx.fillRect(wx + 20, 465, 35, 18);
-            ctx.fillRect(wx, 490, 35, 18);
+            ctx.fillRect(wx, 440, 35, 18); ctx.fillRect(wx + 20, 465, 35, 18); ctx.fillRect(wx, 490, 35, 18);
         }
 
         if (isConquered) {
-            ctx.fillStyle = "#1a0f0a";
-            ctx.fillRect(360, 445, 80, 75);
-            
-            ctx.save();
-            ctx.translate(360, 445);
-            ctx.rotate(-0.3);
-            ctx.fillStyle = "#3d2516";
-            ctx.fillRect(0, 0, 35, 75);
-            ctx.strokeStyle = "#1a0f0a";
-            ctx.strokeRect(0, 0, 35, 75);
-            ctx.restore();
-
-            ctx.save();
-            ctx.translate(440, 445);
-            ctx.rotate(0.35);
-            ctx.fillStyle = "#3d2516";
-            ctx.fillRect(-35, 0, 35, 75);
-            ctx.strokeStyle = "#1a0f0a";
-            ctx.strokeRect(-35, 0, 35, 75);
-            ctx.restore();
-
+            ctx.fillStyle = "#1a0f0a"; ctx.fillRect(360, 445, 80, 75);
+            ctx.save(); ctx.translate(360, 445); ctx.rotate(-0.3); ctx.fillStyle = "#3d2516"; ctx.fillRect(0, 0, 35, 75); ctx.strokeStyle = "#1a0f0a"; ctx.strokeRect(0, 0, 35, 75); ctx.restore();
+            ctx.save(); ctx.translate(440, 445); ctx.rotate(0.35); ctx.fillStyle = "#3d2516"; ctx.fillRect(-35, 0, 35, 75); ctx.strokeStyle = "#1a0f0a"; ctx.strokeRect(-35, 0, 35, 75); ctx.restore();
         } else {
-            ctx.fillStyle = "#5a3d28";
-            ctx.fillRect(360, 445, 80, 75);
-            ctx.strokeStyle = "#2b1d0c";
-            ctx.lineWidth = 3;
-            ctx.strokeRect(360, 445, 80, 75);
-            ctx.fillStyle = "#3d2516";
-            ctx.fillRect(397, 445, 6, 75);
-            ctx.fillStyle = "#2c3e50";
+            ctx.fillStyle = "#5a3d28"; ctx.fillRect(360, 445, 80, 75); ctx.strokeStyle = "#2b1d0c"; ctx.lineWidth = 3; ctx.strokeRect(360, 445, 80, 75);
+            ctx.fillStyle = "#3d2516"; ctx.fillRect(397, 445, 6, 75); ctx.fillStyle = "#2c3e50";
             ctx.beginPath(); ctx.arc(380, 480, 5, 0, Math.PI*2); ctx.fill();
             ctx.beginPath(); ctx.arc(420, 480, 5, 0, Math.PI*2); ctx.fill();
         }
 
         if (!isConquered) {
-            drawDetailedSoldier(210, 412);
-            drawDetailedSoldier(260, 412);
-            drawDetailedSoldier(310, 412);
-
-            drawDetailedSoldier(490, 412);
-            drawDetailedSoldier(540, 412);
-            drawDetailedSoldier(590, 412);
+            drawDetailedSoldier(210, 412); drawDetailedSoldier(260, 412); drawDetailedSoldier(310, 412);
+            drawDetailedSoldier(490, 412); drawDetailedSoldier(540, 412); drawDetailedSoldier(590, 412);
         }
 
         ctx.fillStyle = isConquered ? "#535c5d" : "#7f8c8d";
-        ctx.fillRect(40, 340, 90, 180);
-        ctx.strokeRect(40, 340, 90, 180);
-        ctx.fillRect(35, 320, 25, 25);
-        ctx.fillRect(70, 320, 25, 25);
-        ctx.fillRect(105, 320, 25, 25);
+        ctx.fillRect(40, 340, 90, 180); ctx.strokeRect(40, 340, 90, 180);
+        ctx.fillRect(35, 320, 25, 25); ctx.fillRect(70, 320, 25, 25); ctx.fillRect(105, 320, 25, 25);
 
-        ctx.fillRect(670, 340, 90, 180);
-        ctx.strokeRect(670, 340, 90, 180);
-        ctx.fillRect(665, 320, 25, 25);
-        ctx.fillRect(700, 320, 25, 25);
-        ctx.fillRect(735, 320, 25, 25);
+        ctx.fillRect(670, 340, 90, 180); ctx.strokeRect(670, 340, 90, 180);
+        ctx.fillRect(665, 320, 25, 25); ctx.fillRect(700, 320, 25, 25); ctx.fillRect(735, 320, 25, 25);
 
         if (!isConquered) {
-            drawDetailedSoldier(72, 298);
-            drawDetailedSoldier(712, 298);
-
-            drawWoodenLadder(132, 350, 18, 140);
-            drawDetailedSoldier(141, 410);
-
-            drawWoodenLadder(650, 350, 18, 140);
-            drawDetailedSoldier(659, 410);
+            drawDetailedSoldier(72, 298); drawDetailedSoldier(712, 298);
+            drawWoodenLadder(132, 350, 18, 140); drawDetailedSoldier(141, 410);
+            drawWoodenLadder(650, 350, 18, 140); drawDetailedSoldier(659, 410);
         }
 
         if (isConquered) {
-            ctx.strokeStyle = "#1a1a1a";
-            ctx.lineWidth = 3;
-
-            ctx.beginPath();
-            ctx.moveTo(85, 340); ctx.lineTo(75, 380); ctx.lineTo(90, 420); ctx.lineTo(80, 460);
-            ctx.stroke();
-
-            ctx.beginPath();
-            ctx.moveTo(710, 340); ctx.lineTo(725, 390); ctx.lineTo(705, 430); ctx.lineTo(720, 480);
-            ctx.stroke();
-
-            ctx.beginPath();
-            ctx.moveTo(250, 435); ctx.lineTo(265, 470); ctx.lineTo(255, 510);
-            ctx.moveTo(550, 435); ctx.lineTo(535, 475); ctx.lineTo(545, 515);
-            ctx.stroke();
+            ctx.strokeStyle = "#1a1a1a"; ctx.lineWidth = 3;
+            ctx.beginPath(); ctx.moveTo(85, 340); ctx.lineTo(75, 380); ctx.lineTo(90, 420); ctx.lineTo(80, 460); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(710, 340); ctx.lineTo(725, 390); ctx.lineTo(705, 430); ctx.lineTo(720, 480); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(250, 435); ctx.lineTo(265, 470); ctx.lineTo(255, 510); ctx.moveTo(550, 435); ctx.lineTo(535, 475); ctx.lineTo(545, 515); ctx.stroke();
         }
 
         ctx.restore();
@@ -1640,80 +1646,49 @@ function toggleHint() {
         drawWall(false);
 
         targets.forEach(t => {
-            ctx.save(); 
-            ctx.translate(t.x, t.y);
+            ctx.save(); ctx.translate(t.x, t.y);
 
             if (t.hit) {
                 if (t.isCorrect) {
-                    ctx.fillStyle = "#27ae60";
-                    ctx.beginPath(); ctx.roundRect(-t.width/2, -t.height/2, t.width, t.height, 10); ctx.fill();
-                    
-                    ctx.strokeStyle = "#c0392b";
-                    ctx.lineWidth = 4;
-                    ctx.beginPath();
-                    ctx.moveTo(-50, -30); ctx.lineTo(20, 10); ctx.lineTo(40, -40);
-                    ctx.moveTo(-20, 30); ctx.lineTo(10, -10); ctx.lineTo(50, 20);
-                    ctx.stroke();
-
-                    ctx.fillStyle = "rgba(231, 76, 60, 0.7)";
-                    ctx.beginPath(); ctx.arc(-30, -20, 20, 0, 2*Math.PI); ctx.fill();
-                    ctx.fillStyle = "rgba(241, 196, 15, 0.8)";
-                    ctx.beginPath(); ctx.arc(30, 20, 15, 0, 2*Math.PI); ctx.fill();
+                    ctx.fillStyle = "#27ae60"; ctx.beginPath(); ctx.roundRect(-t.width/2, -t.height/2, t.width, t.height, 10); ctx.fill();
+                    ctx.strokeStyle = "#c0392b"; ctx.lineWidth = 4;
+                    ctx.beginPath(); ctx.moveTo(-50, -30); ctx.lineTo(20, 10); ctx.lineTo(40, -40); ctx.moveTo(-20, 30); ctx.lineTo(10, -10); ctx.lineTo(50, 20); ctx.stroke();
+                    ctx.fillStyle = "rgba(231, 76, 60, 0.7)"; ctx.beginPath(); ctx.arc(-30, -20, 20, 0, 2*Math.PI); ctx.fill();
+                    ctx.fillStyle = "rgba(241, 196, 15, 0.8)"; ctx.beginPath(); ctx.arc(30, 20, 15, 0, 2*Math.PI); ctx.fill();
                 } else {
-                    ctx.fillStyle = "#e74c3c";
-                    ctx.beginPath(); ctx.roundRect(-t.width/2, -t.height/2, t.width, t.height, 10); ctx.fill();
+                    ctx.fillStyle = "#e74c3c"; ctx.beginPath(); ctx.roundRect(-t.width/2, -t.height/2, t.width, t.height, 10); ctx.fill();
                 }
                 ctx.lineWidth = 3; ctx.strokeStyle = "#4a2e1b"; ctx.stroke();
             } else {
-                ctx.fillStyle = "#8c5a2b";
-                ctx.beginPath(); ctx.roundRect(-t.width/2, -t.height/2, t.width, t.height, 10); ctx.fill();
+                ctx.fillStyle = "#8c5a2b"; ctx.beginPath(); ctx.roundRect(-t.width/2, -t.height/2, t.width, t.height, 10); ctx.fill();
                 ctx.lineWidth = 3; ctx.strokeStyle = "#4a2e1b"; ctx.stroke();
 
-                ctx.fillStyle = "#fdf6e2"; 
-                ctx.beginPath();
-                ctx.roundRect(-t.width/2 + 4, -t.height/2 + 4, t.width - 8, t.height - 8, 6); ctx.fill();
+                ctx.fillStyle = "#fdf6e2"; ctx.beginPath(); ctx.roundRect(-t.width/2 + 4, -t.height/2 + 4, t.width - 8, t.height - 8, 6); ctx.fill();
             }
 
             ctx.fillStyle = t.hit ? "#ffffff" : "#2c1d11";
-            ctx.font = "bold 24px 'Segoe UI', sans-serif"; 
-            ctx.textAlign = "center"; ctx.textBaseline = "middle";
-            wrapText(ctx, t.text, 0, 0, t.width - 16, 28); 
-            ctx.restore();
+            ctx.font = "bold 24px 'Segoe UI', sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+            wrapText(ctx, t.text, 0, 0, t.width - 16, 28); ctx.restore();
         });
 
-        ctx.save();
-        ctx.translate(catX, catY);
-        ctx.fillStyle = "#4a2e1b";
-        ctx.fillRect(-30, 0, 60, 40);
-        ctx.beginPath();
-        ctx.moveTo(-30, 0); ctx.lineTo(0, -35); ctx.lineTo(30, 0);
-        ctx.fillStyle = "#5c3a21"; ctx.fill();
-        ctx.lineWidth = 2; ctx.strokeStyle = "#d4a359"; ctx.stroke();
+        ctx.save(); ctx.translate(catX, catY);
+        ctx.fillStyle = "#4a2e1b"; ctx.fillRect(-30, 0, 60, 40);
+        ctx.beginPath(); ctx.moveTo(-30, 0); ctx.lineTo(0, -35); ctx.lineTo(30, 0);
+        ctx.fillStyle = "#5c3a21"; ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = "#d4a359"; ctx.stroke();
 
-        ctx.save();
-        ctx.translate(0, -20);
-        ctx.rotate(catapultAngle);
-        ctx.beginPath();
-        ctx.moveTo(0, 0); ctx.lineTo(35, -35);
-        ctx.lineWidth = 9; ctx.strokeStyle = "#8c5a2b"; ctx.stroke();
+        ctx.save(); ctx.translate(0, -20); ctx.rotate(catapultAngle);
+        ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(35, -35); ctx.lineWidth = 9; ctx.strokeStyle = "#8c5a2b"; ctx.stroke();
         
         if (!fireball || !fireball.active) {
-            ctx.fillStyle = "#7f8c8d";
-            ctx.beginPath();
-            ctx.moveTo(25, -42); ctx.lineTo(45, -40); ctx.lineTo(40, -28); ctx.lineTo(27, -30);
-            ctx.closePath(); ctx.fill();
+            ctx.fillStyle = "#7f8c8d"; ctx.beginPath(); ctx.moveTo(25, -42); ctx.lineTo(45, -40); ctx.lineTo(40, -28); ctx.lineTo(27, -30); ctx.closePath(); ctx.fill();
         }
-        ctx.restore();
-        ctx.restore();
+        ctx.restore(); ctx.restore();
 
         if (trail.length > 0) {
             ctx.save();
             for (let i = 0; i < trail.length; i++) {
-                let p = trail[i];
-                let radius = (i / trail.length) * 14;
-                ctx.beginPath(); ctx.arc(p.x, p.y, radius, 0, 2 * Math.PI);
-                ctx.fillStyle = `rgba(241, 196, 15, ${i / trail.length * 0.5})`;
-                ctx.fill();
+                let p = trail[i]; let radius = (i / trail.length) * 14;
+                ctx.beginPath(); ctx.arc(p.x, p.y, radius, 0, 2 * Math.PI); ctx.fillStyle = `rgba(241, 196, 15, ${i / trail.length * 0.5})`; ctx.fill();
             }
             ctx.restore();
         }
@@ -1721,32 +1696,18 @@ function toggleHint() {
         if (explosionParticles.length > 0) {
             ctx.save();
             explosionParticles.forEach(ep => {
-                ctx.beginPath(); ctx.arc(ep.x, ep.y, ep.radius, 0, 2 * Math.PI);
-                ctx.fillStyle = ep.color; ctx.fill();
+                ctx.beginPath(); ctx.arc(ep.x, ep.y, ep.radius, 0, 2 * Math.PI); ctx.fillStyle = ep.color; ctx.fill();
             });
             ctx.restore();
         }
 
         if (fireball && fireball.active) {
-            ctx.save();
-            ctx.translate(fireball.x, fireball.y);
-            ctx.beginPath(); ctx.arc(0, 0, 18, 0, 2 * Math.PI);
-            ctx.fillStyle = "rgba(231, 76, 60, 0.7)"; ctx.fill();
-            ctx.beginPath(); ctx.arc(0, 0, 12, 0, 2 * Math.PI);
-            ctx.fillStyle = "#f39c12"; ctx.fill();
+            ctx.save(); ctx.translate(fireball.x, fireball.y);
+            ctx.beginPath(); ctx.arc(0, 0, 18, 0, 2 * Math.PI); ctx.fillStyle = "rgba(231, 76, 60, 0.7)"; ctx.fill();
+            ctx.beginPath(); ctx.arc(0, 0, 12, 0, 2 * Math.PI); ctx.fillStyle = "#f39c12"; ctx.fill();
             
-            ctx.fillStyle = "#595959";
-            ctx.strokeStyle = "#333333";
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            ctx.moveTo(-8, -10);
-            ctx.lineTo(6, -12);
-            ctx.lineTo(11, 4);
-            ctx.lineTo(3, 10);
-            ctx.lineTo(-9, 7);
-            ctx.closePath();
-            ctx.fill();
-            ctx.stroke();
+            ctx.fillStyle = "#595959"; ctx.strokeStyle = "#333333"; ctx.lineWidth = 2;
+            ctx.beginPath(); ctx.moveTo(-8, -10); ctx.lineTo(6, -12); ctx.lineTo(11, 4); ctx.lineTo(3, 10); ctx.lineTo(-9, 7); ctx.closePath(); ctx.fill(); ctx.stroke();
             ctx.restore();
         }
     }
@@ -1780,23 +1741,10 @@ function toggleHint() {
         targets.forEach(t => {
             if (!t.hit && pos.x > t.x - t.width / 2 && pos.x < t.x + t.width / 2 && pos.y > t.y - t.height / 2 && pos.y < t.y + t.height / 2) {
                 canShoot = false;
+                let startX = catX; let startY = catY - 50;
+                let targetX = t.x; let targetY = t.y;
                 
-                let startX = catX;
-                let startY = catY - 50;
-                let targetX = t.x;
-                let targetY = t.y;
-                
-                fireball = {
-                    x: startX,
-                    y: startY,
-                    startX: startX,
-                    startY: startY,
-                    targetX: targetX,
-                    targetY: targetY,
-                    progress: 0,
-                    target: t,
-                    active: true
-                };
+                fireball = { x: startX, y: startY, startX: startX, startY: startY, targetX: targetX, targetY: targetY, progress: 0, target: t, active: true };
                 trail = [];
                 
                 playSound('shoot');
@@ -1808,31 +1756,21 @@ function toggleHint() {
     function animateCatapultLaunch() {
         let launchProgress = 0;
         function swingArm() {
-            launchProgress += 0.2;
-            catapultAngle = -launchProgress;
-            drawScene();
-            if (launchProgress < 0.8) {
-                requestAnimationFrame(swingArm);
-            } else {
-                catapultAngle = 0;
-                animateFireball();
-            }
+            launchProgress += 0.2; catapultAngle = -launchProgress; drawScene();
+            if (launchProgress < 0.8) { requestAnimationFrame(swingArm); }
+            else { catapultAngle = 0; animateFireball(); }
         }
         swingArm();
     }
 
     function animateFireball() {
         if (!fireball || !fireball.active) return;
-        
-        fireball.progress += 0.009; 
-        if (fireball.progress > 1) fireball.progress = 1;
+        fireball.progress += 0.009; if (fireball.progress > 1) fireball.progress = 1;
 
         let p = fireball.progress;
         fireball.x = fireball.startX + (fireball.targetX - fireball.startX) * p;
-        
         let linearY = fireball.startY + (fireball.targetY - fireball.startY) * p;
-        let arcHeight = -140; 
-        let arcOffset = 4 * arcHeight * p * (1 - p); 
+        let arcHeight = -140; let arcOffset = 4 * arcHeight * p * (1 - p);
         fireball.y = linearY + arcOffset;
 
         trail.push({ x: fireball.x, y: fireball.y });
@@ -1840,34 +1778,23 @@ function toggleHint() {
 
         if (p >= 1) {
             fireball.active = false;
-            let t = fireball.target;
-            t.hit = true;
-            playSound('hit');
+            let t = fireball.target; t.hit = true; playSound('hit');
 
             for(let i=0; i<25; i++) {
-                let angle = Math.random() * Math.PI * 2;
-                let speed = Math.random() * 5 + 1;
+                let angle = Math.random() * Math.PI * 2; let speed = Math.random() * 5 + 1;
                 explosionParticles.push({
-                    x: t.x,
-                    y: t.y,
-                    vx: Math.cos(angle) * speed,
-                    vy: Math.sin(angle) * speed,
-                    radius: Math.random() * 7 + 2,
-                    color: t.isCorrect ? (Math.random() > 0.3 ? "#2ecc71" : "#e74c3c") : "#e74c3c",
-                    alpha: 1
+                    x: t.x, y: t.y, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed,
+                    radius: Math.random() * 7 + 2, color: t.isCorrect ? (Math.random() > 0.3 ? "#2ecc71" : "#e74c3c") : "#e74c3c", alpha: 1
                 });
             }
 
             if (t.isCorrect) {
-                playSound('correct'); 
-                updateXP(20);
+                playSound('correct'); updateXP(20);
                 document.getElementById('quizFeedback').innerText = "🛡️ VICTORIE! Zidul inamic a fost spulberat cu succes! (+20 XP)";
                 document.getElementById('quizFeedback').style.color = "#27ae60";
                 setTimeout(() => { currentQuizIndex++; loadQuestion(currentQuizIndex); }, 1800);
             } else {
-                playSound('wrong'); 
-                quizWrongAnswers++; 
-                updateXP(-5);
+                playSound('wrong'); quizWrongAnswers++; updateXP(-5);
                 document.getElementById('quizFeedback').innerText = "⚔️ Cădere în luptă! Stânca a eșuat în fața zidului! (-5 XP)";
                 document.getElementById('quizFeedback').style.color = "#c0392b";
                 setTimeout(() => { canShoot = true; fireball = null; trail = []; explosionParticles = []; drawScene(); }, 1400);
@@ -1875,125 +1802,55 @@ function toggleHint() {
         }
 
         if (explosionParticles.length > 0) {
-            explosionParticles.forEach(ep => {
-                ep.x += ep.vx; ep.y += ep.vy;
-                ep.radius *= 0.95;
-            });
+            explosionParticles.forEach(ep => { ep.x += ep.vx; ep.y += ep.vy; ep.radius *= 0.95; });
         }
 
         drawScene();
-        if (fireball && fireball.active || explosionParticles.length > 0) {
-            requestAnimationFrame(animateFireball);
-        }
+        if (fireball && fireball.active || explosionParticles.length > 0) { requestAnimationFrame(animateFireball); }
     }
 
     function launchFirework() {
         if (!isVictory) return;
-        
-        fireworks.push({
-            x: Math.random() * (canvas.width - 200) + 100,
-            y: canvas.height,
-            targetY: Math.random() * 150 + 50,
-            color: `hsl(${Math.random() * 360}, 100%, 60%)`,
-            speed: Math.random() * 3 + 3.5,
-            radius: 3.5
-        });
-        
+        fireworks.push({ x: Math.random() * (canvas.width - 200) + 100, y: canvas.height, targetY: Math.random() * 150 + 50, color: `hsl(${Math.random() * 360}, 100%, 60%)`, speed: Math.random() * 3 + 3.5, radius: 3.5 });
         playSound('fw_launch');
         setTimeout(launchFirework, Math.random() * 900 + 400); 
     }
 
     function animateVictory() {
         if (!isVictory) return;
-        
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "#e3ceab"; 
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
+        ctx.clearRect(0, 0, canvas.width, canvas.height); ctx.fillStyle = "#e3ceab"; ctx.fillRect(0, 0, canvas.width, canvas.height);
         drawWall(true); 
 
         if (Math.random() < 0.6) {
             let spawnX = [80, 400, 715, 260, 540][Math.floor(Math.random() * 5)];
             let spawnY = spawnX === 400 ? 470 : (spawnX < 100 || spawnX > 700 ? 340 : 435);
-            
-            fireEffectParticles.push({
-                x: spawnX + (Math.random() * 40 - 20),
-                y: spawnY,
-                vx: (Math.random() - 0.5) * 1.5,
-                vy: -(Math.random() * 2.5 + 1),
-                radius: Math.random() * 8 + 4,
-                color: Math.random() > 0.4 ? "#e74c3c" : (Math.random() > 0.5 ? "#f39c12" : "#f1c40f"),
-                alpha: 1,
-                isSmoke: Math.random() < 0.3
-            });
+            fireEffectParticles.push({ x: spawnX + (Math.random() * 40 - 20), y: spawnY, vx: (Math.random() - 0.5) * 1.5, vy: -(Math.random() * 2.5 + 1), radius: Math.random() * 8 + 4, color: Math.random() > 0.4 ? "#e74c3c" : (Math.random() > 0.5 ? "#f39c12" : "#f1c40f"), alpha: 1, isSmoke: Math.random() < 0.3 });
         }
 
         for (let i = fireEffectParticles.length - 1; i >= 0; i--) {
-            let fp = fireEffectParticles[i];
-            fp.x += fp.vx;
-            fp.y += fp.vy;
-            fp.radius *= 0.96;
-            fp.alpha -= 0.02;
-
-            if (fp.isSmoke) {
-                fp.color = "#444444";
-                fp.radius *= 1.02;
-            }
-
-            ctx.beginPath();
-            ctx.arc(fp.x, fp.y, Math.max(0.5, fp.radius), 0, Math.PI * 2);
-            ctx.fillStyle = fp.color;
-            ctx.globalAlpha = Math.max(0, fp.alpha);
-            ctx.fill();
-            ctx.globalAlpha = 1;
-
-            if (fp.alpha <= 0 || fp.radius <= 0.5) {
-                fireEffectParticles.splice(i, 1);
-            }
+            let fp = fireEffectParticles[i]; fp.x += fp.vx; fp.y += fp.vy; fp.radius *= 0.96; fp.alpha -= 0.02;
+            if (fp.isSmoke) { fp.color = "#444444"; fp.radius *= 1.02; }
+            ctx.beginPath(); ctx.arc(fp.x, fp.y, Math.max(0.5, fp.radius), 0, Math.PI * 2); ctx.fillStyle = fp.color; ctx.globalAlpha = Math.max(0, fp.alpha); ctx.fill(); ctx.globalAlpha = 1;
+            if (fp.alpha <= 0 || fp.radius <= 0.5) { fireEffectParticles.splice(i, 1); }
         }
 
         for(let i=fireworks.length-1; i>=0; i--) {
-            let fw = fireworks[i];
-            fw.y -= fw.speed;
-            
-            ctx.beginPath();
-            ctx.arc(fw.x, fw.y, fw.radius, 0, Math.PI*2);
-            ctx.fillStyle = fw.color;
-            ctx.fill();
+            let fw = fireworks[i]; fw.y -= fw.speed;
+            ctx.beginPath(); ctx.arc(fw.x, fw.y, fw.radius, 0, Math.PI*2); ctx.fillStyle = fw.color; ctx.fill();
 
             if(fw.y <= fw.targetY) {
                 playSound('fw_explode');
                 for(let j=0; j<45; j++) {
-                    let angle = Math.random() * Math.PI * 2;
-                    let speed = Math.random() * 4 + 1;
-                    fwParticles.push({
-                        x: fw.x,
-                        y: fw.y,
-                        vx: Math.cos(angle) * speed,
-                        vy: Math.sin(angle) * speed,
-                        color: fw.color,
-                        alpha: 1,
-                        decay: Math.random() * 0.02 + 0.015
-                    });
+                    let angle = Math.random() * Math.PI * 2; let speed = Math.random() * 4 + 1;
+                    fwParticles.push({ x: fw.x, y: fw.y, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed, color: fw.color, alpha: 1, decay: Math.random() * 0.02 + 0.015 });
                 }
                 fireworks.splice(i, 1);
             }
         }
 
         for(let i=fwParticles.length-1; i>=0; i--) {
-            let p = fwParticles[i];
-            p.x += p.vx;
-            p.y += p.vy;
-            p.vy += 0.04;
-            p.alpha -= p.decay;
-
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, 2.5, 0, Math.PI*2);
-            ctx.fillStyle = p.color;
-            ctx.globalAlpha = Math.max(0, p.alpha);
-            ctx.fill();
-            ctx.globalAlpha = 1;
-
+            let p = fwParticles[i]; p.x += p.vx; p.y += p.vy; p.vy += 0.04; p.alpha -= p.decay;
+            ctx.beginPath(); ctx.arc(p.x, p.y, 2.5, 0, Math.PI*2); ctx.fillStyle = p.color; ctx.globalAlpha = Math.max(0, p.alpha); ctx.fill(); ctx.globalAlpha = 1;
             if(p.alpha <= 0) fwParticles.splice(i, 1);
         }
 
