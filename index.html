@@ -44,7 +44,6 @@
         .screen { display: none; padding: 16px; flex-grow: 1; overflow-y: auto; }
         .active-screen { display: flex; flex-direction: column; }
 
-        /* Meniu principal aerisit și proporționat */
         #screenClasses {
             padding: 16px;
             padding-bottom: 24px;
@@ -54,7 +53,6 @@
         .card:active { transform: scale(0.98); }
         .lesson-stars { font-size: 1rem; color: #f39c12; }
 
-        /* Sectiuni butoane extra */
         .extra-section { margin-top: 10px; text-align: center; }
         .extra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
         .btn-extra { background: #fffdf7; border: 2px solid #8c5a2b; color: #4a2e1b; padding: 12px 8px; font-weight: bold; font-size: 0.9rem; border-radius: 10px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center; gap: 6px; transition: transform 0.1s; }
@@ -72,7 +70,6 @@
         .summary-box h3:first-child { margin-top: 0; }
         .summary-box ul { margin-left: 18px; margin-top: 6px; }
 
-        /* Escape Room */
         .escape-box { background: #2c1d11; color: #f3e5ab; border: 3px solid #d4a359; padding: 16px; border-radius: 12px; text-align: center; box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
         .locks-row { display: flex; justify-content: center; gap: 8px; margin-bottom: 14px; }
         .lock-card { background: #3d2516; border: 2px solid #8c5a2b; border-radius: 8px; padding: 8px 4px; width: 60px; text-align: center; }
@@ -85,7 +82,6 @@
         .escape-input { width: 80%; max-width: 260px; padding: 10px; font-size: 1.1rem; font-weight: bold; text-align: center; border: 2px solid #d4a359; border-radius: 8px; background: #fdf6e2; color: #2c1d11; margin-bottom: 10px; text-transform: uppercase; }
         .escape-hint { font-size: 0.85rem; color: #e67e22; margin-top: 8px; font-style: italic; display: none; }
 
-        /* Animație Ușă Escape Room */
         .door-modal {
             display: none;
             position: fixed;
@@ -226,7 +222,6 @@
         #wheelCanvas { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         .wheel-pointer { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 20px solid #c0392b; z-index: 10; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4)); }
 
-        /* Stiluri Antrenament Solo */
         .duel-box {
             background: #fffdf7;
             border: 2px solid #8c5a2b;
@@ -321,15 +316,18 @@
             </div>
         </div>
 
-        <!-- Section: Cufăr Zilnic & Antrenament Solo (2 Coloane) -->
+        <!-- Section: Cufăr Zilnic & Antrenament Solo -->
         <div class="extra-grid" style="margin-top: 10px;">
             <button id="btnDailyChest" class="btn-action" style="width: 100%;" onclick="openWheelModal()">🎁 Cufăr Istoric Zilnic</button>
             <button id="btnSolo" class="btn-action" style="width: 100%;" onclick="openDuelSetup()">⚔️ Antrenament Solo</button>
         </div>
 
-        <!-- Section: Despre aplicație -->
-        <div style="text-align: center; margin-top: 14px;">
-            <button id="btnDespre" class="btn-action" style="width: 80%;" onclick="deschideDespre()">ℹ️ Despre aplicație</button>
+        <!-- Section: Porecle & Despre aplicație (2 Coloane) -->
+        <div class="extra-grid" style="margin-top: 10px;">
+            <button class="btn-extra" onclick="deschideModulPorecleEpoci()">
+                <span>🏷️</span> Porecle Celebre
+            </button>
+            <button id="btnDespre" class="btn-action" style="width: 100%;" onclick="deschideDespre()">ℹ️ Despre aplicație</button>
         </div>
     </div>
 
@@ -373,6 +371,26 @@
 
     <div id="screenAsasinateDetail" class="screen">
         <div class="summary-box" id="asasinateDetailContent"></div>
+    </div>
+
+    <!-- ECRANE PORECLE CELEBRE -->
+    <div id="screenPorecleEpoci" class="screen">
+        <h3 style="margin-bottom: 14px; color: #4a2e1b;">🏷️ Porecle Celebre - Alege Epoca:</h3>
+        <div class="card" onclick="deschideListaPorecle('antichitate')"><span>🏛️ Antichitate</span></div>
+        <div class="card" onclick="deschideListaPorecle('evulMediu')"><span>⚔️ Evul Mediu</span></div>
+        <div class="card" onclick="deschideListaPorecle('epocamoderna')"><span>🎩 Epoca Modernă</span></div>
+        <div class="card" onclick="deschideListaPorecle('contemporana')"><span>🚀 Epoca Contemporană</span></div>
+        <!-- CARDUL NOU PENTRU PORECLE BIZARE -->
+        <div class="card" onclick="deschideListaPorecle('bizare')"><span>🤪 Porecle Bizare</span></div>
+    </div>
+
+    <div id="screenPorecleLista" class="screen">
+        <h3 id="porecleListaTitle" style="margin-bottom: 14px; color: #4a2e1b;">Personaje Istorice și Porecle</h3>
+        <div id="porecleContainer"></div>
+    </div>
+
+    <div id="screenPorecleDetail" class="screen">
+        <div class="summary-box" id="porecleDetailContent"></div>
     </div>
 
     <!-- ECRAN CONFIGURARE ANTRENAMENT SOLO -->
@@ -602,6 +620,7 @@
 <script src="lectii.js"></script>
 <script src="barfe.js"></script>
 <script src="asasinate.js"></script>
+<script src="porecle.js"></script>
 
 <script>
     const APP_TITLE = "Istorie gimnaziu: lecții, quizz-uri, jocuri";
@@ -617,24 +636,33 @@
     let barfeSursaCurenta = 'universal';
     let barfeEpocaCurenta = '';
     let asasinateEpocaCurenta = '';
+    let porecleEpocaCurenta = '';
+
+    // Gestionare adâncime istoric pentru butonul Back de la Android
+    let historyDepth = 0;
+
+    function pushNavigationState() {
+        historyDepth++;
+        window.location.hash = "#step" + historyDepth;
+    }
 
     const LEVELS = [
-        { level: 1,  title: "Mic Arheolog",            minXP: 0,     maxXP: 200,    avatar: '🛡️' },
-        { level: 2,  title: "Explorator de Istorie",  minXP: 200,   maxXP: 500,    avatar: '🏛️' },
+        { level: 1,  title: "Mic Arheolog",           minXP: 0,     maxXP: 200,    avatar: '🛡️' },
+        { level: 2,  title: "Explorator de Istorie",   minXP: 200,   maxXP: 500,    avatar: '🏛️' },
         { level: 3,  title: "Scrib Regal",             minXP: 500,   maxXP: 900,    avatar: '📜' },
-        { level: 4,  title: "Cronicar de Seamă",       minXP: 900,   maxXP: 1400,   avatar: '⚔️' },
+        { level: 4,  title: "Cronicar de Seamă",       minXP: 900,   maxXP: 1400,   avatar: '⚔' },
         { level: 5,  title: "Centurion al Cunoașterii",minXP: 1400,  maxXP: 2100,   avatar: '🗡️' },
         { level: 6,  title: "Cavaler al Coroanei",     minXP: 2100,  maxXP: 3000,   avatar: '🏰' },
-        { level: 7,  title: "Strateg al Regatului",   minXP: 3000,  maxXP: 4100,   avatar: '👑' },
+        { level: 7,  title: "Strateg al Regatului",    minXP: 3000,  maxXP: 4100,   avatar: '👑' },
         { level: 8,  title: "Sfetnic Domnesc",        minXP: 4100,  maxXP: 5400,   avatar: '🦅' },
-        { level: 9,  title: "Maestru al Arhivelor",   minXP: 5400,  maxXP: 6900,   avatar: '🗝️' },
-        { level: 10, title: "Gvardian al Istoriei",   minXP: 6900,  maxXP: 8600,   avatar: '🛡️' },
-        { level: 11, title: "Arhitect al Epocilor",   minXP: 8600,  maxXP: 10500,  avatar: '🏛️' },
+        { level: 9,  title: "Maestru al Arhivelor",    minXP: 5400,  maxXP: 6900,   avatar: '🗝️' },
+        { level: 10, title: "Gvardian al Istoriei",    minXP: 6900,  maxXP: 8600,   avatar: '🛡️' },
+        { level: 11, title: "Arhitect al Epocilor",    minXP: 8600,  maxXP: 10500,  avatar: '🏛️' },
         { level: 12, title: "Mare Cronicar",          minXP: 10500, maxXP: 12600,  avatar: '📜' },
-        { level: 13, title: "Comandant Suprem",       minXP: 12600, maxXP: 14900,  avatar: '⚔️' },
+        { level: 13, title: "Comandant Suprem",        minXP: 12600, maxXP: 14900,  avatar: '⚔️' },
         { level: 14, title: "Senator al Cunoașterii", minXP: 14900, maxXP: 17400,  avatar: '🏛️' },
-        { level: 15, title: "Erou al Neamului",       minXP: 17400, maxXP: 20100,  avatar: '👑' },
-        { level: 16, title: "Titan al Istoriei",      minXP: 20100, maxXP: 23000,  avatar: '🔱' },
+        { level: 15, title: "Erou al Neamului",        minXP: 17400, maxXP: 20100,  avatar: '👑' },
+        { level: 16, title: "Titan al Istoriei",       minXP: 20100, maxXP: 23000,  avatar: '🔱' },
         { level: 17, title: "Marele Inquisitor",      minXP: 23000, maxXP: 26100,  avatar: '🦅' },
         { level: 18, title: "Păzitorul Timpului",      minXP: 26100, maxXP: 29400,  avatar: '⏳' },
         { level: 19, title: "Arhonte Suprem",          minXP: 29400, maxXP: 33000,  avatar: '👑' },
@@ -884,6 +912,7 @@
     }
 
     function openClass(clsKey) {
+        pushNavigationState();
         currentClassKey = clsKey;
         document.getElementById('headerTitle').innerText = "Clasa a " + clsKey + "-a";
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
@@ -907,7 +936,8 @@
         });
     }
 
-   function openLessonDetail(clsKey, lessonIdx) {
+    function openLessonDetail(clsKey, lessonIdx) {
+        pushNavigationState();
         currentLessonData = dbLectii[clsKey][lessonIdx];
         currentLessonIdx = lessonIdx;
         currentQuizIndex = 0;
@@ -938,6 +968,7 @@
     }
 
     function deschideModulBarfeSelectSursa() {
+        pushNavigationState();
         document.getElementById('headerTitle').innerText = "💬 Bârfele Cetății";
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
         document.getElementById('screenBarfeSursa').classList.add('active-screen');
@@ -945,6 +976,7 @@
     }
 
     function alegeSursaBarfe(sursa) {
+        pushNavigationState();
         barfeSursaCurenta = sursa;
         let titluSursa = (sursa === 'universal') ? "Istorie Universală" : "Istoria Românilor";
         document.getElementById('barfeEpociTitle').innerText = "💬 Bârfele Cetății (" + titluSursa + ") - Alege Epoca:";
@@ -953,6 +985,7 @@
     }
 
     function deschideListaBarfe(epoca) {
+        pushNavigationState();
         barfeEpocaCurenta = epoca;
         const container = document.getElementById('barfeContainer');
         container.innerHTML = '';
@@ -979,6 +1012,7 @@
     }
 
     function afiseazaDetaliuBarfa(item) {
+        pushNavigationState();
         document.getElementById('headerTitle').innerText = item.titlu;
         document.getElementById('barfeDetailContent').innerHTML = `
             <h3 style="color:#c0392b; margin-bottom:12px;">${item.titlu}</h3>
@@ -989,6 +1023,7 @@
     }
 
     function deschideModulAsasinateEpoci() {
+        pushNavigationState();
         document.getElementById('headerTitle').innerText = "🗡️ Asasinate Celebre";
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
         document.getElementById('screenAsasinateEpoci').classList.add('active-screen');
@@ -996,12 +1031,13 @@
     }
 
     function deschideListaAsasinate(epoca) {
+        pushNavigationState();
         asasinateEpocaCurenta = epoca;
         const container = document.getElementById('asasinateContainer');
         container.innerHTML = '';
 
         let denumireEpoci = { antichitate: "Antichitate", evulMediu: "Evul Mediu", epocamoderna: "Epoca Modernă", contemporana: "Epoca Contemporană" };
-        document.getElementById('asasinateListaTitle').innerText = "🗡️ " + denumireEpoci[epoca];
+        document.getElementById('asasinateListaTitle').innerText = "🗡 " + denumireEpoci[epoca];
 
         let lista = (typeof asasinateData !== 'undefined' && asasinateData[epoca]) ? asasinateData[epoca] : [];
 
@@ -1022,12 +1058,13 @@
     }
 
     function afiseazaDetaliuAsasinat(item) {
+        pushNavigationState();
         document.getElementById('headerTitle').innerText = item.titlu;
         
         let htmlContent = `<h3 style="color:#c0392b; margin-bottom:10px;">${item.titlu}</h3>`;
         if(item.victima) htmlContent += `<p style="margin-bottom:4px;"><b>👤 Victima:</b> ${item.victima}</p>`;
         if(item.an) htmlContent += `<p style="margin-bottom:4px;"><b>📅 Anul/Data:</b> ${item.an}</p>`;
-        if(item.faptas) htmlContent += `<p style="margin-bottom:4px;"><b>🗡️ Autorul:</b> ${item.faptas}</p>`;
+        if(item.faptas) htmlContent += `<p style="margin-bottom:4px;"><b>🗡 Autorul:</b> ${item.faptas}</p>`;
         if(item.context) htmlContent += `<p style="margin-bottom:4px;"><b>🎯 Motiv/Context:</b> ${item.context}</p>`;
         if(item.detalii) htmlContent += `<br><div style="font-size:0.95rem; line-height:1.5; color:#2c1d11;">${item.detalii}</div>`;
         if(item.impact) htmlContent += `<br><p style="color:#8c5a2b; font-weight:bold;"><b>💥 Impact istoric:</b> ${item.impact}</p>`;
@@ -1035,6 +1072,63 @@
         document.getElementById('asasinateDetailContent').innerHTML = htmlContent;
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
         document.getElementById('screenAsasinateDetail').classList.add('active-screen');
+    }
+
+    /* LOGICĂ PORECLE CELEBRE */
+    function deschideModulPorecleEpoci() {
+        pushNavigationState();
+        document.getElementById('headerTitle').innerText = "🏷️ Porecle Celebre";
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById('screenPorecleEpoci').classList.add('active-screen');
+        document.getElementById('backBtn').style.display = 'block';
+    }
+
+    function deschideListaPorecle(epoca) {
+        pushNavigationState();
+        porecleEpocaCurenta = epoca;
+        const container = document.getElementById('porecleContainer');
+        container.innerHTML = '';
+
+        let denumireEpoci = { 
+            antichitate: "Antichitate", 
+            evulMediu: "Evul Mediu", 
+            epocamoderna: "Epoca Modernă", 
+            contemporana: "Epoca Contemporană",
+            bizare: "🤪 Porecle Bizare"
+        };
+        document.getElementById('porecleListaTitle').innerText = "🏷️️ " + (denumireEpoci[epoca] || "Porecle");
+
+        let lista = (typeof porecleData !== 'undefined' && porecleData[epoca]) ? porecleData[epoca] : [];
+
+        if(lista.length === 0) {
+            container.innerHTML = "<p style='text-align:center; padding:20px; color:#5c3a21;'>Nu există porecle adăugate încă pentru această categorie.</p>";
+        } else {
+            lista.forEach((item, idx) => {
+                let div = document.createElement('div');
+                div.className = 'card';
+                div.innerHTML = `<span>${item.titlu || item.personaj}</span>`;
+                div.onclick = () => afiseazaDetaliuPorecla(item);
+                container.appendChild(div);
+            });
+        }
+
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById('screenPorecleLista').classList.add('active-screen');
+    }
+
+    function afiseazaDetaliuPorecla(item) {
+        pushNavigationState();
+        document.getElementById('headerTitle').innerText = item.titlu || item.personaj;
+        
+        let htmlContent = `<h3 style="color:#c0392b; margin-bottom:10px;">${item.titlu || item.personaj}</h3>`;
+        if(item.personaj) htmlContent += `<p style="margin-bottom:4px;"><b>👤 Personajul:</b> ${item.personaj}</p>`;
+        if(item.porecla) htmlContent += `<p style="margin-bottom:4px;"><b>🏷️ Porecla / Titlul:</b> ${item.porecla}</p>`;
+        if(item.originea) htmlContent += `<p style="margin-bottom:4px;"><b>💡 Originea poreclei:</b> ${item.originea}</p>`;
+        if(item.detalii) htmlContent += `<br><div style="font-size:0.95rem; line-height:1.5; color:#2c1d11;">${item.detalii}</div>`;
+
+        document.getElementById('porecleDetailContent').innerHTML = htmlContent;
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById('screenPorecleDetail').classList.add('active-screen');
     }
 
     function deschideStiaiCa() {
@@ -1045,7 +1139,12 @@
         }
     }
 
-    function goBack() {
+    function goBack(fromHardwareBack = false) {
+        if (!fromHardwareBack && window.location.hash !== "") {
+            window.history.back();
+            return;
+        }
+
         const detail = document.getElementById('screenDetail');
         const lessons = document.getElementById('screenLessons');
         const setupDuel = document.getElementById('screenDuelSetup');
@@ -1060,6 +1159,10 @@
         const asasinateEpoci = document.getElementById('screenAsasinateEpoci');
         const asasinateLista = document.getElementById('screenAsasinateLista');
         const asasinateDetail = document.getElementById('screenAsasinateDetail');
+
+        const porecleEpoci = document.getElementById('screenPorecleEpoci');
+        const porecleLista = document.getElementById('screenPorecleLista');
+        const porecleDetail = document.getElementById('screenPorecleDetail');
 
         if (barfeDetail.classList.contains('active-screen')) {
             barfeDetail.classList.remove('active-screen');
@@ -1080,6 +1183,7 @@
             document.getElementById('screenClasses').classList.add('active-screen');
             document.getElementById('headerTitle').innerText = APP_TITLE;
             document.getElementById('backBtn').style.display = 'none';
+            historyDepth = 0;
         } else if (asasinateDetail.classList.contains('active-screen')) {
             asasinateDetail.classList.remove('active-screen');
             asasinateLista.classList.add('active-screen');
@@ -1094,6 +1198,28 @@
             document.getElementById('screenClasses').classList.add('active-screen');
             document.getElementById('headerTitle').innerText = APP_TITLE;
             document.getElementById('backBtn').style.display = 'none';
+            historyDepth = 0;
+        } else if (porecleDetail.classList.contains('active-screen')) {
+            porecleDetail.classList.remove('active-screen');
+            porecleLista.classList.add('active-screen');
+            let denumireEpoci = { 
+                antichitate: "Antichitate", 
+                evulMediu: "Evul Mediu", 
+                epocamoderna: "Epoca Modernă", 
+                contemporana: "Epoca Contemporană",
+                bizare: "🤪 Porecle Bizare"
+            };
+            document.getElementById('headerTitle').innerText = "🏷️ " + (denumireEpoci[porecleEpocaCurenta] || "Porecle");
+        } else if (porecleLista.classList.contains('active-screen')) {
+            porecleLista.classList.remove('active-screen');
+            porecleEpoci.classList.add('active-screen');
+            document.getElementById('headerTitle').innerText = "🏷️ Porecle Celebre";
+        } else if (porecleEpoci.classList.contains('active-screen')) {
+            porecleEpoci.classList.remove('active-screen');
+            document.getElementById('screenClasses').classList.add('active-screen');
+            document.getElementById('headerTitle').innerText = APP_TITLE;
+            document.getElementById('backBtn').style.display = 'none';
+            historyDepth = 0;
         } else if (gameDuel.classList.contains('active-screen') || resultDuel.classList.contains('active-screen')) {
             clearInterval(duelState.timer);
             gameDuel.classList.remove('active-screen');
@@ -1105,20 +1231,20 @@
             document.getElementById('screenClasses').classList.add('active-screen');
             document.getElementById('headerTitle').innerText = APP_TITLE;
             document.getElementById('backBtn').style.display = 'none';
+            historyDepth = 0;
         } else if(detail.classList.contains('active-screen')) {
             detail.classList.remove('active-screen');
             lessons.classList.add('active-screen');
             document.getElementById('headerTitle').innerText = "Clasa a " + currentClassKey + "-a";
-            openClass(currentClassKey);
             
             isVictory = false; 
             if(victoryAnimationId) cancelAnimationFrame(victoryAnimationId);
-            
         } else {
             lessons.classList.remove('active-screen');
             document.getElementById('screenClasses').classList.add('active-screen');
             document.getElementById('headerTitle').innerText = APP_TITLE;
             document.getElementById('backBtn').style.display = 'none';
+            historyDepth = 0;
         }
     }
 
@@ -1187,6 +1313,7 @@
     let duelState = { clasa: 'V', minLecție: 1, maxLecție: 10, intrebari: [], indexCurent: 0, scor: 0, timer: null, timpRamas: 15 };
 
     function openDuelSetup() {
+        pushNavigationState();
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
         document.getElementById('screenDuelSetup').classList.add('active-screen');
         document.getElementById('headerTitle').innerText = "⚔️ Antrenament Solo";
@@ -1856,6 +1983,19 @@
 
         victoryAnimationId = requestAnimationFrame(animateVictory);
     }
+
+    // Ascultăm când utilizatorul apasă pe butonul fizic sau de gest Back de la Android
+    window.addEventListener('hashchange', function() {
+        let currentLevel = 0;
+        if (window.location.hash.startsWith("#step")) {
+            currentLevel = parseInt(window.location.hash.replace("#step", "")) || 0;
+        }
+
+        if (currentLevel < historyDepth) {
+            historyDepth = currentLevel;
+            goBack(true);
+        }
+    });
 
     updateXP(0);
     updateStreak();

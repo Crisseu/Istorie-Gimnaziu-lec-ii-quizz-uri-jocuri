@@ -817,7 +817,7 @@ const barfeData = {
     ], epocamoderna: [
         {
     titlu: "💔 Amanta din umbră și sacrificiul Doamnei Elena Cuza",
-    detalii: "În timp ce Alexandru Ioan Cuza reformat statul modern, viața sa amoroasă stârnea un scandal uriaș! Domnitorul s-a îndrăgostit nebunește de prințesa Maria Obrenovici, instalând-o într-o casă conspirativă chiar lângă Palatul Domnesc din București. Deși părăsită în umbră și umilită de zvonurile din presă, Doamna Elena Cuza a dat dovadă de o demnitate uluitoare: neputând avea copii, a acceptat să-i adopte și să-i crească pe cei doi fiii nelegitimi ai soțului ei și ai amantei sale!"
+    detalii: "În timp ce Alexandru Ioan Cuza reforma statul modern, viața sa amoroasă stârnea un scandal uriaș! Domnitorul s-a îndrăgostit nebunește de prințesa Maria Obrenovici, instalând-o într-o casă conspirativă chiar lângă Palatul Domnesc din București. Deși părăsită în umbră și umilită de zvonurile din presă, Doamna Elena Cuza a dat dovadă de o demnitate uluitoare: neputând avea copii, a acceptat să-i adopte și să-i crească pe cei doi fiii nelegitimi ai soțului ei și ai amantei sale!"
 },
 {
     titlu: "💃 Mița Biciclista – Curtezana extravagantă din Micul Paris care a cucerit regi și miniștri",
@@ -830,7 +830,7 @@ const barfeData = {
 
 {
     titlu: "💔 Tânără prințesă în 'colivia de aur' – Regimul draconian al lui Carol I asupra viitoarei Regine Maria",
-    detalii: "Sosita în România în 1893 ca tânără mireasă a principelui Ferdinand, Maria de Edinburgh s-a lovit de eticheta rigidă impusă de Regele Carol I. Suveranul îi controla strict ieșirile, îi cenzura corespondența și îi izola anturajul pentru a preveni orice influență străină. Când între principesa de doar 17 ani și chipeșul locotenent Zizi Cantacuzino s-a legat o prietenie strânsă ce stârnea bârfe la Curte, Carol I a intervenit fără ezitare, mutându-l disciplinar pe ofițer la o garnizoană izolată din provincie!"
+    detalii: "Sosită în România în 1893 ca tânără mireasă a principelui Ferdinand, Maria de Edinburgh s-a lovit de eticheta rigidă impusă de Regele Carol I. Suveranul îi controla strict ieșirile, îi cenzura corespondența și îi izola anturajul pentru a preveni orice influență străină. Când între principesa de doar 17 ani și chipeșul locotenent Zizi Cantacuzino s-a legat o prietenie strânsă ce stârnea bârfe la Curte, Carol I a intervenit fără ezitare, mutându-l disciplinar pe ofițer la o garnizoană izolată din provincie!"
 },
 {
     titlu: "🎩 'Afacerea Hallier' – Scandalul podurilor prăbușite din vremea lui Cuza",
