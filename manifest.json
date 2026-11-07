@@ -1,7 +1,7 @@
 {
   "name": "Istorie Gimnaziu",
   "short_name": "Istorie",
-  "start_url": "/",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f4f1ea",
   "theme_color": "#4a2e1b",
