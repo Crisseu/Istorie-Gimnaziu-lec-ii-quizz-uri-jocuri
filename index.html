@@ -125,10 +125,10 @@
         header {
             background: var(--header-bg);
             color: var(--header-text);
-            padding: 14px 44px;
+            padding: 14px 48px;
             padding-top: max(14px, env(safe-area-inset-top));
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1.08rem;
             font-weight: bold;
             position: relative;
             border-bottom: 4px solid var(--header-border);
@@ -162,7 +162,7 @@
             cursor: pointer;
             font-weight: bold;
             display: none;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
         }
 
         .player-bar {
@@ -248,7 +248,7 @@
             margin-bottom: 14px;
             cursor: pointer;
             box-shadow: 0 6px 14px rgba(0,0,0,0.1);
-            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            transition: transform 0.15s ease;
             display: flex;
             align-items: center;
             gap: 14px;
@@ -266,19 +266,9 @@
             border-left: 8px solid #1e3a8a;
             color: #0f172a;
         }
-        .subject-icon {
-            font-size: 2.6rem;
-            flex-shrink: 0;
-        }
-        .subject-info h3 {
-            font-size: 1.15rem;
-            margin-bottom: 4px;
-        }
-        .subject-info p {
-            font-size: 0.86rem;
-            opacity: 0.85;
-            line-height: 1.35;
-        }
+        .subject-icon { font-size: 2.6rem; flex-shrink: 0; }
+        .subject-info h3 { font-size: 1.15rem; margin-bottom: 4px; }
+        .subject-info p { font-size: 0.86rem; opacity: 0.85; line-height: 1.35; }
         .subject-stats-pill {
             display: inline-block;
             margin-top: 6px;
@@ -327,6 +317,18 @@
         .btn-action:hover {
             background-color: var(--accent);
             color: #ffffff;
+        }
+        .btn-conquest-hero {
+            width: 100%;
+            margin-top: 10px;
+            background: linear-gradient(135deg, #d97706, #b45309);
+            color: #ffffff;
+            border: 2px solid #f59e0b;
+            font-size: 1rem;
+            padding: 14px;
+        }
+        .btn-conquest-hero:hover {
+            background: linear-gradient(135deg, #b45309, #92400e);
         }
 
         /* TABS DETALIU LECȚIE */
@@ -378,7 +380,7 @@
         .summary-box h3:first-child { margin-top: 0; }
         .summary-box ul { margin-left: 18px; margin-top: 6px; }
 
-        /* CANVAS JOC (ASEDIU ISTORIE & TRIBUNA SOCIALĂ) */
+        /* CANVAS JOC (ASEDIU & TRIBUNA) */
         .game-container {
             position: relative;
             width: 100%;
@@ -470,9 +472,7 @@
             transition: transform 1s ease;
             box-shadow: inset 0 0 18px rgba(0,0,0,0.6);
         }
-        .escape-door.open {
-            transform: rotateY(-78deg);
-        }
+        .escape-door.open { transform: rotateY(-78deg); }
         .escape-input {
             width: 100%;
             padding: 10px;
@@ -529,30 +529,65 @@
             display: none;
         }
 
-        /* ANTRENAMENT SOLO */
+        /* SELECTOR MULTI-CLASĂ & ANTRENAMENT SOLO */
         .duel-box {
             background: var(--card-bg);
             border: 2px solid var(--accent);
             border-radius: 12px;
-            padding: 16px;
+            padding: 14px;
             color: var(--card-text);
             box-shadow: 0 4px 8px rgba(0,0,0,0.06);
         }
-        .duel-group {
+        .multi-class-card {
             background: var(--accent-light);
-            border: 1px solid var(--accent-border);
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 12px;
+            border: 1.5px solid var(--accent-border);
+            border-radius: 10px;
+            padding: 10px 12px;
+            margin-bottom: 10px;
             text-align: left;
+            transition: opacity 0.2s;
+        }
+        .multi-class-card.disabled {
+            opacity: 0.55;
+        }
+        .multi-class-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        .multi-class-check {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            color: var(--accent-dark);
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        .multi-class-check input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent);
+            cursor: pointer;
+        }
+        .btn-mini-all {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 3px 9px;
+            font-size: 0.78rem;
+            font-weight: bold;
+            cursor: pointer;
         }
         .duel-slider-row {
             display: flex;
             justify-content: space-between;
             font-weight: bold;
             color: var(--accent-dark);
-            margin-bottom: 6px;
-            font-size: 0.9rem;
+            margin-bottom: 4px;
+            font-size: 0.84rem;
         }
         .duel-slider-container {
             display: flex;
@@ -564,12 +599,128 @@
             accent-color: var(--accent);
             cursor: pointer;
         }
+        .selection-summary-pill {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            color: #78350f;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.88rem;
+            text-align: center;
+            margin: 10px 0;
+        }
         .duel-options-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
             margin-top: 12px;
         }
+
+        /* CUCERIREA REGIUNILOR (TRIVIADOR) */
+        .mode-pills {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .mode-pill {
+            background: #f1f5f9;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 10px 8px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.86rem;
+            color: #1e293b;
+        }
+        .mode-pill.active {
+            background: var(--accent-light);
+            border-color: var(--accent);
+            color: var(--accent-dark);
+        }
+        .conquest-hud {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            margin-bottom: 6px;
+        }
+        .player-score-card {
+            border-radius: 8px;
+            padding: 6px 8px;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+        }
+        .player-score-card.active-turn {
+            outline: 3px solid #facc15;
+            transform: scale(1.02);
+        }
+        .conquest-status-bar {
+            background: var(--accent-dark);
+            color: #fff;
+            padding: 7px 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.86rem;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+        canvas.conquest-canvas {
+            width: 100%;
+            max-width: 720px;
+            height: auto;
+            aspect-ratio: 8 / 5.4;
+            border-radius: 10px;
+            border: 2px solid var(--accent);
+            background: #dbeafe;
+            display: block;
+            margin: 4px auto 0;
+            touch-action: none !important;
+        }
+
+        /* POP-OUT ÎNTREBARE & BUZZER PESTE HARTĂ */
+        .conquest-quiz-panel {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 92%;
+            max-width: 500px;
+            max-height: 86vh;
+            overflow-y: auto;
+            z-index: 950;
+            background: #0f172a;
+            color: #f8fafc;
+            border: 3px solid #f59e0b;
+            border-radius: 14px;
+            padding: 16px;
+            margin: 0;
+            box-shadow: 0 0 0 100vmax rgba(15, 23, 42, 0.72), 0 14px 32px rgba(0, 0, 0, 0.65);
+        }
+        .buzzer-arena {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .buzzer-btn {
+            padding: 22px 10px;
+            border-radius: 12px;
+            border: 3px solid #ffffff;
+            color: #ffffff;
+            font-size: 1.05rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+            transition: transform 0.08s;
+        }
+        .buzzer-btn:active { transform: scale(0.95); }
+        .buzzer-p1 { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+        .buzzer-p2 { background: linear-gradient(135deg, #dc2626, #b91c1c); }
 
         .wordwall-tip-box {
             background: #fefce8;
@@ -726,7 +877,7 @@
             <div class="subject-icon">🏛️</div>
             <div class="subject-info">
                 <h3>Istorie (Clasele V–VIII)</h3>
-                <p>Lecții, Asediul Cetății, Escape Room cu 4 lacăte, Bârfele Cetății, Asasinate și Porecle Celebre.</p>
+                <p>Lecții, Asediul Cetății, Escape Room cu 4 lacăte, Cucerirea Regiunilor, Bârfele Cetății, Asasinate și Porecle.</p>
                 <span class="subject-stats-pill" id="hubHistoryStats">Nivel 1 • 0 XP</span>
             </div>
         </div>
@@ -749,7 +900,10 @@
     <div id="screenClasses" class="screen">
         <div id="classCardsContainer"></div>
 
-        <div class="extra-grid" style="margin-top: 14px;">
+        <!-- BUTON JOC TIP TRIVIADOR -->
+        <button class="btn-action btn-conquest-hero" onclick="openConquestSetup()">🗺️ Cucerirea Regiunilor (Stil Triviador)</button>
+
+        <div class="extra-grid" style="margin-top: 10px;">
             <button id="btnDailyWheel" class="btn-action" style="width: 100%;" onclick="openWheelModal()">🎡 Roata Norocului</button>
             <button id="btnSolo" class="btn-action" style="width: 100%;" onclick="openDuelSetup()">⚔️ Antrenament Solo</button>
         </div>
@@ -766,36 +920,80 @@
         </div>
     </div>
 
-    <!-- ECRAN 2: CONFIGURARE ANTRENAMENT SOLO -->
+    <!-- ECRAN 2A: CONFIGURARE ANTRENAMENT SOLO (MULTI-CLASĂ) -->
     <div id="screenDuelSetup" class="screen">
         <div class="duel-box">
-            <h2 style="color: var(--accent-dark); margin-bottom: 8px; text-align: center;">⚔️ Antrenament Solo</h2>
-            <p style="font-size:0.88rem; opacity:0.85; margin-bottom:12px; text-align: center;">Alege clasa și intervalul de lecții pentru testul cronometrat!</p>
+            <h2 style="color: var(--accent-dark); margin-bottom: 6px; text-align: center;">⚔️ Antrenament Solo</h2>
+            <p style="font-size:0.86rem; opacity:0.85; margin-bottom:10px; text-align: center;">Bifează una sau mai multe clase și alege lecțiile din fiecare!</p>
 
-            <div class="duel-group">
-                <label for="duelClassSelect"><b>Alege Clasa:</b></label><br>
-                <select id="duelClassSelect" onchange="updateDuelSliders()" style="width: 100%; padding: 8px; font-size: 0.95rem; border-radius: 8px; border: 1px solid var(--accent); margin-top: 4px; background: #ffffff; font-weight: bold; color: #1e293b;">
-                    <option value="V">Clasa a V-a</option>
-                    <option value="VI">Clasa a VI-a</option>
-                    <option value="VII">Clasa a VII-a</option>
-                    <option value="VIII">Clasa a VIII-a</option>
+            <div id="duelMultiClassContainer"></div>
+            <div class="selection-summary-pill" id="duelSelectionSummary">📚 Se calculează...</div>
+
+            <button class="btn-action" style="background: #10b981; color: #fff; border-color: #059669; width: 100%; font-size: 1rem;" onclick="startDuel()">🚀 Începe Antrenamentul!</button>
+        </div>
+    </div>
+
+    <!-- ECRAN 2B: CONFIGURARE CUCERIREA REGIUNILOR (TRIVIADOR MULTI-CLASĂ) -->
+    <div id="screenConquestSetup" class="screen">
+        <div class="duel-box">
+            <h2 style="color: var(--accent-dark); margin-bottom: 6px; text-align: center;">🗺️ Cucerirea Regiunilor</h2>
+            <p style="font-size:0.85rem; opacity:0.85; margin-bottom:10px; text-align: center;">Alege modul de joc și lecțiile (poți combina clasele V–VIII)!</p>
+
+            <div class="mode-pills">
+                <div class="mode-pill active" id="pillModeAI" onclick="setConquestMode('ai')">🤖 Solo vs. 2 Roboți</div>
+                <div class="mode-pill" id="pillModeBuzzer" onclick="setConquestMode('buzzer')">🔔 Duel Buzzer (2 Jucători)</div>
+            </div>
+
+            <div id="aiDifficultyRow" style="margin-bottom: 10px; text-align: left;">
+                <label style="font-weight:bold; font-size:0.88rem; color:var(--accent-dark);">Dificultate Roboți:</label>
+                <select id="conquestAiDifficulty" style="width:100%; padding:7px; border-radius:8px; border:1px solid var(--accent); margin-top:4px; font-weight:bold;">
+                    <option value="easy">🌱 Ușor (Ucenici)</option>
+                    <option value="medium" selected>⚔️ Mediu (Strategi)</option>
+                    <option value="hard">👑 Greu (Maeștri)</option>
                 </select>
             </div>
 
-            <div class="duel-group">
-                <div class="duel-slider-row">
-                    <span>De la lecția: <strong id="valMinLectie">1</strong></span>
-                    <span>Până la lecția: <strong id="valMaxLectie">10</strong></span>
-                </div>
-                <div class="duel-slider-container">
-                    <input type="range" id="sliderMin" min="1" max="50" value="1" oninput="handleRangeSliders()">
-                    <input type="range" id="sliderMax" min="1" max="50" value="10" oninput="handleRangeSliders()">
-                </div>
+            <div id="cqMultiClassContainer"></div>
+            <div class="selection-summary-pill" id="conquestSelectionSummary">📚 Se calculează...</div>
+
+            <button class="btn-action btn-conquest-hero" style="margin-top:4px;" onclick="startConquestGame()">🏰 Începe Cucerirea Hărții!</button>
+        </div>
+    </div>
+
+    <!-- ECRAN 2C: JOC CUCERIREA REGIUNILOR -->
+    <div id="screenConquestGame" class="screen">
+        <div class="conquest-hud" id="conquestHud"></div>
+        <div class="conquest-status-bar" id="conquestStatusBar">Pregătire hartă...</div>
+
+        <canvas id="conquestCanvas" class="conquest-canvas" width="800" height="540"></canvas>
+
+        <!-- POP-OUT ÎNTREBARE / BUZZER -->
+        <div id="conquestQuestionPanel" class="conquest-quiz-panel" style="display:none;">
+            <div style="display:flex; justify-content:space-between; font-size:0.86rem; color:#facc15; font-weight:bold; margin-bottom:8px;">
+                <span id="cqPhaseLabel">⚔️ Duel pentru teritoriu</span>
+                <span>⏳ <span id="cqTimer">15</span>s</span>
+            </div>
+            <div id="cqQuestionText" style="font-weight:bold; font-size:1rem; margin-bottom:12px; line-height:1.4;"></div>
+
+            <!-- BUZZER PENTRU 2 JUCĂTORI -->
+            <div id="cqBuzzerArea" class="buzzer-arena" style="display:none;">
+                <button class="buzzer-btn buzzer-p1" onclick="triggerBuzzer(0)">🔔 JUCĂTOR 1<br><span style="font-size:0.78rem; font-weight:normal;">(Albastru)</span></button>
+                <button class="buzzer-btn buzzer-p2" onclick="triggerBuzzer(1)">🔔 JUCĂTOR 2<br><span style="font-size:0.78rem; font-weight:normal;">(Roșu)</span></button>
             </div>
 
-            <div style="text-align: center; margin-top: 15px;">
-                <button class="btn-action" style="background: #10b981; color: #fff; border-color: #059669; width: 100%; font-size: 1rem;" onclick="startDuel()">🚀 Începe Antrenamentul!</button>
-            </div>
+            <!-- OPȚIUNI RĂSPUNS -->
+            <div id="cqOptionsArea" class="duel-options-grid"></div>
+            <div id="cqFeedbackArea" style="margin-top:10px; font-weight:bold; text-align:center; font-size:0.94rem;"></div>
+        </div>
+    </div>
+
+    <!-- ECRAN 2D: REZULTAT CUCERIREA REGIUNILOR -->
+    <div id="screenConquestResult" class="screen">
+        <div class="duel-box" style="text-align: center;">
+            <h2 style="color: var(--accent-dark);">🏆 Clasament Final – Cucerirea Regiunilor</h2>
+            <div id="conquestPodium" style="margin: 14px 0;"></div>
+            <p id="conquestXpEarned" style="font-weight: bold; color: #059669; margin-bottom: 14px;"></p>
+            <button class="btn-action" style="width: 100%; background: var(--accent); color: white;" onclick="goBack()">🏠 Înapoi la Meniu</button>
         </div>
     </div>
 
@@ -878,13 +1076,7 @@
                     </div>
                 </div>
 
-                <div id="escapeRiddleArea" style="background: rgba(0,0,0,0.35); border: 1px solid #d4a359; border-radius: 10px; padding: 12px; margin-top: 8px;">
-                    <div id="escapeRiddleText" style="font-weight: bold; margin-bottom: 6px; line-height: 1.4;"></div>
-                    <div id="escapeHintText" style="font-size: 0.82rem; color: #fcd34d; margin-bottom: 6px;"></div>
-                    <input type="text" id="escapeAnswerInput" class="escape-input" placeholder="Scrie răspunsul sau codul aici..." onkeydown="if(event.key==='Enter') checkEscapeAnswer()">
-                    <button class="btn-action" style="width: 100%; background: #d97706; color: #fff; border-color: #f59e0b;" onclick="checkEscapeAnswer()">🔑 Descuie Lacătul</button>
-                </div>
-
+                <div id="escapeRiddleArea" style="background: rgba(0,0,0,0.35); border: 1px solid #d4a359; border-radius: 10px; padding: 12px; margin-top: 8px;"></div>
                 <div id="escapeFeedback" style="margin-top: 10px; font-weight: bold; min-height: 22px;"></div>
             </div>
 
@@ -933,7 +1125,7 @@
     <div class="modal-content" style="text-align: left;">
         <span class="close-btn" onclick="inchideModal('modalDespre')">&times;</span>
         <h2>📜 Despre Aplicație</h2>
-        <p><strong>Istorie &amp; Educație Socială Interactivă</strong> reunește într-o singură platformă digitală lecții sintetizate, jocuri educative, simulări, dileme civice și teste cronometrate pentru elevii din clasele V–VIII.</p>
+        <p><strong>Istorie &amp; Educație Socială Interactivă</strong> reunește într-o singură platformă digitală lecții sintetizate, jocuri educative, simulări, dileme civice, cucerirea teritoriilor și teste cronometrate pentru elevii din clasele V–VIII.</p>
         <p style="margin-top:10px;">Toate conținuturile sunt realizate în concordanță cu Programele școlare în vigoare pentru gimnaziu.</p>
         <p style="margin-top:12px;"><strong>prof. Cristi AMĂRIUȚEI</strong></p>
     </div>
@@ -1232,6 +1424,137 @@
         }
     }
 
+    /* =========================================================
+       SELECTOR MULTI-CLASĂ (FOLOSIT LA ANTRENAMENT & TRIVIADOR)
+       ========================================================= */
+    const CLASS_KEYS = ['V', 'VI', 'VII', 'VIII'];
+
+    function renderMultiClassSelector(prefix, summaryElId) {
+        const container = document.getElementById(`${prefix}MultiClassContainer`);
+        container.innerHTML = '';
+
+        CLASS_KEYS.forEach((clsKey, idx) => {
+            const lessons = getLessonsForClass(activeSubject, clsKey);
+            const maxL = lessons.length > 0 ? lessons.length : 1;
+            const defaultChecked = (idx === 0);
+            const defaultMax = Math.min(10, maxL);
+
+            container.innerHTML += `
+                <div class="multi-class-card ${defaultChecked ? '' : 'disabled'}" id="${prefix}_card_${clsKey}">
+                    <div class="multi-class-header">
+                        <label class="multi-class-check">
+                            <input type="checkbox" id="${prefix}_chk_${clsKey}" ${defaultChecked ? 'checked' : ''} onchange="onMultiClassToggle('${prefix}', '${clsKey}', '${summaryElId}')">
+                            <span>Clasa a ${clsKey}-a (${lessons.length} lecții)</span>
+                        </label>
+                        <button type="button" class="btn-mini-all" onclick="selectAllLessonsInClass('${prefix}', '${clsKey}', ${maxL}, '${summaryElId}')">Toate</button>
+                    </div>
+                    <div id="${prefix}_sliders_${clsKey}" style="display: ${defaultChecked ? 'block' : 'none'};">
+                        <div class="duel-slider-row">
+                            <span>De la lecția: <strong id="${prefix}_valMin_${clsKey}">1</strong></span>
+                            <span>Până la lecția: <strong id="${prefix}_valMax_${clsKey}">${defaultMax}</strong></span>
+                        </div>
+                        <div class="duel-slider-container">
+                            <input type="range" id="${prefix}_min_${clsKey}" min="1" max="${maxL}" value="1" oninput="onMultiClassSlider('${prefix}', '${clsKey}', '${summaryElId}')">
+                            <input type="range" id="${prefix}_max_${clsKey}" min="1" max="${maxL}" value="${defaultMax}" oninput="onMultiClassSlider('${prefix}', '${clsKey}', '${summaryElId}')">
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        updateMultiClassSummary(prefix, summaryElId);
+    }
+
+    function onMultiClassToggle(prefix, clsKey, summaryElId) {
+        const chk = document.getElementById(`${prefix}_chk_${clsKey}`);
+        const card = document.getElementById(`${prefix}_card_${clsKey}`);
+        const sliders = document.getElementById(`${prefix}_sliders_${clsKey}`);
+        if (chk.checked) {
+            card.classList.remove('disabled');
+            sliders.style.display = 'block';
+        } else {
+            card.classList.add('disabled');
+            sliders.style.display = 'none';
+        }
+        updateMultiClassSummary(prefix, summaryElId);
+    }
+
+    function selectAllLessonsInClass(prefix, clsKey, maxL, summaryElId) {
+        const chk = document.getElementById(`${prefix}_chk_${clsKey}`);
+        chk.checked = true;
+        onMultiClassToggle(prefix, clsKey, summaryElId);
+        document.getElementById(`${prefix}_min_${clsKey}`).value = "1";
+        document.getElementById(`${prefix}_max_${clsKey}`).value = maxL.toString();
+        onMultiClassSlider(prefix, clsKey, summaryElId);
+    }
+
+    function onMultiClassSlider(prefix, clsKey, summaryElId) {
+        const sMin = document.getElementById(`${prefix}_min_${clsKey}`);
+        const sMax = document.getElementById(`${prefix}_max_${clsKey}`);
+        let minV = parseInt(sMin.value) || 1;
+        let maxV = parseInt(sMax.value) || 1;
+        if (minV > maxV) { sMin.value = maxV; minV = maxV; }
+        document.getElementById(`${prefix}_valMin_${clsKey}`).innerText = minV;
+        document.getElementById(`${prefix}_valMax_${clsKey}`).innerText = maxV;
+        updateMultiClassSummary(prefix, summaryElId);
+    }
+
+    function extractQuestionsFromMultiClass(prefix) {
+        let totalLessons = 0;
+        let pool = [];
+
+        CLASS_KEYS.forEach(clsKey => {
+            const chk = document.getElementById(`${prefix}_chk_${clsKey}`);
+            if (!chk || !chk.checked) return;
+
+            const minL = parseInt(document.getElementById(`${prefix}_min_${clsKey}`).value) || 1;
+            const maxL = parseInt(document.getElementById(`${prefix}_max_${clsKey}`).value) || 1;
+            const lessons = getLessonsForClass(activeSubject, clsKey);
+
+            lessons.forEach((l, idx) => {
+                const nr = idx + 1;
+                if (nr >= minL && nr <= maxL) {
+                    totalLessons++;
+                    if (l.quiz && Array.isArray(l.quiz)) {
+                        l.quiz.forEach(qItem => {
+                            let optsList = Object.values(qItem).find(val => Array.isArray(val)) || [];
+                            if (optsList.length === 0 && qItem.a && qItem.b) {
+                                optsList = [qItem.a, qItem.b, qItem.c, qItem.d].filter(Boolean);
+                            }
+
+                            let correctIdx = 0;
+                            for (const [k, v] of Object.entries(qItem)) {
+                                if (k !== 'nr' && k !== 'id' && typeof v === 'number') {
+                                    correctIdx = v;
+                                    break;
+                                }
+                            }
+
+                            if (optsList.length > 0) {
+                                pool.push({
+                                    intrebare: qItem.intrebare || qItem.q || qItem.text || "Întrebare:",
+                                    optiuni: optsList,
+                                    corect: correctIdx,
+                                    clasa: clsKey
+                                });
+                            }
+                        });
+                    }
+                }
+            });
+        });
+
+        return { totalLessons, pool };
+    }
+
+    function updateMultiClassSummary(prefix, summaryElId) {
+        const { totalLessons, pool } = extractQuestionsFromMultiClass(prefix);
+        const el = document.getElementById(summaryElId);
+        if (el) {
+            el.innerText = `📚 Selectate: ${totalLessons} lecții • ${pool.length} întrebări disponibile`;
+        }
+    }
+
     /* NAVIGARE ÎNTRE MATERII ȘI ECRANE */
     function selectSubject(subj) {
         pushNavigationState();
@@ -1265,6 +1588,7 @@
 
     function returnToSubjectHub() {
         clearInterval(duelState.timer);
+        clearInterval(cqState.timer);
         activeSubject = null;
         historyDepth = 0;
         if (window.location.hash !== "") {
@@ -1286,7 +1610,10 @@
     function openClass(clsKey) {
         pushNavigationState();
         currentClassKey = clsKey;
+        openClassWithoutPush(clsKey);
+    }
 
+    function openClassWithoutPush(clsKey) {
         document.getElementById('headerTitle').innerText = `Clasa a ${clsKey}-a`;
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
         document.getElementById('screenLessons').classList.add('active-screen');
@@ -1326,7 +1653,6 @@
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
         document.getElementById('screenDetail').classList.add('active-screen');
 
-        // Configurare taburi în funcție de materie
         if (activeSubject === 'history') {
             document.getElementById('tabBtnGame').innerText = "🏰 Asediu";
             document.getElementById('tabBtnSpecial').innerText = "🔐 Escape Room";
@@ -1341,7 +1667,6 @@
             initDilemmaModule();
         }
 
-        // Rezumat
         let htmlRezumat = currentLessonData.rezumat || "<p>Rezumatul acestei lecții este în curs de actualizare.</p>";
         if (currentLessonData.stiaiCa) {
             htmlRezumat += `
@@ -1353,7 +1678,6 @@
         }
         document.getElementById('summaryBoxContent').innerHTML = htmlRezumat;
 
-        // Wordwall / Genially (suport 1 sau 2 link-uri)
         const iframe1 = document.getElementById('iframeGame1');
         const iframe2 = document.getElementById('iframeGame2');
         const wrapper1 = document.getElementById('wrapperGame1');
@@ -1391,86 +1715,32 @@
     }
 
     /* =========================================================
-       ANTRENAMENT SOLO (COMUN PENTRU AMBELE MATERII)
+       ANTRENAMENT SOLO (CU SELECTOR MULTI-CLASĂ)
        ========================================================= */
-    let duelState = { clasa: 'V', minLectie: 1, maxLectie: 10, intrebari: [], indexCurent: 0, scor: 0, timer: null, timpRamas: 15 };
+    let duelState = { intrebari: [], indexCurent: 0, scor: 0, timer: null, timpRamas: 15 };
 
     function openDuelSetup() {
         pushNavigationState();
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
         document.getElementById('screenDuelSetup').classList.add('active-screen');
         document.getElementById('headerTitle').innerText = "⚔️ Antrenament Solo";
-        document.getElementById('duelClassSelect').value = 'V';
-        updateDuelSliders();
-    }
-
-    function updateDuelSliders() {
-        let cls = document.getElementById('duelClassSelect').value;
-        let lessons = getLessonsForClass(activeSubject, cls);
-        let maxLectii = lessons.length > 0 ? lessons.length : 30;
-
-        let sMin = document.getElementById('sliderMin');
-        let sMax = document.getElementById('sliderMax');
-
-        sMin.min = "1"; sMin.max = maxLectii.toString();
-        sMax.min = "1"; sMax.max = maxLectii.toString();
-
-        sMin.value = "1";
-        sMax.value = Math.min(10, maxLectii).toString();
-        handleRangeSliders();
-    }
-
-    function handleRangeSliders() {
-        let sMin = document.getElementById('sliderMin');
-        let sMax = document.getElementById('sliderMax');
-
-        let minVal = parseInt(sMin.value) || 1;
-        let maxVal = parseInt(sMax.value) || 1;
-
-        if (minVal > maxVal) { sMin.value = maxVal; minVal = maxVal; }
-
-        document.getElementById('valMinLectie').innerText = minVal;
-        document.getElementById('valMaxLectie').innerText = maxVal;
-
-        duelState.minLectie = minVal;
-        duelState.maxLectie = maxVal;
+        renderMultiClassSelector('duel', 'duelSelectionSummary');
     }
 
     function startDuel() {
-        duelState.clasa = document.getElementById('duelClassSelect').value;
-        duelState.scor = 0;
-        duelState.indexCurent = 0;
-        duelState.intrebari = extrageIntrebariInInterval(duelState.clasa, duelState.minLectie, duelState.maxLectie, 10);
-
-        if (duelState.intrebari.length === 0) {
-            alert("Nu am găsit întrebări disponibile în intervalul de lecții selectat!");
+        const { pool } = extractQuestionsFromMultiClass('duel');
+        if (pool.length === 0) {
+            alert("Bifează cel puțin o clasă care conține lecții cu întrebări!");
             return;
         }
+
+        duelState.scor = 0;
+        duelState.indexCurent = 0;
+        duelState.intrebari = amestecaArray(pool).slice(0, 10);
 
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
         document.getElementById('screenDuelGame').classList.add('active-screen');
         incarcaIntrebareDuel();
-    }
-
-    function extrageIntrebariInInterval(clsKey, minL, maxL, limita) {
-        let intrebari = [];
-        let lessons = getLessonsForClass(activeSubject, clsKey);
-
-        lessons.forEach((l, idx) => {
-            let nrLectie = idx + 1;
-            if (nrLectie >= minL && nrLectie <= maxL && l.quiz && Array.isArray(l.quiz)) {
-                l.quiz.forEach(qItem => {
-                    intrebari.push({
-                        intrebare: qItem.intrebare || qItem.q,
-                        optiuni: qItem.raspunsuri || qItem.options,
-                        corect: (typeof qItem.corect === 'number') ? qItem.corect : qItem.correct
-                    });
-                });
-            }
-        });
-
-        intrebari.sort(() => Math.random() - 0.5);
-        return intrebari.slice(0, limita);
     }
 
     function incarcaIntrebareDuel() {
@@ -1479,7 +1749,7 @@
         let q = duelState.intrebari[duelState.indexCurent];
         document.getElementById('duelQNum').innerText = `${duelState.indexCurent + 1}/${duelState.intrebari.length}`;
         document.getElementById('duelScore').innerText = duelState.scor;
-        document.getElementById('duelQuestionText').innerText = q.intrebare;
+        document.getElementById('duelQuestionText').innerText = `[Clasa a ${q.clasa}-a] ${q.intrebare}`;
 
         let container = document.getElementById('duelOptionsContainer');
         container.innerHTML = '';
@@ -1557,6 +1827,676 @@
     }
 
     /* =========================================================
+       CUCERIREA REGIUNILOR (STIL TRIVIADOR: SOLO VS AI + BUZZER)
+       ========================================================= */
+    const MAP_REGIONS = [
+        { id: 0,  name: "Maramureș",   x: 310, y: 85,  neighbors: [1, 2, 12] },
+        { id: 1,  name: "Crișana",     x: 175, y: 165, neighbors: [0, 2, 4] },
+        { id: 2,  name: "Transilv. N", x: 325, y: 185, neighbors: [0, 1, 3, 5, 12] },
+        { id: 3,  name: "Transilv. S", x: 345, y: 280, neighbors: [2, 4, 5, 6, 7] },
+        { id: 4,  name: "Banat",       x: 155, y: 295, neighbors: [1, 3, 6] },
+        { id: 5,  name: "Țara Bârsei", x: 465, y: 275, neighbors: [2, 3, 7, 8, 11] },
+        { id: 6,  name: "Oltenia",     x: 255, y: 410, neighbors: [3, 4, 7] },
+        { id: 7,  name: "Muntenia V",  x: 415, y: 415, neighbors: [3, 5, 6, 8] },
+        { id: 8,  name: "Muntenia E",  x: 555, y: 400, neighbors: [5, 7, 9, 11] },
+        { id: 9,  name: "Dobrogea",    x: 685, y: 425, neighbors: [8, 11] },
+        { id: 10, name: "Moldova C",   x: 575, y: 185, neighbors: [11, 12, 13] },
+        { id: 11, name: "Moldova S",   x: 585, y: 295, neighbors: [5, 8, 9, 10] },
+        { id: 12, name: "Bucovina",    x: 470, y: 95,  neighbors: [0, 2, 10, 13] },
+        { id: 13, name: "Moldova N",   x: 615, y: 90,  neighbors: [10, 12] }
+    ];
+
+    let cqMode = 'ai';
+    let cqState = {
+        players: [],
+        regions: [],
+        questionPool: [],
+        qCursor: 0,
+        phase: 'expand',
+        turnIndex: 0,
+        battleRound: 1,
+        maxBattleRounds: 4,
+        selectedTargetRegion: null,
+        defenderIndex: null,
+        buzzedPlayer: null,
+        timer: null,
+        timeLeft: 15,
+        isTieBreaker: false
+    };
+
+    function openConquestSetup() {
+        pushNavigationState();
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById('screenConquestSetup').classList.add('active-screen');
+        document.getElementById('headerTitle').innerText = "🗺️ Cucerirea Regiunilor";
+        setConquestMode('ai');
+        renderMultiClassSelector('cq', 'conquestSelectionSummary');
+    }
+
+    function setConquestMode(mode) {
+        cqMode = mode;
+        document.getElementById('pillModeAI').classList.toggle('active', mode === 'ai');
+        document.getElementById('pillModeBuzzer').classList.toggle('active', mode === 'buzzer');
+        document.getElementById('aiDifficultyRow').style.display = (mode === 'ai') ? 'block' : 'none';
+    }
+
+    function startConquestGame() {
+        const { pool } = extractQuestionsFromMultiClass('cq');
+        if (pool.length < 6) {
+            alert("Selectează cel puțin câteva lecții (minim 6 întrebări) pentru a începe partida!");
+            return;
+        }
+
+        cqState.questionPool = amestecaArray(pool);
+        cqState.qCursor = 0;
+        cqState.battleRound = 1;
+        cqState.phase = 'expand';
+        cqState.turnIndex = 0;
+        cqState.selectedTargetRegion = null;
+
+        if (cqMode === 'ai') {
+            cqState.players = [
+                { id: 0, name: "Tu", color: "#2563eb", isAI: false, alive: true },
+                { id: 1, name: "Strategul (AI)", color: "#dc2626", isAI: true, alive: true },
+                { id: 2, name: "Cronicarul (AI)", color: "#059669", isAI: true, alive: true }
+            ];
+            cqState.regions = MAP_REGIONS.map(r => ({
+                ...r, owner: null, isCapital: false, towers: 0, points: 200
+            }));
+            assignCapital(1, 0);
+            assignCapital(10, 1);
+            assignCapital(7, 2);
+        } else {
+            cqState.players = [
+                { id: 0, name: "Jucător 1", color: "#2563eb", isAI: false, alive: true },
+                { id: 1, name: "Jucător 2", color: "#dc2626", isAI: false, alive: true }
+            ];
+            cqState.regions = MAP_REGIONS.map(r => ({
+                ...r, owner: null, isCapital: false, towers: 0, points: 200
+            }));
+            assignCapital(1, 0);
+            assignCapital(10, 1);
+        }
+
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById('screenConquestGame').classList.add('active-screen');
+        updateConquestHUD();
+        drawConquestMap();
+        runNextConquestStep();
+    }
+
+    function assignCapital(regionId, playerId) {
+        const reg = cqState.regions.find(r => r.id === regionId);
+        if (reg) {
+            reg.owner = playerId;
+            reg.isCapital = true;
+            reg.towers = 3;
+            reg.points = 1000;
+        }
+    }
+
+    function getNextConquestQuestion() {
+        if (cqState.qCursor >= cqState.questionPool.length) {
+            cqState.questionPool = amestecaArray(cqState.questionPool);
+            cqState.qCursor = 0;
+        }
+        return cqState.questionPool[cqState.qCursor++];
+    }
+
+    function getPlayerScore(pid) {
+        return cqState.regions
+            .filter(r => r.owner === pid)
+            .reduce((sum, r) => sum + r.points, 0);
+    }
+
+    function updateConquestHUD() {
+        const hud = document.getElementById('conquestHud');
+        hud.style.gridTemplateColumns = `repeat(${cqState.players.length}, 1fr)`;
+        hud.innerHTML = '';
+
+        cqState.players.forEach((p, idx) => {
+            const score = getPlayerScore(p.id);
+            const isTurn = (idx === cqState.turnIndex && cqState.phase !== 'ended');
+            hud.innerHTML += `
+                <div class="player-score-card ${isTurn ? 'active-turn' : ''}" style="background:${p.color};">
+                    <div>${p.name}</div>
+                    <div style="font-size:0.95rem; margin-top:2px;">${score} pct</div>
+                </div>
+            `;
+        });
+    }
+
+    function drawConquestMap() {
+        const c = document.getElementById('conquestCanvas');
+        const ctxM = c.getContext('2d');
+        ctxM.clearRect(0, 0, c.width, c.height);
+
+        ctxM.fillStyle = "#e0f2fe";
+        ctxM.fillRect(0, 0, c.width, c.height);
+
+        ctxM.fillStyle = "#f8fafc";
+        ctxM.strokeStyle = "#94a3b8";
+        ctxM.lineWidth = 4;
+        ctxM.beginPath();
+        ctxM.ellipse(425, 265, 330, 215, 0, 0, Math.PI * 2);
+        ctxM.fill();
+        ctxM.stroke();
+
+        ctxM.strokeStyle = "#94a3b8";
+        ctxM.lineWidth = 2.5;
+        cqState.regions.forEach(r => {
+            r.neighbors.forEach(nId => {
+                if (nId > r.id) {
+                    const nb = cqState.regions.find(x => x.id === nId);
+                    if (nb) {
+                        ctxM.beginPath();
+                        ctxM.moveTo(r.x, r.y);
+                        ctxM.lineTo(nb.x, nb.y);
+                        ctxM.stroke();
+                    }
+                }
+            });
+        });
+
+        const selectableIds = getSelectableRegionIds();
+
+        cqState.regions.forEach(r => {
+            const isSelectable = selectableIds.includes(r.id);
+            const ownerObj = (r.owner !== null) ? cqState.players[r.owner] : null;
+            const fillColor = ownerObj ? ownerObj.color : "#64748b";
+            const radius = r.isCapital ? 34 : 27;
+
+            if (isSelectable) {
+                ctxM.beginPath();
+                ctxM.arc(r.x, r.y, radius + 7, 0, Math.PI * 2);
+                ctxM.fillStyle = "rgba(250, 204, 21, 0.55)";
+                ctxM.fill();
+                ctxM.strokeStyle = "#eab308";
+                ctxM.lineWidth = 3;
+                ctxM.stroke();
+            }
+
+            ctxM.beginPath();
+            ctxM.arc(r.x, r.y, radius, 0, Math.PI * 2);
+            ctxM.fillStyle = fillColor;
+            ctxM.fill();
+            ctxM.lineWidth = 3;
+            ctxM.strokeStyle = "#ffffff";
+            ctxM.stroke();
+
+            ctxM.fillStyle = "#ffffff";
+            ctxM.textAlign = "center";
+            ctxM.textBaseline = "middle";
+            if (r.isCapital) {
+                ctxM.font = "bold 14px 'Segoe UI', sans-serif";
+                ctxM.fillText("🏰".repeat(r.towers), r.x, r.y - 6);
+                ctxM.font = "bold 11px 'Segoe UI', sans-serif";
+                ctxM.fillText(`${r.points}`, r.x, r.y + 11);
+            } else {
+                ctxM.font = "bold 13px 'Segoe UI', sans-serif";
+                ctxM.fillText(`${r.points}`, r.x, r.y);
+            }
+
+            ctxM.fillStyle = "#0f172a";
+            ctxM.font = "bold 12px 'Segoe UI', sans-serif";
+            ctxM.fillText(r.name, r.x, r.y + radius + 13);
+        });
+    }
+
+    function getSelectableRegionIds() {
+        const curPlayer = cqState.players[cqState.turnIndex];
+        if (!curPlayer || curPlayer.isAI) return [];
+
+        if (cqState.phase === 'pick_free') {
+            const free = cqState.regions.filter(r => r.owner === null);
+            const myIds = cqState.regions.filter(r => r.owner === curPlayer.id).map(r => r.id);
+            const adjFree = free.filter(r => r.neighbors.some(n => myIds.includes(n)));
+            return (adjFree.length > 0 ? adjFree : free).map(r => r.id);
+        }
+
+        if (cqState.phase === 'battle_select') {
+            const myIds = cqState.regions.filter(r => r.owner === curPlayer.id).map(r => r.id);
+            const enemyAdj = cqState.regions.filter(r => r.owner !== null && r.owner !== curPlayer.id && r.neighbors.some(n => myIds.includes(n)));
+            return (enemyAdj.length > 0 ? enemyAdj : cqState.regions.filter(r => r.owner !== null && r.owner !== curPlayer.id)).map(r => r.id);
+        }
+
+        return [];
+    }
+
+    function runNextConquestStep() {
+        updateConquestHUD();
+        drawConquestMap();
+
+        const freeRegions = cqState.regions.filter(r => r.owner === null);
+
+        if (freeRegions.length > 0) {
+            cqState.phase = 'expand';
+            document.getElementById('conquestStatusBar').innerText = `📍 Etapa I: Expansiunea (${freeRegions.length} regiuni libere rămase)`;
+            startExpansionQuestion();
+            return;
+        }
+
+        const alivePlayers = cqState.players.filter(p => cqState.regions.some(r => r.owner === p.id));
+        if (alivePlayers.length <= 1 || cqState.battleRound > cqState.maxBattleRounds) {
+            finishConquestGame();
+            return;
+        }
+
+        while (!cqState.regions.some(r => r.owner === cqState.players[cqState.turnIndex].id)) {
+            advanceBattleTurn(false);
+        }
+
+        const attacker = cqState.players[cqState.turnIndex];
+        cqState.phase = 'battle_select';
+        updateConquestHUD();
+        drawConquestMap();
+
+        if (attacker.isAI) {
+            document.getElementById('conquestStatusBar').innerText = `🤖 ${attacker.name} își alege ținta de atac (Runda ${cqState.battleRound}/${cqState.maxBattleRounds})...`;
+            setTimeout(() => {
+                const myIds = cqState.regions.filter(r => r.owner === attacker.id).map(r => r.id);
+                let targetsPool = cqState.regions.filter(r => r.owner !== attacker.id && r.neighbors.some(n => myIds.includes(n)));
+                if (targetsPool.length === 0) targetsPool = cqState.regions.filter(r => r.owner !== attacker.id);
+                const chosen = targetsPool[Math.floor(Math.random() * targetsPool.length)];
+                initiateBattleOnRegion(chosen);
+            }, 1100);
+        } else {
+            document.getElementById('conquestStatusBar').innerText = `⚔️ Runda ${cqState.battleRound}/${cqState.maxBattleRounds} – ${attacker.name}: Atinge o regiune inamică galbenă pentru a o ataca!`;
+        }
+    }
+
+    function advanceBattleTurn(incrementRoundIfWrapped = true) {
+        cqState.turnIndex++;
+        if (cqState.turnIndex >= cqState.players.length) {
+            cqState.turnIndex = 0;
+            if (incrementRoundIfWrapped) cqState.battleRound++;
+        }
+    }
+
+    /* ETAPA I: EXPANSIUNEA */
+    function startExpansionQuestion() {
+        const panel = document.getElementById('conquestQuestionPanel');
+        const buzzerArea = document.getElementById('cqBuzzerArea');
+        const optsArea = document.getElementById('cqOptionsArea');
+        const fback = document.getElementById('cqFeedbackArea');
+
+        panel.style.display = 'block';
+        fback.innerText = '';
+        cqState.buzzedPlayer = null;
+        cqState.isTieBreaker = false;
+
+        const q = getNextConquestQuestion();
+        document.getElementById('cqPhaseLabel').innerText = "📍 Cucerire Teritoriu Liber";
+        document.getElementById('cqQuestionText').innerText = `[Clasa a ${q.clasa}-a] ${q.intrebare}`;
+
+        if (cqMode === 'buzzer') {
+            buzzerArea.style.display = 'grid';
+            optsArea.style.display = 'none';
+            cqState.currentQuestionObj = q;
+            startConquestTimer(15, () => {
+                fback.innerText = "⏰ Timp expirat! Trecem la următoarea întrebare.";
+                setTimeout(() => { panel.style.display = 'none'; runNextConquestStep(); }, 1100);
+            });
+        } else {
+            buzzerArea.style.display = 'none';
+            optsArea.style.display = 'grid';
+            renderConquestOptions(q, (isCorrect) => {
+                resolveSoloExpansion(isCorrect);
+            });
+            startConquestTimer(15, () => resolveSoloExpansion(false));
+        }
+    }
+
+    function resolveSoloExpansion(humanCorrect) {
+        clearInterval(cqState.timer);
+        const fback = document.getElementById('cqFeedbackArea');
+        const diff = document.getElementById('conquestAiDifficulty').value;
+        const aiProb = diff === 'easy' ? 0.45 : (diff === 'medium' ? 0.68 : 0.85);
+
+        const ai1Ok = Math.random() < aiProb;
+        const ai2Ok = Math.random() < aiProb;
+
+        let aiMsgs = [];
+        if (ai1Ok) {
+            const reg = pickBestFreeRegionForAI(1);
+            if (reg) { reg.owner = 1; aiMsgs.push(`Strategul a luat ${reg.name}`); }
+        }
+        if (ai2Ok) {
+            const reg = pickBestFreeRegionForAI(2);
+            if (reg) { reg.owner = 2; aiMsgs.push(`Cronicarul a luat ${reg.name}`); }
+        }
+
+        const stillFree = cqState.regions.filter(r => r.owner === null);
+        if (humanCorrect && stillFree.length > 0) {
+            playSound('correct');
+            fback.style.color = "#34d399";
+            fback.innerText = `✅ Corect! ${aiMsgs.length ? '(' + aiMsgs.join(', ') + ')' : ''} Alege acum o regiune liberă de pe hartă!`;
+            setTimeout(() => {
+                document.getElementById('conquestQuestionPanel').style.display = 'none';
+                cqState.phase = 'pick_free';
+                cqState.turnIndex = 0;
+                document.getElementById('conquestStatusBar').innerText = "👆 Atinge o regiune liberă (evidențiată cu galben) pentru a o cuceri!";
+                drawConquestMap();
+            }, 1100);
+        } else {
+            if (!humanCorrect) playSound('wrong');
+            fback.style.color = humanCorrect ? "#34d399" : "#f87171";
+            fback.innerText = humanCorrect
+                ? "✅ Corect, dar nu au mai rămas regiuni libere!"
+                : `❌ Greșit! ${aiMsgs.length ? aiMsgs.join(', ') + '.' : 'Nimeni nu a cucerit teritoriu.'}`;
+            setTimeout(() => {
+                document.getElementById('conquestQuestionPanel').style.display = 'none';
+                runNextConquestStep();
+            }, 1350);
+        }
+    }
+
+    function pickBestFreeRegionForAI(aiId) {
+        const free = cqState.regions.filter(r => r.owner === null);
+        if (free.length === 0) return null;
+        const myIds = cqState.regions.filter(r => r.owner === aiId).map(r => r.id);
+        const adj = free.filter(r => r.neighbors.some(n => myIds.includes(n)));
+        const pool = adj.length > 0 ? adj : free;
+        return pool[Math.floor(Math.random() * pool.length)];
+    }
+
+    /* CLICK PE HARTĂ (SELECTARE REGIUNE LIBERĂ SAU ATAC) */
+    document.getElementById('conquestCanvas').addEventListener('click', function(e) {
+        const selectableIds = getSelectableRegionIds();
+        if (selectableIds.length === 0) return;
+
+        const c = document.getElementById('conquestCanvas');
+        const rect = c.getBoundingClientRect();
+        const clickX = (e.clientX - rect.left) * (c.width / rect.width);
+        const clickY = (e.clientY - rect.top) * (c.height / rect.height);
+
+        const clicked = cqState.regions.find(r => {
+            const dist = Math.hypot(clickX - r.x, clickY - r.y);
+            return dist <= 38 && selectableIds.includes(r.id);
+        });
+
+        if (!clicked) return;
+
+        if (cqState.phase === 'pick_free') {
+            playSound('correct');
+            clicked.owner = cqState.players[cqState.turnIndex].id;
+            cqState.phase = 'expand';
+            updateConquestHUD();
+            drawConquestMap();
+            setTimeout(() => runNextConquestStep(), 500);
+        } else if (cqState.phase === 'battle_select') {
+            initiateBattleOnRegion(clicked);
+        }
+    });
+
+    /* ETAPA II: DUEL PE TERITORIU */
+    function initiateBattleOnRegion(region) {
+        cqState.selectedTargetRegion = region;
+        cqState.defenderIndex = region.owner;
+        cqState.phase = 'battle_quiz';
+        cqState.isTieBreaker = false;
+
+        const attacker = cqState.players[cqState.turnIndex];
+        const defender = cqState.players[cqState.defenderIndex];
+
+        document.getElementById('conquestStatusBar').innerText = `⚔️ ${attacker.name} atacă ${region.name} (${defender.name})!`;
+        launchBattleQuestion();
+    }
+
+    function launchBattleQuestion() {
+        const panel = document.getElementById('conquestQuestionPanel');
+        const buzzerArea = document.getElementById('cqBuzzerArea');
+        const optsArea = document.getElementById('cqOptionsArea');
+        const fback = document.getElementById('cqFeedbackArea');
+
+        panel.style.display = 'block';
+        fback.innerText = '';
+        cqState.buzzedPlayer = null;
+
+        const q = getNextConquestQuestion();
+        cqState.currentQuestionObj = q;
+        document.getElementById('cqPhaseLabel').innerText = cqState.isTieBreaker
+            ? "⚡ ÎNTREBARE DE DEPARTAJARE!"
+            : `⚔️ Bătălie pentru ${cqState.selectedTargetRegion.name}`;
+        document.getElementById('cqQuestionText').innerText = `[Clasa a ${q.clasa}-a] ${q.intrebare}`;
+
+        if (cqMode === 'buzzer') {
+            buzzerArea.style.display = 'grid';
+            optsArea.style.display = 'none';
+            startConquestTimer(15, () => {
+                fback.innerText = "⏰ Nimeni nu a apăsat! Apărătorul își păstrează teritoriul.";
+                setTimeout(() => {
+                    panel.style.display = 'none';
+                    advanceBattleTurn(true);
+                    runNextConquestStep();
+                }, 1200);
+            });
+        } else {
+            buzzerArea.style.display = 'none';
+            optsArea.style.display = 'grid';
+
+            const attacker = cqState.players[cqState.turnIndex];
+            const defender = cqState.players[cqState.defenderIndex];
+
+            if (attacker.isAI && defender.isAI) {
+                optsArea.style.display = 'none';
+                fback.style.color = "#facc15";
+                fback.innerText = `🤖 ${attacker.name} și ${defender.name} se duelează...`;
+                setTimeout(() => {
+                    const attackerWins = Math.random() < 0.52;
+                    applyBattleOutcome(attackerWins);
+                }, 1200);
+                return;
+            }
+
+            renderConquestOptions(q, (humanCorrect) => {
+                clearInterval(cqState.timer);
+                const diff = document.getElementById('conquestAiDifficulty').value;
+                const aiProb = diff === 'easy' ? 0.42 : (diff === 'medium' ? 0.65 : 0.82);
+                const aiCorrect = Math.random() < aiProb;
+
+                const humanIsAttacker = !attacker.isAI;
+                const attOk = humanIsAttacker ? humanCorrect : aiCorrect;
+                const defOk = humanIsAttacker ? aiCorrect : humanCorrect;
+
+                if (attOk && defOk && !cqState.isTieBreaker) {
+                    playSound('correct');
+                    fback.style.color = "#facc15";
+                    fback.innerText = "⚡ Egalitate! Ambii au răspuns corect! Urmează întrebarea de departajare!";
+                    cqState.isTieBreaker = true;
+                    setTimeout(() => launchBattleQuestion(), 1200);
+                } else {
+                    const attackerWins = attOk && !defOk ? true : (!attOk && defOk ? false : (attOk && humanIsAttacker));
+                    applyBattleOutcome(attackerWins);
+                }
+            });
+
+            startConquestTimer(15, () => {
+                const humanIsAttacker = !attacker.isAI;
+                applyBattleOutcome(!humanIsAttacker);
+            });
+        }
+    }
+
+    /* LOGICA BUZZER (2 JUCĂTORI PE ACELAȘI ECRAN) */
+    function triggerBuzzer(playerIdx) {
+        if (cqState.buzzedPlayer !== null) return;
+        clearInterval(cqState.timer);
+        cqState.buzzedPlayer = playerIdx;
+
+        const pObj = cqState.players[playerIdx];
+        document.getElementById('cqBuzzerArea').style.display = 'none';
+        document.getElementById('cqOptionsArea').style.display = 'grid';
+        document.getElementById('cqFeedbackArea').style.color = "#facc15";
+        document.getElementById('cqFeedbackArea').innerText = `🔔 ${pObj.name} a apăsat primul! Alege răspunsul în 6 secunde!`;
+
+        renderConquestOptions(cqState.currentQuestionObj, (isCorrect) => {
+            clearInterval(cqState.timer);
+            resolveBuzzerAnswer(playerIdx, isCorrect);
+        });
+
+        startConquestTimer(6, () => resolveBuzzerAnswer(playerIdx, false));
+    }
+
+    function resolveBuzzerAnswer(playerIdx, isCorrect) {
+        const fback = document.getElementById('cqFeedbackArea');
+        const panel = document.getElementById('conquestQuestionPanel');
+
+        if (cqState.phase === 'expand') {
+            if (isCorrect) {
+                playSound('correct');
+                fback.style.color = "#34d399";
+                fback.innerText = `✅ Corect! ${cqState.players[playerIdx].name} alege o regiune liberă!`;
+                setTimeout(() => {
+                    panel.style.display = 'none';
+                    cqState.phase = 'pick_free';
+                    cqState.turnIndex = playerIdx;
+                    document.getElementById('conquestStatusBar').innerText = `👆 ${cqState.players[playerIdx].name}: Atinge o regiune liberă de pe hartă!`;
+                    drawConquestMap();
+                }, 900);
+            } else {
+                playSound('wrong');
+                const otherIdx = playerIdx === 0 ? 1 : 0;
+                fback.style.color = "#f87171";
+                fback.innerText = `❌ Greșit! ${cqState.players[otherIdx].name} primește regiunea!`;
+                setTimeout(() => {
+                    panel.style.display = 'none';
+                    cqState.phase = 'pick_free';
+                    cqState.turnIndex = otherIdx;
+                    document.getElementById('conquestStatusBar').innerText = `👆 ${cqState.players[otherIdx].name}: Atinge o regiune liberă de pe hartă!`;
+                    drawConquestMap();
+                }, 1000);
+            }
+        } else {
+            const attackerId = cqState.players[cqState.turnIndex].id;
+            const attackerWins = isCorrect ? (playerIdx === attackerId) : (playerIdx !== attackerId);
+            applyBattleOutcome(attackerWins);
+        }
+    }
+
+    function applyBattleOutcome(attackerWins) {
+        const fback = document.getElementById('cqFeedbackArea');
+        const panel = document.getElementById('conquestQuestionPanel');
+        const attacker = cqState.players[cqState.turnIndex];
+        const defender = cqState.players[cqState.defenderIndex];
+        const reg = cqState.selectedTargetRegion;
+
+        if (attackerWins) {
+            playSound('correct');
+            if (reg.isCapital) {
+                reg.towers--;
+                if (reg.towers > 0) {
+                    fback.style.color = "#34d399";
+                    fback.innerText = `💥 ${attacker.name} a doborât un turn al cetății ${reg.name}! (${reg.towers} turnuri rămase)`;
+                } else {
+                    cqState.regions.forEach(r => {
+                        if (r.owner === defender.id) {
+                            r.owner = attacker.id;
+                            if (r.isCapital) { r.isCapital = false; r.points = 400; }
+                        }
+                    });
+                    fback.style.color = "#34d399";
+                    fback.innerText = `🏰🔥 CETATEA ${reg.name} A CĂZUT! ${attacker.name} a cucerit tot imperiul lui ${defender.name}!`;
+                }
+            } else {
+                reg.owner = attacker.id;
+                reg.points += 100;
+                fback.style.color = "#34d399";
+                fback.innerText = `⚔️ Victorie! ${attacker.name} a cucerit regiunea ${reg.name}!`;
+            }
+        } else {
+            playSound('wrong');
+            reg.points += 50;
+            fback.style.color = "#f87171";
+            fback.innerText = `🛡️ Apărare reușită! ${defender.name} a păstrat regiunea ${reg.name}!`;
+        }
+
+        updateConquestHUD();
+        drawConquestMap();
+
+        setTimeout(() => {
+            panel.style.display = 'none';
+            advanceBattleTurn(true);
+            runNextConquestStep();
+        }, 1500);
+    }
+
+    function renderConquestOptions(q, onSelectCallback) {
+        const optsArea = document.getElementById('cqOptionsArea');
+        optsArea.innerHTML = '';
+
+        const shuffled = amestecaArray(q.optiuni.map((txt, idx) => ({
+            text: txt,
+            isCorrect: (idx === q.corect)
+        })));
+
+        shuffled.forEach(item => {
+            const btn = document.createElement('button');
+            btn.className = 'btn-action';
+            btn.style.width = '100%';
+            btn.style.margin = '0';
+            btn.innerText = item.text;
+            btn.onclick = () => {
+                optsArea.querySelectorAll('button').forEach(b => b.disabled = true);
+                onSelectCallback(item.isCorrect);
+            };
+            optsArea.appendChild(btn);
+        });
+    }
+
+    function startConquestTimer(seconds, onTimeout) {
+        clearInterval(cqState.timer);
+        cqState.timeLeft = seconds;
+        document.getElementById('cqTimer').innerText = cqState.timeLeft;
+
+        cqState.timer = setInterval(() => {
+            cqState.timeLeft--;
+            document.getElementById('cqTimer').innerText = cqState.timeLeft;
+            if (cqState.timeLeft <= 0) {
+                clearInterval(cqState.timer);
+                onTimeout();
+            }
+        }, 1000);
+    }
+
+    function finishConquestGame() {
+        cqState.phase = 'ended';
+        clearInterval(cqState.timer);
+        document.getElementById('conquestQuestionPanel').style.display = 'none';
+
+        const ranked = [...cqState.players]
+            .map(p => ({ ...p, score: getPlayerScore(p.id) }))
+            .sort((a, b) => b.score - a.score);
+
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById('screenConquestResult').classList.add('active-screen');
+
+        const medals = ["🥇", "🥈", "🥉"];
+        const podiumEl = document.getElementById('conquestPodium');
+        podiumEl.innerHTML = '';
+
+        ranked.forEach((p, i) => {
+            podiumEl.innerHTML += `
+                <div style="background:${p.color}; color:#fff; padding:12px; border-radius:10px; margin-bottom:8px; font-weight:bold; display:flex; justify-content:space-between; align-items:center;">
+                    <span>${medals[i] || '🏅'} Locul ${i + 1}: ${p.name}</span>
+                    <span>${p.score} puncte</span>
+                </div>
+            `;
+        });
+
+        let earnedXP = 60;
+        if (cqMode === 'ai') {
+            const humanPlace = ranked.findIndex(p => p.id === 0);
+            earnedXP = humanPlace === 0 ? 150 : (humanPlace === 1 ? 80 : 40);
+        } else {
+            earnedXP = 100;
+        }
+        updateXP(earnedXP);
+        playSound('levelup');
+        document.getElementById('conquestXpEarned').innerText = `✨ Recompensă adăugată la profil: +${earnedXP} XP!`;
+    }
+
+    /* =========================================================
        JOC CANVAS: ASEDIU MEDIEVAL (ISTORIE) & TRIBUNA (SOCIALĂ)
        ========================================================= */
     const canvas = document.getElementById('gameCanvas');
@@ -1584,7 +2524,6 @@
         const totalQ = currentLessonData.quiz.length;
 
         if (qIndex >= totalQ) {
-            // Salvare 3 steluțe la finalizarea quizz-ului
             let starsKey = `${activeSubject}_stars_${currentClassKey}_${currentLessonIdx}`;
             localStorage.setItem(starsKey, "3");
 
@@ -1606,7 +2545,7 @@
 
         const qData = currentLessonData.quiz[qIndex];
         const qText = qData.intrebare || qData.q;
-        const opts = qData.raspunsuri || qData.options;
+        const opts = qData.raspunsuri || qData.options || Object.values(qData).find(val => Array.isArray(val)) || [];
         const correctIdx = (typeof qData.corect === 'number') ? qData.corect : qData.correct;
 
         document.getElementById('quizQuestion').innerText = `Întrebarea ${qIndex + 1}/${totalQ}: ${qText}`;
@@ -1677,16 +2616,13 @@
         else drawSocialCommunityScene(isFinished);
     }
 
-    /* SCENA 1: ASEDIU MEDIEVAL (ISTORIE) */
     function drawHistorySiegeScene(isFinished) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Cer & câmpie
         ctx.fillStyle = "#bae6fd"; ctx.fillRect(0, 0, canvas.width, 430);
         ctx.fillStyle = "#fde047"; ctx.beginPath(); ctx.arc(90, 70, 36, 0, Math.PI * 2); ctx.fill();
         ctx.fillStyle = "#65a30d"; ctx.fillRect(0, 430, canvas.width, 220);
 
-        // Cetatea (dreapta)
         const castleDamage = Math.min(gameStep, 5);
         ctx.fillStyle = "#78716c";
         ctx.fillRect(540, 340 + castleDamage * 14, 210, 210 - castleDamage * 14);
@@ -1694,7 +2630,6 @@
         ctx.fillRect(520, 310 + castleDamage * 16, 45, 240 - castleDamage * 16);
         ctx.fillRect(725, 310 + castleDamage * 16, 45, 240 - castleDamage * 16);
 
-        // Steag cetate sau steag victorios
         ctx.fillStyle = "#292524"; ctx.fillRect(642, 260 + castleDamage * 14, 6, 80);
         ctx.fillStyle = isFinished ? "#10b981" : "#dc2626";
         ctx.beginPath();
@@ -1703,7 +2638,6 @@
         ctx.lineTo(648, 298 + castleDamage * 14);
         ctx.fill();
 
-        // Catapulta (stânga)
         ctx.fillStyle = "#78350f";
         ctx.fillRect(70, 515, 130, 22);
         ctx.fillStyle = "#451a03";
@@ -1711,7 +2645,6 @@
         ctx.strokeStyle = "#92400e"; ctx.lineWidth = 10;
         ctx.beginPath(); ctx.moveTo(135, 515); ctx.lineTo(95, 455); ctx.stroke();
 
-        // Proiectil în zbor
         if (projectile) {
             ctx.fillStyle = "#f97316";
             ctx.beginPath(); ctx.arc(projectile.x, projectile.y, 14, 0, Math.PI * 2); ctx.fill();
@@ -1719,7 +2652,6 @@
             ctx.beginPath(); ctx.arc(projectile.x - 3, projectile.y - 3, 6, 0, Math.PI * 2); ctx.fill();
         }
 
-        // Artificii victorie
         fireworks.forEach(p => {
             ctx.fillStyle = p.color;
             ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
@@ -1784,7 +2716,6 @@
         animFrameId = requestAnimationFrame(animFw);
     }
 
-    /* SCENA 2: CONSTRUIRE COMUNITATE (EDUCAȚIE SOCIALĂ) */
     function drawSocialCommunityScene(isFinished) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -2314,8 +3245,21 @@
         const setupDuel = document.getElementById('screenDuelSetup');
         const gameDuel = document.getElementById('screenDuelGame');
         const resultDuel = document.getElementById('screenDuelResult');
+        const setupCq = document.getElementById('screenConquestSetup');
+        const gameCq = document.getElementById('screenConquestGame');
+        const resultCq = document.getElementById('screenConquestResult');
 
-        if (gameDuel.classList.contains('active-screen') || resultDuel.classList.contains('active-screen')) {
+        if (gameCq.classList.contains('active-screen') || resultCq.classList.contains('active-screen')) {
+            clearInterval(cqState.timer);
+            gameCq.classList.remove('active-screen');
+            resultCq.classList.remove('active-screen');
+            setupCq.classList.add('active-screen');
+            document.getElementById('headerTitle').innerText = "🗺️ Cucerirea Regiunilor";
+        } else if (setupCq.classList.contains('active-screen')) {
+            setupCq.classList.remove('active-screen');
+            classes.classList.add('active-screen');
+            document.getElementById('headerTitle').innerText = SUBJECT_CONFIG[activeSubject].title;
+        } else if (gameDuel.classList.contains('active-screen') || resultDuel.classList.contains('active-screen')) {
             clearInterval(duelState.timer);
             gameDuel.classList.remove('active-screen');
             resultDuel.classList.remove('active-screen');
@@ -2337,27 +3281,6 @@
         }
     }
 
-    function openClassWithoutPush(clsKey) {
-        document.getElementById('headerTitle').innerText = `Clasa a ${clsKey}-a`;
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
-        document.getElementById('screenLessons').classList.add('active-screen');
-
-        const container = document.getElementById('lessonsListContainer');
-        container.innerHTML = '';
-        const lessons = getLessonsForClass(activeSubject, clsKey);
-        lessons.forEach((les, idx) => {
-            let starsKey = `${activeSubject}_stars_${clsKey}_${idx}`;
-            let savedStars = parseInt(localStorage.getItem(starsKey)) || 0;
-            let starsDisplay = savedStars > 0 ? "⭐".repeat(savedStars) : "";
-            let titlu = les.titlu || les.title || `Lecția ${idx + 1}`;
-            container.innerHTML += `
-                <div class="card" onclick="openLessonDetail('${clsKey}', ${idx})">
-                    <span>${titlu}</span>
-                    <span class="lesson-stars">${starsDisplay}</span>
-                </div>`;
-        });
-    }
-
     function deschideDespre() { document.getElementById('modalDespre').style.display = 'block'; }
     function inchideModal(id) { document.getElementById(id).style.display = 'none'; }
 
@@ -2372,7 +3295,6 @@
         }
     });
 
-    // Inițializare Hub la încărcare
     refreshHubStats();
 </script>
 
