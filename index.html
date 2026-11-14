@@ -2,243 +2,545 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Istorie gimnaziu: lecții, quizz-uri, jocuri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
+    <title>Istorie & Educație Socială: lecții, quizz-uri, jocuri</title>
+    
+    <!-- PWA & Culori de interfață -->
     <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" id="metaThemeColor" content="#1e1b4b">
+    
+    <!-- Suport iOS / Safari -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Istorie">
-    <link rel="apple-touch-icon" href="icon-192.png.png">  
-    <!-- Redirecționare automată pentru rutele din ecranul principal pe iOS/Android -->
-    <script>
-      if (window.location.pathname.endsWith('/') && !window.location.pathname.endsWith('/index.html')) {
-        // Asigură că deschiderea din shortcut dă load direct la index.html
-      }
-    </script>
-    <style>
-        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; user-select: none; }
-        
-        html, body { 
-            background-color: #2b1d0c; 
-            min-height: 100vh; 
-        }
-        
-        body { display: flex; justify-content: center; }
-        
-        .app-container { 
-            width: 100%; 
-            max-width: 100%; 
-            background: #fdf6e2; 
-            min-height: 100vh; 
-            box-shadow: none; 
-            display: flex; 
-            flex-direction: column; 
-            position: relative; 
-        }
-        
-        header { background: linear-gradient(135deg, #4a2e1b, #2c1d11); color: #f3e5ab; padding: 14px 16px; text-align: center; font-size: 1.15rem; font-weight: bold; position: relative; border-bottom: 4px solid #d4a359; flex-shrink: 0; }
-        .back-btn { position: absolute; left: 12px; top: 10px; background: #8c5a2b; border: 1px solid #d4a359; color: #fff; padding: 4px 10px; border-radius: 6px; cursor: pointer; font-weight: bold; display: none; }
-        
-        .player-bar { background: #3d2516; color: #f3e5ab; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; border-bottom: 2px solid #8c5a2b; flex-shrink: 0; }
-        .player-profile { display: flex; align-items: center; gap: 8px; cursor: pointer; }
-        .avatar-icon { font-size: 1.8rem; background: #2c1d11; border: 2px solid #d4a359; border-radius: 50%; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; }
-        .streak-badge { background: #d35400; color: #fff; padding: 2px 8px; border-radius: 12px; font-weight: bold; font-size: 0.8rem; margin-left: 4px; border: 1px solid #e67e22; }
-        .xp-info { text-align: right; }
-        .xp-bar-bg { width: 100px; background: #2c1d11; height: 10px; border-radius: 5px; overflow: hidden; border: 1px solid #d4a359; margin-top: 4px; display: inline-block; }
-        .xp-bar-fill { width: 0%; height: 100%; background: linear-gradient(90deg, #2ecc71, #27ae60); transition: width 0.4s ease; }
+    <meta name="apple-mobile-web-app-title" content="Istorie & EdSoc">
+    
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon-192.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="icon-192.png">
 
-        .screen { display: none; padding: 16px; flex-grow: 1; overflow-y: auto; }
+    <style>
+        :root {
+            --bg-outer: #1e1b4b;
+            --bg-app: #f8fafc;
+            --header-bg: linear-gradient(135deg, #312e81, #1e1b4b);
+            --header-text: #f8fafc;
+            --header-border: #6366f1;
+            --btn-back-bg: #4f46e5;
+            --btn-back-border: #818cf8;
+            --bar-bg: #1e293b;
+            --bar-text: #f8fafc;
+            --bar-border: #334155;
+            --accent: #4f46e5;
+            --accent-dark: #312e81;
+            --accent-light: #e0e7ff;
+            --accent-border: #6366f1;
+            --card-bg: #ffffff;
+            --card-text: #1e293b;
+            --card-border: #cbd5e1;
+            --tab-bg: #e2e8f0;
+            --tab-text: #334155;
+        }
+
+        /* TEMA ISTORIE (Pergament & Bronz Medieval) */
+        body.theme-history {
+            --bg-outer: #2b1d0c;
+            --bg-app: #fdf6e2;
+            --header-bg: linear-gradient(135deg, #5c3a21, #2b1d0c);
+            --header-text: #fdf6e2;
+            --header-border: #d4a359;
+            --btn-back-bg: #8c5a2b;
+            --btn-back-border: #d4a359;
+            --bar-bg: #3e2714;
+            --bar-text: #fdf6e2;
+            --bar-border: #8c5a2b;
+            --accent: #8c5a2b;
+            --accent-dark: #4a2e1b;
+            --accent-light: #f5e6c8;
+            --accent-border: #d4a359;
+            --card-bg: #fffdf7;
+            --card-text: #3e2714;
+            --card-border: #d4a359;
+            --tab-bg: #ebd8b7;
+            --tab-text: #4a2e1b;
+        }
+
+        /* TEMA EDUCAȚIE SOCIALĂ (Civic Bleumarin & Albastru) */
+        body.theme-social {
+            --bg-outer: #0f172a;
+            --bg-app: #fdfbf7;
+            --header-bg: linear-gradient(135deg, #1e3a8a, #0f172a);
+            --header-text: #f1f5f9;
+            --header-border: #3b82f6;
+            --btn-back-bg: #2563eb;
+            --btn-back-border: #60a5fa;
+            --bar-bg: #1e293b;
+            --bar-text: #f8fafc;
+            --bar-border: #334155;
+            --accent: #2563eb;
+            --accent-dark: #1e3a8a;
+            --accent-light: #eff6ff;
+            --accent-border: #3b82f6;
+            --card-bg: #ffffff;
+            --card-text: #1e293b;
+            --card-border: #cbd5e1;
+            --tab-bg: #e2e8f0;
+            --tab-text: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+        }
+
+        html, body {
+            background-color: var(--bg-outer);
+            min-height: 100vh;
+            transition: background-color 0.25s ease;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        .app-container {
+            width: 100%;
+            max-width: 100%;
+            background: var(--bg-app);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: background 0.25s ease;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 14px 44px;
+            padding-top: max(14px, env(safe-area-inset-top));
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            position: relative;
+            border-bottom: 4px solid var(--header-border);
+            flex-shrink: 0;
+        }
+
+        .back-btn {
+            position: absolute;
+            left: 12px;
+            top: max(10px, env(safe-area-inset-top));
+            background: var(--btn-back-bg);
+            border: 1px solid var(--btn-back-border);
+            color: #fff;
+            padding: 4px 11px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            display: none;
+            font-size: 1rem;
+        }
+
+        .home-btn {
+            position: absolute;
+            right: 12px;
+            top: max(10px, env(safe-area-inset-top));
+            background: rgba(255,255,255,0.14);
+            border: 1px solid var(--btn-back-border);
+            color: #fff;
+            padding: 4px 9px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            display: none;
+            font-size: 0.9rem;
+        }
+
+        .player-bar {
+            background: var(--bar-bg);
+            color: var(--bar-text);
+            padding: 10px 16px;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            border-bottom: 2px solid var(--bar-border);
+            flex-shrink: 0;
+        }
+
+        .player-profile { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+        .avatar-icon {
+            font-size: 1.8rem;
+            background: rgba(0,0,0,0.35);
+            border: 2px solid var(--header-border);
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .streak-badge {
+            background: #ea580c;
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 0.78rem;
+            margin-left: 4px;
+            border: 1px solid #f97316;
+        }
+        .xp-info { text-align: right; }
+        .xp-bar-bg {
+            width: 100px;
+            background: rgba(0,0,0,0.45);
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid var(--header-border);
+            margin-top: 4px;
+            display: inline-block;
+        }
+        .xp-bar-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #10b981, #059669);
+            transition: width 0.4s ease;
+        }
+
+        .screen {
+            display: none;
+            padding: 16px;
+            padding-bottom: max(22px, env(safe-area-inset-bottom));
+            flex-grow: 1;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
         .active-screen { display: flex; flex-direction: column; }
 
-        #screenClasses {
-            padding: 16px;
-            padding-bottom: 24px;
+        /* HUB SELECTOR MATERIE */
+        .hub-hero {
+            text-align: center;
+            padding: 12px 8px 18px;
+        }
+        .hub-hero h2 {
+            color: #1e1b4b;
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+        }
+        .hub-hero p {
+            color: #475569;
+            font-size: 0.92rem;
+        }
+        .subject-card {
+            border-radius: 14px;
+            padding: 18px;
+            margin-bottom: 14px;
+            cursor: pointer;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .subject-card:active { transform: scale(0.98); }
+        .subject-card.history-card {
+            background: linear-gradient(135deg, #fffdf7, #f5e6c8);
+            border: 2px solid #8c5a2b;
+            border-left: 8px solid #5c3a21;
+            color: #3e2714;
+        }
+        .subject-card.social-card {
+            background: linear-gradient(135deg, #ffffff, #e0f2fe);
+            border: 2px solid #2563eb;
+            border-left: 8px solid #1e3a8a;
+            color: #0f172a;
+        }
+        .subject-icon {
+            font-size: 2.6rem;
+            flex-shrink: 0;
+        }
+        .subject-info h3 {
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+        }
+        .subject-info p {
+            font-size: 0.86rem;
+            opacity: 0.85;
+            line-height: 1.35;
+        }
+        .subject-stats-pill {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 0.78rem;
+            font-weight: bold;
+            padding: 3px 9px;
+            border-radius: 999px;
+            background: rgba(0,0,0,0.08);
         }
 
-        .card { background: #fffdf7; border: 1px solid #d4a359; border-left: 6px solid #8c5a2b; padding: 14px 16px; margin-bottom: 12px; border-radius: 10px; cursor: pointer; font-weight: bold; color: #4a2e1b; box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-size: 1.05rem; transition: transform 0.1s ease; display: flex; justify-content: space-between; align-items: center; }
+        /* CARDURI LECȚII & CLASE */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-left: 6px solid var(--accent);
+            padding: 14px 16px;
+            margin-bottom: 11px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--card-text);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            font-size: 1.02rem;
+            transition: transform 0.1s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
         .card:active { transform: scale(0.98); }
-        .lesson-stars { font-size: 1rem; color: #f39c12; }
+        .lesson-stars { font-size: 0.95rem; color: #f59e0b; flex-shrink: 0; }
 
-        .extra-section { margin-top: 10px; text-align: center; }
-        .extra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
-        .btn-extra { background: #fffdf7; border: 2px solid #8c5a2b; color: #4a2e1b; padding: 12px 8px; font-weight: bold; font-size: 0.9rem; border-radius: 10px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center; gap: 6px; transition: transform 0.1s; }
-        .btn-extra:active { transform: scale(0.98); }
+        .extra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .btn-action {
+            background-color: var(--card-bg);
+            color: var(--card-text);
+            border: 2px solid var(--accent);
+            padding: 12px 14px;
+            font-size: 0.93rem;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.08);
+            transition: all 0.18s ease;
+        }
+        .btn-action:hover {
+            background-color: var(--accent);
+            color: #ffffff;
+        }
 
-        .tabs { display: flex; border-bottom: 2px solid #d4a359; margin-bottom: 14px; background: #ebdcb9; border-radius: 8px 8px 0 0; overflow: hidden; flex-shrink: 0; }
-        .tab-btn { flex: 1; padding: 10px 3px; border: none; background: transparent; cursor: pointer; font-weight: bold; color: #5c3a21; font-size: 0.8rem; text-align: center; }
-        .tab-btn.active { background: #8c5a2b; color: white; }
+        /* TABS DETALIU LECȚIE */
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 14px;
+            background: var(--tab-bg);
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 10px 3px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--tab-text);
+            font-size: 0.78rem;
+            text-align: center;
+        }
+        .tab-btn.active {
+            background: var(--accent);
+            color: #ffffff;
+        }
 
         .tab-content { display: none; }
         .tab-content.active { display: block; }
 
-        .summary-box { background: #ffffff; border: 1px solid #d4a359; padding: 16px; border-radius: 10px; line-height: 1.5; font-size: 0.95rem; color: #2c1d11; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .summary-box h3 { color: #c0392b; margin-top: 12px; border-bottom: 2px dashed #d4a359; padding-bottom: 4px; font-size: 1.1rem; }
+        .summary-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 16px;
+            border-radius: 10px;
+            line-height: 1.55;
+            font-size: 0.96rem;
+            color: var(--card-text);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+        .summary-box h3 {
+            color: var(--accent);
+            margin-top: 12px;
+            border-bottom: 2px dashed var(--accent-border);
+            padding-bottom: 4px;
+            font-size: 1.08rem;
+        }
         .summary-box h3:first-child { margin-top: 0; }
         .summary-box ul { margin-left: 18px; margin-top: 6px; }
 
-        .escape-box { background: #2c1d11; color: #f3e5ab; border: 3px solid #d4a359; padding: 16px; border-radius: 12px; text-align: center; box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
-        .locks-row { display: flex; justify-content: center; gap: 8px; margin-bottom: 14px; }
-        .lock-card { background: #3d2516; border: 2px solid #8c5a2b; border-radius: 8px; padding: 8px 4px; width: 60px; text-align: center; }
-        .lock-card.active-lock { border-color: #f1c40f; box-shadow: 0 0 8px #f1c40f; }
-        .lock-card.solved-lock { border-color: #2ecc71; background: #1e3d23; }
-        .lock-icon { font-size: 1.3rem; }
-        .lock-digit { font-size: 1.2rem; font-weight: bold; color: #f1c40f; min-height: 25px; line-height: 25px; }
-
-        .escape-puzzle { font-size: 0.95rem; line-height: 1.4; background: #3d2516; padding: 12px; border-radius: 8px; border: 1px solid #8c5a2b; margin-bottom: 14px; color: #fffdf7; text-align: left; }
-        .escape-input { width: 80%; max-width: 260px; padding: 10px; font-size: 1.1rem; font-weight: bold; text-align: center; border: 2px solid #d4a359; border-radius: 8px; background: #fdf6e2; color: #2c1d11; margin-bottom: 10px; text-transform: uppercase; }
-        .escape-hint { font-size: 0.85rem; color: #e67e22; margin-top: 8px; font-style: italic; display: none; }
-
-        .door-modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.88);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            backdrop-filter: blur(4px);
-        }
-
-        .door-frame {
+        /* CANVAS JOC (ASEDIU ISTORIE & TRIBUNA SOCIALĂ) */
+        .game-container {
             position: relative;
-            width: 200px; height: 290px;
-            background: #2b1d0c;
-            border: 8px solid #8c5a2b;
-            border-radius: 12px 12px 0 0;
-            perspective: 1000px;
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(241, 196, 15, 0.4);
-        }
-
-        .door-inside {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: radial-gradient(circle, #fff9c4 10%, #fbc02d 60%, #e67e22 100%);
-            display: flex; justify-content: center; align-items: center;
-            font-size: 50px;
-        }
-
-        .door {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(135deg, #4a2e1b, #2c1d11);
-            border: 4px solid #8c5a2b;
-            transform-origin: left;
-            transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex; justify-content: center; align-items: center;
-        }
-
-        .door.open {
-            transform: rotateY(-110deg);
-        }
-
-        .keyhole {
-            width: 32px; height: 45px;
-            background: #1a0f0a;
-            border: 3px solid #d4a359;
-            border-radius: 16px 16px 8px 8px;
-            position: relative;
-        }
-
-        .animated-key {
-            position: absolute;
-            font-size: 42px;
-            top: -110px;
-            opacity: 0;
-            transition: all 0.8s ease;
-        }
-
-        .animated-key.insert {
-            top: calc(50% - 22px);
-            opacity: 1;
-        }
-
-        .animated-key.turn {
-            transform: rotate(90deg);
-        }
-
-        .victory-card {
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.8s ease;
-            margin-top: 15px;
-            text-align: center;
-            color: #fff;
-            max-width: 90%;
-            background: #3d2516;
-            border: 2px solid #d4a359;
-            padding: 14px 18px;
+            width: 100%;
+            background: var(--accent-light);
+            border: 2px solid var(--accent);
             border-radius: 12px;
+            padding: 8px;
+            text-align: center;
         }
-
-        .victory-card.show {
-            opacity: 1;
-            transform: scale(1);
+        .question-banner {
+            background: var(--accent-dark);
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.94rem;
+            margin-bottom: 8px;
+            border: 1px solid var(--accent-border);
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-
-        .archery-container { 
-            position: relative; 
-            width: 100%; 
-            background: #f0e3c4; 
-            border: 2px solid #8c5a2b; 
-            border-radius: 12px; 
-            padding: 8px; 
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.1); 
-            text-align: center; 
-        }
-        
-        .question-banner { background: #4a2e1b; color: #f3e5ab; padding: 10px; border-radius: 8px; font-weight: bold; font-size: 0.95rem; margin-bottom: 8px; border: 1px solid #d4a359; min-height: 50px; display: flex; align-items: center; justify-content: center; }
-        
-        canvas { 
-            background: #e8d5b5; 
-            border-radius: 8px; 
-            border: 1px solid #8c5a2b; 
-            width: 100%; 
-            max-width: 800px; 
-            height: auto; 
-            aspect-ratio: 8 / 6.5; 
-            display: block; 
-            margin: 0 auto; 
+        canvas.game-canvas {
+            background: #e2e8f0;
+            border-radius: 8px;
+            border: 1px solid var(--accent);
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            aspect-ratio: 8 / 6.5;
+            display: block;
+            margin: 0 auto;
             touch-action: none !important;
-            user-select: none;
-            -webkit-user-select: none;
-            -webkit-touch-callout: none;
         }
-        
-        .quiz-feedback { margin-top: 6px; font-weight: bold; min-height: 20px; font-size: 0.9rem; }
+        .quiz-feedback {
+            margin-top: 6px;
+            font-weight: bold;
+            min-height: 22px;
+            font-size: 0.9rem;
+        }
 
-        .btn-action { background-color: #fffdf7; color: #4a2e1b; border: 2px solid #8c5a2b; padding: 12px 16px; font-size: 0.95rem; font-weight: bold; border-radius: 10px; cursor: pointer; box-shadow: 0 3px 5px rgba(0, 0, 0, 0.08); transition: all 0.2s ease; }
-        .btn-action:hover { background-color: #8c5a2b; color: #ffffff; }
-
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(3px); overscroll-behavior: none; }
-        .modal-content { background-color: #fdf6e2; margin: 10% auto; padding: 20px; border: 3px solid #8c5a2b; border-radius: 12px; width: 90%; max-width: 550px; color: #2c1d11; box-shadow: 0 10px 25px rgba(0,0,0,0.3); position: relative; text-align: center; }
-        .modal-content h2 { margin-top: 0; color: #4a2e1b; border-bottom: 2px solid #d4a359; padding-bottom: 6px; margin-bottom: 12px; }
-        .close-btn { color: #8c5a2b; float: right; font-size: 26px; font-weight: bold; cursor: pointer; line-height: 18px; }
-
-        .avatar-grid { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
-        .avatar-option { font-size: 2rem; background: #fffdf7; border: 2px solid #d4a359; border-radius: 10px; padding: 8px; cursor: pointer; transition: transform 0.2s; }
-        .avatar-option:hover { transform: scale(1.1); }
-        .avatar-option.locked { opacity: 0.4; cursor: not-allowed; filter: grayscale(1); }
-
-        .wheel-wrapper { position: relative; width: 100%; max-width: 260px; aspect-ratio: 1 / 1; margin: 12px auto; display: flex; justify-content: center; align-items: center; }
-        #wheelCanvas { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        .wheel-pointer { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 12px solid transparent; border-right: 12px solid transparent; border-top: 20px solid #c0392b; z-index: 10; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4)); }
-
-        .duel-box {
-            background: #fffdf7;
-            border: 2px solid #8c5a2b;
+        /* ESCAPE ROOM (ISTORIE) */
+        .escape-box {
+            background: #2b1d0c;
+            color: #fdf6e2;
+            border: 3px solid #d4a359;
             border-radius: 12px;
             padding: 16px;
-            color: #2c1d11;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .padlocks-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 12px 0;
+            flex-wrap: wrap;
+        }
+        .padlock-badge {
+            background: #4a2e1b;
+            border: 2px solid #d4a359;
+            border-radius: 10px;
+            padding: 8px 12px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .padlock-badge.unlocked {
+            background: #065f46;
+            border-color: #10b981;
+            color: #ecfdf5;
+        }
+        .escape-door-wrap {
+            perspective: 700px;
+            margin: 12px auto;
+            width: 150px;
+            height: 170px;
+        }
+        .escape-door {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #6b4226, #3e2714);
+            border: 4px solid #d4a359;
+            border-radius: 75px 75px 4px 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform-origin: left center;
+            transition: transform 1s ease;
+            box-shadow: inset 0 0 18px rgba(0,0,0,0.6);
+        }
+        .escape-door.open {
+            transform: rotateY(-78deg);
+        }
+        .escape-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid #d4a359;
+            font-size: 1rem;
+            margin: 10px 0;
+            text-align: center;
+            font-weight: bold;
+            user-select: text;
+            -webkit-user-select: text;
+        }
+
+        /* DILEME SOCIALE (EDUCAȚIE SOCIALĂ) */
+        .dilemma-container {
+            background: #1e293b;
+            color: #f8fafc;
+            border: 3px solid #3b82f6;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .dilemma-card {
+            background: #0f172a;
+            border: 1px solid #3b82f6;
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 14px;
+            text-align: left;
+            line-height: 1.45;
+            color: #f1f5f9;
+        }
+        .dilemma-opt-btn {
+            width: 100%;
+            background: #ffffff;
+            color: #1e293b;
+            border: 2px solid #3b82f6;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s;
+        }
+        .dilemma-opt-btn:hover { background: #eff6ff; }
+        .dilemma-feedback {
+            margin-top: 12px;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.94rem;
+            text-align: center;
+            display: none;
+        }
+
+        /* ANTRENAMENT SOLO */
+        .duel-box {
+            background: var(--card-bg);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 16px;
+            color: var(--card-text);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.06);
         }
         .duel-group {
-            background: #f0e3c4;
-            border: 1px solid #d4a359;
+            background: var(--accent-light);
+            border: 1px solid var(--accent-border);
             padding: 10px;
             border-radius: 8px;
             margin-bottom: 12px;
@@ -248,7 +550,7 @@
             display: flex;
             justify-content: space-between;
             font-weight: bold;
-            color: #4a2e1b;
+            color: var(--accent-dark);
             margin-bottom: 6px;
             font-size: 0.9rem;
         }
@@ -259,7 +561,7 @@
         }
         .duel-slider-container input[type="range"] {
             width: 100%;
-            accent-color: #8c5a2b;
+            accent-color: var(--accent);
             cursor: pointer;
         }
         .duel-options-grid {
@@ -268,12 +570,125 @@
             gap: 8px;
             margin-top: 12px;
         }
+
+        .wordwall-tip-box {
+            background: #fefce8;
+            border: 1px dashed #ca8a04;
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+            font-size: 0.88rem;
+            color: #854d0e;
+            line-height: 1.4;
+        }
+
+        /* MODALE */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(3px);
+            overflow-y: auto;
+        }
+        .modal-content {
+            background-color: #ffffff;
+            margin: 8% auto;
+            padding: 20px;
+            border: 3px solid var(--accent);
+            border-radius: 12px;
+            width: 92%;
+            max-width: 550px;
+            color: #1e293b;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            position: relative;
+            text-align: center;
+        }
+        .modal-content h2 {
+            margin-top: 0;
+            color: var(--accent-dark);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+        }
+        .close-btn {
+            color: var(--accent);
+            float: right;
+            font-size: 26px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 18px;
+        }
+
+        .avatar-grid {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+        .avatar-option {
+            font-size: 1.9rem;
+            background: #f8fafc;
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            padding: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .avatar-option:hover { transform: scale(1.1); }
+        .avatar-option.locked { opacity: 0.38; cursor: not-allowed; filter: grayscale(1); }
+
+        .wheel-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 260px;
+            aspect-ratio: 1 / 1;
+            margin: 12px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #wheelCanvas {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .wheel-pointer {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 20px solid #ef4444;
+            z-index: 10;
+        }
+
+        .fun-fact-card {
+            background: #fffbeb;
+            border: 2px solid #d97706;
+            border-radius: 10px;
+            padding: 14px;
+            margin: 10px 0;
+            text-align: left;
+            line-height: 1.5;
+            color: #451a03;
+            font-size: 0.96rem;
+        }
+
         @media (max-width: 600px) {
             .duel-options-grid { grid-template-columns: 1fr; }
         }
-
         @media (min-width: 600px) {
-            .screen { max-width: 850px; margin: 0 auto; width: 100%; }
+            .screen { max-width: 860px; margin: 0 auto; width: 100%; }
         }
     </style>
 </head>
@@ -282,132 +697,84 @@
 <div class="app-container">
     <header>
         <button class="back-btn" id="backBtn" onclick="goBack()">&#8592;</button>
-        <span id="headerTitle">Istorie gimnaziu: lecții, quizz-uri, jocuri</span>
+        <span id="headerTitle">Istorie &amp; Educație Socială</span>
+        <button class="home-btn" id="homeBtn" onclick="returnToSubjectHub()" title="Schimbă materia">🏠 Materii</button>
     </header>
 
-    <div class="player-bar">
+    <div class="player-bar" id="playerBar">
         <div class="player-profile" onclick="openAvatarModal()">
-            <div class="avatar-icon" id="playerAvatar">🛡️</div>
+            <div class="avatar-icon" id="playerAvatar">⚔️</div>
             <div>
-                <strong id="playerRank">Nivel 1: Mic Arheolog</strong>
+                <strong id="playerRank">Nivel 1</strong>
                 <span class="streak-badge" id="streakText">🔥 1 Zi</span>
             </div>
         </div>
         <div class="xp-info">
-            <span id="xpText">0 / 100 XP</span>
+            <span id="xpText">0 / 200 XP</span>
             <div><div class="xp-bar-bg"><div class="xp-bar-fill" id="xpFill"></div></div></div>
         </div>
     </div>
 
-    <!-- ECRAN PRINCIPAL -->
-    <div id="screenClasses" class="screen active-screen">
-        <div>
-            <h3 style="margin-bottom: 10px; color: #4a2e1b; font-size: 1.05rem;">Alege Clasa:</h3>
-            <div class="card" onclick="openClass('V')"><span>📜 Clasa a V-a</span></div>
-            <div class="card" onclick="openClass('VI')"><span>⚔️ Clasa a VI-a</span></div>
-            <div class="card" onclick="openClass('VII')"><span>🏰 Clasa a VII-a</span></div>
-            <div class="card" onclick="openClass('VIII')"><span>👑 Clasa a VIII-a</span></div>
+    <!-- ECRAN 0: SELECTOR MATERIE (HUB PRINCIPAL) -->
+    <div id="screenSubjectHub" class="screen active-screen">
+        <div class="hub-hero">
+            <h2>🎓 Alege Disciplina</h2>
+            <p>Lecții sintetizate, jocuri interactive, simulări și antrenamente pentru gimnaziu (clasele V–VIII)</p>
         </div>
 
-        <!-- Section: Curiozități & Picanterii -->
-        <div class="extra-section">
-            <h4 style="color: #4a2e1b; font-size: 0.95rem; margin-bottom: 4px;">✨ Curiozități & Picanterii Istorice</h4>
-            <div class="extra-grid">
-                <button class="btn-extra" onclick="deschideModulBarfeSelectSursa()">
-                    <span>💬</span> Bârfele Cetății
-                </button>
-                <button class="btn-extra" onclick="deschideModulAsasinateEpoci()">
-                    <span>🗡️</span> Asasinate Celebre
-                </button>
+        <div class="subject-card history-card" onclick="selectSubject('history')">
+            <div class="subject-icon">🏛️</div>
+            <div class="subject-info">
+                <h3>Istorie (Clasele V–VIII)</h3>
+                <p>Lecții, Asediul Cetății, Escape Room cu 4 lacăte, Bârfele Cetății, Asasinate și Porecle Celebre.</p>
+                <span class="subject-stats-pill" id="hubHistoryStats">Nivel 1 • 0 XP</span>
             </div>
         </div>
 
-        <!-- Section: Cufăr Zilnic & Antrenament Solo -->
-        <div class="extra-grid" style="margin-top: 10px;">
-            <button id="btnDailyChest" class="btn-action" style="width: 100%;" onclick="openWheelModal()">🎁 Cufăr Istoric Zilnic</button>
+        <div class="subject-card social-card" onclick="selectSubject('social')">
+            <div class="subject-icon">🤝</div>
+            <div class="subject-info">
+                <h3>Educație Socială (Clasele V–VIII)</h3>
+                <p>Gândire critică, Interculturalitate, Cetățenie democratică, Educație economico-financiară și Dileme Sociale.</p>
+                <span class="subject-stats-pill" id="hubSocialStats">Nivel 1 • 0 XP</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 8px;">
+            <button class="btn-action" style="width: 100%; border-color: #4f46e5; color: #1e1b4b;" onclick="deschideDespre()">ℹ️ Despre aplicație</button>
+        </div>
+    </div>
+
+    <!-- ECRAN 1: CLASELE MATERIEI SELECTATE (V–VIII) -->
+    <div id="screenClasses" class="screen">
+        <div id="classCardsContainer"></div>
+
+        <div class="extra-grid" style="margin-top: 14px;">
+            <button id="btnDailyWheel" class="btn-action" style="width: 100%;" onclick="openWheelModal()">🎡 Roata Norocului</button>
             <button id="btnSolo" class="btn-action" style="width: 100%;" onclick="openDuelSetup()">⚔️ Antrenament Solo</button>
         </div>
 
-        <!-- Section: Porecle & Despre aplicație (2 Coloane) -->
-        <div class="extra-grid" style="margin-top: 10px;">
-            <button class="btn-extra" onclick="deschideModulPorecleEpoci()">
-                <span>🏷️</span> Porecle Celebre
-            </button>
-            <button id="btnDespre" class="btn-action" style="width: 100%;" onclick="deschideDespre()">ℹ️ Despre aplicație</button>
+        <!-- BUTOANE SUPLIMENTARE SPECIFICE ISTORIEI -->
+        <div id="historyExtrasGrid" class="extra-grid" style="margin-top: 10px; display: none;">
+            <button class="btn-action" onclick="openFunFactModal('barfe')">🗣️ Bârfele Cetății</button>
+            <button class="btn-action" onclick="openFunFactModal('asasinate')">🗡️ Asasinate Celebre</button>
+            <button class="btn-action" style="grid-column: span 2;" onclick="openFunFactModal('porecle')">👑 Porecle Celebre din Istorie</button>
+        </div>
+
+        <div style="margin-top: 10px;">
+            <button class="btn-action" style="width: 100%;" onclick="deschideDespre()">ℹ️ Despre aplicație</button>
         </div>
     </div>
 
-    <!-- ECRANE BÂRFELE CETĂȚII -->
-    <div id="screenBarfeSursa" class="screen">
-        <h3 style="margin-bottom: 14px; color: #4a2e1b;">💬 Bârfele Cetății:</h3>
-        <div class="card" onclick="alegeSursaBarfe('universal')"><span>🌍 Istorie Universală</span></div>
-        <div class="card" onclick="alegeSursaBarfe('romani')"><span>🇷🇴 Istoria Românilor</span></div>
-    </div>
-
-    <div id="screenBarfeEpoci" class="screen">
-        <h3 id="barfeEpociTitle" style="margin-bottom: 14px; color: #4a2e1b;">Alege Epoca:</h3>
-        <div class="card" onclick="deschideListaBarfe('antichitate')"><span>🏛️ Antichitate</span></div>
-        <div class="card" onclick="deschideListaBarfe('evulMediu')"><span>⚔️ Evul Mediu</span></div>
-        <div class="card" onclick="deschideListaBarfe('epocamoderna')"><span>🎩 Epoca Modernă</span></div>
-        <div class="card" onclick="deschideListaBarfe('contemporana')"><span>🚀 Epoca Contemporană</span></div>
-    </div>
-
-    <div id="screenBarfeLista" class="screen">
-        <h3 id="barfeListaTitle" style="margin-bottom: 14px; color: #4a2e1b;">Subiecte Picanterii</h3>
-        <div id="barfeContainer"></div>
-    </div>
-
-    <div id="screenBarfeDetail" class="screen">
-        <div class="summary-box" id="barfeDetailContent"></div>
-    </div>
-
-    <!-- ECRANE ASASINATE CELEBRE -->
-    <div id="screenAsasinateEpoci" class="screen">
-        <h3 style="margin-bottom: 14px; color: #4a2e1b;">🗡️ Asasinate Celebre - Alege Epoca:</h3>
-        <div class="card" onclick="deschideListaAsasinate('antichitate')"><span>🏛️ Antichitate</span></div>
-        <div class="card" onclick="deschideListaAsasinate('evulMediu')"><span>⚔️ Evul Mediu</span></div>
-        <div class="card" onclick="deschideListaAsasinate('epocamoderna')"><span>🎩 Epoca Modernă</span></div>
-        <div class="card" onclick="deschideListaAsasinate('contemporana')"><span>🚀 Epoca Contemporană</span></div>
-    </div>
-
-    <div id="screenAsasinateLista" class="screen">
-        <h3 id="asasinateListaTitle" style="margin-bottom: 14px; color: #4a2e1b;">Asasinate Istorice</h3>
-        <div id="asasinateContainer"></div>
-    </div>
-
-    <div id="screenAsasinateDetail" class="screen">
-        <div class="summary-box" id="asasinateDetailContent"></div>
-    </div>
-
-    <!-- ECRANE PORECLE CELEBRE -->
-    <div id="screenPorecleEpoci" class="screen">
-        <h3 style="margin-bottom: 14px; color: #4a2e1b;">🏷️ Porecle Celebre - Alege Epoca:</h3>
-        <div class="card" onclick="deschideListaPorecle('antichitate')"><span>🏛️ Antichitate</span></div>
-        <div class="card" onclick="deschideListaPorecle('evulMediu')"><span>⚔️ Evul Mediu</span></div>
-        <div class="card" onclick="deschideListaPorecle('epocamoderna')"><span>🎩 Epoca Modernă</span></div>
-        <div class="card" onclick="deschideListaPorecle('contemporana')"><span>🚀 Epoca Contemporană</span></div>
-        <!-- CARDUL NOU PENTRU PORECLE BIZARE -->
-        <div class="card" onclick="deschideListaPorecle('bizare')"><span>🤪 Porecle Bizare</span></div>
-    </div>
-
-    <div id="screenPorecleLista" class="screen">
-        <h3 id="porecleListaTitle" style="margin-bottom: 14px; color: #4a2e1b;">Personaje Istorice și Porecle</h3>
-        <div id="porecleContainer"></div>
-    </div>
-
-    <div id="screenPorecleDetail" class="screen">
-        <div class="summary-box" id="porecleDetailContent"></div>
-    </div>
-
-    <!-- ECRAN CONFIGURARE ANTRENAMENT SOLO -->
+    <!-- ECRAN 2: CONFIGURARE ANTRENAMENT SOLO -->
     <div id="screenDuelSetup" class="screen">
         <div class="duel-box">
-            <h2 style="color: #4a2e1b; margin-bottom: 8px; text-align: center;">⚔️ Antrenament Solo</h2>
-            <p style="font-size:0.88rem; color:#5c3a21; margin-bottom:12px; text-align: center;">Alege clasa și intervalul de lecții pentru testul cronometrat!</p>
+            <h2 style="color: var(--accent-dark); margin-bottom: 8px; text-align: center;">⚔️ Antrenament Solo</h2>
+            <p style="font-size:0.88rem; opacity:0.85; margin-bottom:12px; text-align: center;">Alege clasa și intervalul de lecții pentru testul cronometrat!</p>
 
             <div class="duel-group">
                 <label for="duelClassSelect"><b>Alege Clasa:</b></label><br>
-                <select id="duelClassSelect" onchange="updateDuelSliders()" style="width: 100%; padding: 8px; font-size: 0.95rem; border-radius: 8px; border: 1px solid #8c5a2b; margin-top: 4px; background: #fffdf7; font-weight: bold; color: #4a2e1b;">
+                <select id="duelClassSelect" onchange="updateDuelSliders()" style="width: 100%; padding: 8px; font-size: 0.95rem; border-radius: 8px; border: 1px solid var(--accent); margin-top: 4px; background: #ffffff; font-weight: bold; color: #1e293b;">
                     <option value="V">Clasa a V-a</option>
                     <option value="VI">Clasa a VI-a</option>
                     <option value="VII">Clasa a VII-a</option>
@@ -421,180 +788,180 @@
                     <span>Până la lecția: <strong id="valMaxLectie">10</strong></span>
                 </div>
                 <div class="duel-slider-container">
-                    <input type="range" id="sliderMin" min="1" max="59" value="1" oninput="handleRangeSliders()">
-                    <input type="range" id="sliderMax" min="1" max="59" value="10" oninput="handleRangeSliders()">
+                    <input type="range" id="sliderMin" min="1" max="50" value="1" oninput="handleRangeSliders()">
+                    <input type="range" id="sliderMax" min="1" max="50" value="10" oninput="handleRangeSliders()">
                 </div>
             </div>
 
             <div style="text-align: center; margin-top: 15px;">
-                <button class="btn-action" style="background: #27ae60; color: #fff; border-color: #2ecc71; width: 100%; font-size: 1rem;" onclick="startDuel()">🚀 Începe Antrenamentul!</button>
+                <button class="btn-action" style="background: #10b981; color: #fff; border-color: #059669; width: 100%; font-size: 1rem;" onclick="startDuel()">🚀 Începe Antrenamentul!</button>
             </div>
         </div>
     </div>
 
-    <!-- ECRAN JOC ANTRENAMENT SOLO -->
+    <!-- ECRAN 3: JOC ANTRENAMENT SOLO -->
     <div id="screenDuelGame" class="screen">
         <div class="duel-box">
-            <div style="display: flex; justify-content: space-between; align-items: center; background: #4a2e1b; color: #f3e5ab; padding: 8px 12px; border-radius: 8px; font-weight: bold; margin-bottom: 12px;">
-                <div>⏳ <span id="duelTimer" style="color:#f1c40f; font-size:1.05rem;">15</span>s</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; background: var(--accent-dark); color: #ffffff; padding: 8px 12px; border-radius: 8px; font-weight: bold; margin-bottom: 12px;">
+                <div>⏳ <span id="duelTimer" style="color:#facc15; font-size:1.05rem;">15</span>s</div>
                 <div>🏆 Scor: <span id="duelScore">0</span></div>
                 <div>Întrebarea <span id="duelQNum">1</span>/10</div>
             </div>
 
-            <h3 id="duelQuestionText" style="color: #4a2e1b; margin-bottom: 12px; font-size: 1rem;">Aici va fi întrebarea...</h3>
+            <h3 id="duelQuestionText" style="margin-bottom: 12px; font-size: 1rem;">Aici va fi întrebarea...</h3>
             <div id="duelOptionsContainer" class="duel-options-grid"></div>
         </div>
     </div>
 
-    <!-- ECRAN REZULTAT SOLO & INSIGNĂ -->
+    <!-- ECRAN 4: REZULTAT SOLO & INSIGNĂ -->
     <div id="screenDuelResult" class="screen">
         <div class="duel-box" style="text-align: center;">
-            <h2 style="color: #4a2e1b;">🎉 Antrenament Finalizat</h2>
-            <div style="font-size: 2rem; font-weight: bold; color: #d35400; margin: 8px 0;">
+            <h2 style="color: var(--accent-dark);">🎉 Antrenament Finalizat</h2>
+            <div style="font-size: 2rem; font-weight: bold; color: #ea580c; margin: 8px 0;">
                 <span id="finalDuelScore">0</span> Puncte
             </div>
             
-            <div id="badgeContainer" style="background: #f0e3c4; border: 2px solid #d4a359; border-radius: 10px; padding: 12px; margin: 12px 0;">
-                <div id="badgeIcon" style="font-size: 2.5rem; margin-bottom: 4px;">🛡️</div>
-                <div id="badgeTitle" style="font-weight: bold; color: #4a2e1b; font-size: 1rem;">Insigna obținută</div>
-                <div id="badgeDesc" style="font-size: 0.82rem; color: #5c3a21; margin-top: 2px;"></div>
+            <div id="badgeContainer" style="background: var(--accent-light); border: 2px solid var(--accent); border-radius: 10px; padding: 12px; margin: 12px 0;">
+                <div id="badgeIcon" style="font-size: 2.5rem; margin-bottom: 4px;">🏅</div>
+                <div id="badgeTitle" style="font-weight: bold; color: var(--accent-dark); font-size: 1rem;">Insigna obținută</div>
+                <div id="badgeDesc" style="font-size: 0.84rem; opacity: 0.85; margin-top: 2px;"></div>
             </div>
 
-            <p id="duelResultMessage" style="font-weight: bold; color: #27ae60; margin-bottom: 12px; font-size: 0.9rem;"></p>
+            <p id="duelResultMessage" style="font-weight: bold; color: #059669; margin-bottom: 12px; font-size: 0.92rem;"></p>
 
-            <button class="btn-action" style="width: 100%; background: #8c5a2b; color: white;" onclick="goBack()">🏠 Înapoi la Meniu</button>
+            <button class="btn-action" style="width: 100%; background: var(--accent); color: white;" onclick="goBack()">🏠 Înapoi la Meniu</button>
         </div>
     </div>
 
+    <!-- ECRAN 5: LISTĂ LECȚII -->
     <div id="screenLessons" class="screen">
-        <h3 id="lessonsCategoryTitle" style="margin-bottom: 12px; color: #4a2e1b;">Lecții</h3>
+        <h3 id="lessonsCategoryTitle" style="margin-bottom: 12px; color: var(--accent-dark);">Lecții</h3>
         <div id="lessonsListContainer"></div>
     </div>
 
+    <!-- ECRAN 6: DETALIU LECȚIE -->
     <div id="screenDetail" class="screen">
         <div class="tabs">
             <button class="tab-btn active" onclick="switchTab('summary')">📖 Rezumat</button>
-            <button class="tab-btn" onclick="switchTab('game')">🔥 Asediu</button>
-            <button class="tab-btn" onclick="switchTab('escape')">🗝️ Escape Room</button>
-            <button class="tab-btn" onclick="switchTab('genially')">🌐 Wordwall</button>
+            <button class="tab-btn" id="tabBtnGame" onclick="switchTab('game')">🎯 Joc Quizz</button>
+            <button class="tab-btn" id="tabBtnSpecial" onclick="switchTab('special')">🔐 Provocare</button>
+            <button class="tab-btn" onclick="switchTab('wordwall')">🌐 Wordwall</button>
         </div>
 
+        <!-- TAB 1: REZUMAT -->
         <div id="tabSummary" class="tab-content active">
             <div id="summaryBoxContent" class="summary-box"></div>
         </div>
 
+        <!-- TAB 2: QUIZZ CANVAS (ASEDIU PENTRU ISTORIE / TRIBUNA PENTRU SOCIALĂ) -->
         <div id="tabGame" class="tab-content">
-            <div class="archery-container" id="archeryContainer">
-                <div id="quizQuestion" class="question-banner">Alege răspunsul istoric corect pentru a sparge zidul inamic cu o stâncă incendiară!</div>
-                <canvas id="archeryCanvas" width="800" height="650"></canvas>
+            <div class="game-container">
+                <div id="quizQuestion" class="question-banner">Alege răspunsul corect!</div>
+                <canvas id="gameCanvas" class="game-canvas" width="800" height="650"></canvas>
                 <div id="quizFeedback" class="quiz-feedback"></div>
             </div>
         </div>
 
-        <div id="tabEscape" class="tab-content">
-            <div class="escape-box">
-                <h3 style="color: #f1c40f; margin-bottom: 8px;">🗝️ Evadarea din Arhivă (4 Lacăte)</h3>
-                <p style="font-size:0.82rem; color:#d4a359; margin-bottom:12px;">Deschide fiecare lacăt pentru a obține cifrele codului de evadare!</p>
+        <!-- TAB 3: ESCAPE ROOM (ISTORIE) SAU DILEME SOCIALE (EDUCAȚIE SOCIALĂ) -->
+        <div id="tabSpecial" class="tab-content">
+            <!-- MODUL ISTORIE: ESCAPE ROOM -->
+            <div id="historyEscapeWrapper" class="escape-box" style="display:none;">
+                <h3 style="color: #facc15; margin-bottom: 6px;">🔐 Escape Room Istoric</h3>
+                <p style="font-size:0.84rem; color:#fde68a; margin-bottom:8px;">Descuie toate cele 4 lacăte răspunzând corect la enigme!</p>
 
-                <div class="locks-row">
-                    <div class="lock-card" id="lockCard0"><div class="lock-icon" id="lockIcon0">🔒</div><div class="lock-digit" id="lockDigit0">?</div></div>
-                    <div class="lock-card" id="lockCard1"><div class="lock-icon" id="lockIcon1">🔒</div><div class="lock-digit" id="lockDigit1">?</div></div>
-                    <div class="lock-card" id="lockCard2"><div class="lock-icon" id="lockIcon2">🔒</div><div class="lock-digit" id="lockDigit2">?</div></div>
-                    <div class="lock-card" id="lockCard3"><div class="lock-icon" id="lockIcon3">🔒</div><div class="lock-digit" id="lockDigit3">?</div></div>
+                <div class="padlocks-row" id="escapePadlocksRow"></div>
+
+                <div class="escape-door-wrap">
+                    <div class="escape-door" id="escapeDoor">
+                        <div style="font-size: 2.3rem;" id="escapeDoorIcon">🚪</div>
+                        <div style="font-size: 0.78rem; font-weight: bold; color: #fde68a; margin-top: 4px;" id="escapeDoorStatus">UȘĂ ÎNCUIATĂ</div>
+                    </div>
                 </div>
 
-                <div class="escape-puzzle" id="escapePuzzleText">Se încarcă enigma...</div>
-                
-                <div id="escapeInputArea">
-                    <input type="text" id="escapeInput" class="escape-input" placeholder="Răspuns..." autocomplete="off">
-                    <br>
-                    <button class="btn-action" style="background: #27ae60; color: #fff; border-color: #2ecc71;" onclick="checkCurrentLock()">🔓 Deschide Lacătul!</button>
-                    <button class="btn-action" style="background: #e67e22; color: #fff; border-color: #d35400;" onclick="toggleHint()">💡 Indiciu</button>
+                <div id="escapeRiddleArea" style="background: rgba(0,0,0,0.35); border: 1px solid #d4a359; border-radius: 10px; padding: 12px; margin-top: 8px;">
+                    <div id="escapeRiddleText" style="font-weight: bold; margin-bottom: 6px; line-height: 1.4;"></div>
+                    <div id="escapeHintText" style="font-size: 0.82rem; color: #fcd34d; margin-bottom: 6px;"></div>
+                    <input type="text" id="escapeAnswerInput" class="escape-input" placeholder="Scrie răspunsul sau codul aici..." onkeydown="if(event.key==='Enter') checkEscapeAnswer()">
+                    <button class="btn-action" style="width: 100%; background: #d97706; color: #fff; border-color: #f59e0b;" onclick="checkEscapeAnswer()">🔑 Descuie Lacătul</button>
                 </div>
-                
-                <div id="escapeHintText" class="escape-hint"></div>
-                <p id="escapeFeedback" style="margin-top: 10px; font-weight: bold; min-height: 20px; font-size: 0.9rem;"></p>
+
+                <div id="escapeFeedback" style="margin-top: 10px; font-weight: bold; min-height: 22px;"></div>
+            </div>
+
+            <!-- MODUL EDUCAȚIE SOCIALĂ: DILEME SOCIALE -->
+            <div id="socialDilemmaWrapper" class="dilemma-container" style="display:none;">
+                <h3 style="color: #60a5fa; margin-bottom: 8px;">🎭 Dileme Sociale &amp; Decizii</h3>
+                <p style="font-size:0.82rem; color:#93c5fd; margin-bottom:12px;">Analizează situația și alege cea mai potrivită reacție!</p>
+
+                <div id="dilemmaProgressText" style="font-size:0.85rem; font-weight:bold; color:#e2e8f0; margin-bottom:8px;"></div>
+                <div class="dilemma-card" id="dilemmaText">Aici va apărea dilema...</div>
+                <div id="dilemmaOptionsArea"></div>
+                <div id="dilemmaFeedbackText" class="dilemma-feedback"></div>
+                <button id="btnNextDilemma" class="btn-action" style="display:none; width:100%; margin-top:10px; background:#2563eb; color:white;" onclick="urmatoareaDilema()">Următoarea Dilemă ➔</button>
             </div>
         </div>
 
-        <div id="tabGenially" class="tab-content">
-            <p style="font-size:0.85rem; color:#5c3a21; margin-bottom:6px; font-weight:bold;">Resurse interactive externe:</p>
-            <div style="background: #fff8eb; border: 1px dashed #d4a359; border-radius: 8px; padding: 8px; margin-bottom: 12px; font-size: 0.8rem; color: #5c3a21; line-height: 1.3;">
-                💡 <strong>Sfat pentru telefon:</strong> După ce selectezi jocul dorit, apasă pe simbolul de <strong>Full-Screen</strong> ⛶ din ecranul jocului și rotește telefonul pe orizontală pentru o vizualizare optimă!
+        <!-- TAB 4: WORDWALL / GENIALLY -->
+        <div id="tabWordwall" class="tab-content">
+            <div class="wordwall-tip-box">
+                💡 <strong>Sfat pentru telefon:</strong> Apasă pe simbolul de <strong>Full-Screen ⛶</strong> din colțul jocului și rotește telefonul pe orizontală pentru o vizualizare optimă!
             </div>
-            
-            <div style="background: #fffdf7; border: 1px solid #d4a359; border-radius: 10px; padding: 10px; margin-bottom: 12px;">
-                <p style="color: #c0392b; font-weight: bold; margin-bottom: 6px; font-size: 0.9rem;">1. Resursa 1</p>
+
+            <div id="wrapperGame1" style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 10px; padding: 10px; margin-bottom: 16px;">
+                <h4 id="titleGame1" style="color: var(--accent-dark); margin-bottom: 8px;">🎮 Activitate Interactivă 1</h4>
                 <div style="width: 100%; position: relative; padding-bottom: 56.25%; height: 0;">
                     <iframe id="iframeGame1" frameborder="0" width="100%" height="100%" style="position: absolute; left: 0; top: 0; border-radius: 6px;" src="" allowfullscreen="true"></iframe>
                 </div>
             </div>
-            <div style="background: #fffdf7; border: 1px solid #d4a359; border-radius: 10px; padding: 10px; margin-bottom: 12px;">
-                <p style="color: #c0392b; font-weight: bold; margin-bottom: 6px; font-size: 0.9rem;">2. Resursa 2</p>
+
+            <div id="wrapperGame2" style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 10px; padding: 10px; margin-bottom: 12px; display: none;">
+                <h4 id="titleGame2" style="color: var(--accent-dark); margin-bottom: 8px;">🎮 Activitate Interactivă 2</h4>
                 <div style="width: 100%; position: relative; padding-bottom: 56.25%; height: 0;">
                     <iframe id="iframeGame2" frameborder="0" width="100%" height="100%" style="position: absolute; left: 0; top: 0; border-radius: 6px;" src="" allowfullscreen="true"></iframe>
                 </div>
             </div>
-            <div style="background: #fffdf7; border: 1px solid #d4a359; border-radius: 10px; padding: 10px; margin-bottom: 12px;">
-                <p style="color: #c0392b; font-weight: bold; margin-bottom: 6px; font-size: 0.9rem;">3. Resursa 3</p>
-                <div style="width: 100%; position: relative; padding-bottom: 56.25%; height: 0;">
-                    <iframe id="iframeGame3" frameborder="0" width="100%" height="100%" style="position: absolute; left: 0; top: 0; border-radius: 6px;" src="" allowfullscreen="true"></iframe>
-                </div>
+
+            <div id="noWordwallMsg" style="display:none; text-align:center; padding:20px; color:#64748b; font-weight:bold;">
+                Nu există joc extern atașat acestei lecții.
             </div>
         </div>
     </div>
 </div>
 
-<div id="doorModal" class="door-modal">
-    <div class="door-frame">
-        <div class="door-inside">🌟</div>
-        <div class="door" id="mainDoor">
-            <div class="keyhole"></div>
-            <div class="animated-key" id="animatedKey">🔑</div>
-        </div>
-    </div>
-
-    <div class="victory-card" id="victoryCard">
-        <h2 style="color: #f1c40f; font-size: 20px; margin-bottom: 8px;">🎉 FELICITĂRI!</h2>
-        <p style="font-size: 15px; color: #fff; line-height: 1.4;" id="victoryDetails"></p>
-        <button onclick="closeDoorModal()" class="btn-action" style="margin-top: 12px; background: #27ae60; color: white; border: none;">Continuă Aventura! 🚀</button>
-    </div>
-</div>
-
+<!-- MODALE -->
 <div id="modalDespre" class="modal">
     <div class="modal-content" style="text-align: left;">
         <span class="close-btn" onclick="inchideModal('modalDespre')">&times;</span>
         <h2>📜 Despre Aplicație</h2>
-        <p><strong>Istorie gimnaziu: lecții, quizz-uri, jocuri</strong> este o platformă educațională digitală concepută pentru a sprijini elevii din clasele V–VIII în parcurgerea și aprofundarea materiei de Istorie.</p>
-        <p style="margin-top:10px;">Aplicația oferă:</p>
-        <ul style="margin-left:20px; margin-top:6px;">
-            <li>Sinteze concise și structurate ale lecțiilor.</li>
-            <li>Joc interactiv de Asediu Medieval cu Catapultă dinamică și Stânci Incendiare.</li>
-            <li>Modul interactiv "Escape Room" cu 4 lacăte de deblocat.</li>
-            <li>Jocuri didactice interactive externe.</li>
-        </ul>
-        <p style="margin-top:10px;">Toate lecțiile/rezumatele, quizz-urile și jocurile Wordwall/Genially sunt realizate în concordanță cu <strong>Programa școlară</strong> actuală la <strong>Istorie</strong>, având ca sursă informațională manualele școlare ale editurilor <strong>CD Press</strong> (clasele V-VII) și <strong>Art Klett</strong> (clasa a VIII-a).</p>
-        <p style="margin-top:10px;"><strong>prof. Cristi AMĂRIUȚEI</strong></p>
-        <p style="margin-top:8px;">Școala Gimnazială „Gheorghe și Maria Tașcă” comuna Bălăbănești, jud. Galați</p>
-        <p style="margin-top:4px;">Școala Gimnazială Nr. 1 comuna Bălășești, jud. Galați</p>
+        <p><strong>Istorie &amp; Educație Socială Interactivă</strong> reunește într-o singură platformă digitală lecții sintetizate, jocuri educative, simulări, dileme civice și teste cronometrate pentru elevii din clasele V–VIII.</p>
+        <p style="margin-top:10px;">Toate conținuturile sunt realizate în concordanță cu Programele școlare în vigoare pentru gimnaziu.</p>
+        <p style="margin-top:12px;"><strong>prof. Cristi AMĂRIUȚEI</strong></p>
     </div>
 </div>
 
-<!-- MODAL POP-UP "ȘTIAI CĂ...?" -->
 <div id="modalStiaiCa" class="modal">
-    <div class="modal-content" style="border-color: #d35400; background: #fffdf7;">
+    <div class="modal-content">
         <span class="close-btn" onclick="inchideModal('modalStiaiCa')">&times;</span>
-        <h2 style="color: #d35400; border-bottom-color: #e67e22;">💡 Știai că...?</h2>
-        <p id="stiaiCaText" style="font-size: 1rem; line-height: 1.5; color: #2c1d11; margin-top: 8px;"></p>
-        <button class="btn-action" style="margin-top: 15px; background: #d35400; color: white; border-color: #e67e22;" onclick="inchideModal('modalStiaiCa')">Am aflat secretul! 🕵️‍♂️</button>
+        <h2>💡 Știai că...?</h2>
+        <p id="stiaiCaText" style="font-size: 1rem; line-height: 1.5; color: #1e293b; margin-top: 8px;"></p>
+        <button class="btn-action" style="margin-top: 15px; background: var(--accent); color: white;" onclick="inchideModal('modalStiaiCa')">Am înțeles! 🤝</button>
+    </div>
+</div>
+
+<div id="modalFunFact" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="inchideModal('modalFunFact')">&times;</span>
+        <h2 id="funFactModalTitle">📜 Curiozități Istorice</h2>
+        <div id="funFactBody" class="fun-fact-card"></div>
+        <button class="btn-action" style="margin-top: 10px; background: #8c5a2b; color: white; width: 100%;" onclick="nextFunFact()">🎲 Altă poveste din istorie</button>
     </div>
 </div>
 
 <div id="modalAvatar" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="inchideModal('modalAvatar')">&times;</span>
-        <h2>🎭 Alege Avatarul Istoric</h2>
-        <p style="font-size:0.85rem; color:#5c3a21;">Crește în nivel pentru a debloca noi caractere!</p>
+        <h2>🎭 Alege Avatarul</h2>
+        <p style="font-size:0.85rem; color:#475569;">Crește în nivel pentru a debloca noi caractere!</p>
         <div class="avatar-grid" id="avatarGrid"></div>
     </div>
 </div>
@@ -602,115 +969,158 @@
 <div id="modalWheel" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="inchideModal('modalWheel')">&times;</span>
-        <h2>🎡 Roata Norocului Istoric</h2>
-        <p style="font-size:0.85rem; color:#5c3a21;">Învârte roata pentru a primi bonusul tău zilnic de XP!</p>
+        <h2 id="wheelModalTitle">🎡 Roata Norocului</h2>
+        <p style="font-size:0.85rem; color:#475569;">Învârte roata pentru bonusul tău zilnic de XP!</p>
         <div class="wheel-wrapper">
             <div class="wheel-pointer"></div>
             <canvas id="wheelCanvas" width="300" height="300"></canvas>
         </div>
         <button id="btnSpinWheel" class="btn-action" onclick="spinWheel()">🎰 Învârte Roata!</button>
-        <p id="wheelResultText" style="font-size: 1rem; font-weight: bold; color: #27ae60; margin-top: 10px; min-height: 22px;"></p>
+        <p id="wheelResultText" style="font-size: 1rem; font-weight: bold; color: #059669; margin-top: 10px; min-height: 22px;"></p>
     </div>
 </div>
 
 <div id="modalLevelUp" class="modal">
     <div class="modal-content">
         <span class="close-btn" onclick="inchideModal('modalLevelUp')">&times;</span>
-        <h2 style="color:#27ae60;">🎉 LEVEL UP!</h2>
-        <p style="font-size:1.1rem; font-weight:bold; margin-top:8px;" id="levelUpText"></p>
-        <button class="btn-action" style="margin-top:15px;" onclick="inchideModal('modalLevelUp')">Continuă Aventura! ⚔️</button>
+        <h2 style="color:#059669;">🎉 LEVEL UP!</h2>
+        <p style="font-size:1.08rem; font-weight:bold; margin-top:8px;" id="levelUpText"></p>
+        <button class="btn-action" style="margin-top:15px; background:#059669; color:white;" onclick="inchideModal('modalLevelUp')">Continuă! 🚀</button>
     </div>
 </div>
 
-<!-- FIȘIERELE CU DATE ȘI SCRIPTURI -->
+<!-- FIȘIERELE DE DATE EXTERNE (ISTORIE + EDUCAȚIE SOCIALĂ) -->
 <script src="lectii.js"></script>
 <script src="barfe.js"></script>
 <script src="asasinate.js"></script>
 <script src="porecle.js"></script>
+<script src="date_sociala.js"></script>
 
 <script>
-    const APP_TITLE = "Istorie gimnaziu: lecții, quizz-uri, jocuri";
-    let xp = parseInt(localStorage.getItem('userXP')) || 0;
-    let selectedAvatar = localStorage.getItem('userAvatar') || '🛡️';
-    let quizWrongAnswers = 0;
+    /* =========================================================
+       CONFIGURARE GENERALĂ & PROGRES INDEPENDENT PE MATERIE
+       ========================================================= */
+    let activeSubject = null; // 'history' | 'social' | null
+    let currentClassKey = 'V';
     let currentLessonData = null;
     let currentLessonIdx = null;
-    let currentClassKey = 'V';
     let currentQuizIndex = 0;
-    let currentLockIndex = 0;
+    let currentDilemmaIndex = 0;
 
-    let barfeSursaCurenta = 'universal';
-    let barfeEpocaCurenta = '';
-    let asasinateEpocaCurenta = '';
-    let porecleEpocaCurenta = '';
+    const SUBJECT_CONFIG = {
+        history: {
+            title: "Istorie Interactivă (V–VIII)",
+            themeClass: "theme-history",
+            themeColor: "#2b1d0c",
+            xpKey: "userXP",
+            avatarKey: "userAvatar",
+            defaultAvatar: "⚔️",
+            streakKey: "userStreak",
+            visitKey: "lastVisitDate",
+            spinKey: "lastChestClaim",
+            wheelTitle: "🎡 Roata Norocului Istoric",
+            wheelBtn: "🎡 Roata Norocului",
+            classes: [
+                { key: "V", label: "🏺 Clasa a V-a: Preistoria și Antichitatea" },
+                { key: "VI", label: "🏰 Clasa a VI-a: Evul Mediu și Epoca Modernă" },
+                { key: "VII", label: "🌍 Clasa a VII-a: Epoca Contemporană" },
+                { key: "VIII", label: "🇷🇴 Clasa a VIII-a: Istoria Românilor" }
+            ],
+            levels: [
+                { level: 1,  title: "Ucenic Cronicar",       minXP: 0,     maxXP: 200,   avatar: '📜' },
+                { level: 2,  title: "Străjer al Cetății",    minXP: 200,   maxXP: 500,   avatar: '🛡️' },
+                { level: 3,  title: "Arcaș Regesc",          minXP: 500,   maxXP: 900,   avatar: '🏹' },
+                { level: 4,  title: "Cavaler al Ordinului",  minXP: 900,   maxXP: 1400,  avatar: '⚔️' },
+                { level: 5,  title: "Explorator Antic",      minXP: 1400,  maxXP: 2100,  avatar: '🧭' },
+                { level: 6,  title: "Pârcălab de Cetate",    minXP: 2100,  maxXP: 3000,  avatar: '🏰' },
+                { level: 7,  title: "Strateg Militar",       minXP: 3000,  maxXP: 4100,  avatar: '🗺️' },
+                { level: 8,  title: "Mare Logofăt",          minXP: 4100,  maxXP: 5400,  avatar: '✒️' },
+                { level: 9,  title: "Spătar Domnesc",        minXP: 5400,  maxXP: 6900,  avatar: '🗡️' },
+                { level: 10, title: "Sol al Păcii",          minXP: 6900,  maxXP: 8600,  avatar: '🕊️' },
+                { level: 11, title: "Vornic al Țării",       minXP: 8600,  maxXP: 10500, avatar: '⚖️' },
+                { level: 12, title: "Hatman al Oștilor",     minXP: 10500, maxXP: 12600, avatar: '🎖️' },
+                { level: 13, title: "Cărturar Umanist",      minXP: 12600, maxXP: 14900, avatar: '📚' },
+                { level: 14, title: "Arheolog Maestru",      minXP: 14900, maxXP: 17400, avatar: '🏺' },
+                { level: 15, title: "Voievod Neînfricat",    minXP: 17400, maxXP: 20100, avatar: '👑' },
+                { level: 16, title: "Ctitor de Neam",        minXP: 20100, maxXP: 23000, avatar: '🏛️' },
+                { level: 17, title: "Domnitor Înțelept",     minXP: 23000, maxXP: 26100, avatar: '🦁' },
+                { level: 18, title: "Păstrător al Memoriei", minXP: 26100, maxXP: 29400, avatar: '⏳' },
+                { level: 19, title: "Mare Istoric",          minXP: 29400, maxXP: 33000, avatar: '🏆' },
+                { level: 20, title: "Legendă a Istoriei",    minXP: 33000, maxXP: Infinity, avatar: '🌌' }
+            ]
+        },
+        social: {
+            title: "Educație Socială Interactivă",
+            themeClass: "theme-social",
+            themeColor: "#0f172a",
+            xpKey: "userSocialXP",
+            avatarKey: "userSocialAvatar",
+            defaultAvatar: "🤝",
+            streakKey: "socialUserStreak",
+            visitKey: "socialLastVisitDate",
+            spinKey: "socialLastSpinDate",
+            wheelTitle: "🎡 Roata Cetățeanului",
+            wheelBtn: "🎁 Bonusul Cetățeanului",
+            classes: [
+                { key: "V", label: "🌱 Clasa a V-a: Gândire critică și drepturile copilului" },
+                { key: "VI", label: "🌍 Clasa a VI-a: Educație interculturală" },
+                { key: "VII", label: "⚖️ Clasa a VII-a: Educație pentru cetățenie democratică" },
+                { key: "VIII", label: "💰 Clasa a VIII-a: Educație economico-financiară" }
+            ],
+            levels: [
+                { level: 1,  title: "Mic Cetățean",             minXP: 0,     maxXP: 200,   avatar: '🤝' },
+                { level: 2,  title: "Promotor al Empatiei",     minXP: 200,   maxXP: 500,   avatar: '🌱' },
+                { level: 3,  title: "Promotor al Respectului",  minXP: 500,   maxXP: 900,   avatar: '⭐' },
+                { level: 4,  title: "Gardian al Drepturilor",   minXP: 900,   maxXP: 1400,  avatar: '🛡️' },
+                { level: 5,  title: "Ambasador al Toleranței",  minXP: 1400,  maxXP: 2100,  avatar: '🌍' },
+                { level: 6,  title: "Lider al Comunității",     minXP: 2100,  maxXP: 3000,  avatar: '🏛️' },
+                { level: 7,  title: "Strateg al Bugetului",     minXP: 3000,  maxXP: 4100,  avatar: '💰' },
+                { level: 8,  title: "Cetățean Model",           minXP: 4100,  maxXP: 5400,  avatar: '👑' },
+                { level: 9,  title: "Mediator Social",          minXP: 5400,  maxXP: 6900,  avatar: '⚖️' },
+                { level: 10, title: "Sfetnic Civic",            minXP: 6900,  maxXP: 8600,  avatar: '📜' },
+                { level: 11, title: "Arhitect al Dialogului",   minXP: 8600,  maxXP: 10500, avatar: '🕊️' },
+                { level: 12, title: "Lider Voluntar",           minXP: 10500, maxXP: 12600, avatar: '💖' },
+                { level: 13, title: "Manager Financiar",        minXP: 12600, maxXP: 14900, avatar: '📊' },
+                { level: 14, title: "Defensor al Egalității",   minXP: 14900, maxXP: 17400, avatar: '🗽' },
+                { level: 15, title: "Ambasador al Democrației", minXP: 17400, maxXP: 20100, avatar: '🗳️' },
+                { level: 16, title: "Vizionar al Comunității",  minXP: 20100, maxXP: 23000, avatar: '🔭' },
+                { level: 17, title: "Titan al Cetățeniei",      minXP: 23000, maxXP: 26100, avatar: '🏆' },
+                { level: 18, title: "Garant al Dreptății",      minXP: 26100, maxXP: 29400, avatar: '⚖️' },
+                { level: 19, title: "Magistrat Civic",          minXP: 29400, maxXP: 33000, avatar: '🏛️' },
+                { level: 20, title: "Legendă Socială",          minXP: 33000, maxXP: Infinity, avatar: '🌌' }
+            ]
+        }
+    };
 
-    // Gestionare adâncime istoric pentru butonul Back de la Android
+    function amestecaArray(array) {
+        let copie = [...array];
+        for (let i = copie.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [copie[i], copie[j]] = [copie[j], copie[i]];
+        }
+        return copie;
+    }
+
     let historyDepth = 0;
-
     function pushNavigationState() {
         historyDepth++;
         window.location.hash = "#step" + historyDepth;
     }
 
-    const LEVELS = [
-        { level: 1,  title: "Mic Arheolog",           minXP: 0,     maxXP: 200,    avatar: '🛡️' },
-        { level: 2,  title: "Explorator de Istorie",   minXP: 200,   maxXP: 500,    avatar: '🏛️' },
-        { level: 3,  title: "Scrib Regal",             minXP: 500,   maxXP: 900,    avatar: '📜' },
-        { level: 4,  title: "Cronicar de Seamă",       minXP: 900,   maxXP: 1400,   avatar: '⚔' },
-        { level: 5,  title: "Centurion al Cunoașterii",minXP: 1400,  maxXP: 2100,   avatar: '🗡️' },
-        { level: 6,  title: "Cavaler al Coroanei",     minXP: 2100,  maxXP: 3000,   avatar: '🏰' },
-        { level: 7,  title: "Strateg al Regatului",    minXP: 3000,  maxXP: 4100,   avatar: '👑' },
-        { level: 8,  title: "Sfetnic Domnesc",        minXP: 4100,  maxXP: 5400,   avatar: '🦅' },
-        { level: 9,  title: "Maestru al Arhivelor",    minXP: 5400,  maxXP: 6900,   avatar: '🗝️' },
-        { level: 10, title: "Gvardian al Istoriei",    minXP: 6900,  maxXP: 8600,   avatar: '🛡️' },
-        { level: 11, title: "Arhitect al Epocilor",    minXP: 8600,  maxXP: 10500,  avatar: '🏛️' },
-        { level: 12, title: "Mare Cronicar",          minXP: 10500, maxXP: 12600,  avatar: '📜' },
-        { level: 13, title: "Comandant Suprem",        minXP: 12600, maxXP: 14900,  avatar: '⚔️' },
-        { level: 14, title: "Senator al Cunoașterii", minXP: 14900, maxXP: 17400,  avatar: '🏛️' },
-        { level: 15, title: "Erou al Neamului",        minXP: 17400, maxXP: 20100,  avatar: '👑' },
-        { level: 16, title: "Titan al Istoriei",       minXP: 20100, maxXP: 23000,  avatar: '🔱' },
-        { level: 17, title: "Marele Inquisitor",      minXP: 23000, maxXP: 26100,  avatar: '🦅' },
-        { level: 18, title: "Păzitorul Timpului",      minXP: 26100, maxXP: 29400,  avatar: '⏳' },
-        { level: 19, title: "Arhonte Suprem",          minXP: 29400, maxXP: 33000,  avatar: '👑' },
-        { level: 20, title: "Legendă Absolută",       minXP: 33000, maxXP: Infinity, avatar: '🌌' }
-    ];
-
-    const WHEEL_SECTORS = [
-        { label: "+10 XP", xp: 10, color: "#8c5a2b", chance: 35 },
-        { label: "+20 XP", xp: 20, color: "#27ae60", chance: 30 },
-        { label: "+30 XP", xp: 30, color: "#2980b9", chance: 18 },
-        { label: "+50 XP", xp: 50, color: "#8e44ad", chance: 10 },
-        { label: "+80 XP", xp: 80, color: "#e67e22", chance: 5 },
-        { label: "+100 XP", xp: 100, color: "#f1c40f", chance: 2 }
-    ];
-
+    /* AUDIO FEEDBACK */
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     function playSound(type) {
         if (audioCtx.state === 'suspended') { audioCtx.resume(); }
-        if (type === 'shoot') {
-            const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
-            osc.type = 'triangle'; osc.frequency.setValueAtTime(250, audioCtx.currentTime);
-            osc.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + 0.25);
-            gain.gain.setValueAtTime(0.4, audioCtx.currentTime); gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
-            osc.connect(gain); gain.connect(audioCtx.destination); osc.start(); osc.stop(audioCtx.currentTime + 0.25);
-        } else if (type === 'hit') {
-            const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
-            osc.type = 'square'; osc.frequency.setValueAtTime(120, audioCtx.currentTime);
-            gain.gain.setValueAtTime(0.3, audioCtx.currentTime); gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.15);
-            osc.connect(gain); gain.connect(audioCtx.destination); osc.start(); osc.stop(audioCtx.currentTime + 0.15);
-        } else if (type === 'tick') {
-            const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
-            osc.type = 'sine'; osc.frequency.setValueAtTime(600, audioCtx.currentTime);
-            gain.gain.setValueAtTime(0.1, audioCtx.currentTime); gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.03);
-            osc.connect(gain); gain.connect(audioCtx.destination); osc.start(); osc.stop(audioCtx.currentTime + 0.03);
-        } else if (type === 'correct') {
+        if (type === 'correct') {
             [523.25, 659.25, 783.99].forEach((freq, index) => {
                 const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
                 osc.type = 'sine'; osc.frequency.value = freq;
                 gain.gain.setValueAtTime(0, audioCtx.currentTime + index * 0.08);
                 gain.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + index * 0.08 + 0.02);
                 gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + index * 0.08 + 0.3);
-                osc.connect(gain); gain.connect(audioCtx.destination); osc.start(audioCtx.currentTime + index * 0.08); osc.stop(audioCtx.currentTime + index * 0.08 + 0.3);
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.start(audioCtx.currentTime + index * 0.08);
+                osc.stop(audioCtx.currentTime + index * 0.08 + 0.3);
             });
         } else if (type === 'wrong') {
             [261.63, 220.00].forEach((freq, index) => {
@@ -719,7 +1129,9 @@
                 gain.gain.setValueAtTime(0, audioCtx.currentTime + index * 0.1);
                 gain.gain.linearRampToValueAtTime(0.2, audioCtx.currentTime + index * 0.1 + 0.02);
                 gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + index * 0.1 + 0.25);
-                osc.connect(gain); gain.connect(audioCtx.destination); osc.start(audioCtx.currentTime + index * 0.1); osc.stop(audioCtx.currentTime + index * 0.1 + 0.25);
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.start(audioCtx.currentTime + index * 0.1);
+                osc.stop(audioCtx.currentTime + index * 0.1 + 0.25);
             });
         } else if (type === 'levelup') {
             [440, 554.37, 659.25, 880].forEach((freq, index) => {
@@ -728,40 +1140,42 @@
                 gain.gain.setValueAtTime(0, audioCtx.currentTime + index * 0.1);
                 gain.gain.linearRampToValueAtTime(0.25, audioCtx.currentTime + index * 0.1 + 0.03);
                 gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + index * 0.1 + 0.4);
-                osc.connect(gain); gain.connect(audioCtx.destination); osc.start(audioCtx.currentTime + index * 0.1); osc.stop(audioCtx.currentTime + index * 0.1 + 0.4);
+                osc.connect(gain); gain.connect(audioCtx.destination);
+                osc.start(audioCtx.currentTime + index * 0.1);
+                osc.stop(audioCtx.currentTime + index * 0.1 + 0.4);
             });
-        } else if (type === 'fw_launch') {
-            const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
-            osc.type = 'sine'; osc.frequency.setValueAtTime(300, audioCtx.currentTime);
-            osc.frequency.exponentialRampToValueAtTime(600, audioCtx.currentTime + 0.5);
-            gain.gain.setValueAtTime(0, audioCtx.currentTime);
-            gain.gain.linearRampToValueAtTime(0.05, audioCtx.currentTime + 0.1);
-            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.5);
-            osc.connect(gain); gain.connect(audioCtx.destination); osc.start(); osc.stop(audioCtx.currentTime + 0.5);
-        } else if (type === 'fw_explode') {
-            const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
-            osc.type = 'square'; osc.frequency.setValueAtTime(100, audioCtx.currentTime);
-            osc.frequency.exponentialRampToValueAtTime(10, audioCtx.currentTime + 0.3);
-            gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
-            osc.connect(gain); gain.connect(audioCtx.destination); osc.start(); osc.stop(audioCtx.currentTime + 0.3);
         }
     }
 
-    function getCurrentLevelInfo(valXP) {
-        let curLvl = LEVELS[0];
-        for (let i = 0; i < LEVELS.length; i++) {
-            if (valXP >= LEVELS[i].minXP) curLvl = LEVELS[i];
+    function getLevelInfoForSubject(subj, valXP) {
+        const lvls = SUBJECT_CONFIG[subj].levels;
+        let curLvl = lvls[0];
+        for (let i = 0; i < lvls.length; i++) {
+            if (valXP >= lvls[i].minXP) curLvl = lvls[i];
         }
         return curLvl;
     }
 
+    function refreshHubStats() {
+        const hXP = parseInt(localStorage.getItem(SUBJECT_CONFIG.history.xpKey)) || 0;
+        const hLvl = getLevelInfoForSubject('history', hXP);
+        document.getElementById('hubHistoryStats').innerText = `Nivel ${hLvl.level}: ${hLvl.title} • ${hXP} XP`;
+
+        const sXP = parseInt(localStorage.getItem(SUBJECT_CONFIG.social.xpKey)) || 0;
+        const sLvl = getLevelInfoForSubject('social', sXP);
+        document.getElementById('hubSocialStats').innerText = `Nivel ${sLvl.level}: ${sLvl.title} • ${sXP} XP`;
+    }
+
     function updateXP(val) {
-        let oldLevel = getCurrentLevelInfo(xp);
+        if (!activeSubject) return;
+        const cfg = SUBJECT_CONFIG[activeSubject];
+        let xp = parseInt(localStorage.getItem(cfg.xpKey)) || 0;
+        let selectedAvatar = localStorage.getItem(cfg.avatarKey) || cfg.defaultAvatar;
+        let oldLevel = getLevelInfoForSubject(activeSubject, xp);
+
         xp = Math.max(0, xp + val);
-        localStorage.setItem('userXP', xp);
-        
-        let curLvl = getCurrentLevelInfo(xp);
+        localStorage.setItem(cfg.xpKey, xp);
+        let curLvl = getLevelInfoForSubject(activeSubject, xp);
 
         if (curLvl.level > oldLevel.level) {
             playSound('levelup');
@@ -777,166 +1191,124 @@
             document.getElementById('xpText').innerText = `${xp} / ${curLvl.maxXP} XP`;
         } else {
             document.getElementById('xpText').innerText = `${xp} XP`;
-            percentage = 100;
         }
 
         document.getElementById('xpFill').style.width = percentage + '%';
         document.getElementById('playerRank').innerText = `Nivel ${curLvl.level}: ${curLvl.title}`;
         document.getElementById('playerAvatar').innerText = selectedAvatar;
+        refreshHubStats();
     }
 
     function updateStreak() {
+        if (!activeSubject) return;
+        const cfg = SUBJECT_CONFIG[activeSubject];
         let today = new Date().toDateString();
-        let lastVisit = localStorage.getItem('lastVisitDate');
-        let streak = parseInt(localStorage.getItem('userStreak')) || 1;
+        let lastVisit = localStorage.getItem(cfg.visitKey);
+        let streak = parseInt(localStorage.getItem(cfg.streakKey)) || 1;
 
-        if (lastVisit) {
+        if (lastVisit && lastVisit !== today) {
             let lastDate = new Date(lastVisit);
             let diffDays = Math.floor((new Date() - lastDate) / (1000 * 60 * 60 * 24));
             if (diffDays === 1) streak++;
             else if (diffDays > 1) streak = 1;
         }
-        localStorage.setItem('lastVisitDate', today);
-        localStorage.setItem('userStreak', streak);
+        localStorage.setItem(cfg.visitKey, today);
+        localStorage.setItem(cfg.streakKey, streak);
         document.getElementById('streakText').innerText = `🔥 ${streak} Zi${streak > 1 ? 'le' : ''}`;
     }
 
-    let wheelAngle = 0;
-    let isSpinning = false;
-
-    function drawWheel() {
-        const wCanvas = document.getElementById('wheelCanvas');
-        if(!wCanvas) return;
-        const wCtx = wCanvas.getContext('2d');
-        const numSectors = WHEEL_SECTORS.length;
-        const arc = (2 * Math.PI) / numSectors;
-        const radius = wCanvas.width / 2;
-
-        wCtx.clearRect(0, 0, wCanvas.width, wCanvas.height);
-
-        for (let i = 0; i < numSectors; i++) {
-            const angle = wheelAngle + i * arc;
-            wCtx.beginPath();
-            wCtx.fillStyle = WHEEL_SECTORS[i].color;
-            wCtx.moveTo(radius, radius);
-            wCtx.arc(radius, radius, radius - 5, angle, angle + arc);
-            wCtx.fill();
-            wCtx.lineWidth = 2;
-            wCtx.strokeStyle = "#4a2e1b";
-            wCtx.stroke();
-
-            wCtx.save();
-            wCtx.translate(radius, radius);
-            wCtx.rotate(angle + arc / 2);
-            wCtx.textAlign = "right";
-            wCtx.fillStyle = "#ffffff";
-            wCtx.font = "bold 15px 'Segoe UI', sans-serif";
-            wCtx.fillText(WHEEL_SECTORS[i].label, radius - 20, 5);
-            wCtx.restore();
+    /* ACCESARE LECȚII PENTRU AMBELE BAZE DE DATE */
+    function getLessonsForClass(subj, clsKey) {
+        if (subj === 'history') {
+            if (typeof dbLectii !== 'undefined') {
+                return dbLectii[clsKey] || dbLectii[`clasa_${clsKey}`] || [];
+            }
+            return [];
+        } else {
+            if (typeof dateSociala !== 'undefined') {
+                return dateSociala[`clasa_${clsKey}`] || dateSociala[clsKey] || [];
+            }
+            return [];
         }
-
-        wCtx.beginPath();
-        wCtx.arc(radius, radius, 25, 0, 2 * Math.PI);
-        wCtx.fillStyle = "#fdf6e2";
-        wCtx.fill();
-        wCtx.lineWidth = 3;
-        wCtx.strokeStyle = "#8c5a2b";
-        wCtx.stroke();
     }
 
-    function openWheelModal() {
-        let lastChest = localStorage.getItem('lastChestClaim');
-        let today = new Date().toDateString();
-        if (lastChest === today) {
-            alert("Ai învârtit deja Roata Istorică astăzi! Revino mâine pentru un nou bonus.");
-            return;
-        }
-        document.getElementById('wheelResultText').innerText = "";
-        document.getElementById('btnSpinWheel').disabled = false;
-        document.getElementById('modalWheel').style.display = 'block';
-        setTimeout(drawWheel, 50);
+    /* NAVIGARE ÎNTRE MATERII ȘI ECRANE */
+    function selectSubject(subj) {
+        pushNavigationState();
+        activeSubject = subj;
+        const cfg = SUBJECT_CONFIG[subj];
+
+        document.body.classList.remove('theme-history', 'theme-social');
+        document.body.classList.add(cfg.themeClass);
+        document.getElementById('metaThemeColor').setAttribute('content', cfg.themeColor);
+
+        document.getElementById('headerTitle').innerText = cfg.title;
+        document.getElementById('playerBar').style.display = 'flex';
+        document.getElementById('backBtn').style.display = 'block';
+        document.getElementById('homeBtn').style.display = 'block';
+
+        document.getElementById('btnDailyWheel').innerText = cfg.wheelBtn;
+        document.getElementById('historyExtrasGrid').style.display = (subj === 'history') ? 'grid' : 'none';
+
+        const classContainer = document.getElementById('classCardsContainer');
+        classContainer.innerHTML = `<h3 style="margin-bottom: 10px; color: var(--accent-dark); font-size: 1.05rem;">Alege Clasa:</h3>`;
+        cfg.classes.forEach(c => {
+            classContainer.innerHTML += `<div class="card" onclick="openClass('${c.key}')"><span>${c.label}</span><span>➔</span></div>`;
+        });
+
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById('screenClasses').classList.add('active-screen');
+
+        updateXP(0);
+        updateStreak();
     }
 
-    function spinWheel() {
-        if (isSpinning) return;
-        isSpinning = true;
-        document.getElementById('btnSpinWheel').disabled = true;
-        document.getElementById('wheelResultText').innerText = "Se învârte...";
-
-        let rand = Math.floor(Math.random() * 100) + 1;
-        let cumulative = 0;
-        let selectedIndex = 0;
-
-        for (let i = 0; i < WHEEL_SECTORS.length; i++) {
-            cumulative += WHEEL_SECTORS[i].chance;
-            if (rand <= cumulative) {
-                selectedIndex = i;
-                break;
-            }
+    function returnToSubjectHub() {
+        clearInterval(duelState.timer);
+        activeSubject = null;
+        historyDepth = 0;
+        if (window.location.hash !== "") {
+            history.replaceState(null, null, ' ');
         }
 
-        const numSectors = WHEEL_SECTORS.length;
-        const sectorArc = (2 * Math.PI) / numSectors;
-        const targetAngle = (3 * Math.PI / 2) - (selectedIndex * sectorArc) - (sectorArc / 2);
-        const extraRotations = 5 * 2 * Math.PI; 
-        const totalTargetAngle = wheelAngle + extraRotations + (targetAngle - (wheelAngle % (2 * Math.PI)));
+        document.body.classList.remove('theme-history', 'theme-social');
+        document.getElementById('metaThemeColor').setAttribute('content', '#1e1b4b');
+        document.getElementById('headerTitle').innerText = "Istorie & Educație Socială";
+        document.getElementById('playerBar').style.display = 'none';
+        document.getElementById('backBtn').style.display = 'none';
+        document.getElementById('homeBtn').style.display = 'none';
 
-        let start = null;
-        const duration = 4000; 
-        let lastSectorIndex = -1;
-
-        function animateWheel(timestamp) {
-            if (!start) start = timestamp;
-            let progress = (timestamp - start) / duration;
-            if (progress > 1) progress = 1;
-
-            let easeProgress = 1 - Math.pow(1 - progress, 3);
-            wheelAngle = easeProgress * totalTargetAngle;
-            drawWheel();
-
-            let currentSector = Math.floor(((3 * Math.PI / 2 - wheelAngle) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI) / sectorArc);
-            if (currentSector !== lastSectorIndex) {
-                playSound('tick');
-                lastSectorIndex = currentSector;
-            }
-
-            if (progress < 1) {
-                requestAnimationFrame(animateWheel);
-            } else {
-                isSpinning = false;
-                let wonXP = WHEEL_SECTORS[selectedIndex].xp;
-                let today = new Date().toDateString();
-                localStorage.setItem('lastChestClaim', today);
-                
-                playSound('correct');
-                updateXP(wonXP);
-                document.getElementById('wheelResultText').innerText = `🎉 FELICITĂRI! Ai câștigat +${wonXP} XP Bonus!`;
-            }
-        }
-
-        requestAnimationFrame(animateWheel);
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById('screenSubjectHub').classList.add('active-screen');
+        refreshHubStats();
     }
 
     function openClass(clsKey) {
         pushNavigationState();
         currentClassKey = clsKey;
-        document.getElementById('headerTitle').innerText = "Clasa a " + clsKey + "-a";
+
+        document.getElementById('headerTitle').innerText = `Clasa a ${clsKey}-a`;
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
         document.getElementById('screenLessons').classList.add('active-screen');
-        document.getElementById('backBtn').style.display = 'block';
 
         const container = document.getElementById('lessonsListContainer');
         container.innerHTML = '';
-        
-        const lessons = dbLectii[clsKey] || [];
+
+        const lessons = getLessonsForClass(activeSubject, clsKey);
+        if (lessons.length === 0) {
+            container.innerHTML = "<p style='text-align:center; padding:20px; color:#64748b;'>Lecțiile pentru această clasă vor fi adăugate curând!</p>";
+            return;
+        }
+
         lessons.forEach((les, idx) => {
-            let starsKey = `stars_${clsKey}_${idx}`;
+            let starsKey = `${activeSubject}_stars_${clsKey}_${idx}`;
             let savedStars = parseInt(localStorage.getItem(starsKey)) || 0;
             let starsDisplay = savedStars > 0 ? "⭐".repeat(savedStars) : "";
+            let titlu = les.titlu || les.title || `Lecția ${idx + 1}`;
 
             container.innerHTML += `
                 <div class="card" onclick="openLessonDetail('${clsKey}', ${idx})">
-                    <span>${les.title}</span>
+                    <span>${titlu}</span>
                     <span class="lesson-stars">${starsDisplay}</span>
                 </div>`;
         });
@@ -944,394 +1316,98 @@
 
     function openLessonDetail(clsKey, lessonIdx) {
         pushNavigationState();
-        currentLessonData = dbLectii[clsKey][lessonIdx];
+        const lessons = getLessonsForClass(activeSubject, clsKey);
+        currentLessonData = lessons[lessonIdx];
         currentLessonIdx = lessonIdx;
         currentQuizIndex = 0;
-        quizWrongAnswers = 0;
+        currentDilemmaIndex = 0;
 
-        document.getElementById('headerTitle').innerText = currentLessonData.title;
+        document.getElementById('headerTitle').innerText = currentLessonData.titlu || currentLessonData.title || "Lecție";
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
         document.getElementById('screenDetail').classList.add('active-screen');
 
-        let htmlRezumat = currentLessonData.summary || "";
+        // Configurare taburi în funcție de materie
+        if (activeSubject === 'history') {
+            document.getElementById('tabBtnGame').innerText = "🏰 Asediu";
+            document.getElementById('tabBtnSpecial').innerText = "🔐 Escape Room";
+            document.getElementById('historyEscapeWrapper').style.display = 'block';
+            document.getElementById('socialDilemmaWrapper').style.display = 'none';
+            initEscapeRoom();
+        } else {
+            document.getElementById('tabBtnGame').innerText = "⚖️ Tribuna";
+            document.getElementById('tabBtnSpecial').innerText = "🎭 Dileme Sociale";
+            document.getElementById('historyEscapeWrapper').style.display = 'none';
+            document.getElementById('socialDilemmaWrapper').style.display = 'block';
+            initDilemmaModule();
+        }
+
+        // Rezumat
+        let htmlRezumat = currentLessonData.rezumat || "<p>Rezumatul acestei lecții este în curs de actualizare.</p>";
         if (currentLessonData.stiaiCa) {
             htmlRezumat += `
                 <br><div style="text-align: center; margin-top: 15px;">
-                    <button class="btn-action" style="background: #f39c12; color: #fff; border-color: #d35400; font-size: 0.88rem;" onclick="deschideStiaiCa()">
-                        💡 Știai că...? (Secret Istoric)
+                    <button class="btn-action" style="background: var(--accent); color: #fff; font-size: 0.88rem;" onclick="deschideStiaiCa()">
+                        💡 Știai că...? (Curiozitate)
                     </button>
                 </div>`;
         }
         document.getElementById('summaryBoxContent').innerHTML = htmlRezumat;
-        
-        let ifr1 = document.getElementById('iframeGame1');
-        let ifr2 = document.getElementById('iframeGame2');
-        let ifr3 = document.getElementById('iframeGame3');
-        ifr1.src = ''; ifr2.src = ''; ifr3.src = '';
 
-        initEscapeRoom();
+        // Wordwall / Genially (suport 1 sau 2 link-uri)
+        const iframe1 = document.getElementById('iframeGame1');
+        const iframe2 = document.getElementById('iframeGame2');
+        const wrapper1 = document.getElementById('wrapperGame1');
+        const wrapper2 = document.getElementById('wrapperGame2');
+        const noMsg = document.getElementById('noWordwallMsg');
+
+        let urls = [];
+        if (Array.isArray(currentLessonData.wordwallUrls) && currentLessonData.wordwallUrls.length > 0) {
+            urls = currentLessonData.wordwallUrls.filter(Boolean);
+        } else {
+            const single = currentLessonData.wordwallUrl || currentLessonData.geniallyUrl || currentLessonData.linkWordwall || "";
+            if (single) urls = [single];
+        }
+
+        if (urls.length === 0) {
+            iframe1.src = "";
+            iframe2.src = "";
+            wrapper1.style.display = "none";
+            wrapper2.style.display = "none";
+            noMsg.style.display = "block";
+        } else {
+            noMsg.style.display = "none";
+            wrapper1.style.display = "block";
+            iframe1.src = urls[0];
+            if (urls[1]) {
+                wrapper2.style.display = "block";
+                iframe2.src = urls[1];
+            } else {
+                iframe2.src = "";
+                wrapper2.style.display = "none";
+            }
+        }
+
         switchTab('summary');
     }
 
-    function deschideModulBarfeSelectSursa() {
-        pushNavigationState();
-        document.getElementById('headerTitle').innerText = "💬 Bârfele Cetății";
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
-        document.getElementById('screenBarfeSursa').classList.add('active-screen');
-        document.getElementById('backBtn').style.display = 'block';
-    }
-
-    function alegeSursaBarfe(sursa) {
-        pushNavigationState();
-        barfeSursaCurenta = sursa;
-        let titluSursa = (sursa === 'universal') ? "Istorie Universală" : "Istoria Românilor";
-        document.getElementById('barfeEpociTitle').innerText = "💬 Bârfele Cetății (" + titluSursa + ") - Alege Epoca:";
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
-        document.getElementById('screenBarfeEpoci').classList.add('active-screen');
-    }
-
-    function deschideListaBarfe(epoca) {
-        pushNavigationState();
-        barfeEpocaCurenta = epoca;
-        const container = document.getElementById('barfeContainer');
-        container.innerHTML = '';
-
-        let denumireEpoci = { antichitate: "Antichitate", evulMediu: "Evul Mediu", epocamoderna: "Epoca Modernă", contemporana: "Epoca Contemporană" };
-        document.getElementById('barfeListaTitle').innerText = "💬 " + denumireEpoci[epoca];
-
-        let lista = (typeof barfeData !== 'undefined' && barfeData[barfeSursaCurenta] && barfeData[barfeSursaCurenta][epoca]) ? barfeData[barfeSursaCurenta][epoca] : [];
-
-        if(lista.length === 0) {
-            container.innerHTML = "<p style='text-align:center; padding:20px; color:#5c3a21;'>Nu există picanterii adăugate încă pentru această epocă.</p>";
-        } else {
-            lista.forEach((item, idx) => {
-                let div = document.createElement('div');
-                div.className = 'card';
-                div.innerHTML = `<span>${item.titlu}</span>`;
-                div.onclick = () => afiseazaDetaliuBarfa(item);
-                container.appendChild(div);
-            });
-        }
-
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
-        document.getElementById('screenBarfeLista').classList.add('active-screen');
-    }
-
-    function afiseazaDetaliuBarfa(item) {
-        pushNavigationState();
-        document.getElementById('headerTitle').innerText = item.titlu;
-        document.getElementById('barfeDetailContent').innerHTML = `
-            <h3 style="color:#c0392b; margin-bottom:12px;">${item.titlu}</h3>
-            <div style="font-size:1rem; line-height:1.5; color:#2c1d11;">${item.detalii}</div>
-        `;
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
-        document.getElementById('screenBarfeDetail').classList.add('active-screen');
-    }
-
-    function deschideModulAsasinateEpoci() {
-        pushNavigationState();
-        document.getElementById('headerTitle').innerText = "🗡️ Asasinate Celebre";
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
-        document.getElementById('screenAsasinateEpoci').classList.add('active-screen');
-        document.getElementById('backBtn').style.display = 'block';
-    }
-
-    function deschideListaAsasinate(epoca) {
-        pushNavigationState();
-        asasinateEpocaCurenta = epoca;
-        const container = document.getElementById('asasinateContainer');
-        container.innerHTML = '';
-
-        let denumireEpoci = { antichitate: "Antichitate", evulMediu: "Evul Mediu", epocamoderna: "Epoca Modernă", contemporana: "Epoca Contemporană" };
-        document.getElementById('asasinateListaTitle').innerText = "🗡 " + denumireEpoci[epoca];
-
-        let lista = (typeof asasinateData !== 'undefined' && asasinateData[epoca]) ? asasinateData[epoca] : [];
-
-        if(lista.length === 0) {
-            container.innerHTML = "<p style='text-align:center; padding:20px; color:#5c3a21;'>Nu există asasinate adăugate încă pentru această epocă.</p>";
-        } else {
-            lista.forEach((item, idx) => {
-                let div = document.createElement('div');
-                div.className = 'card';
-                div.innerHTML = `<span>${item.titlu}</span>`;
-                div.onclick = () => afiseazaDetaliuAsasinat(item);
-                container.appendChild(div);
-            });
-        }
-
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
-        document.getElementById('screenAsasinateLista').classList.add('active-screen');
-    }
-
-    function afiseazaDetaliuAsasinat(item) {
-        pushNavigationState();
-        document.getElementById('headerTitle').innerText = item.titlu;
-        
-        let htmlContent = `<h3 style="color:#c0392b; margin-bottom:10px;">${item.titlu}</h3>`;
-        if(item.victima) htmlContent += `<p style="margin-bottom:4px;"><b>👤 Victima:</b> ${item.victima}</p>`;
-        if(item.an) htmlContent += `<p style="margin-bottom:4px;"><b>📅 Anul/Data:</b> ${item.an}</p>`;
-        if(item.faptas) htmlContent += `<p style="margin-bottom:4px;"><b>🗡 Autorul:</b> ${item.faptas}</p>`;
-        if(item.context) htmlContent += `<p style="margin-bottom:4px;"><b>🎯 Motiv/Context:</b> ${item.context}</p>`;
-        if(item.detalii) htmlContent += `<br><div style="font-size:0.95rem; line-height:1.5; color:#2c1d11;">${item.detalii}</div>`;
-        if(item.impact) htmlContent += `<br><p style="color:#8c5a2b; font-weight:bold;"><b>💥 Impact istoric:</b> ${item.impact}</p>`;
-
-        document.getElementById('asasinateDetailContent').innerHTML = htmlContent;
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
-        document.getElementById('screenAsasinateDetail').classList.add('active-screen');
-    }
-
-    /* LOGICĂ PORECLE CELEBRE */
-    function deschideModulPorecleEpoci() {
-        pushNavigationState();
-        document.getElementById('headerTitle').innerText = "🏷️ Porecle Celebre";
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
-        document.getElementById('screenPorecleEpoci').classList.add('active-screen');
-        document.getElementById('backBtn').style.display = 'block';
-    }
-
-    function deschideListaPorecle(epoca) {
-        pushNavigationState();
-        porecleEpocaCurenta = epoca;
-        const container = document.getElementById('porecleContainer');
-        container.innerHTML = '';
-
-        let denumireEpoci = { 
-            antichitate: "Antichitate", 
-            evulMediu: "Evul Mediu", 
-            epocamoderna: "Epoca Modernă", 
-            contemporana: "Epoca Contemporană",
-            bizare: "🤪 Porecle Bizare"
-        };
-        document.getElementById('porecleListaTitle').innerText = "🏷️️ " + (denumireEpoci[epoca] || "Porecle");
-
-        let lista = (typeof porecleData !== 'undefined' && porecleData[epoca]) ? porecleData[epoca] : [];
-
-        if(lista.length === 0) {
-            container.innerHTML = "<p style='text-align:center; padding:20px; color:#5c3a21;'>Nu există porecle adăugate încă pentru această categorie.</p>";
-        } else {
-            lista.forEach((item, idx) => {
-                let div = document.createElement('div');
-                div.className = 'card';
-                div.innerHTML = `<span>${item.titlu || item.personaj}</span>`;
-                div.onclick = () => afiseazaDetaliuPorecla(item);
-                container.appendChild(div);
-            });
-        }
-
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
-        document.getElementById('screenPorecleLista').classList.add('active-screen');
-    }
-
-    function afiseazaDetaliuPorecla(item) {
-        pushNavigationState();
-        document.getElementById('headerTitle').innerText = item.titlu || item.personaj;
-        
-        let htmlContent = `<h3 style="color:#c0392b; margin-bottom:10px;">${item.titlu || item.personaj}</h3>`;
-        if(item.personaj) htmlContent += `<p style="margin-bottom:4px;"><b>👤 Personajul:</b> ${item.personaj}</p>`;
-        if(item.porecla) htmlContent += `<p style="margin-bottom:4px;"><b>🏷️ Porecla / Titlul:</b> ${item.porecla}</p>`;
-        if(item.originea) htmlContent += `<p style="margin-bottom:4px;"><b>💡 Originea poreclei:</b> ${item.originea}</p>`;
-        if(item.detalii) htmlContent += `<br><div style="font-size:0.95rem; line-height:1.5; color:#2c1d11;">${item.detalii}</div>`;
-
-        document.getElementById('porecleDetailContent').innerHTML = htmlContent;
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
-        document.getElementById('screenPorecleDetail').classList.add('active-screen');
-    }
-
-    function deschideStiaiCa() {
-        if (currentLessonData && currentLessonData.stiaiCa) {
-            document.getElementById('stiaiCaText').innerText = currentLessonData.stiaiCa;
-            document.getElementById('modalStiaiCa').style.display = 'block';
-            playSound('correct');
-        }
-    }
-
-    function goBack(fromHardwareBack = false) {
-        if (!fromHardwareBack && window.location.hash !== "") {
-            window.history.back();
-            return;
-        }
-
-        const detail = document.getElementById('screenDetail');
-        const lessons = document.getElementById('screenLessons');
-        const setupDuel = document.getElementById('screenDuelSetup');
-        const gameDuel = document.getElementById('screenDuelGame');
-        const resultDuel = document.getElementById('screenDuelResult');
-        
-        const barfeSursa = document.getElementById('screenBarfeSursa');
-        const barfeEpoci = document.getElementById('screenBarfeEpoci');
-        const barfeLista = document.getElementById('screenBarfeLista');
-        const barfeDetail = document.getElementById('screenBarfeDetail');
-
-        const asasinateEpoci = document.getElementById('screenAsasinateEpoci');
-        const asasinateLista = document.getElementById('screenAsasinateLista');
-        const asasinateDetail = document.getElementById('screenAsasinateDetail');
-
-        const porecleEpoci = document.getElementById('screenPorecleEpoci');
-        const porecleLista = document.getElementById('screenPorecleLista');
-        const porecleDetail = document.getElementById('screenPorecleDetail');
-
-        if (barfeDetail.classList.contains('active-screen')) {
-            barfeDetail.classList.remove('active-screen');
-            barfeLista.classList.add('active-screen');
-            let denumireEpoci = { antichitate: "Antichitate", evulMediu: "Evul Mediu", epocamoderna: "Epoca Modernă", contemporana: "Epoca Contemporană" };
-            document.getElementById('headerTitle').innerText = "💬 " + denumireEpoci[barfeEpocaCurenta];
-        } else if (barfeLista.classList.contains('active-screen')) {
-            barfeLista.classList.remove('active-screen');
-            barfeEpoci.classList.add('active-screen');
-            let titluSursa = (barfeSursaCurenta === 'universal') ? "Istorie Universală" : "Istoria Românilor";
-            document.getElementById('headerTitle').innerText = "💬 Bârfele Cetății (" + titluSursa + ")";
-        } else if (barfeEpoci.classList.contains('active-screen')) {
-            barfeEpoci.classList.remove('active-screen');
-            barfeSursa.classList.add('active-screen');
-            document.getElementById('headerTitle').innerText = "💬 Bârfele Cetății";
-        } else if (barfeSursa.classList.contains('active-screen')) {
-            barfeSursa.classList.remove('active-screen');
-            document.getElementById('screenClasses').classList.add('active-screen');
-            document.getElementById('headerTitle').innerText = APP_TITLE;
-            document.getElementById('backBtn').style.display = 'none';
-            historyDepth = 0;
-        } else if (asasinateDetail.classList.contains('active-screen')) {
-            asasinateDetail.classList.remove('active-screen');
-            asasinateLista.classList.add('active-screen');
-            let denumireEpoci = { antichitate: "Antichitate", evulMediu: "Evul Mediu", epocamoderna: "Epoca Modernă", contemporana: "Epoca Contemporană" };
-            document.getElementById('headerTitle').innerText = "🗡️ " + denumireEpoci[asasinateEpocaCurenta];
-        } else if (asasinateLista.classList.contains('active-screen')) {
-            asasinateLista.classList.remove('active-screen');
-            asasinateEpoci.classList.add('active-screen');
-            document.getElementById('headerTitle').innerText = "🗡️ Asasinate Celebre";
-        } else if (asasinateEpoci.classList.contains('active-screen')) {
-            asasinateEpoci.classList.remove('active-screen');
-            document.getElementById('screenClasses').classList.add('active-screen');
-            document.getElementById('headerTitle').innerText = APP_TITLE;
-            document.getElementById('backBtn').style.display = 'none';
-            historyDepth = 0;
-        } else if (porecleDetail.classList.contains('active-screen')) {
-            porecleDetail.classList.remove('active-screen');
-            porecleLista.classList.add('active-screen');
-            let denumireEpoci = { 
-                antichitate: "Antichitate", 
-                evulMediu: "Evul Mediu", 
-                epocamoderna: "Epoca Modernă", 
-                contemporana: "Epoca Contemporană",
-                bizare: "🤪 Porecle Bizare"
-            };
-            document.getElementById('headerTitle').innerText = "🏷️ " + (denumireEpoci[porecleEpocaCurenta] || "Porecle");
-        } else if (porecleLista.classList.contains('active-screen')) {
-            porecleLista.classList.remove('active-screen');
-            porecleEpoci.classList.add('active-screen');
-            document.getElementById('headerTitle').innerText = "🏷️ Porecle Celebre";
-        } else if (porecleEpoci.classList.contains('active-screen')) {
-            porecleEpoci.classList.remove('active-screen');
-            document.getElementById('screenClasses').classList.add('active-screen');
-            document.getElementById('headerTitle').innerText = APP_TITLE;
-            document.getElementById('backBtn').style.display = 'none';
-            historyDepth = 0;
-        } else if (gameDuel.classList.contains('active-screen') || resultDuel.classList.contains('active-screen')) {
-            clearInterval(duelState.timer);
-            gameDuel.classList.remove('active-screen');
-            resultDuel.classList.remove('active-screen');
-            setupDuel.classList.add('active-screen');
-            document.getElementById('headerTitle').innerText = "⚔️ Antrenament Solo";
-        } else if (setupDuel.classList.contains('active-screen')) {
-            setupDuel.classList.remove('active-screen');
-            document.getElementById('screenClasses').classList.add('active-screen');
-            document.getElementById('headerTitle').innerText = APP_TITLE;
-            document.getElementById('backBtn').style.display = 'none';
-            historyDepth = 0;
-        } else if(detail.classList.contains('active-screen')) {
-            detail.classList.remove('active-screen');
-            lessons.classList.add('active-screen');
-            document.getElementById('headerTitle').innerText = "Clasa a " + currentClassKey + "-a";
-            
-            isVictory = false; 
-            if(victoryAnimationId) cancelAnimationFrame(victoryAnimationId);
-        } else {
-            lessons.classList.remove('active-screen');
-            document.getElementById('screenClasses').classList.add('active-screen');
-            document.getElementById('headerTitle').innerText = APP_TITLE;
-            document.getElementById('backBtn').style.display = 'none';
-            historyDepth = 0;
-        }
-    }
-
-    function switchTab(t) {
-        const btns = document.querySelectorAll('.tab-btn');
-        const contents = document.querySelectorAll('.tab-content');
-        btns.forEach(b => b.classList.remove('active'));
-        contents.forEach(c => c.classList.remove('active'));
-        
-        if (t !== 'game') {
-            isVictory = false;
-            if (victoryAnimationId) cancelAnimationFrame(victoryAnimationId);
-        }
-
-        if(t === 'summary') { 
-            btns[0].classList.add('active'); 
-            document.getElementById('tabSummary').classList.add('active'); 
-        } else if(t === 'game') { 
-            btns[1].classList.add('active'); 
-            document.getElementById('tabGame').classList.add('active'); 
-            initArcheryGame();
-        } else if(t === 'escape') {
-            btns[2].classList.add('active');
-            document.getElementById('tabEscape').classList.add('active');
-        } else { 
-            btns[3].classList.add('active'); 
-            document.getElementById('tabGenially').classList.add('active');
-            
-            if(currentLessonData) {
-                setTimeout(() => {
-                    document.getElementById('iframeGame1').src = currentLessonData.game1 || "";
-                    document.getElementById('iframeGame2').src = currentLessonData.game2 || "";
-                    document.getElementById('iframeGame3').src = currentLessonData.game3 || "";
-                }, 50);
-            }
-        }
-    }
-
-    function deschideDespre() { document.getElementById('modalDespre').style.display = 'block'; }
-    function inchideModal(id) { document.getElementById(id).style.display = 'none'; }
-    
-    function openAvatarModal() {
-        let curLvl = getCurrentLevelInfo(xp).level;
-        let container = document.getElementById('avatarGrid');
-        container.innerHTML = '';
-
-        LEVELS.forEach(lvl => {
-            let isUnlocked = curLvl >= lvl.level;
-            let div = document.createElement('div');
-            div.className = `avatar-option ${isUnlocked ? '' : 'locked'}`;
-            div.innerText = lvl.avatar;
-            div.title = isUnlocked ? lvl.title : `Deblocabil la Nivelul ${lvl.level}`;
-            if (isUnlocked) {
-                div.onclick = function() {
-                    selectedAvatar = lvl.avatar;
-                    localStorage.setItem('userAvatar', selectedAvatar);
-                    document.getElementById('playerAvatar').innerText = selectedAvatar;
-                    inchideModal('modalAvatar');
-                };
-            }
-            container.appendChild(div);
-        });
-        document.getElementById('modalAvatar').style.display = 'block';
-    }
-
-    let duelState = { clasa: 'V', minLecție: 1, maxLecție: 10, intrebari: [], indexCurent: 0, scor: 0, timer: null, timpRamas: 15 };
+    /* =========================================================
+       ANTRENAMENT SOLO (COMUN PENTRU AMBELE MATERII)
+       ========================================================= */
+    let duelState = { clasa: 'V', minLectie: 1, maxLectie: 10, intrebari: [], indexCurent: 0, scor: 0, timer: null, timpRamas: 15 };
 
     function openDuelSetup() {
         pushNavigationState();
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
         document.getElementById('screenDuelSetup').classList.add('active-screen');
         document.getElementById('headerTitle').innerText = "⚔️ Antrenament Solo";
-        document.getElementById('backBtn').style.display = 'block';
         document.getElementById('duelClassSelect').value = 'V';
         updateDuelSliders();
     }
 
     function updateDuelSliders() {
         let cls = document.getElementById('duelClassSelect').value;
-        let lessons = dbLectii[cls] || [];
-        let maxLectii = lessons.length > 0 ? lessons.length : 50;
+        let lessons = getLessonsForClass(activeSubject, cls);
+        let maxLectii = lessons.length > 0 ? lessons.length : 30;
 
         let sMin = document.getElementById('sliderMin');
         let sMax = document.getElementById('sliderMax');
@@ -1341,7 +1417,6 @@
 
         sMin.value = "1";
         sMax.value = Math.min(10, maxLectii).toString();
-
         handleRangeSliders();
     }
 
@@ -1357,14 +1432,15 @@
         document.getElementById('valMinLectie').innerText = minVal;
         document.getElementById('valMaxLectie').innerText = maxVal;
 
-        duelState.minLecție = minVal;
-        duelState.maxLecție = maxVal;
+        duelState.minLectie = minVal;
+        duelState.maxLectie = maxVal;
     }
 
     function startDuel() {
         duelState.clasa = document.getElementById('duelClassSelect').value;
-        duelState.scor = 0; duelState.indexCurent = 0;
-        duelState.intrebari = extrageIntrebariInInterval(duelState.clasa, duelState.minLecție, duelState.maxLecție, 10);
+        duelState.scor = 0;
+        duelState.indexCurent = 0;
+        duelState.intrebari = extrageIntrebariInInterval(duelState.clasa, duelState.minLectie, duelState.maxLectie, 10);
 
         if (duelState.intrebari.length === 0) {
             alert("Nu am găsit întrebări disponibile în intervalul de lecții selectat!");
@@ -1378,13 +1454,17 @@
 
     function extrageIntrebariInInterval(clsKey, minL, maxL, limita) {
         let intrebari = [];
-        let lessons = dbLectii[clsKey] || [];
+        let lessons = getLessonsForClass(activeSubject, clsKey);
 
         lessons.forEach((l, idx) => {
             let nrLectie = idx + 1;
             if (nrLectie >= minL && nrLectie <= maxL && l.quiz && Array.isArray(l.quiz)) {
                 l.quiz.forEach(qItem => {
-                    intrebari.push({ intrebare: qItem.q, optiuni: qItem.opts, corect: qItem.c });
+                    intrebari.push({
+                        intrebare: qItem.intrebare || qItem.q,
+                        optiuni: qItem.raspunsuri || qItem.options,
+                        corect: (typeof qItem.corect === 'number') ? qItem.corect : qItem.correct
+                    });
                 });
             }
         });
@@ -1397,21 +1477,26 @@
         clearInterval(duelState.timer);
 
         let q = duelState.intrebari[duelState.indexCurent];
-        document.getElementById('duelQNum').innerText = duelState.indexCurent + 1;
+        document.getElementById('duelQNum').innerText = `${duelState.indexCurent + 1}/${duelState.intrebari.length}`;
         document.getElementById('duelScore').innerText = duelState.scor;
         document.getElementById('duelQuestionText').innerText = q.intrebare;
 
         let container = document.getElementById('duelOptionsContainer');
         container.innerHTML = '';
 
-        q.optiuni.forEach((opt, idx) => {
+        let optiuniAmestecate = amestecaArray(q.optiuni.map((optText, idx) => ({
+            text: optText,
+            isCorrect: (idx === q.corect)
+        })));
+
+        optiuniAmestecate.forEach((item) => {
             let btn = document.createElement('button');
             btn.className = 'btn-action';
             btn.style.width = '100%';
             btn.style.margin = '0';
             btn.style.textAlign = 'center';
-            btn.innerText = opt;
-            btn.onclick = () => verificaRaspunsDuel(idx === q.corect);
+            btn.innerText = item.text;
+            btn.onclick = () => verificaRaspunsDuel(item.isCorrect);
             container.appendChild(btn);
         });
 
@@ -1440,7 +1525,6 @@
         }
 
         duelState.indexCurent++;
-
         if (duelState.indexCurent < duelState.intrebari.length) {
             incarcaIntrebareDuel();
         } else {
@@ -1458,14 +1542,13 @@
         let earnedXP = Math.floor(duelState.scor / 10);
         updateXP(earnedXP);
 
-        let badgeIcon = "🛡️", badgeTitle = "Recruit al Istoriei", badgeDesc = "Ai finalizat antrenamentul cu succes!";
-
+        let badgeIcon = "🏅", badgeTitle = "Insigna: Explorer", badgeDesc = "Ai finalizat antrenamentul cu succes!";
         if (duelState.scor >= 1800) {
-            badgeIcon = "👑"; badgeTitle = "Insigna: Mare Strateg Regal"; badgeDesc = "Performanță absolută! Cunoștințe impecabile de istorie!";
+            badgeIcon = "👑"; badgeTitle = "Insigna: Mare Maestru"; badgeDesc = "Performanță absolută! Răspunsuri rapide și impecabile!";
         } else if (duelState.scor >= 1200) {
-            badgeIcon = "⚔️"; badgeTitle = "Insigna: Cavaler Cronicar"; badgeDesc = "Rezultat excelent! Ai stăpânit foarte bine lecțiile!";
+            badgeIcon = "⭐"; badgeTitle = "Insigna: Strateg de Elită"; badgeDesc = "Rezultat excelent! Ai stăpânit foarte bine lecțiile!";
         } else if (duelState.scor >= 600) {
-            badgeIcon = "📜"; badgeTitle = "Insigna: Scrib Harnic"; badgeDesc = "Un rezultat bun! Ești pe drumul cel bun spre excelență.";
+            badgeIcon = "📜"; badgeTitle = "Insigna: Cărturar Dedicat"; badgeDesc = "Un rezultat bun! Ești pe drumul cel bun spre excelență.";
         }
 
         document.getElementById('badgeIcon').innerText = badgeIcon;
@@ -1473,543 +1556,835 @@
         document.getElementById('badgeDesc').innerText = badgeDesc;
     }
 
-    function getEscapeStorageKeys() {
-        let cKey = (typeof currentClassKey !== 'undefined') ? currentClassKey : 'cls';
-        let lIdx = (typeof currentLessonIdx !== 'undefined') ? currentLessonIdx : 0;
-        return { solvedKey: `escape_solved_${cKey}_${lIdx}`, progressKey: `escape_progress_${cKey}_${lIdx}` };
-    }
+    /* =========================================================
+       JOC CANVAS: ASEDIU MEDIEVAL (ISTORIE) & TRIBUNA (SOCIALĂ)
+       ========================================================= */
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    let gameStep = 0;
+    let targets = [], canShoot = true;
+    let projectile = null;
+    let fireworks = [];
+    let animFrameId = null;
 
-    function initEscapeRoom() {
-        const hasEscape = currentLessonData && currentLessonData.escape && Array.isArray(currentLessonData.escape.locks) && currentLessonData.escape.locks.length > 0;
-
-        if (!hasEscape) {
-            document.getElementById('escapePuzzleText').innerText = "🔒 Modulul Escape Room pentru această lecție nu a fost încă configurat de profesor.";
-            document.querySelector('.locks-row').style.display = 'none';
-            document.getElementById('escapeInputArea').style.display = 'none';
+    function initCanvasGame() {
+        if (animFrameId) { cancelAnimationFrame(animFrameId); animFrameId = null; }
+        projectile = null;
+        fireworks = [];
+        if (!currentLessonData || !currentLessonData.quiz || currentLessonData.quiz.length === 0) {
+            document.getElementById('quizQuestion').innerText = "Această lecție nu are întrebări quizz configurate.";
             return;
         }
-
-        document.querySelector('.locks-row').style.display = 'flex';
-        let keys = getEscapeStorageKeys();
-        let isSolved = localStorage.getItem(keys.solvedKey) === 'true';
-        let locksData = currentLessonData.escape.locks;
-
-        if (isSolved) {
-            for (let i = 0; i < 4; i++) {
-                let card = document.getElementById(`lockCard${i}`);
-                if (card) card.className = "lock-card solved-lock";
-                let icon = document.getElementById(`lockIcon${i}`);
-                if (icon) icon.innerText = '🔓';
-                let digit = document.getElementById(`lockDigit${i}`);
-                if (digit) digit.innerText = locksData[i] ? locksData[i].digitRevealed : '';
-            }
-            let finalCodeStr = locksData.map(l => l.digitRevealed).join('');
-            document.getElementById('escapePuzzleText').innerHTML = `🎉 AI EVADAT CU SUCCES!<br>Codul descifrat al arhivei a fost: <strong>${finalCodeStr}</strong>!`;
-            document.getElementById('escapeInputArea').style.display = 'block';
-            document.getElementById('escapeInputArea').innerHTML = `<button class="btn-action" style="background: #e67e22; color: #fff; border-color: #d35400; font-size: 0.9rem;" onclick="resetEscapeRoom()">🔄 Reîncearcă Evadarea (Reset)</button>`;
-        } else {
-            restoreEscapeInputArea();
-            updateLocksUI(locksData);
-        }
+        gameStep = 0;
+        currentQuizIndex = 0;
+        loadCanvasQuestion(currentQuizIndex);
     }
 
-    function restoreEscapeInputArea() {
-        document.getElementById('escapeInputArea').style.display = 'block';
-        document.getElementById('escapeInputArea').innerHTML = `
-            <input type="text" id="escapeInput" class="escape-input" placeholder="Răspuns..." autocomplete="off">
-            <br>
-            <button class="btn-action" style="background: #27ae60; color: #fff; border-color: #2ecc71;" onclick="checkCurrentLock()">🔓 Deschide Lacătul!</button>
-            <button class="btn-action" style="background: #e67e22; color: #fff; border-color: #d35400;" onclick="toggleHint()">💡 Indiciu</button>
-        `;
-        document.getElementById('escapeFeedback').innerText = '';
-        document.getElementById('escapeHintText').style.display = 'none';
-    }
+    function loadCanvasQuestion(qIndex) {
+        const totalQ = currentLessonData.quiz.length;
 
-    function resetEscapeRoom() {
-        let keys = getEscapeStorageKeys();
-        localStorage.removeItem(keys.solvedKey);
-        localStorage.removeItem(keys.progressKey);
-        currentLockIndex = 0;
-        restoreEscapeInputArea();
-        if (currentLessonData && currentLessonData.escape && currentLessonData.escape.locks) {
-            updateLocksUI(currentLessonData.escape.locks);
-        }
-    }
+        if (qIndex >= totalQ) {
+            // Salvare 3 steluțe la finalizarea quizz-ului
+            let starsKey = `${activeSubject}_stars_${currentClassKey}_${currentLessonIdx}`;
+            localStorage.setItem(starsKey, "3");
 
-    function updateLocksUI(locksData) {
-        let keys = getEscapeStorageKeys();
-        let savedProgress = parseInt(localStorage.getItem(keys.progressKey)) || 0;
-        currentLockIndex = savedProgress;
-
-        for (let i = 0; i < 4; i++) {
-            let card = document.getElementById(`lockCard${i}`);
-            let icon = document.getElementById(`lockIcon${i}`);
-            let digit = document.getElementById(`lockDigit${i}`);
-
-            if (i < currentLockIndex) {
-                if (card) card.className = "lock-card solved-lock";
-                if (icon) icon.innerText = '🔓';
-                if (digit) digit.innerText = locksData[i].digitRevealed;
-            } else if (i === currentLockIndex) {
-                if (card) card.className = "lock-card active-lock";
-                if (icon) icon.innerText = '🔒';
-                if (digit) digit.innerText = '?';
+            if (activeSubject === 'history') {
+                document.getElementById('quizQuestion').innerText = "🏆 VICTORIE! CETATEA A FOST CUCERITĂ!";
+                document.getElementById('quizFeedback').innerText = "Ai răspuns corect la toate întrebările și ai câștigat +50 XP și ⭐⭐⭐!";
             } else {
-                if (card) card.className = "lock-card";
-                if (icon) icon.innerText = '🔒';
-                if (digit) digit.innerText = '-';
+                document.getElementById('quizQuestion').innerText = "🏆 FELICITĂRI! AI CONSTRUIT COMUNITATEA PERFECTĂ!";
+                document.getElementById('quizFeedback').innerText = "Toți cetățenii îți mulțumesc pentru deciziile înțelepte! (+50 XP și ⭐⭐⭐)";
             }
-        }
+            document.getElementById('quizFeedback').style.color = "#059669";
 
-        if (currentLockIndex < 4) {
-            document.getElementById('escapePuzzleText').innerText = locksData[currentLockIndex].puzzle;
-            document.getElementById('escapeHintText').innerText = locksData[currentLockIndex].hint || "Verifică rezumatul!";
-            let inp = document.getElementById('escapeInput');
-            if (inp) inp.value = '';
-        } else {
-            let keys = getEscapeStorageKeys();
-            localStorage.setItem(keys.solvedKey, 'true');
-            let finalCodeStr = locksData.map(l => l.digitRevealed).join('');
-            document.getElementById('escapePuzzleText').innerHTML = `🎉 AI EVADAT CU SUCCES! Codul istoric descifrat al arhivei a fost: <strong>${finalCodeStr}</strong>!`;
-            document.getElementById('escapeInputArea').style.display = 'block';
-            document.getElementById('escapeInputArea').innerHTML = `<button class="btn-action" style="background: #e67e22; color: #fff; border-color: #d35400; font-size: 0.9rem;" onclick="resetEscapeRoom()">🔄 Reîncearcă Evadarea (Reset)</button>`;
-            playDoorUnlockAnimation(finalCodeStr, 50);
-        }
-    }
-
-    function playDoorUnlockAnimation(code, wonXP) {
-        const modal = document.getElementById('doorModal');
-        const door = document.getElementById('mainDoor');
-        const key = document.getElementById('animatedKey');
-        const victoryCard = document.getElementById('victoryCard');
-        const victoryDetails = document.getElementById('victoryDetails');
-
-        door.classList.remove('open');
-        key.classList.remove('insert', 'turn');
-        key.style.opacity = '0';
-        victoryCard.classList.remove('show');
-        modal.style.display = 'flex';
-
-        setTimeout(() => { key.classList.add('insert'); }, 300);
-        setTimeout(() => { key.classList.add('turn'); playSound('correct'); }, 1200);
-        setTimeout(() => { key.style.opacity = '0'; door.classList.add('open'); playSound('levelup'); }, 1800);
-        setTimeout(() => {
-            victoryDetails.innerHTML = `
-                Ai deschis toate cele 4 lacăte!<br>
-                Codul/Anul descifrat din arhivă este: <strong style="color:#f1c40f; font-size: 18px;">${code}</strong>!<br>
-                <span style="color: #2ecc71; font-weight: bold; font-size: 16px;">+${wonXP} XP</span><br><br>
-                🔓 <strong>UȘA MARE S-A DEBLOCAT CU SUCCES!</strong>
-            `;
-            victoryCard.classList.add('show');
-            updateXP(wonXP);
-        }, 2500);
-    }
-
-    function closeDoorModal() { document.getElementById('doorModal').style.display = 'none'; }
-
-    function removeDiacritics(str) {
-        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/â|ă/g, "a").replace(/î/g, "i").replace(/ș|ş/g, "s").replace(/ț|ţ/g, "t").toLowerCase().trim();
-    }
-
-    function checkCurrentLock() {
-        if (!currentLessonData || !currentLessonData.escape || !currentLessonData.escape.locks) return;
-        let inpElem = document.getElementById('escapeInput');
-        if (!inpElem) return;
-        let rawInput = inpElem.value;
-        if (!rawInput.trim()) return;
-
-        let inputVal = removeDiacritics(rawInput);
-        let locksData = currentLessonData.escape.locks;
-        let correctCode = removeDiacritics(locksData[currentLockIndex].code.toString());
-
-        if (inputVal === correctCode) {
             playSound('correct');
-            document.getElementById('escapeFeedback').innerText = `🔓 Lacătul ${currentLockIndex + 1} s-a deschis! Ai deblocat cifra/litera '${locksData[currentLockIndex].digitRevealed}'!`;
-            document.getElementById('escapeFeedback').style.color = "#2ecc71";
-
-            currentLockIndex++;
-            let keys = getEscapeStorageKeys();
-            localStorage.setItem(keys.progressKey, currentLockIndex);
-            document.getElementById('escapeHintText').style.display = 'none';
-            setTimeout(() => { document.getElementById('escapeFeedback').innerText = ''; updateLocksUI(locksData); }, 1200);
-        } else {
-            playSound('wrong');
-            document.getElementById('escapeFeedback').innerText = "❌ Cod incorect pentru acest lacăt! Verifică rezumatul și încearcă din nou.";
-            document.getElementById('escapeFeedback').style.color = "#e74c3c";
-        }
-    }
-
-    function toggleHint() {
-        let hintElem = document.getElementById('escapeHintText');
-        if (!hintElem) return;
-        hintElem.style.display = (hintElem.style.display === 'none' || hintElem.style.display === '') ? 'block' : 'none';
-    }
-
-    /* JOC ASEDIU MEDIEVAL */
-    const canvas = document.getElementById('archeryCanvas');
-    const ctx = canvas.getContext('2d');
-    
-    let catX = canvas.width / 2;
-    let catY = canvas.height - 40;
-    let targets = [], canShoot = true, fireball = null, trail = [], explosionParticles = [];
-    let catapultAngle = 0;
-    let isVictory = false, victoryAnimationId = null, fireworks = [], fwParticles = [], fireEffectParticles = [];
-
-    function initArcheryGame() {
-        isVictory = false;
-        if(victoryAnimationId) cancelAnimationFrame(victoryAnimationId);
-        fireworks = []; fwParticles = []; fireEffectParticles = [];
-        if (!currentLessonData || !currentLessonData.quiz || currentLessonData.quiz.length === 0) return;
-        loadQuestion(currentQuizIndex);
-    }
-
-    function loadQuestion(qIndex) {
-        if (qIndex >= currentLessonData.quiz.length) {
-            let earnedStars = 3;
-            if (quizWrongAnswers >= 3) earnedStars = 1;
-            else if (quizWrongAnswers >= 1) earnedStars = 2;
-
-            let starsKey = `stars_${currentClassKey}_${currentLessonIdx}`;
-            let oldStars = parseInt(localStorage.getItem(starsKey)) || 0;
-            if (earnedStars > oldStars) localStorage.setItem(starsKey, earnedStars);
-
-            document.getElementById('quizQuestion').innerText = `🏆 Felicitări! Ai obținut ${"⭐".repeat(earnedStars)} pentru această lecție!`;
-            document.getElementById('quizFeedback').innerText = "Fortăreața a fost cucerită! Revino la lecții pentru următoarea luptă.";
-            document.getElementById('quizFeedback').style.color = "#27ae60";
-            
-            targets = []; fireball = null; trail = []; explosionParticles = []; catapultAngle = 0; canShoot = false;
-            isVictory = true;
-            launchFirework();
-            animateVictory();
+            updateXP(50);
+            if (activeSubject === 'history') startVictoryFireworks();
+            else drawScene(true);
             return;
         }
 
         const qData = currentLessonData.quiz[qIndex];
-        document.getElementById('quizQuestion').innerText = `Întrebarea ${qIndex + 1}/${currentLessonData.quiz.length}: ${qData.q}`;
-        document.getElementById('quizFeedback').innerText = "Atinge răspunsul corect pentru a zdrobi fortăreața inamică!";
-        document.getElementById('quizFeedback').style.color = "#4a2e1b";
+        const qText = qData.intrebare || qData.q;
+        const opts = qData.raspunsuri || qData.options;
+        const correctIdx = (typeof qData.corect === 'number') ? qData.corect : qData.correct;
 
-        canShoot = true; fireball = null; trail = []; explosionParticles = []; catapultAngle = 0;
-        const opts = qData.opts; targets = [];
-        
-        const targetPositions = [ { x: 195, y: 120 }, { x: 605, y: 120 }, { x: 195, y: 300 }, { x: 605, y: 300 } ];
-        const targetWidth = 370, targetHeight = 115;
+        document.getElementById('quizQuestion').innerText = `Întrebarea ${qIndex + 1}/${totalQ}: ${qText}`;
+        document.getElementById('quizFeedback').innerText = activeSubject === 'history'
+            ? "Atinge ținta corectă pentru a trage cu catapulta!"
+            : "Alege decizia corectă pentru a dezvolta comunitatea!";
+        document.getElementById('quizFeedback').style.color = "var(--card-text)";
 
-        for (let i = 0; i < opts.length; i++) {
-            targets.push({ 
-                x: targetPositions[i].x, y: targetPositions[i].y, 
-                width: targetWidth, height: targetHeight, 
-                text: opts[i], isCorrect: (i === qData.c), hit: false 
+        canShoot = true;
+        let opțiuniAmestecate = amestecaArray(opts.map((text, idx) => ({
+            text: text,
+            isCorrect: (idx === correctIdx)
+        })));
+
+        targets = [];
+        const targetPositions = [ { x: 205, y: 110 }, { x: 595, y: 110 }, { x: 205, y: 245 }, { x: 595, y: 245 } ];
+        for (let i = 0; i < opțiuniAmestecate.length; i++) {
+            targets.push({
+                x: targetPositions[i].x,
+                y: targetPositions[i].y,
+                width: 355,
+                height: 100,
+                text: opțiuniAmestecate[i].text,
+                isCorrect: opțiuniAmestecate[i].isCorrect,
+                hit: false
             });
         }
-        drawScene();
+        drawScene(false);
     }
 
-    function drawDetailedSoldier(x, y, scale = 1) {
-        ctx.save(); ctx.translate(x, y); ctx.scale(scale, scale);
-        ctx.fillStyle = "#8b0000"; ctx.beginPath(); ctx.roundRect(-7, -12, 14, 22, 4); ctx.fill();
-        ctx.lineWidth = 1; ctx.strokeStyle = "#4a1c1c"; ctx.stroke();
-        ctx.fillStyle = "#3d2516"; ctx.fillRect(-7, -2, 14, 3);
-        ctx.fillStyle = "#f5d0b1"; ctx.beginPath(); ctx.arc(0, -17, 6, 0, Math.PI * 2); ctx.fill();
-        ctx.fillStyle = "#7f8c8d"; ctx.beginPath(); ctx.arc(0, -18, 6.5, Math.PI, 0, false); ctx.fill();
-        ctx.fillRect(-7, -18, 14, 2); ctx.restore();
-    }
+    function drawDynamicFitText(ctx, text, x, y, maxWidth, maxHeight) {
+        let words = String(text).split(' ');
+        let fontSize = 28;
+        let lines = [];
+        let lineHeight = 32;
 
-    function drawWoodenLadder(x, y, width, height) {
-        ctx.save(); ctx.fillStyle = "#8c5a2b"; ctx.strokeStyle = "#4a2e1b"; ctx.lineWidth = 2;
-        ctx.fillRect(x, y, 4, height); ctx.fillRect(x + width - 4, y, 4, height);
-        for (let stepY = y + 8; stepY < y + height; stepY += 12) { ctx.fillRect(x, stepY, width, 3); }
-        ctx.restore();
-    }
+        while (fontSize >= 16) {
+            ctx.font = `bold ${fontSize}px 'Segoe UI', sans-serif`;
+            lineHeight = fontSize + 4;
+            lines = [];
+            let currentLine = '';
 
-    function drawWall(isConquered = false) {
-        ctx.save();
-        ctx.fillStyle = isConquered ? "#535c5d" : "#7f8c8d"; ctx.strokeStyle = "#2c3e50"; ctx.lineWidth = 3;
-        ctx.beginPath(); ctx.moveTo(60, 430); ctx.quadraticCurveTo(400, 455, 740, 430);
-        ctx.lineTo(740, 520); ctx.quadraticCurveTo(400, 545, 60, 520); ctx.closePath(); ctx.fill(); ctx.stroke();
-
-        ctx.fillStyle = isConquered ? "#6b7778" : "#95a5a6";
-        for(let wx = 90; wx < 710; wx += 45) {
-            ctx.fillRect(wx, 440, 35, 18); ctx.fillRect(wx + 20, 465, 35, 18); ctx.fillRect(wx, 490, 35, 18);
-        }
-
-        if (isConquered) {
-            ctx.fillStyle = "#1a0f0a"; ctx.fillRect(360, 445, 80, 75);
-            ctx.save(); ctx.translate(360, 445); ctx.rotate(-0.3); ctx.fillStyle = "#3d2516"; ctx.fillRect(0, 0, 35, 75); ctx.strokeStyle = "#1a0f0a"; ctx.strokeRect(0, 0, 35, 75); ctx.restore();
-            ctx.save(); ctx.translate(440, 445); ctx.rotate(0.35); ctx.fillStyle = "#3d2516"; ctx.fillRect(-35, 0, 35, 75); ctx.strokeStyle = "#1a0f0a"; ctx.strokeRect(-35, 0, 35, 75); ctx.restore();
-        } else {
-            ctx.fillStyle = "#5a3d28"; ctx.fillRect(360, 445, 80, 75); ctx.strokeStyle = "#2b1d0c"; ctx.lineWidth = 3; ctx.strokeRect(360, 445, 80, 75);
-            ctx.fillStyle = "#3d2516"; ctx.fillRect(397, 445, 6, 75); ctx.fillStyle = "#2c3e50";
-            ctx.beginPath(); ctx.arc(380, 480, 5, 0, Math.PI*2); ctx.fill();
-            ctx.beginPath(); ctx.arc(420, 480, 5, 0, Math.PI*2); ctx.fill();
-        }
-
-        if (!isConquered) {
-            drawDetailedSoldier(210, 412); drawDetailedSoldier(260, 412); drawDetailedSoldier(310, 412);
-            drawDetailedSoldier(490, 412); drawDetailedSoldier(540, 412); drawDetailedSoldier(590, 412);
-        }
-
-        ctx.fillStyle = isConquered ? "#535c5d" : "#7f8c8d";
-        ctx.fillRect(40, 340, 90, 180); ctx.strokeRect(40, 340, 90, 180);
-        ctx.fillRect(35, 320, 25, 25); ctx.fillRect(70, 320, 25, 25); ctx.fillRect(105, 320, 25, 25);
-
-        ctx.fillRect(670, 340, 90, 180); ctx.strokeRect(670, 340, 90, 180);
-        ctx.fillRect(665, 320, 25, 25); ctx.fillRect(700, 320, 25, 25); ctx.fillRect(735, 320, 25, 25);
-
-        if (!isConquered) {
-            drawDetailedSoldier(72, 298); drawDetailedSoldier(712, 298);
-            drawWoodenLadder(132, 350, 18, 140); drawDetailedSoldier(141, 410);
-            drawWoodenLadder(650, 350, 18, 140); drawDetailedSoldier(659, 410);
-        }
-
-        if (isConquered) {
-            ctx.strokeStyle = "#1a1a1a"; ctx.lineWidth = 3;
-            ctx.beginPath(); ctx.moveTo(85, 340); ctx.lineTo(75, 380); ctx.lineTo(90, 420); ctx.lineTo(80, 460); ctx.stroke();
-            ctx.beginPath(); ctx.moveTo(710, 340); ctx.lineTo(725, 390); ctx.lineTo(705, 430); ctx.lineTo(720, 480); ctx.stroke();
-            ctx.beginPath(); ctx.moveTo(250, 435); ctx.lineTo(265, 470); ctx.lineTo(255, 510); ctx.moveTo(550, 435); ctx.lineTo(535, 475); ctx.lineTo(545, 515); ctx.stroke();
-        }
-
-        ctx.restore();
-    }
-
-    function drawScene() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "#e3ceab"; ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        drawWall(false);
-
-        targets.forEach(t => {
-            ctx.save(); ctx.translate(t.x, t.y);
-
-            if (t.hit) {
-                if (t.isCorrect) {
-                    ctx.fillStyle = "#27ae60"; ctx.beginPath(); ctx.roundRect(-t.width/2, -t.height/2, t.width, t.height, 10); ctx.fill();
-                    ctx.strokeStyle = "#c0392b"; ctx.lineWidth = 4;
-                    ctx.beginPath(); ctx.moveTo(-50, -30); ctx.lineTo(20, 10); ctx.lineTo(40, -40); ctx.moveTo(-20, 30); ctx.lineTo(10, -10); ctx.lineTo(50, 20); ctx.stroke();
-                    ctx.fillStyle = "rgba(231, 76, 60, 0.7)"; ctx.beginPath(); ctx.arc(-30, -20, 20, 0, 2*Math.PI); ctx.fill();
-                    ctx.fillStyle = "rgba(241, 196, 15, 0.8)"; ctx.beginPath(); ctx.arc(30, 20, 15, 0, 2*Math.PI); ctx.fill();
+            for (let n = 0; n < words.length; n++) {
+                let testLine = currentLine + words[n] + ' ';
+                let testWidth = ctx.measureText(testLine).width;
+                if (testWidth > maxWidth - 22 && n > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = words[n] + ' ';
                 } else {
-                    ctx.fillStyle = "#e74c3c"; ctx.beginPath(); ctx.roundRect(-t.width/2, -t.height/2, t.width, t.height, 10); ctx.fill();
+                    currentLine = testLine;
                 }
-                ctx.lineWidth = 3; ctx.strokeStyle = "#4a2e1b"; ctx.stroke();
-            } else {
-                ctx.fillStyle = "#8c5a2b"; ctx.beginPath(); ctx.roundRect(-t.width/2, -t.height/2, t.width, t.height, 10); ctx.fill();
-                ctx.lineWidth = 3; ctx.strokeStyle = "#4a2e1b"; ctx.stroke();
-
-                ctx.fillStyle = "#fdf6e2"; ctx.beginPath(); ctx.roundRect(-t.width/2 + 4, -t.height/2 + 4, t.width - 8, t.height - 8, 6); ctx.fill();
             }
+            lines.push(currentLine.trim());
 
-            ctx.fillStyle = t.hit ? "#ffffff" : "#2c1d11";
-            ctx.font = "bold 24px 'Segoe UI', sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-            wrapText(ctx, t.text, 0, 0, t.width - 16, 28); ctx.restore();
+            if (lines.length * lineHeight <= maxHeight - 14) break;
+            fontSize -= 2;
+        }
+
+        ctx.font = `bold ${fontSize}px 'Segoe UI', sans-serif`;
+        let startY = y - ((lines.length - 1) * lineHeight) / 2;
+        for (let k = 0; k < lines.length; k++) {
+            ctx.fillText(lines[k], x, startY + (k * lineHeight));
+        }
+    }
+
+    function drawScene(isFinished) {
+        if (activeSubject === 'history') drawHistorySiegeScene(isFinished);
+        else drawSocialCommunityScene(isFinished);
+    }
+
+    /* SCENA 1: ASEDIU MEDIEVAL (ISTORIE) */
+    function drawHistorySiegeScene(isFinished) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Cer & câmpie
+        ctx.fillStyle = "#bae6fd"; ctx.fillRect(0, 0, canvas.width, 430);
+        ctx.fillStyle = "#fde047"; ctx.beginPath(); ctx.arc(90, 70, 36, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = "#65a30d"; ctx.fillRect(0, 430, canvas.width, 220);
+
+        // Cetatea (dreapta)
+        const castleDamage = Math.min(gameStep, 5);
+        ctx.fillStyle = "#78716c";
+        ctx.fillRect(540, 340 + castleDamage * 14, 210, 210 - castleDamage * 14);
+        ctx.fillStyle = "#57534e";
+        ctx.fillRect(520, 310 + castleDamage * 16, 45, 240 - castleDamage * 16);
+        ctx.fillRect(725, 310 + castleDamage * 16, 45, 240 - castleDamage * 16);
+
+        // Steag cetate sau steag victorios
+        ctx.fillStyle = "#292524"; ctx.fillRect(642, 260 + castleDamage * 14, 6, 80);
+        ctx.fillStyle = isFinished ? "#10b981" : "#dc2626";
+        ctx.beginPath();
+        ctx.moveTo(648, 262 + castleDamage * 14);
+        ctx.lineTo(705, 280 + castleDamage * 14);
+        ctx.lineTo(648, 298 + castleDamage * 14);
+        ctx.fill();
+
+        // Catapulta (stânga)
+        ctx.fillStyle = "#78350f";
+        ctx.fillRect(70, 515, 130, 22);
+        ctx.fillStyle = "#451a03";
+        ctx.beginPath(); ctx.arc(95, 542, 16, 0, Math.PI * 2); ctx.arc(175, 542, 16, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = "#92400e"; ctx.lineWidth = 10;
+        ctx.beginPath(); ctx.moveTo(135, 515); ctx.lineTo(95, 455); ctx.stroke();
+
+        // Proiectil în zbor
+        if (projectile) {
+            ctx.fillStyle = "#f97316";
+            ctx.beginPath(); ctx.arc(projectile.x, projectile.y, 14, 0, Math.PI * 2); ctx.fill();
+            ctx.fillStyle = "#fef08a";
+            ctx.beginPath(); ctx.arc(projectile.x - 3, projectile.y - 3, 6, 0, Math.PI * 2); ctx.fill();
+        }
+
+        // Artificii victorie
+        fireworks.forEach(p => {
+            ctx.fillStyle = p.color;
+            ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
         });
 
-        ctx.save(); ctx.translate(catX, catY);
-        ctx.fillStyle = "#4a2e1b"; ctx.fillRect(-30, 0, 60, 40);
-        ctx.beginPath(); ctx.moveTo(-30, 0); ctx.lineTo(0, -35); ctx.lineTo(30, 0);
-        ctx.fillStyle = "#5c3a21"; ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = "#d4a359"; ctx.stroke();
+        if (!isFinished) {
+            targets.forEach(t => {
+                ctx.save(); ctx.translate(t.x, t.y);
+                ctx.fillStyle = t.hit ? (t.isCorrect ? "#10b981" : "#ef4444") : "#fffdf7";
+                ctx.beginPath(); ctx.roundRect(-t.width / 2, -t.height / 2, t.width, t.height, 12); ctx.fill();
+                ctx.lineWidth = 3; ctx.strokeStyle = "#8c5a2b"; ctx.stroke();
 
-        ctx.save(); ctx.translate(0, -20); ctx.rotate(catapultAngle);
-        ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(35, -35); ctx.lineWidth = 9; ctx.strokeStyle = "#8c5a2b"; ctx.stroke();
-        
-        if (!fireball || !fireball.active) {
-            ctx.fillStyle = "#7f8c8d"; ctx.beginPath(); ctx.moveTo(25, -42); ctx.lineTo(45, -40); ctx.lineTo(40, -28); ctx.lineTo(27, -30); ctx.closePath(); ctx.fill();
-        }
-        ctx.restore(); ctx.restore();
-
-        if (trail.length > 0) {
-            ctx.save();
-            for (let i = 0; i < trail.length; i++) {
-                let p = trail[i]; let radius = (i / trail.length) * 14;
-                ctx.beginPath(); ctx.arc(p.x, p.y, radius, 0, 2 * Math.PI); ctx.fillStyle = `rgba(241, 196, 15, ${i / trail.length * 0.5})`; ctx.fill();
-            }
-            ctx.restore();
-        }
-
-        if (explosionParticles.length > 0) {
-            ctx.save();
-            explosionParticles.forEach(ep => {
-                ctx.beginPath(); ctx.arc(ep.x, ep.y, ep.radius, 0, 2 * Math.PI); ctx.fillStyle = ep.color; ctx.fill();
+                ctx.fillStyle = t.hit ? "#ffffff" : "#3e2714";
+                ctx.textAlign = "center"; ctx.textBaseline = "middle";
+                drawDynamicFitText(ctx, t.text, 0, 0, t.width, t.height);
+                ctx.restore();
             });
-            ctx.restore();
-        }
-
-        if (fireball && fireball.active) {
-            ctx.save(); ctx.translate(fireball.x, fireball.y);
-            ctx.beginPath(); ctx.arc(0, 0, 18, 0, 2 * Math.PI); ctx.fillStyle = "rgba(231, 76, 60, 0.7)"; ctx.fill();
-            ctx.beginPath(); ctx.arc(0, 0, 12, 0, 2 * Math.PI); ctx.fillStyle = "#f39c12"; ctx.fill();
-            
-            ctx.fillStyle = "#595959"; ctx.strokeStyle = "#333333"; ctx.lineWidth = 2;
-            ctx.beginPath(); ctx.moveTo(-8, -10); ctx.lineTo(6, -12); ctx.lineTo(11, 4); ctx.lineTo(3, 10); ctx.lineTo(-9, 7); ctx.closePath(); ctx.fill(); ctx.stroke();
-            ctx.restore();
         }
     }
 
-    function wrapText(context, text, x, y, maxWidth, lineHeight) {
-        let words = text.split(' '), line = '', lines = [];
-        for (let n = 0; n < words.length; n++) {
-            let testLine = line + words[n] + ' ';
-            if (context.measureText(testLine).width > maxWidth && n > 0) { lines.push(line); line = words[n] + ' '; }
-            else line = testLine;
+    function launchCatapultProjectile(targetX, targetY, onDone) {
+        const startX = 110, startY = 455;
+        let t = 0;
+        function step() {
+            t += 0.06;
+            projectile = {
+                x: startX + (targetX - startX) * t,
+                y: startY + (targetY - startY) * t - Math.sin(t * Math.PI) * 140
+            };
+            drawHistorySiegeScene(false);
+            if (t < 1) {
+                animFrameId = requestAnimationFrame(step);
+            } else {
+                projectile = null;
+                onDone();
+            }
         }
-        lines.push(line);
-        let startY = y - ((lines.length - 1) * lineHeight) / 2;
-        for (let k = 0; k < lines.length; k++) context.fillText(lines[k].trim(), x, startY + (k * lineHeight));
+        animFrameId = requestAnimationFrame(step);
     }
 
-    function getCanvasPos(e) {
-        const rect = canvas.getBoundingClientRect();
-        const clientX = e.clientX || (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
-        const clientY = e.clientY || (e.touches && e.touches[0] ? e.touches[0].clientY : 0);
-        return { 
-            x: (clientX - rect.left) * (canvas.width / rect.width), 
-            y: (clientY - rect.top) * (canvas.height / rect.height) 
-        };
+    function startVictoryFireworks() {
+        const colors = ["#ef4444", "#facc15", "#10b981", "#3b82f6", "#ec4899"];
+        for (let i = 0; i < 65; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const speed = 1.5 + Math.random() * 4.5;
+            fireworks.push({
+                x: 400 + (Math.random() - 0.5) * 260,
+                y: 180 + (Math.random() - 0.5) * 100,
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed,
+                size: 3 + Math.random() * 4,
+                color: colors[i % colors.length],
+                life: 70
+            });
+        }
+        function animFw() {
+            fireworks.forEach(p => { p.x += p.vx; p.y += p.vy; p.vy += 0.06; p.life--; });
+            fireworks = fireworks.filter(p => p.life > 0);
+            drawHistorySiegeScene(true);
+            if (fireworks.length > 0) animFrameId = requestAnimationFrame(animFw);
+        }
+        animFrameId = requestAnimationFrame(animFw);
+    }
+
+    /* SCENA 2: CONSTRUIRE COMUNITATE (EDUCAȚIE SOCIALĂ) */
+    function drawSocialCommunityScene(isFinished) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#38bdf8"; ctx.fillRect(0, 0, canvas.width, 420);
+        ctx.fillStyle = "#facc15"; ctx.beginPath(); ctx.arc(720, 70, 40, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = "#4ade80"; ctx.fillRect(0, 420, canvas.width, 230);
+        ctx.fillStyle = "#94a3b8"; ctx.fillRect(0, 520, canvas.width, 80);
+
+        if (gameStep >= 1 || isFinished) {
+            ctx.fillStyle = "#f87171"; ctx.fillRect(60, 260, 140, 160);
+            ctx.fillStyle = "#475569"; ctx.fillRect(110, 360, 40, 60);
+            ctx.fillStyle = "#fef08a"; ctx.fillRect(80, 280, 30, 30); ctx.fillRect(140, 280, 30, 30);
+        }
+        if (gameStep >= 2 || isFinished) {
+            ctx.fillStyle = "#78350f"; ctx.fillRect(240, 360, 20, 60);
+            ctx.fillStyle = "#15803d"; ctx.beginPath(); ctx.arc(250, 340, 35, 0, Math.PI * 2); ctx.fill();
+            ctx.fillStyle = "#78350f"; ctx.fillRect(300, 370, 18, 50);
+            ctx.fillStyle = "#16a34a"; ctx.beginPath(); ctx.arc(309, 350, 30, 0, Math.PI * 2); ctx.fill();
+        }
+        if (gameStep >= 3 || isFinished) {
+            ctx.fillStyle = "#3b82f6"; ctx.fillRect(200, 535, 90, 35); ctx.fillRect(220, 515, 50, 20);
+            ctx.fillStyle = "#0f172a"; ctx.beginPath(); ctx.arc(220, 570, 12, 0, Math.PI * 2); ctx.arc(270, 570, 12, 0, Math.PI * 2); ctx.fill();
+        }
+        if (gameStep >= 4 || isFinished) {
+            ctx.fillStyle = "#e2e8f0"; ctx.fillRect(360, 220, 180, 200);
+            ctx.fillStyle = "#2563eb"; ctx.beginPath(); ctx.moveTo(340, 220); ctx.lineTo(450, 160); ctx.lineTo(560, 220); ctx.fill();
+            ctx.fillStyle = "#fef08a"; ctx.fillRect(390, 250, 35, 35); ctx.fillRect(465, 250, 35, 35);
+        }
+        if (gameStep >= 5 || isFinished) {
+            ctx.fillStyle = "#b45309"; ctx.fillRect(260, 440, 50, 12);
+            ctx.fillStyle = "#0f172a"; ctx.fillRect(265, 452, 6, 12); ctx.fillRect(300, 452, 6, 12);
+            ctx.fillStyle = "#475569"; ctx.fillRect(560, 370, 6, 80);
+            ctx.fillStyle = "#facc15"; ctx.beginPath(); ctx.arc(563, 365, 10, 0, Math.PI * 2); ctx.fill();
+        }
+        if (gameStep >= 6 || isFinished) {
+            ctx.fillStyle = "#ef4444"; ctx.fillRect(0, 500, canvas.width, 15);
+            ctx.strokeStyle = "#ffffff"; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(0, 507); ctx.lineTo(canvas.width, 507); ctx.stroke();
+        }
+        if (gameStep >= 7 || isFinished) {
+            ctx.fillStyle = "#0284c7"; ctx.fillRect(580, 300, 160, 120);
+            ctx.strokeStyle = "#ffffff"; ctx.lineWidth = 2;
+            ctx.strokeRect(580, 300, 160, 120);
+            ctx.beginPath(); ctx.moveTo(660, 300); ctx.lineTo(660, 420); ctx.stroke();
+            ctx.beginPath(); ctx.arc(660, 360, 20, 0, Math.PI * 2); ctx.stroke();
+        }
+        if (gameStep >= 8 || isFinished) {
+            drawPerson(270, 430, "#ec4899");
+            drawPerson(420, 430, "#10b981");
+            drawPerson(460, 440, "#f59e0b", 0.8);
+            drawPerson(630, 380, "#8b5cf6");
+        }
+
+        if (!isFinished) {
+            targets.forEach(t => {
+                ctx.save(); ctx.translate(t.x, t.y);
+                ctx.fillStyle = t.hit ? (t.isCorrect ? "#10b981" : "#ef4444") : "#ffffff";
+                ctx.beginPath(); ctx.roundRect(-t.width / 2, -t.height / 2, t.width, t.height, 12); ctx.fill();
+                ctx.lineWidth = 3; ctx.strokeStyle = "#2563eb"; ctx.stroke();
+
+                ctx.fillStyle = t.hit ? "#ffffff" : "#0f172a";
+                ctx.textAlign = "center"; ctx.textBaseline = "middle";
+                drawDynamicFitText(ctx, t.text, 0, 0, t.width, t.height);
+                ctx.restore();
+            });
+        }
+    }
+
+    function drawPerson(x, y, shirtColor, scale = 1) {
+        ctx.save(); ctx.translate(x, y); ctx.scale(scale, scale);
+        ctx.fillStyle = "#fbcfe8"; ctx.beginPath(); ctx.arc(0, -25, 8, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = shirtColor; ctx.fillRect(-7, -17, 14, 18);
+        ctx.fillStyle = "#1e293b"; ctx.fillRect(-6, 1, 5, 14); ctx.fillRect(1, 1, 5, 14);
+        ctx.restore();
     }
 
     canvas.addEventListener('click', function(e) {
         if (!canShoot) return;
-        const pos = getCanvasPos(e);
+        const rect = canvas.getBoundingClientRect();
+        const clickX = (e.clientX - rect.left) * (canvas.width / rect.width);
+        const clickY = (e.clientY - rect.top) * (canvas.height / rect.height);
 
         targets.forEach(t => {
-            if (!t.hit && pos.x > t.x - t.width / 2 && pos.x < t.x + t.width / 2 && pos.y > t.y - t.height / 2 && pos.y < t.y + t.height / 2) {
+            if (!t.hit && clickX > t.x - t.width / 2 && clickX < t.x + t.width / 2 && clickY > t.y - t.height / 2 && clickY < t.y + t.height / 2) {
                 canShoot = false;
-                let startX = catX; let startY = catY - 50;
-                let targetX = t.x; let targetY = t.y;
-                
-                fireball = { x: startX, y: startY, startX: startX, startY: startY, targetX: targetX, targetY: targetY, progress: 0, target: t, active: true };
-                trail = [];
-                
-                playSound('shoot');
-                animateCatapultLaunch();
+                const resolveHit = () => {
+                    t.hit = true;
+                    if (t.isCorrect) {
+                        playSound('correct');
+                        updateXP(20);
+                        gameStep++;
+                        document.getElementById('quizFeedback').innerText = activeSubject === 'history'
+                            ? "💥 Lovitură directă asupra cetății! (+20 XP)"
+                            : "🌟 Bravo! Ai adăugat un nou element în comunitate! (+20 XP)";
+                        document.getElementById('quizFeedback').style.color = "#059669";
+                    } else {
+                        playSound('wrong');
+                        document.getElementById('quizFeedback').innerText = "❌ Răspuns incorect! Mai încearcă.";
+                        document.getElementById('quizFeedback').style.color = "#dc2626";
+                    }
+                    drawScene(false);
+                    setTimeout(() => {
+                        if (t.isCorrect) { currentQuizIndex++; loadCanvasQuestion(currentQuizIndex); }
+                        else { canShoot = true; t.hit = false; drawScene(false); }
+                    }, 1250);
+                };
+
+                if (activeSubject === 'history') {
+                    launchCatapultProjectile(t.x, t.y, resolveHit);
+                } else {
+                    resolveHit();
+                }
             }
         });
     });
 
-    function animateCatapultLaunch() {
-        let launchProgress = 0;
-        function swingArm() {
-            launchProgress += 0.2; catapultAngle = -launchProgress; drawScene();
-            if (launchProgress < 0.8) { requestAnimationFrame(swingArm); }
-            else { catapultAngle = 0; animateFireball(); }
-        }
-        swingArm();
+    /* =========================================================
+       ESCAPE ROOM (ISTORIE)
+       ========================================================= */
+    let escapeState = { riddles: [], unlockedCount: 0 };
+
+    function normalizeStr(s) {
+        return String(s || "")
+            .toLowerCase()
+            .trim()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
     }
 
-    function animateFireball() {
-        if (!fireball || !fireball.active) return;
-        fireball.progress += 0.009; if (fireball.progress > 1) fireball.progress = 1;
+    function initEscapeRoom() {
+        const raw = currentLessonData.escapeRoom || currentLessonData.escape || [];
+        escapeState.riddles = Array.isArray(raw) ? raw : [];
+        const saveKey = `escape_solved_${currentClassKey}_${currentLessonIdx}`;
+        escapeState.unlockedCount = parseInt(localStorage.getItem(saveKey)) || 0;
+        if (escapeState.unlockedCount > escapeState.riddles.length) {
+            escapeState.unlockedCount = escapeState.riddles.length;
+        }
+        renderEscapeRoom();
+    }
 
-        let p = fireball.progress;
-        fireball.x = fireball.startX + (fireball.targetX - fireball.startX) * p;
-        let linearY = fireball.startY + (fireball.targetY - fireball.startY) * p;
-        let arcHeight = -140; let arcOffset = 4 * arcHeight * p * (1 - p);
-        fireball.y = linearY + arcOffset;
+    function renderEscapeRoom() {
+        const row = document.getElementById('escapePadlocksRow');
+        const door = document.getElementById('escapeDoor');
+        const doorIcon = document.getElementById('escapeDoorIcon');
+        const doorStatus = document.getElementById('escapeDoorStatus');
+        const riddleArea = document.getElementById('escapeRiddleArea');
+        const fback = document.getElementById('escapeFeedback');
 
-        trail.push({ x: fireball.x, y: fireball.y });
-        if (trail.length > 15) trail.shift();
+        row.innerHTML = '';
+        fback.innerText = '';
 
-        if (p >= 1) {
-            fireball.active = false;
-            let t = fireball.target; t.hit = true; playSound('hit');
+        if (escapeState.riddles.length === 0) {
+            door.classList.remove('open');
+            doorIcon.innerText = "🚪";
+            doorStatus.innerText = "FĂRĂ ENIGME";
+            riddleArea.innerHTML = "<p>Această lecție nu are încă provocări Escape Room configurate.</p>";
+            return;
+        }
 
-            for(let i=0; i<25; i++) {
-                let angle = Math.random() * Math.PI * 2; let speed = Math.random() * 5 + 1;
-                explosionParticles.push({
-                    x: t.x, y: t.y, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed,
-                    radius: Math.random() * 7 + 2, color: t.isCorrect ? (Math.random() > 0.3 ? "#2ecc71" : "#e74c3c") : "#e74c3c", alpha: 1
-                });
-            }
+        escapeState.riddles.forEach((_, i) => {
+            const isOpen = i < escapeState.unlockedCount;
+            row.innerHTML += `<div class="padlock-badge ${isOpen ? 'unlocked' : ''}">${isOpen ? '🔓' : '🔒'} Lacăt ${i + 1}</div>`;
+        });
 
-            if (t.isCorrect) {
-                playSound('correct'); updateXP(20);
-                document.getElementById('quizFeedback').innerText = "🛡️ VICTORIE! Zidul inamic a fost spulberat cu succes! (+20 XP)";
-                document.getElementById('quizFeedback').style.color = "#27ae60";
-                setTimeout(() => { currentQuizIndex++; loadQuestion(currentQuizIndex); }, 1800);
+        if (escapeState.unlockedCount >= escapeState.riddles.length) {
+            door.classList.add('open');
+            doorIcon.innerText = "🏆";
+            doorStatus.innerText = "EVADARE REUȘITĂ!";
+            riddleArea.innerHTML = `
+                <h4 style="color:#10b981; margin-bottom:6px;">🎉 Felicitări! Ai deschis toate cele ${escapeState.riddles.length} lacăte!</h4>
+                <p style="font-size:0.88rem; margin-bottom:10px;">Ai demonstrat că stăpânești secretele acestei lecții de istorie.</p>
+                <button class="btn-action" style="background:#059669; color:white; width:100%;" onclick="resetEscapeRoom()">🔄 Reia Escape Room</button>
+            `;
+        } else {
+            door.classList.remove('open');
+            doorIcon.innerText = "🚪";
+            doorStatus.innerText = `LACĂTUL ${escapeState.unlockedCount + 1} / ${escapeState.riddles.length}`;
+
+            const cur = escapeState.riddles[escapeState.unlockedCount];
+            const qText = cur.intrebare || cur.indiciu || cur.enigma || cur.text || "Rezolvă enigma:";
+            const hint = cur.hint || cur.ajutor || "";
+            riddleArea.innerHTML = `
+                <div style="font-weight: bold; margin-bottom: 6px; line-height: 1.4;">Enigma #${escapeState.unlockedCount + 1}: ${qText}</div>
+                ${hint ? `<div style="font-size: 0.82rem; color: #fcd34d; margin-bottom: 6px;">💡 Indiciu: ${hint}</div>` : ''}
+                <input type="text" id="escapeAnswerInput" class="escape-input" placeholder="Scrie răspunsul sau codul aici..." onkeydown="if(event.key==='Enter') checkEscapeAnswer()">
+                <button class="btn-action" style="width: 100%; background: #d97706; color: #fff; border-color: #f59e0b;" onclick="checkEscapeAnswer()">🔑 Descuie Lacătul</button>
+            `;
+        }
+    }
+
+    function checkEscapeAnswer() {
+        const inputEl = document.getElementById('escapeAnswerInput');
+        if (!inputEl) return;
+        const userAns = normalizeStr(inputEl.value);
+        if (!userAns) return;
+
+        const cur = escapeState.riddles[escapeState.unlockedCount];
+        const validRaw = cur.raspuns || cur.cod || cur.solutie || cur.answer || "";
+        const validList = Array.isArray(validRaw) ? validRaw : String(validRaw).split('|');
+        const isCorrect = validList.some(v => normalizeStr(v) === userAns);
+
+        const fback = document.getElementById('escapeFeedback');
+        if (isCorrect) {
+            playSound('correct');
+            escapeState.unlockedCount++;
+            const saveKey = `escape_solved_${currentClassKey}_${currentLessonIdx}`;
+            localStorage.setItem(saveKey, escapeState.unlockedCount.toString());
+            updateXP(25);
+            renderEscapeRoom();
+            fback.style.color = "#34d399";
+            fback.innerText = "🔓 Lacăt descuiat! (+25 XP)";
+        } else {
+            playSound('wrong');
+            fback.style.color = "#f87171";
+            fback.innerText = "❌ Cod greșit! Recitește rezumatul lecției și încearcă din nou.";
+        }
+    }
+
+    function resetEscapeRoom() {
+        escapeState.unlockedCount = 0;
+        const saveKey = `escape_solved_${currentClassKey}_${currentLessonIdx}`;
+        localStorage.setItem(saveKey, "0");
+        renderEscapeRoom();
+    }
+
+    /* =========================================================
+       DILEME SOCIALE (EDUCAȚIE SOCIALĂ)
+       ========================================================= */
+    function initDilemmaModule() {
+        currentDilemmaIndex = 0;
+        incarcaDilemaCurenta();
+    }
+
+    function incarcaDilemaCurenta() {
+        const dilemmaList = currentLessonData.dileme || [];
+        const fback = document.getElementById('dilemmaFeedbackText');
+        const nextBtn = document.getElementById('btnNextDilemma');
+        fback.style.display = 'none';
+        nextBtn.style.display = 'none';
+
+        if (dilemmaList.length === 0) {
+            document.getElementById('dilemmaText').innerText = "Nu există dileme configurate pentru această lecție.";
+            document.getElementById('dilemmaOptionsArea').innerHTML = "";
+            document.getElementById('dilemmaProgressText').innerText = "";
+            return;
+        }
+
+        if (currentDilemmaIndex >= dilemmaList.length) {
+            document.getElementById('dilemmaProgressText').innerText = `🎉 TOATE CELE ${dilemmaList.length} DILEME AU FOST REZOLVATE!`;
+            let titluFinal = currentClassKey === 'VIII'
+                ? "Ești un Mic Antreprenor Chibzuit! 💰"
+                : "Ești un Cetățean Model!";
+            let textMijloc = currentClassKey === 'VIII'
+                ? "Ai analizat cu atenție toate scenariile și ai luat decizii financiare inteligente, punând bazele unui buget echilibrat!"
+                : "Ai analizat cu atenție toate scenariile practice și ai ales calea empatiei, respectului și responsabilității!";
+
+            document.getElementById('dilemmaText').innerHTML = `
+                <div style="text-align:center; padding:10px;">
+                    <div style="font-size:3rem; margin-bottom:8px;">🌟👏🏅</div>
+                    <h3 style="color:#10b981;">${titluFinal}</h3>
+                    <p style="margin-top:6px; color:#cbd5e1;">${textMijloc}</p>
+                </div>`;
+            document.getElementById('dilemmaOptionsArea').innerHTML = `<button class="btn-action" style="width:100%; background:#059669; color:white; font-size:1.05rem;" onclick="initDilemmaModule()">🔄 Reia Dilemele Lecției</button>`;
+            playSound('correct');
+            updateXP(30);
+            return;
+        }
+
+        const d = dilemmaList[currentDilemmaIndex];
+        document.getElementById('dilemmaProgressText').innerText = `Dilema ${currentDilemmaIndex + 1} din ${dilemmaList.length}`;
+        document.getElementById('dilemmaText').innerText = d.scenariu;
+
+        let optiuniAmestecate = amestecaArray(d.optiuni.map((opt, idx) => ({ ...opt, originalIdx: idx })));
+        let optsHtml = "";
+        optiuniAmestecate.forEach((opt) => {
+            optsHtml += `<button class="dilemma-opt-btn" onclick="alegeVariantaDilema(${opt.originalIdx})">${opt.text}</button>`;
+        });
+        document.getElementById('dilemmaOptionsArea').innerHTML = optsHtml;
+    }
+
+    function alegeVariantaDilema(optIdx) {
+        const d = currentLessonData.dileme[currentDilemmaIndex];
+        const opt = d.optiuni[optIdx];
+        const fback = document.getElementById('dilemmaFeedbackText');
+
+        fback.innerHTML = opt.raspuns;
+        fback.style.display = 'block';
+
+        if (opt.puncte > 0) {
+            playSound('correct');
+            fback.style.background = "#d1fae5";
+            fback.style.color = "#065f46";
+            updateXP(opt.puncte);
+        } else {
+            playSound('wrong');
+            fback.style.background = "#fee2e2";
+            fback.style.color = "#991b1b";
+        }
+
+        document.querySelectorAll('.dilemma-opt-btn').forEach(b => b.disabled = true);
+        document.getElementById('btnNextDilemma').style.display = 'block';
+    }
+
+    function urmatoareaDilema() {
+        currentDilemmaIndex++;
+        incarcaDilemaCurenta();
+    }
+
+    /* =========================================================
+       BÂRFELE CETĂȚII, ASASINATE & PORECLE (ISTORIE)
+       ========================================================= */
+    let activeFunFactCategory = 'barfe';
+
+    function getFunFactPool(cat) {
+        if (cat === 'barfe') {
+            return (typeof barfeIstorice !== 'undefined') ? barfeIstorice : (typeof dbBarfe !== 'undefined' ? dbBarfe : []);
+        } else if (cat === 'asasinate') {
+            return (typeof asasinateCelebre !== 'undefined') ? asasinateCelebre : (typeof dbAsasinate !== 'undefined' ? dbAsasinate : []);
+        } else {
+            return (typeof porecleCelebre !== 'undefined') ? porecleCelebre : (typeof dbPorecle !== 'undefined' ? dbPorecle : []);
+        }
+    }
+
+    function openFunFactModal(cat) {
+        activeFunFactCategory = cat;
+        const titles = {
+            barfe: "🗣️ Bârfele Cetății",
+            asasinate: "🗡️ Asasinate Celebre din Istorie",
+            porecle: "👑 Porecle Celebre ale Conducătorilor"
+        };
+        document.getElementById('funFactModalTitle').innerText = titles[cat];
+        nextFunFact();
+        document.getElementById('modalFunFact').style.display = 'block';
+    }
+
+    function nextFunFact() {
+        const pool = getFunFactPool(activeFunFactCategory);
+        const body = document.getElementById('funFactBody');
+        if (!Array.isArray(pool) || pool.length === 0) {
+            body.innerHTML = "<p>Conținutul va fi încărcat în curând!</p>";
+            return;
+        }
+        const item = pool[Math.floor(Math.random() * pool.length)];
+        if (typeof item === 'string') {
+            body.innerHTML = `<p>${item}</p>`;
+        } else if (item && typeof item === 'object') {
+            const heading = item.titlu || item.nume || item.personaj || "";
+            const sub = item.porecla ? ` — <em>„${item.porecla}”</em>` : (item.an ? ` (${item.an})` : "");
+            const desc = item.text || item.poveste || item.motiv || item.detalii || "";
+            body.innerHTML = `${heading ? `<h4 style="color:#78350f; margin-bottom:6px;">${heading}${sub}</h4>` : ''}<p>${desc}</p>`;
+        }
+        playSound('correct');
+    }
+
+    /* =========================================================
+       ROATA ZILNICĂ (ISTORIE & EDUCAȚIE SOCIALĂ)
+       ========================================================= */
+    const wheelCanvas = document.getElementById('wheelCanvas');
+    const wheelCtx = wheelCanvas.getContext('2d');
+    const wheelSlices = [
+        { label: "10 XP", val: 10, color: "#3b82f6" },
+        { label: "25 XP", val: 25, color: "#10b981" },
+        { label: "50 XP", val: 50, color: "#f59e0b" },
+        { label: "15 XP", val: 15, color: "#8b5cf6" },
+        { label: "100 XP", val: 100, color: "#ef4444" },
+        { label: "30 XP", val: 30, color: "#06b6d4" }
+    ];
+    let wheelAngle = 0;
+    let isSpinning = false;
+
+    function drawWheel() {
+        const numSlices = wheelSlices.length;
+        const sliceAngle = (Math.PI * 2) / numSlices;
+        const centerX = wheelCanvas.width / 2;
+        const centerY = wheelCanvas.height / 2;
+        const radius = wheelCanvas.width / 2 - 5;
+
+        wheelCtx.clearRect(0, 0, wheelCanvas.width, wheelCanvas.height);
+
+        for (let i = 0; i < numSlices; i++) {
+            const angle = wheelAngle + i * sliceAngle;
+            wheelCtx.beginPath();
+            wheelCtx.moveTo(centerX, centerY);
+            wheelCtx.arc(centerX, centerY, radius, angle, angle + sliceAngle);
+            wheelCtx.fillStyle = wheelSlices[i].color;
+            wheelCtx.fill();
+            wheelCtx.lineWidth = 2;
+            wheelCtx.strokeStyle = "#ffffff";
+            wheelCtx.stroke();
+
+            wheelCtx.save();
+            wheelCtx.translate(centerX, centerY);
+            wheelCtx.rotate(angle + sliceAngle / 2);
+            wheelCtx.textAlign = "right";
+            wheelCtx.fillStyle = "#ffffff";
+            wheelCtx.font = "bold 16px 'Segoe UI', sans-serif";
+            wheelCtx.fillText(wheelSlices[i].label, radius - 20, 6);
+            wheelCtx.restore();
+        }
+    }
+
+    function spinWheel() {
+        if (isSpinning || !activeSubject) return;
+        const cfg = SUBJECT_CONFIG[activeSubject];
+        const todayStr = new Date().toDateString();
+        const lastSpin = localStorage.getItem(cfg.spinKey);
+
+        if (lastSpin === todayStr) {
+            document.getElementById('wheelResultText').innerText = "🔒 Ai învârtit deja roata astăzi la această materie! Revino mâine!";
+            document.getElementById('wheelResultText').style.color = "#dc2626";
+            return;
+        }
+
+        isSpinning = true;
+        document.getElementById('wheelResultText').innerText = "🎰 Roata se învârte...";
+        document.getElementById('wheelResultText').style.color = "var(--accent)";
+
+        const randomSpin = Math.PI * 2 * 5 + Math.random() * Math.PI * 2;
+        const startAngle = wheelAngle;
+        const duration = 3000;
+        const startTime = performance.now();
+
+        function animateSpin(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+
+            wheelAngle = startAngle + randomSpin * easeOut;
+            drawWheel();
+
+            if (progress < 1) {
+                requestAnimationFrame(animateSpin);
             } else {
-                playSound('wrong'); quizWrongAnswers++; updateXP(-5);
-                document.getElementById('quizFeedback').innerText = "⚔️ Cădere în luptă! Stânca a eșuat în fața zidului! (-5 XP)";
-                document.getElementById('quizFeedback').style.color = "#c0392b";
-                setTimeout(() => { canShoot = true; fireball = null; trail = []; explosionParticles = []; drawScene(); }, 1400);
+                isSpinning = false;
+                localStorage.setItem(cfg.spinKey, todayStr);
+
+                const numSlices = wheelSlices.length;
+                const sliceAngle = (Math.PI * 2) / numSlices;
+                let normalizedAngle = (1.5 * Math.PI - (wheelAngle % (Math.PI * 2))) % (Math.PI * 2);
+                if (normalizedAngle < 0) normalizedAngle += Math.PI * 2;
+
+                const winIndex = Math.floor(normalizedAngle / sliceAngle);
+                const wonItem = wheelSlices[winIndex];
+
+                playSound('correct');
+                updateXP(wonItem.val);
+                document.getElementById('wheelResultText').innerText = `🎉 Felicitări! Ai câștigat ${wonItem.label}!`;
+                document.getElementById('wheelResultText').style.color = "#059669";
             }
         }
-
-        if (explosionParticles.length > 0) {
-            explosionParticles.forEach(ep => { ep.x += ep.vx; ep.y += ep.vy; ep.radius *= 0.95; });
-        }
-
-        drawScene();
-        if (fireball && fireball.active || explosionParticles.length > 0) { requestAnimationFrame(animateFireball); }
+        requestAnimationFrame(animateSpin);
     }
 
-    function launchFirework() {
-        if (!isVictory) return;
-        fireworks.push({ x: Math.random() * (canvas.width - 200) + 100, y: canvas.height, targetY: Math.random() * 150 + 50, color: `hsl(${Math.random() * 360}, 100%, 60%)`, speed: Math.random() * 3 + 3.5, radius: 3.5 });
-        playSound('fw_launch');
-        setTimeout(launchFirework, Math.random() * 900 + 400); 
+    function openWheelModal() {
+        if (!activeSubject) return;
+        document.getElementById('wheelModalTitle').innerText = SUBJECT_CONFIG[activeSubject].wheelTitle;
+        document.getElementById('wheelResultText').innerText = "";
+        document.getElementById('modalWheel').style.display = 'block';
+        drawWheel();
     }
 
-    function animateVictory() {
-        if (!isVictory) return;
-        ctx.clearRect(0, 0, canvas.width, canvas.height); ctx.fillStyle = "#e3ceab"; ctx.fillRect(0, 0, canvas.width, canvas.height);
-        drawWall(true); 
+    function openAvatarModal() {
+        if (!activeSubject) return;
+        const cfg = SUBJECT_CONFIG[activeSubject];
+        let xp = parseInt(localStorage.getItem(cfg.xpKey)) || 0;
+        let curLvl = getLevelInfoForSubject(activeSubject, xp).level;
+        let container = document.getElementById('avatarGrid');
+        container.innerHTML = '';
 
-        if (Math.random() < 0.6) {
-            let spawnX = [80, 400, 715, 260, 540][Math.floor(Math.random() * 5)];
-            let spawnY = spawnX === 400 ? 470 : (spawnX < 100 || spawnX > 700 ? 340 : 435);
-            fireEffectParticles.push({ x: spawnX + (Math.random() * 40 - 20), y: spawnY, vx: (Math.random() - 0.5) * 1.5, vy: -(Math.random() * 2.5 + 1), radius: Math.random() * 8 + 4, color: Math.random() > 0.4 ? "#e74c3c" : (Math.random() > 0.5 ? "#f39c12" : "#f1c40f"), alpha: 1, isSmoke: Math.random() < 0.3 });
-        }
-
-        for (let i = fireEffectParticles.length - 1; i >= 0; i--) {
-            let fp = fireEffectParticles[i]; fp.x += fp.vx; fp.y += fp.vy; fp.radius *= 0.96; fp.alpha -= 0.02;
-            if (fp.isSmoke) { fp.color = "#444444"; fp.radius *= 1.02; }
-            ctx.beginPath(); ctx.arc(fp.x, fp.y, Math.max(0.5, fp.radius), 0, Math.PI * 2); ctx.fillStyle = fp.color; ctx.globalAlpha = Math.max(0, fp.alpha); ctx.fill(); ctx.globalAlpha = 1;
-            if (fp.alpha <= 0 || fp.radius <= 0.5) { fireEffectParticles.splice(i, 1); }
-        }
-
-        for(let i=fireworks.length-1; i>=0; i--) {
-            let fw = fireworks[i]; fw.y -= fw.speed;
-            ctx.beginPath(); ctx.arc(fw.x, fw.y, fw.radius, 0, Math.PI*2); ctx.fillStyle = fw.color; ctx.fill();
-
-            if(fw.y <= fw.targetY) {
-                playSound('fw_explode');
-                for(let j=0; j<45; j++) {
-                    let angle = Math.random() * Math.PI * 2; let speed = Math.random() * 4 + 1;
-                    fwParticles.push({ x: fw.x, y: fw.y, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed, color: fw.color, alpha: 1, decay: Math.random() * 0.02 + 0.015 });
-                }
-                fireworks.splice(i, 1);
+        cfg.levels.forEach(lvl => {
+            let isUnlocked = curLvl >= lvl.level;
+            let div = document.createElement('div');
+            div.className = `avatar-option ${isUnlocked ? '' : 'locked'}`;
+            div.innerText = lvl.avatar;
+            div.title = isUnlocked ? lvl.title : `Deblocabil la Nivelul ${lvl.level}`;
+            if (isUnlocked) {
+                div.onclick = function() {
+                    localStorage.setItem(cfg.avatarKey, lvl.avatar);
+                    document.getElementById('playerAvatar').innerText = lvl.avatar;
+                    inchideModal('modalAvatar');
+                };
             }
-        }
-
-        for(let i=fwParticles.length-1; i>=0; i--) {
-            let p = fwParticles[i]; p.x += p.vx; p.y += p.vy; p.vy += 0.04; p.alpha -= p.decay;
-            ctx.beginPath(); ctx.arc(p.x, p.y, 2.5, 0, Math.PI*2); ctx.fillStyle = p.color; ctx.globalAlpha = Math.max(0, p.alpha); ctx.fill(); ctx.globalAlpha = 1;
-            if(p.alpha <= 0) fwParticles.splice(i, 1);
-        }
-
-        victoryAnimationId = requestAnimationFrame(animateVictory);
+            container.appendChild(div);
+        });
+        document.getElementById('modalAvatar').style.display = 'block';
     }
 
-    // Ascultăm când utilizatorul apasă pe butonul fizic sau de gest Back de la Android
+    function switchTab(t) {
+        const btns = document.querySelectorAll('.tab-btn');
+        const contents = document.querySelectorAll('.tab-content');
+        btns.forEach(b => b.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        if (t === 'summary') {
+            btns[0].classList.add('active');
+            document.getElementById('tabSummary').classList.add('active');
+        } else if (t === 'game') {
+            btns[1].classList.add('active');
+            document.getElementById('tabGame').classList.add('active');
+            initCanvasGame();
+        } else if (t === 'special') {
+            btns[2].classList.add('active');
+            document.getElementById('tabSpecial').classList.add('active');
+        } else {
+            btns[3].classList.add('active');
+            document.getElementById('tabWordwall').classList.add('active');
+        }
+    }
+
+    function deschideStiaiCa() {
+        if (currentLessonData && currentLessonData.stiaiCa) {
+            document.getElementById('stiaiCaText').innerText = currentLessonData.stiaiCa;
+            document.getElementById('modalStiaiCa').style.display = 'block';
+            playSound('correct');
+        }
+    }
+
+    /* NAVIGARE ÎNAPOI (BUTON INTERFAȚĂ + BUTON HARDWARE ANDROID) */
+    function goBack(fromHardwareBack = false) {
+        if (!fromHardwareBack && window.location.hash !== "") {
+            window.history.back();
+            return;
+        }
+
+        const classes = document.getElementById('screenClasses');
+        const lessons = document.getElementById('screenLessons');
+        const detail = document.getElementById('screenDetail');
+        const setupDuel = document.getElementById('screenDuelSetup');
+        const gameDuel = document.getElementById('screenDuelGame');
+        const resultDuel = document.getElementById('screenDuelResult');
+
+        if (gameDuel.classList.contains('active-screen') || resultDuel.classList.contains('active-screen')) {
+            clearInterval(duelState.timer);
+            gameDuel.classList.remove('active-screen');
+            resultDuel.classList.remove('active-screen');
+            setupDuel.classList.add('active-screen');
+            document.getElementById('headerTitle').innerText = "⚔️ Antrenament Solo";
+        } else if (setupDuel.classList.contains('active-screen')) {
+            setupDuel.classList.remove('active-screen');
+            classes.classList.add('active-screen');
+            document.getElementById('headerTitle').innerText = SUBJECT_CONFIG[activeSubject].title;
+        } else if (detail.classList.contains('active-screen')) {
+            detail.classList.remove('active-screen');
+            openClassWithoutPush(currentClassKey);
+        } else if (lessons.classList.contains('active-screen')) {
+            lessons.classList.remove('active-screen');
+            classes.classList.add('active-screen');
+            document.getElementById('headerTitle').innerText = SUBJECT_CONFIG[activeSubject].title;
+        } else if (classes.classList.contains('active-screen')) {
+            returnToSubjectHub();
+        }
+    }
+
+    function openClassWithoutPush(clsKey) {
+        document.getElementById('headerTitle').innerText = `Clasa a ${clsKey}-a`;
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+        document.getElementById('screenLessons').classList.add('active-screen');
+
+        const container = document.getElementById('lessonsListContainer');
+        container.innerHTML = '';
+        const lessons = getLessonsForClass(activeSubject, clsKey);
+        lessons.forEach((les, idx) => {
+            let starsKey = `${activeSubject}_stars_${clsKey}_${idx}`;
+            let savedStars = parseInt(localStorage.getItem(starsKey)) || 0;
+            let starsDisplay = savedStars > 0 ? "⭐".repeat(savedStars) : "";
+            let titlu = les.titlu || les.title || `Lecția ${idx + 1}`;
+            container.innerHTML += `
+                <div class="card" onclick="openLessonDetail('${clsKey}', ${idx})">
+                    <span>${titlu}</span>
+                    <span class="lesson-stars">${starsDisplay}</span>
+                </div>`;
+        });
+    }
+
+    function deschideDespre() { document.getElementById('modalDespre').style.display = 'block'; }
+    function inchideModal(id) { document.getElementById(id).style.display = 'none'; }
+
     window.addEventListener('hashchange', function() {
         let currentLevel = 0;
         if (window.location.hash.startsWith("#step")) {
             currentLevel = parseInt(window.location.hash.replace("#step", "")) || 0;
         }
-
         if (currentLevel < historyDepth) {
             historyDepth = currentLevel;
             goBack(true);
         }
     });
 
-    updateXP(0);
-    updateStreak();
+    // Inițializare Hub la încărcare
+    refreshHubStats();
 </script>
+
+<!-- Înregistrare Service Worker PWA -->
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js');
-  }
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js')
+                .then(() => console.log('Service Worker înregistrat!'))
+                .catch(err => console.log('Eroare Service Worker:', err));
+        });
+    }
 </script>
 </body>
 </html>
