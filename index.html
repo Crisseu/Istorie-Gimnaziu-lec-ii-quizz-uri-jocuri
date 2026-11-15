@@ -1667,7 +1667,7 @@
             initDilemmaModule();
         }
 
-        let htmlRezumat = currentLessonData.rezumat || "<p>Rezumatul acestei lecții este în curs de actualizare.</p>";
+        let htmlRezumat = currentLessonData.rezumat || currentLessonData.summary || "<p>Rezumatul acestei lecții este în curs de actualizare.</p>";
         if (currentLessonData.stiaiCa) {
             htmlRezumat += `
                 <br><div style="text-align: center; margin-top: 15px;">
@@ -1687,6 +1687,8 @@
         let urls = [];
         if (Array.isArray(currentLessonData.wordwallUrls) && currentLessonData.wordwallUrls.length > 0) {
             urls = currentLessonData.wordwallUrls.filter(Boolean);
+        } else if (currentLessonData.game1 || currentLessonData.game2) {
+            urls = [currentLessonData.game1, currentLessonData.game2].filter(Boolean);
         } else {
             const single = currentLessonData.wordwallUrl || currentLessonData.geniallyUrl || currentLessonData.linkWordwall || "";
             if (single) urls = [single];
@@ -2545,8 +2547,8 @@
 
         const qData = currentLessonData.quiz[qIndex];
         const qText = qData.intrebare || qData.q;
-        const opts = qData.raspunsuri || qData.options || Object.values(qData).find(val => Array.isArray(val)) || [];
-        const correctIdx = (typeof qData.corect === 'number') ? qData.corect : qData.correct;
+        const opts = qData.opts || qData.raspunsuri || qData.options || [];
+        const correctIdx = (typeof qData.c === 'number') ? qData.c : ((typeof qData.corect === 'number') ? qData.corect : qData.correct);
 
         document.getElementById('quizQuestion').innerText = `Întrebarea ${qIndex + 1}/${totalQ}: ${qText}`;
         document.getElementById('quizFeedback').innerText = activeSubject === 'history'
@@ -2845,8 +2847,10 @@
     }
 
     function initEscapeRoom() {
-        const raw = currentLessonData.escapeRoom || currentLessonData.escape || [];
-        escapeState.riddles = Array.isArray(raw) ? raw : [];
+        const raw = (currentLessonData.escape && Array.isArray(currentLessonData.escape.locks))
+            ? currentLessonData.escape.locks
+            : (Array.isArray(currentLessonData.escapeRoom) ? currentLessonData.escapeRoom : []);
+        escapeState.riddles = raw;
         const saveKey = `escape_solved_${currentClassKey}_${currentLessonIdx}`;
         escapeState.unlockedCount = parseInt(localStorage.getItem(saveKey)) || 0;
         if (escapeState.unlockedCount > escapeState.riddles.length) {
@@ -2874,17 +2878,20 @@
             return;
         }
 
-        escapeState.riddles.forEach((_, i) => {
+        escapeState.riddles.forEach((item, i) => {
             const isOpen = i < escapeState.unlockedCount;
-            row.innerHTML += `<div class="padlock-badge ${isOpen ? 'unlocked' : ''}">${isOpen ? '🔓' : '🔒'} Lacăt ${i + 1}</div>`;
+            const revealed = (isOpen && item.digitRevealed) ? ` (${item.digitRevealed})` : '';
+            row.innerHTML += `<div class="padlock-badge ${isOpen ? 'unlocked' : ''}">${isOpen ? '🔓' : '🔒'} Lacăt ${i + 1}${revealed}</div>`;
         });
 
         if (escapeState.unlockedCount >= escapeState.riddles.length) {
+            const secretWord = escapeState.riddles.map(r => r.digitRevealed || '').join('');
             door.classList.add('open');
             doorIcon.innerText = "🏆";
             doorStatus.innerText = "EVADARE REUȘITĂ!";
             riddleArea.innerHTML = `
                 <h4 style="color:#10b981; margin-bottom:6px;">🎉 Felicitări! Ai deschis toate cele ${escapeState.riddles.length} lacăte!</h4>
+                ${secretWord ? `<p style="font-size:1rem; font-weight:bold; color:#facc15; margin-bottom:6px;">🔑 Cuvântul-cheie descoperit: ${secretWord}</p>` : ''}
                 <p style="font-size:0.88rem; margin-bottom:10px;">Ai demonstrat că stăpânești secretele acestei lecții de istorie.</p>
                 <button class="btn-action" style="background:#059669; color:white; width:100%;" onclick="resetEscapeRoom()">🔄 Reia Escape Room</button>
             `;
@@ -2894,12 +2901,12 @@
             doorStatus.innerText = `LACĂTUL ${escapeState.unlockedCount + 1} / ${escapeState.riddles.length}`;
 
             const cur = escapeState.riddles[escapeState.unlockedCount];
-            const qText = cur.intrebare || cur.indiciu || cur.enigma || cur.text || "Rezolvă enigma:";
+            const qText = cur.puzzle || cur.intrebare || cur.indiciu || cur.enigma || cur.text || "Rezolvă enigma:";
             const hint = cur.hint || cur.ajutor || "";
             riddleArea.innerHTML = `
-                <div style="font-weight: bold; margin-bottom: 6px; line-height: 1.4;">Enigma #${escapeState.unlockedCount + 1}: ${qText}</div>
+                <div style="font-weight: bold; margin-bottom: 6px; line-height: 1.4;">${qText}</div>
                 ${hint ? `<div style="font-size: 0.82rem; color: #fcd34d; margin-bottom: 6px;">💡 Indiciu: ${hint}</div>` : ''}
-                <input type="text" id="escapeAnswerInput" class="escape-input" placeholder="Scrie răspunsul sau codul aici..." onkeydown="if(event.key==='Enter') checkEscapeAnswer()">
+                <input type="text" id="escapeAnswerInput" class="escape-input" placeholder="Scrie răspunsul aici..." onkeydown="if(event.key==='Enter') checkEscapeAnswer()">
                 <button class="btn-action" style="width: 100%; background: #d97706; color: #fff; border-color: #f59e0b;" onclick="checkEscapeAnswer()">🔑 Descuie Lacătul</button>
             `;
         }
@@ -2912,7 +2919,7 @@
         if (!userAns) return;
 
         const cur = escapeState.riddles[escapeState.unlockedCount];
-        const validRaw = cur.raspuns || cur.cod || cur.solutie || cur.answer || "";
+        const validRaw = cur.code || cur.raspuns || cur.cod || cur.solutie || cur.answer || "";
         const validList = Array.isArray(validRaw) ? validRaw : String(validRaw).split('|');
         const isCorrect = validList.some(v => normalizeStr(v) === userAns);
 
