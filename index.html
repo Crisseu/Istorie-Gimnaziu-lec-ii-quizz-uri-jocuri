@@ -380,7 +380,7 @@
         .summary-box h3:first-child { margin-top: 0; }
         .summary-box ul { margin-left: 18px; margin-top: 6px; }
 
-        /* CANVAS JOC (ASEDIU & TRIBUNA) */
+        /* CANVAS JOC (ASEDIU & COMUNITATE) */
         .game-container {
             position: relative;
             width: 100%;
@@ -1051,7 +1051,7 @@
             <div id="summaryBoxContent" class="summary-box"></div>
         </div>
 
-        <!-- TAB 2: QUIZZ CANVAS (ASEDIU PENTRU ISTORIE / TRIBUNA PENTRU SOCIALĂ) -->
+        <!-- TAB 2: QUIZZ CANVAS (ASEDIU PENTRU ISTORIE / COMUNITATE PENTRU SOCIALĂ) -->
         <div id="tabGame" class="tab-content">
             <div class="game-container">
                 <div id="quizQuestion" class="question-banner">Alege răspunsul corect!</div>
@@ -1219,7 +1219,7 @@
                 { key: "VIII", label: "🇷🇴 Clasa a VIII-a: Istoria Românilor" }
             ],
             levels: [
-                { level: 1,  title: "Ucenic Cronicar",       minXP: 0,     maxXP: 200,   avatar: '📜' },
+                { level: 1,  title: "Ucenic Cronicar",        minXP: 0,     maxXP: 200,   avatar: '📜' },
                 { level: 2,  title: "Străjer al Cetății",    minXP: 200,   maxXP: 500,   avatar: '🛡️' },
                 { level: 3,  title: "Arcaș Regesc",          minXP: 500,   maxXP: 900,   avatar: '🏹' },
                 { level: 4,  title: "Cavaler al Ordinului",  minXP: 900,   maxXP: 1400,  avatar: '⚔️' },
@@ -1336,6 +1336,42 @@
                 osc.start(audioCtx.currentTime + index * 0.1);
                 osc.stop(audioCtx.currentTime + index * 0.1 + 0.4);
             });
+        } else if (type === 'shoot') {
+            const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(180, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(65, audioCtx.currentTime + 0.25);
+            gain.gain.setValueAtTime(0.18, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.25);
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            osc.start(); osc.stop(audioCtx.currentTime + 0.25);
+        } else if (type === 'hit') {
+            const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+            osc.type = 'square';
+            osc.frequency.setValueAtTime(120, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(40, audioCtx.currentTime + 0.2);
+            gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.2);
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            osc.start(); osc.stop(audioCtx.currentTime + 0.2);
+        } else if (type === 'fw_launch') {
+            const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(300, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(850, audioCtx.currentTime + 0.35);
+            gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.35);
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            osc.start(); osc.stop(audioCtx.currentTime + 0.35);
+        } else if (type === 'fw_explode') {
+            const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(150, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(35, audioCtx.currentTime + 0.3);
+            gain.gain.setValueAtTime(0.18, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            osc.start(); osc.stop(audioCtx.currentTime + 0.3);
         }
     }
 
@@ -1589,6 +1625,8 @@
     function returnToSubjectHub() {
         clearInterval(duelState.timer);
         clearInterval(cqState.timer);
+        isVictory = false;
+        if (victoryAnimationId) { cancelAnimationFrame(victoryAnimationId); victoryAnimationId = null; }
         activeSubject = null;
         historyDepth = 0;
         if (window.location.hash !== "") {
@@ -1628,7 +1666,9 @@
         }
 
         lessons.forEach((les, idx) => {
-            let starsKey = `${activeSubject}_stars_${clsKey}_${idx}`;
+            let starsKey = activeSubject === 'history'
+                ? `stars_${clsKey}_${idx}`
+                : `${activeSubject}_stars_${clsKey}_${idx}`;
             let savedStars = parseInt(localStorage.getItem(starsKey)) || 0;
             let starsDisplay = savedStars > 0 ? "⭐".repeat(savedStars) : "";
             let titlu = les.titlu || les.title || `Lecția ${idx + 1}`;
@@ -2499,49 +2539,379 @@
     }
 
     /* =========================================================
-       JOC CANVAS: ASEDIU MEDIEVAL (ISTORIE) & TRIBUNA (SOCIALĂ)
+       JOC CANVAS: ASEDIU MEDIEVAL ORIGINAL (ISTORIE) & COMUNITATE (SOCIALĂ)
        ========================================================= */
     const canvas = document.getElementById('gameCanvas');
     const ctx = canvas.getContext('2d');
     let gameStep = 0;
-    let targets = [], canShoot = true;
-    let projectile = null;
-    let fireworks = [];
-    let animFrameId = null;
+
+    /* VARIABILELE ORIGINALE ALE JOCULUI ASEDIU MEDIEVAL */
+    let catX = canvas.width / 2;
+    let catY = canvas.height - 40;
+    let targets = [], canShoot = true, fireball = null, trail = [], explosionParticles = [];
+    let catapultAngle = 0;
+    let isVictory = false, victoryAnimationId = null, fireworks = [], fwParticles = [], fireEffectParticles = [];
+    let quizWrongAnswers = 0;
 
     function initCanvasGame() {
-        if (animFrameId) { cancelAnimationFrame(animFrameId); animFrameId = null; }
-        projectile = null;
-        fireworks = [];
+        isVictory = false;
+        if (victoryAnimationId) { cancelAnimationFrame(victoryAnimationId); victoryAnimationId = null; }
+        fireworks = []; fwParticles = []; fireEffectParticles = [];
+        quizWrongAnswers = 0;
+
         if (!currentLessonData || !currentLessonData.quiz || currentLessonData.quiz.length === 0) {
             document.getElementById('quizQuestion').innerText = "Această lecție nu are întrebări quizz configurate.";
             return;
         }
         gameStep = 0;
         currentQuizIndex = 0;
-        loadCanvasQuestion(currentQuizIndex);
+
+        if (activeSubject === 'history') {
+            loadQuestion(currentQuizIndex);
+        } else {
+            loadSocialQuestion(currentQuizIndex);
+        }
     }
 
-    function loadCanvasQuestion(qIndex) {
+    /* --- CODUL ORIGINAL PENTRU ASEDIU MEDIEVAL (ISTORIE) --- */
+    function loadQuestion(qIndex) {
+        if (qIndex >= currentLessonData.quiz.length) {
+            let earnedStars = 3;
+            if (quizWrongAnswers >= 3) earnedStars = 1;
+            else if (quizWrongAnswers >= 1) earnedStars = 2;
+
+            let starsKey = `stars_${currentClassKey}_${currentLessonIdx}`;
+            let oldStars = parseInt(localStorage.getItem(starsKey)) || 0;
+            if (earnedStars > oldStars) localStorage.setItem(starsKey, earnedStars);
+
+            document.getElementById('quizQuestion').innerText = `🏆 Felicitări! Ai obținut ${"⭐".repeat(earnedStars)} pentru această lecție!`;
+            document.getElementById('quizFeedback').innerText = "Fortăreața a fost cucerită! Revino la lecții pentru următoarea luptă.";
+            document.getElementById('quizFeedback').style.color = "#27ae60";
+            
+            targets = []; fireball = null; trail = []; explosionParticles = []; catapultAngle = 0; canShoot = false;
+            isVictory = true;
+            launchFirework();
+            animateVictory();
+            return;
+        }
+
+        const qData = currentLessonData.quiz[qIndex];
+        const qText = qData.q || qData.intrebare;
+        const opts = qData.opts || qData.raspunsuri || qData.options || [];
+        const correctIdx = (typeof qData.c === 'number') ? qData.c : ((typeof qData.corect === 'number') ? qData.corect : qData.correct);
+
+        document.getElementById('quizQuestion').innerText = `Întrebarea ${qIndex + 1}/${currentLessonData.quiz.length}: ${qText}`;
+        document.getElementById('quizFeedback').innerText = "Atinge răspunsul corect pentru a zdrobi fortăreața inamică!";
+        document.getElementById('quizFeedback').style.color = "#4a2e1b";
+
+        canShoot = true; fireball = null; trail = []; explosionParticles = []; catapultAngle = 0;
+        
+        let opțiuniPornire = opts.map((optText, idx) => {
+            return {
+                text: optText,
+                isCorrect: (idx === correctIdx)
+            };
+        });
+
+        let opțiuniAmestecate = amestecaArray(opțiuniPornire);
+
+        targets = [];
+        const targetPositions = [ { x: 195, y: 120 }, { x: 605, y: 120 }, { x: 195, y: 300 }, { x: 605, y: 300 } ];
+        const targetWidth = 370, targetHeight = 115;
+
+        for (let i = 0; i < opțiuniAmestecate.length; i++) {
+            targets.push({ 
+                x: targetPositions[i].x, y: targetPositions[i].y, 
+                width: targetWidth, height: targetHeight, 
+                text: opțiuniAmestecate[i].text, 
+                isCorrect: opțiuniAmestecate[i].isCorrect, 
+                hit: false 
+            });
+        }
+        drawScene();
+    }
+
+    function drawDetailedSoldier(x, y, scale = 1) {
+        ctx.save(); ctx.translate(x, y); ctx.scale(scale, scale);
+        ctx.fillStyle = "#8b0000"; ctx.beginPath(); ctx.roundRect(-7, -12, 14, 22, 4); ctx.fill();
+        ctx.lineWidth = 1; ctx.strokeStyle = "#4a1c1c"; ctx.stroke();
+        ctx.fillStyle = "#3d2516"; ctx.fillRect(-7, -2, 14, 3);
+        ctx.fillStyle = "#f5d0b1"; ctx.beginPath(); ctx.arc(0, -17, 6, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = "#7f8c8d"; ctx.beginPath(); ctx.arc(0, -18, 6.5, Math.PI, 0, false); ctx.fill();
+        ctx.fillRect(-7, -18, 14, 2); ctx.restore();
+    }
+
+    function drawWoodenLadder(x, y, width, height) {
+        ctx.save(); ctx.fillStyle = "#8c5a2b"; ctx.strokeStyle = "#4a2e1b"; ctx.lineWidth = 2;
+        ctx.fillRect(x, y, 4, height); ctx.fillRect(x + width - 4, y, 4, height);
+        for (let stepY = y + 8; stepY < y + height; stepY += 12) { ctx.fillRect(x, stepY, width, 3); }
+        ctx.restore();
+    }
+
+    function drawWall(isConquered = false) {
+        ctx.save();
+        ctx.fillStyle = isConquered ? "#535c5d" : "#7f8c8d"; ctx.strokeStyle = "#2c3e50"; ctx.lineWidth = 3;
+        ctx.beginPath(); ctx.moveTo(60, 430); ctx.quadraticCurveTo(400, 455, 740, 430);
+        ctx.lineTo(740, 520); ctx.quadraticCurveTo(400, 545, 60, 520); ctx.closePath(); ctx.fill(); ctx.stroke();
+
+        ctx.fillStyle = isConquered ? "#6b7778" : "#95a5a6";
+        for(let wx = 90; wx < 710; wx += 45) {
+            ctx.fillRect(wx, 440, 35, 18); ctx.fillRect(wx + 20, 465, 35, 18); ctx.fillRect(wx, 490, 35, 18);
+        }
+
+        if (isConquered) {
+            ctx.fillStyle = "#1a0f0a"; ctx.fillRect(360, 445, 80, 75);
+            ctx.save(); ctx.translate(360, 445); ctx.rotate(-0.3); ctx.fillStyle = "#3d2516"; ctx.fillRect(0, 0, 35, 75); ctx.strokeStyle = "#1a0f0a"; ctx.strokeRect(0, 0, 35, 75); ctx.restore();
+            ctx.save(); ctx.translate(440, 445); ctx.rotate(0.35); ctx.fillStyle = "#3d2516"; ctx.fillRect(-35, 0, 35, 75); ctx.strokeStyle = "#1a0f0a"; ctx.strokeRect(-35, 0, 35, 75); ctx.restore();
+        } else {
+            ctx.fillStyle = "#5a3d28"; ctx.fillRect(360, 445, 80, 75); ctx.strokeStyle = "#2b1d0c"; ctx.lineWidth = 3; ctx.strokeRect(360, 445, 80, 75);
+            ctx.fillStyle = "#3d2516"; ctx.fillRect(397, 445, 6, 75); ctx.fillStyle = "#2c3e50";
+            ctx.beginPath(); ctx.arc(380, 480, 5, 0, Math.PI*2); ctx.fill();
+            ctx.beginPath(); ctx.arc(420, 480, 5, 0, Math.PI*2); ctx.fill();
+        }
+
+        if (!isConquered) {
+            drawDetailedSoldier(210, 412); drawDetailedSoldier(260, 412); drawDetailedSoldier(310, 412);
+            drawDetailedSoldier(490, 412); drawDetailedSoldier(540, 412); drawDetailedSoldier(590, 412);
+        }
+
+        ctx.fillStyle = isConquered ? "#535c5d" : "#7f8c8d";
+        ctx.fillRect(40, 340, 90, 180); ctx.strokeRect(40, 340, 90, 180);
+        ctx.fillRect(35, 320, 25, 25); ctx.fillRect(70, 320, 25, 25); ctx.fillRect(105, 320, 25, 25);
+
+        ctx.fillRect(670, 340, 90, 180); ctx.strokeRect(670, 340, 90, 180);
+        ctx.fillRect(665, 320, 25, 25); ctx.fillRect(700, 320, 25, 25); ctx.fillRect(735, 320, 25, 25);
+
+        if (!isConquered) {
+            drawDetailedSoldier(72, 298); drawDetailedSoldier(712, 298);
+            drawWoodenLadder(132, 350, 18, 140); drawDetailedSoldier(141, 410);
+            drawWoodenLadder(650, 350, 18, 140); drawDetailedSoldier(659, 410);
+        }
+
+        if (isConquered) {
+            ctx.strokeStyle = "#1a1a1a"; ctx.lineWidth = 3;
+            ctx.beginPath(); ctx.moveTo(85, 340); ctx.lineTo(75, 380); ctx.lineTo(90, 420); ctx.lineTo(80, 460); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(710, 340); ctx.lineTo(725, 390); ctx.lineTo(705, 430); ctx.lineTo(720, 480); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(250, 435); ctx.lineTo(265, 470); ctx.lineTo(255, 510); ctx.moveTo(550, 435); ctx.lineTo(535, 475); ctx.lineTo(545, 515); ctx.stroke();
+        }
+
+        ctx.restore();
+    }
+
+    function drawScene() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#e3ceab"; ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        drawWall(false);
+
+        targets.forEach(t => {
+            ctx.save(); ctx.translate(t.x, t.y);
+
+            if (t.hit) {
+                if (t.isCorrect) {
+                    ctx.fillStyle = "#27ae60"; ctx.beginPath(); ctx.roundRect(-t.width/2, -t.height/2, t.width, t.height, 10); ctx.fill();
+                    ctx.strokeStyle = "#c0392b"; ctx.lineWidth = 4;
+                    ctx.beginPath(); ctx.moveTo(-50, -30); ctx.lineTo(20, 10); ctx.lineTo(40, -40); ctx.moveTo(-20, 30); ctx.lineTo(10, -10); ctx.lineTo(50, 20); ctx.stroke();
+                    ctx.fillStyle = "rgba(231, 76, 60, 0.7)"; ctx.beginPath(); ctx.arc(-30, -20, 20, 0, 2*Math.PI); ctx.fill();
+                    ctx.fillStyle = "rgba(241, 196, 15, 0.8)"; ctx.beginPath(); ctx.arc(30, 20, 15, 0, 2*Math.PI); ctx.fill();
+                } else {
+                    ctx.fillStyle = "#e74c3c"; ctx.beginPath(); ctx.roundRect(-t.width/2, -t.height/2, t.width, t.height, 10); ctx.fill();
+                }
+                ctx.lineWidth = 3; ctx.strokeStyle = "#4a2e1b"; ctx.stroke();
+            } else {
+                ctx.fillStyle = "#8c5a2b"; ctx.beginPath(); ctx.roundRect(-t.width/2, -t.height/2, t.width, t.height, 10); ctx.fill();
+                ctx.lineWidth = 3; ctx.strokeStyle = "#4a2e1b"; ctx.stroke();
+
+                ctx.fillStyle = "#fdf6e2"; ctx.beginPath(); ctx.roundRect(-t.width/2 + 4, -t.height/2 + 4, t.width - 8, t.height - 8, 6); ctx.fill();
+            }
+
+            ctx.fillStyle = t.hit ? "#ffffff" : "#2c1d11";
+            ctx.font = "bold 24px 'Segoe UI', sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+            wrapText(ctx, t.text, 0, 0, t.width - 16, 28); ctx.restore();
+        });
+
+        ctx.save(); ctx.translate(catX, catY);
+        ctx.fillStyle = "#4a2e1b"; ctx.fillRect(-30, 0, 60, 40);
+        ctx.beginPath(); ctx.moveTo(-30, 0); ctx.lineTo(0, -35); ctx.lineTo(30, 0);
+        ctx.fillStyle = "#5c3a21"; ctx.fill(); ctx.lineWidth = 2; ctx.strokeStyle = "#d4a359"; ctx.stroke();
+
+        ctx.save(); ctx.translate(0, -20); ctx.rotate(catapultAngle);
+        ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(35, -35); ctx.lineWidth = 9; ctx.strokeStyle = "#8c5a2b"; ctx.stroke();
+        
+        if (!fireball || !fireball.active) {
+            ctx.fillStyle = "#7f8c8d"; ctx.beginPath(); ctx.moveTo(25, -42); ctx.lineTo(45, -40); ctx.lineTo(40, -28); ctx.lineTo(27, -30); ctx.closePath(); ctx.fill();
+        }
+        ctx.restore(); ctx.restore();
+
+        if (trail.length > 0) {
+            ctx.save();
+            for (let i = 0; i < trail.length; i++) {
+                let p = trail[i]; let radius = (i / trail.length) * 14;
+                ctx.beginPath(); ctx.arc(p.x, p.y, radius, 0, 2 * Math.PI); ctx.fillStyle = `rgba(241, 196, 15, ${(i / trail.length) * 0.5})`; ctx.fill();
+            }
+            ctx.restore();
+        }
+
+        if (explosionParticles.length > 0) {
+            ctx.save();
+            explosionParticles.forEach(ep => {
+                ctx.beginPath(); ctx.arc(ep.x, ep.y, ep.radius, 0, 2 * Math.PI); ctx.fillStyle = ep.color; ctx.fill();
+            });
+            ctx.restore();
+        }
+
+        if (fireball && fireball.active) {
+            ctx.save(); ctx.translate(fireball.x, fireball.y);
+            ctx.beginPath(); ctx.arc(0, 0, 18, 0, 2 * Math.PI); ctx.fillStyle = "rgba(231, 76, 60, 0.7)"; ctx.fill();
+            ctx.beginPath(); ctx.arc(0, 0, 12, 0, 2 * Math.PI); ctx.fillStyle = "#f39c12"; ctx.fill();
+            
+            ctx.fillStyle = "#595959"; ctx.strokeStyle = "#333333"; ctx.lineWidth = 2;
+            ctx.beginPath(); ctx.moveTo(-8, -10); ctx.lineTo(6, -12); ctx.lineTo(11, 4); ctx.lineTo(3, 10); ctx.lineTo(-9, 7); ctx.closePath(); ctx.fill(); ctx.stroke();
+            ctx.restore();
+        }
+    }
+
+    function wrapText(context, text, x, y, maxWidth, lineHeight) {
+        let words = String(text).split(' '), line = '', lines = [];
+        for (let n = 0; n < words.length; n++) {
+            let testLine = line + words[n] + ' ';
+            if (context.measureText(testLine).width > maxWidth && n > 0) { lines.push(line); line = words[n] + ' '; }
+            else line = testLine;
+        }
+        lines.push(line);
+        let startY = y - ((lines.length - 1) * lineHeight) / 2;
+        for (let k = 0; k < lines.length; k++) context.fillText(lines[k].trim(), x, startY + (k * lineHeight));
+    }
+
+    function getCanvasPos(e) {
+        const rect = canvas.getBoundingClientRect();
+        const clientX = e.clientX || (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+        const clientY = e.clientY || (e.touches && e.touches[0] ? e.touches[0].clientY : 0);
+        return { 
+            x: (clientX - rect.left) * (canvas.width / rect.width), 
+            y: (clientY - rect.top) * (canvas.height / rect.height) 
+        };
+    }
+
+    function animateCatapultLaunch() {
+        let launchProgress = 0;
+        function swingArm() {
+            launchProgress += 0.2; catapultAngle = -launchProgress; drawScene();
+            if (launchProgress < 0.8) { requestAnimationFrame(swingArm); }
+            else { catapultAngle = 0; animateFireball(); }
+        }
+        swingArm();
+    }
+
+    function animateFireball() {
+        if (!fireball || !fireball.active) return;
+        fireball.progress += 0.009; if (fireball.progress > 1) fireball.progress = 1;
+
+        let p = fireball.progress;
+        fireball.x = fireball.startX + (fireball.targetX - fireball.startX) * p;
+        let linearY = fireball.startY + (fireball.targetY - fireball.startY) * p;
+        let arcHeight = -140; let arcOffset = 4 * arcHeight * p * (1 - p);
+        fireball.y = linearY + arcOffset;
+
+        trail.push({ x: fireball.x, y: fireball.y });
+        if (trail.length > 15) trail.shift();
+
+        if (p >= 1) {
+            fireball.active = false;
+            let t = fireball.target; t.hit = true; playSound('hit');
+
+            for(let i=0; i<25; i++) {
+                let angle = Math.random() * Math.PI * 2; let speed = Math.random() * 5 + 1;
+                explosionParticles.push({
+                    x: t.x, y: t.y, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed,
+                    radius: Math.random() * 7 + 2, color: t.isCorrect ? (Math.random() > 0.3 ? "#2ecc71" : "#e74c3c") : "#e74c3c", alpha: 1
+                });
+            }
+
+            if (t.isCorrect) {
+                playSound('correct'); updateXP(20);
+                document.getElementById('quizFeedback').innerText = "🛡️ VICTORIE! Zidul inamic a fost spulberat cu succes! (+20 XP)";
+                document.getElementById('quizFeedback').style.color = "#27ae60";
+                setTimeout(() => { currentQuizIndex++; loadQuestion(currentQuizIndex); }, 1800);
+            } else {
+                playSound('wrong'); quizWrongAnswers++; updateXP(-5);
+                document.getElementById('quizFeedback').innerText = "⚔️ Cădere în luptă! Stânca a eșuat în fața zidului! (-5 XP)";
+                document.getElementById('quizFeedback').style.color = "#c0392b";
+                setTimeout(() => { canShoot = true; fireball = null; trail = []; explosionParticles = []; drawScene(); }, 1400);
+            }
+        }
+
+        if (explosionParticles.length > 0) {
+            explosionParticles.forEach(ep => { ep.x += ep.vx; ep.y += ep.vy; ep.radius *= 0.95; });
+        }
+
+        drawScene();
+        if ((fireball && fireball.active) || explosionParticles.length > 0) { requestAnimationFrame(animateFireball); }
+    }
+
+    function launchFirework() {
+        if (!isVictory) return;
+        fireworks.push({ x: Math.random() * (canvas.width - 200) + 100, y: canvas.height, targetY: Math.random() * 150 + 50, color: `hsl(${Math.random() * 360}, 100%, 60%)`, speed: Math.random() * 3 + 3.5, radius: 3.5 });
+        playSound('fw_launch');
+        setTimeout(launchFirework, Math.random() * 900 + 400); 
+    }
+
+    function animateVictory() {
+        if (!isVictory) return;
+        ctx.clearRect(0, 0, canvas.width, canvas.height); ctx.fillStyle = "#e3ceab"; ctx.fillRect(0, 0, canvas.width, canvas.height);
+        drawWall(true); 
+
+        if (Math.random() < 0.6) {
+            let spawnX = [80, 400, 715, 260, 540][Math.floor(Math.random() * 5)];
+            let spawnY = spawnX === 400 ? 470 : (spawnX < 100 || spawnX > 700 ? 340 : 435);
+            fireEffectParticles.push({ x: spawnX + (Math.random() * 40 - 20), y: spawnY, vx: (Math.random() - 0.5) * 1.5, vy: -(Math.random() * 2.5 + 1), radius: Math.random() * 8 + 4, color: Math.random() > 0.4 ? "#e74c3c" : (Math.random() > 0.5 ? "#f39c12" : "#f1c40f"), alpha: 1, isSmoke: Math.random() < 0.3 });
+        }
+
+        for (let i = fireEffectParticles.length - 1; i >= 0; i--) {
+            let fp = fireEffectParticles[i]; fp.x += fp.vx; fp.y += fp.vy; fp.radius *= 0.96; fp.alpha -= 0.02;
+            if (fp.isSmoke) { fp.color = "#444444"; fp.radius *= 1.02; }
+            ctx.beginPath(); ctx.arc(fp.x, fp.y, Math.max(0.5, fp.radius), 0, Math.PI * 2); ctx.fillStyle = fp.color; ctx.globalAlpha = Math.max(0, fp.alpha); ctx.fill(); ctx.globalAlpha = 1;
+            if (fp.alpha <= 0 || fp.radius <= 0.5) { fireEffectParticles.splice(i, 1); }
+        }
+
+        for(let i=fireworks.length-1; i>=0; i--) {
+            let fw = fireworks[i]; fw.y -= fw.speed;
+            ctx.beginPath(); ctx.arc(fw.x, fw.y, fw.radius, 0, Math.PI*2); ctx.fillStyle = fw.color; ctx.fill();
+
+            if(fw.y <= fw.targetY) {
+                playSound('fw_explode');
+                for(let j=0; j<45; j++) {
+                    let angle = Math.random() * Math.PI * 2; let speed = Math.random() * 4 + 1;
+                    fwParticles.push({ x: fw.x, y: fw.y, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed, color: fw.color, alpha: 1, decay: Math.random() * 0.02 + 0.015 });
+                }
+                fireworks.splice(i, 1);
+            }
+        }
+
+        for(let i=fwParticles.length-1; i>=0; i--) {
+            let p = fwParticles[i]; p.x += p.vx; p.y += p.vy; p.vy += 0.04; p.alpha -= p.decay;
+            ctx.beginPath(); ctx.arc(p.x, p.y, 2.5, 0, Math.PI*2); ctx.fillStyle = p.color; ctx.globalAlpha = Math.max(0, p.alpha); ctx.fill(); ctx.globalAlpha = 1;
+            if(p.alpha <= 0) fwParticles.splice(i, 1);
+        }
+
+        victoryAnimationId = requestAnimationFrame(animateVictory);
+    }
+
+    /* --- JOCUL DE COMUNITATE PENTRU EDUCAȚIE SOCIALĂ (NESCHIMBAT) --- */
+    function loadSocialQuestion(qIndex) {
         const totalQ = currentLessonData.quiz.length;
 
         if (qIndex >= totalQ) {
             let starsKey = `${activeSubject}_stars_${currentClassKey}_${currentLessonIdx}`;
             localStorage.setItem(starsKey, "3");
 
-            if (activeSubject === 'history') {
-                document.getElementById('quizQuestion').innerText = "🏆 VICTORIE! CETATEA A FOST CUCERITĂ!";
-                document.getElementById('quizFeedback').innerText = "Ai răspuns corect la toate întrebările și ai câștigat +50 XP și ⭐⭐⭐!";
-            } else {
-                document.getElementById('quizQuestion').innerText = "🏆 FELICITĂRI! AI CONSTRUIT COMUNITATEA PERFECTĂ!";
-                document.getElementById('quizFeedback').innerText = "Toți cetățenii îți mulțumesc pentru deciziile înțelepte! (+50 XP și ⭐⭐⭐)";
-            }
+            document.getElementById('quizQuestion').innerText = "🏆 FELICITĂRI! AI CONSTRUIT COMUNITATEA PERFECTĂ!";
+            document.getElementById('quizFeedback').innerText = "Toți cetățenii îți mulțumesc pentru deciziile înțelepte! (+50 XP și ⭐⭐⭐)";
             document.getElementById('quizFeedback').style.color = "#059669";
 
             playSound('correct');
             updateXP(50);
-            if (activeSubject === 'history') startVictoryFireworks();
-            else drawScene(true);
+            drawSocialCommunityScene(true);
             return;
         }
 
@@ -2551,9 +2921,7 @@
         const correctIdx = (typeof qData.c === 'number') ? qData.c : ((typeof qData.corect === 'number') ? qData.corect : qData.correct);
 
         document.getElementById('quizQuestion').innerText = `Întrebarea ${qIndex + 1}/${totalQ}: ${qText}`;
-        document.getElementById('quizFeedback').innerText = activeSubject === 'history'
-            ? "Atinge ținta corectă pentru a trage cu catapulta!"
-            : "Alege decizia corectă pentru a dezvolta comunitatea!";
+        document.getElementById('quizFeedback').innerText = "Alege decizia corectă pentru a dezvolta comunitatea!";
         document.getElementById('quizFeedback').style.color = "var(--card-text)";
 
         canShoot = true;
@@ -2575,7 +2943,7 @@
                 hit: false
             });
         }
-        drawScene(false);
+        drawSocialCommunityScene(false);
     }
 
     function drawDynamicFitText(ctx, text, x, y, maxWidth, maxHeight) {
@@ -2611,111 +2979,6 @@
         for (let k = 0; k < lines.length; k++) {
             ctx.fillText(lines[k], x, startY + (k * lineHeight));
         }
-    }
-
-    function drawScene(isFinished) {
-        if (activeSubject === 'history') drawHistorySiegeScene(isFinished);
-        else drawSocialCommunityScene(isFinished);
-    }
-
-    function drawHistorySiegeScene(isFinished) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        ctx.fillStyle = "#bae6fd"; ctx.fillRect(0, 0, canvas.width, 430);
-        ctx.fillStyle = "#fde047"; ctx.beginPath(); ctx.arc(90, 70, 36, 0, Math.PI * 2); ctx.fill();
-        ctx.fillStyle = "#65a30d"; ctx.fillRect(0, 430, canvas.width, 220);
-
-        const castleDamage = Math.min(gameStep, 5);
-        ctx.fillStyle = "#78716c";
-        ctx.fillRect(540, 340 + castleDamage * 14, 210, 210 - castleDamage * 14);
-        ctx.fillStyle = "#57534e";
-        ctx.fillRect(520, 310 + castleDamage * 16, 45, 240 - castleDamage * 16);
-        ctx.fillRect(725, 310 + castleDamage * 16, 45, 240 - castleDamage * 16);
-
-        ctx.fillStyle = "#292524"; ctx.fillRect(642, 260 + castleDamage * 14, 6, 80);
-        ctx.fillStyle = isFinished ? "#10b981" : "#dc2626";
-        ctx.beginPath();
-        ctx.moveTo(648, 262 + castleDamage * 14);
-        ctx.lineTo(705, 280 + castleDamage * 14);
-        ctx.lineTo(648, 298 + castleDamage * 14);
-        ctx.fill();
-
-        ctx.fillStyle = "#78350f";
-        ctx.fillRect(70, 515, 130, 22);
-        ctx.fillStyle = "#451a03";
-        ctx.beginPath(); ctx.arc(95, 542, 16, 0, Math.PI * 2); ctx.arc(175, 542, 16, 0, Math.PI * 2); ctx.fill();
-        ctx.strokeStyle = "#92400e"; ctx.lineWidth = 10;
-        ctx.beginPath(); ctx.moveTo(135, 515); ctx.lineTo(95, 455); ctx.stroke();
-
-        if (projectile) {
-            ctx.fillStyle = "#f97316";
-            ctx.beginPath(); ctx.arc(projectile.x, projectile.y, 14, 0, Math.PI * 2); ctx.fill();
-            ctx.fillStyle = "#fef08a";
-            ctx.beginPath(); ctx.arc(projectile.x - 3, projectile.y - 3, 6, 0, Math.PI * 2); ctx.fill();
-        }
-
-        fireworks.forEach(p => {
-            ctx.fillStyle = p.color;
-            ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
-        });
-
-        if (!isFinished) {
-            targets.forEach(t => {
-                ctx.save(); ctx.translate(t.x, t.y);
-                ctx.fillStyle = t.hit ? (t.isCorrect ? "#10b981" : "#ef4444") : "#fffdf7";
-                ctx.beginPath(); ctx.roundRect(-t.width / 2, -t.height / 2, t.width, t.height, 12); ctx.fill();
-                ctx.lineWidth = 3; ctx.strokeStyle = "#8c5a2b"; ctx.stroke();
-
-                ctx.fillStyle = t.hit ? "#ffffff" : "#3e2714";
-                ctx.textAlign = "center"; ctx.textBaseline = "middle";
-                drawDynamicFitText(ctx, t.text, 0, 0, t.width, t.height);
-                ctx.restore();
-            });
-        }
-    }
-
-    function launchCatapultProjectile(targetX, targetY, onDone) {
-        const startX = 110, startY = 455;
-        let t = 0;
-        function step() {
-            t += 0.06;
-            projectile = {
-                x: startX + (targetX - startX) * t,
-                y: startY + (targetY - startY) * t - Math.sin(t * Math.PI) * 140
-            };
-            drawHistorySiegeScene(false);
-            if (t < 1) {
-                animFrameId = requestAnimationFrame(step);
-            } else {
-                projectile = null;
-                onDone();
-            }
-        }
-        animFrameId = requestAnimationFrame(step);
-    }
-
-    function startVictoryFireworks() {
-        const colors = ["#ef4444", "#facc15", "#10b981", "#3b82f6", "#ec4899"];
-        for (let i = 0; i < 65; i++) {
-            const angle = Math.random() * Math.PI * 2;
-            const speed = 1.5 + Math.random() * 4.5;
-            fireworks.push({
-                x: 400 + (Math.random() - 0.5) * 260,
-                y: 180 + (Math.random() - 0.5) * 100,
-                vx: Math.cos(angle) * speed,
-                vy: Math.sin(angle) * speed,
-                size: 3 + Math.random() * 4,
-                color: colors[i % colors.length],
-                life: 70
-            });
-        }
-        function animFw() {
-            fireworks.forEach(p => { p.x += p.vx; p.y += p.vy; p.vy += 0.06; p.life--; });
-            fireworks = fireworks.filter(p => p.life > 0);
-            drawHistorySiegeScene(true);
-            if (fireworks.length > 0) animFrameId = requestAnimationFrame(animFw);
-        }
-        animFrameId = requestAnimationFrame(animFw);
     }
 
     function drawSocialCommunityScene(isFinished) {
@@ -2793,44 +3056,49 @@
         ctx.restore();
     }
 
+    /* CLICK PE CANVAS PENTRU AMBELE MATERII */
     canvas.addEventListener('click', function(e) {
         if (!canShoot) return;
-        const rect = canvas.getBoundingClientRect();
-        const clickX = (e.clientX - rect.left) * (canvas.width / rect.width);
-        const clickY = (e.clientY - rect.top) * (canvas.height / rect.height);
+        const pos = getCanvasPos(e);
 
-        targets.forEach(t => {
-            if (!t.hit && clickX > t.x - t.width / 2 && clickX < t.x + t.width / 2 && clickY > t.y - t.height / 2 && clickY < t.y + t.height / 2) {
-                canShoot = false;
-                const resolveHit = () => {
+        if (activeSubject === 'history') {
+            targets.forEach(t => {
+                if (!t.hit && pos.x > t.x - t.width / 2 && pos.x < t.x + t.width / 2 && pos.y > t.y - t.height / 2 && pos.y < t.y + t.height / 2) {
+                    canShoot = false;
+                    let startX = catX; let startY = catY - 50;
+                    let targetX = t.x; let targetY = t.y;
+                    
+                    fireball = { x: startX, y: startY, startX: startX, startY: startY, targetX: targetX, targetY: targetY, progress: 0, target: t, active: true };
+                    trail = [];
+                    
+                    playSound('shoot');
+                    animateCatapultLaunch();
+                }
+            });
+        } else {
+            targets.forEach(t => {
+                if (!t.hit && pos.x > t.x - t.width / 2 && pos.x < t.x + t.width / 2 && pos.y > t.y - t.height / 2 && pos.y < t.y + t.height / 2) {
+                    canShoot = false;
                     t.hit = true;
                     if (t.isCorrect) {
                         playSound('correct');
                         updateXP(20);
                         gameStep++;
-                        document.getElementById('quizFeedback').innerText = activeSubject === 'history'
-                            ? "💥 Lovitură directă asupra cetății! (+20 XP)"
-                            : "🌟 Bravo! Ai adăugat un nou element în comunitate! (+20 XP)";
+                        document.getElementById('quizFeedback').innerText = "🌟 Bravo! Ai adăugat un nou element în comunitate! (+20 XP)";
                         document.getElementById('quizFeedback').style.color = "#059669";
                     } else {
                         playSound('wrong');
                         document.getElementById('quizFeedback').innerText = "❌ Răspuns incorect! Mai încearcă.";
                         document.getElementById('quizFeedback').style.color = "#dc2626";
                     }
-                    drawScene(false);
+                    drawSocialCommunityScene(false);
                     setTimeout(() => {
-                        if (t.isCorrect) { currentQuizIndex++; loadCanvasQuestion(currentQuizIndex); }
-                        else { canShoot = true; t.hit = false; drawScene(false); }
+                        if (t.isCorrect) { currentQuizIndex++; loadSocialQuestion(currentQuizIndex); }
+                        else { canShoot = true; t.hit = false; drawSocialCommunityScene(false); }
                     }, 1250);
-                };
-
-                if (activeSubject === 'history') {
-                    launchCatapultProjectile(t.x, t.y, resolveHit);
-                } else {
-                    resolveHit();
                 }
-            }
-        });
+            });
+        }
     });
 
     /* =========================================================
@@ -3277,6 +3545,8 @@
             classes.classList.add('active-screen');
             document.getElementById('headerTitle').innerText = SUBJECT_CONFIG[activeSubject].title;
         } else if (detail.classList.contains('active-screen')) {
+            isVictory = false;
+            if (victoryAnimationId) { cancelAnimationFrame(victoryAnimationId); victoryAnimationId = null; }
             detail.classList.remove('active-screen');
             openClassWithoutPush(currentClassKey);
         } else if (lessons.classList.contains('active-screen')) {
