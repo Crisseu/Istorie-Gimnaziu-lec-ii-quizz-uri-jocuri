@@ -1093,29 +1093,18 @@
             </div>
         </div>
 
-        <!-- TAB 4: WORDWALL / GENIALLY -->
+        <!-- TAB 4: WORDWALL / GENIALLY (DINAMIC - ORICÂTE RESURSE) -->
         <div id="tabWordwall" class="tab-content">
             <div class="wordwall-tip-box">
                 💡 <strong>Sfat pentru telefon:</strong> Apasă pe simbolul de <strong>Full-Screen ⛶</strong> din colțul jocului și rotește telefonul pe orizontală pentru o vizualizare optimă!
             </div>
 
-            <div id="wrapperGame1" style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 10px; padding: 10px; margin-bottom: 16px;">
-                <h4 id="titleGame1" style="color: var(--accent-dark); margin-bottom: 8px;">🎮 Activitate Interactivă 1</h4>
-                <div style="width: 100%; position: relative; padding-bottom: 56.25%; height: 0;">
-                    <iframe id="iframeGame1" frameborder="0" width="100%" height="100%" style="position: absolute; left: 0; top: 0; border-radius: 6px;" src="" allowfullscreen="true"></iframe>
-                </div>
-            </div>
-
-            <div id="wrapperGame2" style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 10px; padding: 10px; margin-bottom: 12px; display: none;">
-                <h4 id="titleGame2" style="color: var(--accent-dark); margin-bottom: 8px;">🎮 Activitate Interactivă 2</h4>
-                <div style="width: 100%; position: relative; padding-bottom: 56.25%; height: 0;">
-                    <iframe id="iframeGame2" frameborder="0" width="100%" height="100%" style="position: absolute; left: 0; top: 0; border-radius: 6px;" src="" allowfullscreen="true"></iframe>
-                </div>
-            </div>
+            <div id="wordwallGamesContainer"></div>
 
             <div id="noWordwallMsg" style="display:none; text-align:center; padding:20px; color:#64748b; font-weight:bold;">
                 Nu există joc extern atașat acestei lecții.
             </div>
+        </div>
         </div>
     </div>
 </div>
@@ -1718,39 +1707,37 @@
         }
         document.getElementById('summaryBoxContent').innerHTML = htmlRezumat;
 
-        const iframe1 = document.getElementById('iframeGame1');
-        const iframe2 = document.getElementById('iframeGame2');
-        const wrapper1 = document.getElementById('wrapperGame1');
-        const wrapper2 = document.getElementById('wrapperGame2');
+       const gamesContainer = document.getElementById('wordwallGamesContainer');
         const noMsg = document.getElementById('noWordwallMsg');
+        gamesContainer.innerHTML = '';
 
-        let urls = [];
+        let resources = [];
         if (Array.isArray(currentLessonData.wordwallUrls) && currentLessonData.wordwallUrls.length > 0) {
-            urls = currentLessonData.wordwallUrls.filter(Boolean);
-        } else if (currentLessonData.game1 || currentLessonData.game2) {
-            urls = [currentLessonData.game1, currentLessonData.game2].filter(Boolean);
+            resources = currentLessonData.wordwallUrls.filter(Boolean);
         } else {
-            const single = currentLessonData.wordwallUrl || currentLessonData.geniallyUrl || currentLessonData.linkWordwall || "";
-            if (single) urls = [single];
+            ['game1', 'game2', 'game3', 'game4', 'game5', 'wordwall1', 'wordwall2', 'wordwall3', 'wordwallUrl', 'geniallyUrl', 'linkWordwall'].forEach(key => {
+                if (currentLessonData[key]) resources.push(currentLessonData[key]);
+            });
         }
 
-        if (urls.length === 0) {
-            iframe1.src = "";
-            iframe2.src = "";
-            wrapper1.style.display = "none";
-            wrapper2.style.display = "none";
+        if (resources.length === 0) {
             noMsg.style.display = "block";
         } else {
             noMsg.style.display = "none";
-            wrapper1.style.display = "block";
-            iframe1.src = urls[0];
-            if (urls[1]) {
-                wrapper2.style.display = "block";
-                iframe2.src = urls[1];
-            } else {
-                iframe2.src = "";
-                wrapper2.style.display = "none";
-            }
+            resources.forEach((res, index) => {
+                const url = (typeof res === 'object') ? (res.url || res.link || '') : res;
+                const customTitle = (typeof res === 'object' && res.title) ? res.title : `🎮 Activitate Interactivă ${index + 1}`;
+                if (!url) return;
+
+                gamesContainer.innerHTML += `
+                    <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 10px; padding: 10px; margin-bottom: 16px;">
+                        <h4 style="color: var(--accent-dark); margin-bottom: 8px;">${customTitle}</h4>
+                        <div style="width: 100%; position: relative; padding-bottom: 56.25%; height: 0;">
+                            <iframe frameborder="0" width="100%" height="100%" style="position: absolute; left: 0; top: 0; border-radius: 6px;" src="${url}" allowfullscreen="true"></iframe>
+                        </div>
+                    </div>
+                `;
+            });
         }
 
         switchTab('summary');
