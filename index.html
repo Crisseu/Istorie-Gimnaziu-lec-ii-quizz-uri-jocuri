@@ -1855,7 +1855,7 @@
         document.getElementById('badgeDesc').innerText = badgeDesc;
     }
 
-    /* =========================================================
+   /* =========================================================
        CUCERIREA REGIUNILOR (STIL TRIVIADOR: SOLO VS AI + BUZZER)
        ========================================================= */
     const MAP_REGIONS = [
@@ -1876,6 +1876,7 @@
     ];
 
     let cqMode = 'ai';
+    let buzzerDelayTimeout = null;
     let cqState = {
         players: [],
         regions: [],
@@ -1892,6 +1893,29 @@
         timeLeft: 15,
         isTieBreaker: false
     };
+
+    function resetBuzzerButtons() {
+        clearTimeout(buzzerDelayTimeout);
+        const panel = document.getElementById('conquestQuestionPanel');
+        if (panel) panel.style.borderColor = '#f59e0b';
+
+        const btn0 = document.querySelector('.buzzer-p1');
+        const btn1 = document.querySelector('.buzzer-p2');
+        if (btn0) {
+            btn0.disabled = false;
+            btn0.style.opacity = '1';
+            btn0.style.transform = 'scale(1)';
+            btn0.style.borderColor = '#ffffff';
+            btn0.innerHTML = '🔔 JUCĂTOR 1<br><span style="font-size:0.78rem; font-weight:normal;">(Albastru)</span>';
+        }
+        if (btn1) {
+            btn1.disabled = false;
+            btn1.style.opacity = '1';
+            btn1.style.transform = 'scale(1)';
+            btn1.style.borderColor = '#ffffff';
+            btn1.innerHTML = '🔔 JUCĂTOR 2<br><span style="font-size:0.78rem; font-weight:normal;">(Roșu)</span>';
+        }
+    }
 
     function openConquestSetup() {
         pushNavigationState();
@@ -1916,6 +1940,7 @@
             return;
         }
 
+        resetBuzzerButtons();
         cqState.questionPool = amestecaArray(pool);
         cqState.qCursor = 0;
         cqState.battleRound = 1;
@@ -2159,6 +2184,7 @@
         document.getElementById('cqQuestionText').innerText = `[Clasa a ${q.clasa}-a] ${q.intrebare}`;
 
         if (cqMode === 'buzzer') {
+            resetBuzzerButtons();
             buzzerArea.style.display = 'grid';
             optsArea.style.display = 'none';
             cqState.currentQuestionObj = q;
@@ -2290,6 +2316,7 @@
         document.getElementById('cqQuestionText').innerText = `[Clasa a ${q.clasa}-a] ${q.intrebare}`;
 
         if (cqMode === 'buzzer') {
+            resetBuzzerButtons();
             buzzerArea.style.display = 'grid';
             optsArea.style.display = 'none';
             startConquestTimer(15, () => {
@@ -2354,17 +2381,41 @@
         cqState.buzzedPlayer = playerIdx;
 
         const pObj = cqState.players[playerIdx];
-        document.getElementById('cqBuzzerArea').style.display = 'none';
-        document.getElementById('cqOptionsArea').style.display = 'grid';
-        document.getElementById('cqFeedbackArea').style.color = "#facc15";
-        document.getElementById('cqFeedbackArea').innerText = `🔔 ${pObj.name} a apăsat primul! Alege răspunsul în 6 secunde!`;
+        const isP1 = (playerIdx === 0);
+        document.getElementById('conquestQuestionPanel').style.borderColor = pObj.color;
 
-        renderConquestOptions(cqState.currentQuestionObj, (isCorrect) => {
-            clearInterval(cqState.timer);
-            resolveBuzzerAnswer(playerIdx, isCorrect);
-        });
+        const winnerBtn = document.querySelector(isP1 ? '.buzzer-p1' : '.buzzer-p2');
+        const loserBtn = document.querySelector(isP1 ? '.buzzer-p2' : '.buzzer-p1');
 
-        startConquestTimer(6, () => resolveBuzzerAnswer(playerIdx, false));
+        if (winnerBtn) {
+            winnerBtn.disabled = true;
+            winnerBtn.style.transform = 'scale(1.04)';
+            winnerBtn.style.borderColor = '#facc15';
+            winnerBtn.innerHTML = `✅ ${pObj.name.toUpperCase()}<br><span style="font-size:0.82rem; font-weight:bold;">A APĂSAT PRIMUL!</span>`;
+        }
+        if (loserBtn) {
+            loserBtn.disabled = true;
+            loserBtn.style.opacity = '0.3';
+            loserBtn.style.transform = 'scale(0.96)';
+        }
+
+        document.getElementById('cqTimer').innerText = "10";
+        document.getElementById('cqFeedbackArea').style.color = isP1 ? '#60a5fa' : '#f87171';
+        document.getElementById('cqFeedbackArea').innerText = `✋ STOP! ${pObj.name} a apăsat primul! Variantele apar imediat...`;
+
+        buzzerDelayTimeout = setTimeout(() => {
+            document.getElementById('cqBuzzerArea').style.display = 'none';
+            document.getElementById('cqOptionsArea').style.display = 'grid';
+            document.getElementById('cqFeedbackArea').style.color = '#facc15';
+            document.getElementById('cqFeedbackArea').innerText = `${isP1 ? '🔵' : '🔴'} ${pObj.name} răspunde! Ai 10 secunde!`;
+
+            renderConquestOptions(cqState.currentQuestionObj, (isCorrect) => {
+                clearInterval(cqState.timer);
+                resolveBuzzerAnswer(playerIdx, isCorrect);
+            });
+
+            startConquestTimer(10, () => resolveBuzzerAnswer(playerIdx, false));
+        }, 2500);
     }
 
     function resolveBuzzerAnswer(playerIdx, isCorrect) {
@@ -2378,6 +2429,7 @@
                 fback.innerText = `✅ Corect! ${cqState.players[playerIdx].name} alege o regiune liberă!`;
                 setTimeout(() => {
                     panel.style.display = 'none';
+                    resetBuzzerButtons();
                     cqState.phase = 'pick_free';
                     cqState.turnIndex = playerIdx;
                     document.getElementById('conquestStatusBar').innerText = `👆 ${cqState.players[playerIdx].name}: Atinge o regiune liberă de pe hartă!`;
@@ -2390,6 +2442,7 @@
                 fback.innerText = `❌ Greșit! ${cqState.players[otherIdx].name} primește regiunea!`;
                 setTimeout(() => {
                     panel.style.display = 'none';
+                    resetBuzzerButtons();
                     cqState.phase = 'pick_free';
                     cqState.turnIndex = otherIdx;
                     document.getElementById('conquestStatusBar').innerText = `👆 ${cqState.players[otherIdx].name}: Atinge o regiune liberă de pe hartă!`;
@@ -2445,6 +2498,7 @@
 
         setTimeout(() => {
             panel.style.display = 'none';
+            resetBuzzerButtons();
             advanceBattleTurn(true);
             runNextConquestStep();
         }, 1500);
@@ -2453,6 +2507,11 @@
     function renderConquestOptions(q, onSelectCallback) {
         const optsArea = document.getElementById('cqOptionsArea');
         optsArea.innerHTML = '';
+
+        const activePlayer = (cqMode === 'buzzer' && cqState.buzzedPlayer !== null)
+            ? cqState.players[cqState.buzzedPlayer]
+            : null;
+        const activeColor = activePlayer ? activePlayer.color : 'var(--accent)';
 
         const shuffled = amestecaArray(q.optiuni.map((txt, idx) => ({
             text: txt,
@@ -2464,9 +2523,17 @@
             btn.className = 'btn-action';
             btn.style.width = '100%';
             btn.style.margin = '0';
+            btn.style.borderColor = activeColor;
+            btn.style.borderWidth = '3px';
+            if (activePlayer) {
+                btn.style.backgroundColor = '#ffffff';
+                btn.style.color = '#0f172a';
+            }
             btn.innerText = item.text;
             btn.onclick = () => {
                 optsArea.querySelectorAll('button').forEach(b => b.disabled = true);
+                btn.style.backgroundColor = activeColor;
+                btn.style.color = '#ffffff';
                 onSelectCallback(item.isCorrect);
             };
             optsArea.appendChild(btn);
@@ -2491,6 +2558,7 @@
     function finishConquestGame() {
         cqState.phase = 'ended';
         clearInterval(cqState.timer);
+        resetBuzzerButtons();
         document.getElementById('conquestQuestionPanel').style.display = 'none';
 
         const ranked = [...cqState.players]
