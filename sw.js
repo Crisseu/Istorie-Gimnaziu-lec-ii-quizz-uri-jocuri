@@ -1,4 +1,4 @@
-const CACHE_NAME = 'istorie-edsociala-v1';
+const CACHE_NAME = 'istorie-edsociala-v3';
 
 const ASSETS_TO_CACHE = [
   './',
